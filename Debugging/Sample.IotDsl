@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<exampleModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="914e09f8-0723-415e-8c0c-73e73b4f0441" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
+  <elements>
+    <exampleElement Id="a055b9b5-6707-40bb-bf6a-955756d5528d" name="ExampleElement1">
+      <targets>
+        <exampleElementMoniker name="/914e09f8-0723-415e-8c0c-73e73b4f0441/ExampleElement2" />
+      </targets>
+    </exampleElement>
+    <exampleElement Id="c2dd523d-284f-4d25-8876-e9b9e527c08b" name="ExampleElement2" />
+  </elements>
+</exampleModel>

@@ -1,0 +1,971 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Compañía.IotDsl.IotDslDomainModel.Description" xml:space="preserve">
+    <value>Description for Compañía.IotDsl.IotDsl</value>
+    <comment>Description for DslLibrary &apos;IotDsl&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDslDomainModel.DisplayName" xml:space="preserve">
+    <value>IotDsl</value>
+    <comment>DisplayName for DslLibrary &apos;IotDsl&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1.Description" xml:space="preserve">
+    <value>The root in which all other elements are embedded. Appears as a diagram.</value>
+    <comment>Description for DomainClass &apos;IotDsl1&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1.DisplayName" xml:space="preserve">
+    <value>Iot Dsl1</value>
+    <comment>DisplayName for DomainClass &apos;IotDsl1&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursos</value>
+    <comment>Description for DomainClass &apos;GrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursos.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>DisplayName for DomainClass &apos;GrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursos/Nombre.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursos.Nombre</value>
+    <comment>Description for DomainProperty &apos;Nombre&apos; on DomainClass &apos;GrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursos/Nombre.DisplayName" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>DisplayName for DomainProperty &apos;Nombre&apos; on DomainClass &apos;GrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursos/Location.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursos.Location</value>
+    <comment>Description for DomainProperty &apos;Location&apos; on DomainClass &apos;GrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursos/Location.DisplayName" xml:space="preserve">
+    <value>Location</value>
+    <comment>DisplayName for DomainProperty &apos;Location&apos; on DomainClass &apos;GrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoT.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.CentroIoT</value>
+    <comment>Description for DomainClass &apos;CentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoT.DisplayName" xml:space="preserve">
+    <value>Centro Io T</value>
+    <comment>DisplayName for DomainClass &apos;CentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoT/Nombre.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.CentroIoT.Nombre</value>
+    <comment>Description for DomainProperty &apos;Nombre&apos; on DomainClass &apos;CentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoT/Nombre.DisplayName" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>DisplayName for DomainProperty &apos;Nombre&apos; on DomainClass &apos;CentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaService.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.MessagingasaService</value>
+    <comment>Description for DomainClass &apos;MessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaService.DisplayName" xml:space="preserve">
+    <value>Messagingasa Service</value>
+    <comment>DisplayName for DomainClass &apos;MessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaService/Nombre.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.MessagingasaService.Nombre</value>
+    <comment>Description for DomainProperty &apos;Nombre&apos; on DomainClass &apos;MessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaService/Nombre.DisplayName" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>DisplayName for DomainProperty &apos;Nombre&apos; on DomainClass &apos;MessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalytics.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalytics</value>
+    <comment>Description for DomainClass &apos;DataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalytics.DisplayName" xml:space="preserve">
+    <value>Data Analytics</value>
+    <comment>DisplayName for DomainClass &apos;DataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalytics/Nombre.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalytics.Nombre</value>
+    <comment>Description for DomainProperty &apos;Nombre&apos; on DomainClass &apos;DataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalytics/Nombre.DisplayName" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>DisplayName for DomainProperty &apos;Nombre&apos; on DomainClass &apos;DataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AlmacenamientoNoSQL.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.AlmacenamientoNoSQL</value>
+    <comment>Description for DomainClass &apos;AlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AlmacenamientoNoSQL.DisplayName" xml:space="preserve">
+    <value>Almacenamiento No SQL</value>
+    <comment>DisplayName for DomainClass &apos;AlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AlmacenamientoNoSQL/Nombre.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.AlmacenamientoNoSQL.Nombre</value>
+    <comment>Description for DomainProperty &apos;Nombre&apos; on DomainClass &apos;AlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AlmacenamientoNoSQL/Nombre.DisplayName" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>DisplayName for DomainProperty &apos;Nombre&apos; on DomainClass &apos;AlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.VisualizaconDatos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.VisualizaconDatos</value>
+    <comment>Description for DomainClass &apos;VisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.VisualizaconDatos.DisplayName" xml:space="preserve">
+    <value>Visualizacon Datos</value>
+    <comment>DisplayName for DomainClass &apos;VisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.VisualizaconDatos/Nombre.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.VisualizaconDatos.Nombre</value>
+    <comment>Description for DomainProperty &apos;Nombre&apos; on DomainClass &apos;VisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.VisualizaconDatos/Nombre.DisplayName" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>DisplayName for DomainProperty &apos;Nombre&apos; on DomainClass &apos;VisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos</value>
+    <comment>Description for DomainClass &apos;IotDsl1TieneGrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos.DisplayName" xml:space="preserve">
+    <value>Iot Dsl1 Tiene Grupo De Recursos</value>
+    <comment>DisplayName for DomainClass &apos;IotDsl1TieneGrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos/IotDsl1.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos.IotDsl1</value>
+    <comment>Description for DomainRole &apos;IotDsl1&apos; on DomainRelationship &apos;IotDsl1TieneGrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos/IotDsl1.DisplayName" xml:space="preserve">
+    <value>Iot Dsl1</value>
+    <comment>DisplayName for DomainRole &apos;IotDsl1&apos; on DomainRelationship &apos;IotDsl1TieneGrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos/IotDsl1.PropertyDisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>PropertyDisplayName for DomainRole &apos;IotDsl1&apos; on DomainRelationship &apos;IotDsl1TieneGrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos/GrupoDeRecursos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos.GrupoDeRecursos</value>
+    <comment>Description for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;IotDsl1TieneGrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos/GrupoDeRecursos.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>DisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;IotDsl1TieneGrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos/GrupoDeRecursos.PropertyDisplayName" xml:space="preserve">
+    <value>Iot Dsl1</value>
+    <comment>PropertyDisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;IotDsl1TieneGrupoDeRecursos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT</value>
+    <comment>Description for DomainClass &apos;GrupoDeRecursosTieneCentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos Tiene Centro Io T</value>
+    <comment>DisplayName for DomainClass &apos;GrupoDeRecursosTieneCentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT/GrupoDeRecursos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT.GrupoDeRecursos</value>
+    <comment>Description for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneCentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT/GrupoDeRecursos.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>DisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneCentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT/GrupoDeRecursos.PropertyDisplayName" xml:space="preserve">
+    <value>Centro Io T</value>
+    <comment>PropertyDisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneCentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT/CentroIoT.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT.CentroIoT</value>
+    <comment>Description for DomainRole &apos;CentroIoT&apos; on DomainRelationship &apos;GrupoDeRecursosTieneCentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT/CentroIoT.DisplayName" xml:space="preserve">
+    <value>Centro Io T</value>
+    <comment>DisplayName for DomainRole &apos;CentroIoT&apos; on DomainRelationship &apos;GrupoDeRecursosTieneCentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT/CentroIoT.PropertyDisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>PropertyDisplayName for DomainRole &apos;CentroIoT&apos; on DomainRelationship &apos;GrupoDeRecursosTieneCentroIoT&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService</value>
+    <comment>Description for DomainClass &apos;GrupoDeRecursosTieneMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos Tiene Messagingasa Service</value>
+    <comment>DisplayName for DomainClass &apos;GrupoDeRecursosTieneMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService/GrupoDeRecursos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService.GrupoDeRecursos</value>
+    <comment>Description for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService/GrupoDeRecursos.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>DisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService/GrupoDeRecursos.PropertyDisplayName" xml:space="preserve">
+    <value>Messagingasa Service</value>
+    <comment>PropertyDisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService/MessagingasaService.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService.MessagingasaService</value>
+    <comment>Description for DomainRole &apos;MessagingasaService&apos; on DomainRelationship &apos;GrupoDeRecursosTieneMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService/MessagingasaService.DisplayName" xml:space="preserve">
+    <value>Messagingasa Service</value>
+    <comment>DisplayName for DomainRole &apos;MessagingasaService&apos; on DomainRelationship &apos;GrupoDeRecursosTieneMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService/MessagingasaService.PropertyDisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>PropertyDisplayName for DomainRole &apos;MessagingasaService&apos; on DomainRelationship &apos;GrupoDeRecursosTieneMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTReferenciasMessagingasaService.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.CentroIoTReferenciasMessagingasaService</value>
+    <comment>Description for DomainClass &apos;CentroIoTReferenciasMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTReferenciasMessagingasaService.DisplayName" xml:space="preserve">
+    <value>Centro Io TReferencias Messagingasa Service</value>
+    <comment>DisplayName for DomainClass &apos;CentroIoTReferenciasMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTReferenciasMessagingasaService/CentroIoT.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.CentroIoTReferenciasMessagingasaService.CentroIoT</value>
+    <comment>Description for DomainRole &apos;CentroIoT&apos; on DomainRelationship &apos;CentroIoTReferenciasMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTReferenciasMessagingasaService/CentroIoT.DisplayName" xml:space="preserve">
+    <value>Centro Io T</value>
+    <comment>DisplayName for DomainRole &apos;CentroIoT&apos; on DomainRelationship &apos;CentroIoTReferenciasMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTReferenciasMessagingasaService/CentroIoT.PropertyDisplayName" xml:space="preserve">
+    <value>Messagingasa Service</value>
+    <comment>PropertyDisplayName for DomainRole &apos;CentroIoT&apos; on DomainRelationship &apos;CentroIoTReferenciasMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTReferenciasMessagingasaService/MessagingasaService.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.CentroIoTReferenciasMessagingasaService.MessagingasaService</value>
+    <comment>Description for DomainRole &apos;MessagingasaService&apos; on DomainRelationship &apos;CentroIoTReferenciasMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTReferenciasMessagingasaService/MessagingasaService.DisplayName" xml:space="preserve">
+    <value>Messagingasa Service</value>
+    <comment>DisplayName for DomainRole &apos;MessagingasaService&apos; on DomainRelationship &apos;CentroIoTReferenciasMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTReferenciasMessagingasaService/MessagingasaService.PropertyDisplayName" xml:space="preserve">
+    <value>Centro Io T</value>
+    <comment>PropertyDisplayName for DomainRole &apos;MessagingasaService&apos; on DomainRelationship &apos;CentroIoTReferenciasMessagingasaService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics</value>
+    <comment>Description for DomainClass &apos;GrupoDeRecursosTieneDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos Tiene Data Analytics</value>
+    <comment>DisplayName for DomainClass &apos;GrupoDeRecursosTieneDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics/GrupoDeRecursos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics.GrupoDeRecursos</value>
+    <comment>Description for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics/GrupoDeRecursos.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>DisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics/GrupoDeRecursos.PropertyDisplayName" xml:space="preserve">
+    <value>Data Analytics</value>
+    <comment>PropertyDisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics/DataAnalytics.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics.DataAnalytics</value>
+    <comment>Description for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;GrupoDeRecursosTieneDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics/DataAnalytics.DisplayName" xml:space="preserve">
+    <value>Data Analytics</value>
+    <comment>DisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;GrupoDeRecursosTieneDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics/DataAnalytics.PropertyDisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>PropertyDisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;GrupoDeRecursosTieneDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIotHub.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.EntradaIotHub</value>
+    <comment>Description for DomainClass &apos;EntradaIotHub&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIotHub.DisplayName" xml:space="preserve">
+    <value>Entrada Iot Hub</value>
+    <comment>DisplayName for DomainClass &apos;EntradaIotHub&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIotHub/DataAnalytics.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.EntradaIotHub.DataAnalytics</value>
+    <comment>Description for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;EntradaIotHub&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIotHub/DataAnalytics.DisplayName" xml:space="preserve">
+    <value>Data Analytics</value>
+    <comment>DisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;EntradaIotHub&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIotHub/DataAnalytics.PropertyDisplayName" xml:space="preserve">
+    <value>Centro Io T</value>
+    <comment>PropertyDisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;EntradaIotHub&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIotHub/CentroIoT.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.EntradaIotHub.CentroIoT</value>
+    <comment>Description for DomainRole &apos;CentroIoT&apos; on DomainRelationship &apos;EntradaIotHub&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIotHub/CentroIoT.DisplayName" xml:space="preserve">
+    <value>Centro Io T</value>
+    <comment>DisplayName for DomainRole &apos;CentroIoT&apos; on DomainRelationship &apos;EntradaIotHub&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIotHub/CentroIoT.PropertyDisplayName" xml:space="preserve">
+    <value>Data Analytics</value>
+    <comment>PropertyDisplayName for DomainRole &apos;CentroIoT&apos; on DomainRelationship &apos;EntradaIotHub&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL</value>
+    <comment>Description for DomainClass &apos;GrupoDeRecursosTieneAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos Tiene Almacenamiento No SQL</value>
+    <comment>DisplayName for DomainClass &apos;GrupoDeRecursosTieneAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL/GrupoDeRecursos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL.GrupoDeRecursos</value>
+    <comment>Description for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL/GrupoDeRecursos.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>DisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL/GrupoDeRecursos.PropertyDisplayName" xml:space="preserve">
+    <value>Almacenamiento No SQL</value>
+    <comment>PropertyDisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL/AlmacenamientoNoSQL.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL.AlmacenamientoNoSQL</value>
+    <comment>Description for DomainRole &apos;AlmacenamientoNoSQL&apos; on DomainRelationship &apos;GrupoDeRecursosTieneAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL/AlmacenamientoNoSQL.DisplayName" xml:space="preserve">
+    <value>Almacenamiento No SQL</value>
+    <comment>DisplayName for DomainRole &apos;AlmacenamientoNoSQL&apos; on DomainRelationship &apos;GrupoDeRecursosTieneAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL/AlmacenamientoNoSQL.PropertyDisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>PropertyDisplayName for DomainRole &apos;AlmacenamientoNoSQL&apos; on DomainRelationship &apos;GrupoDeRecursosTieneAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaAlmacenamientoNoSQL.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.SalidaAlmacenamientoNoSQL</value>
+    <comment>Description for DomainClass &apos;SalidaAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaAlmacenamientoNoSQL.DisplayName" xml:space="preserve">
+    <value>Salida Almacenamiento No SQL</value>
+    <comment>DisplayName for DomainClass &apos;SalidaAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaAlmacenamientoNoSQL/DataAnalytics.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.SalidaAlmacenamientoNoSQL.DataAnalytics</value>
+    <comment>Description for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;SalidaAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaAlmacenamientoNoSQL/DataAnalytics.DisplayName" xml:space="preserve">
+    <value>Data Analytics</value>
+    <comment>DisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;SalidaAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaAlmacenamientoNoSQL/DataAnalytics.PropertyDisplayName" xml:space="preserve">
+    <value>Almacenamiento No SQL</value>
+    <comment>PropertyDisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;SalidaAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaAlmacenamientoNoSQL/AlmacenamientoNoSQL.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.SalidaAlmacenamientoNoSQL.AlmacenamientoNoSQL</value>
+    <comment>Description for DomainRole &apos;AlmacenamientoNoSQL&apos; on DomainRelationship &apos;SalidaAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaAlmacenamientoNoSQL/AlmacenamientoNoSQL.DisplayName" xml:space="preserve">
+    <value>Almacenamiento No SQL</value>
+    <comment>DisplayName for DomainRole &apos;AlmacenamientoNoSQL&apos; on DomainRelationship &apos;SalidaAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaAlmacenamientoNoSQL/AlmacenamientoNoSQL.PropertyDisplayName" xml:space="preserve">
+    <value>Data Analytics</value>
+    <comment>PropertyDisplayName for DomainRole &apos;AlmacenamientoNoSQL&apos; on DomainRelationship &apos;SalidaAlmacenamientoNoSQL&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos</value>
+    <comment>Description for DomainClass &apos;GrupoDeRecursosTieneVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos Tiene Visualizacon Datos</value>
+    <comment>DisplayName for DomainClass &apos;GrupoDeRecursosTieneVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos/GrupoDeRecursos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos.GrupoDeRecursos</value>
+    <comment>Description for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos/GrupoDeRecursos.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>DisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos/GrupoDeRecursos.PropertyDisplayName" xml:space="preserve">
+    <value>Visualizacon Datos</value>
+    <comment>PropertyDisplayName for DomainRole &apos;GrupoDeRecursos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos/VisualizaconDatos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos.VisualizaconDatos</value>
+    <comment>Description for DomainRole &apos;VisualizaconDatos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos/VisualizaconDatos.DisplayName" xml:space="preserve">
+    <value>Visualizacon Datos</value>
+    <comment>DisplayName for DomainRole &apos;VisualizaconDatos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos/VisualizaconDatos.PropertyDisplayName" xml:space="preserve">
+    <value>Grupo De Recursos</value>
+    <comment>PropertyDisplayName for DomainRole &apos;VisualizaconDatos&apos; on DomainRelationship &apos;GrupoDeRecursosTieneVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos</value>
+    <comment>Description for DomainClass &apos;MessagingasaServiceReferenciasVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos.DisplayName" xml:space="preserve">
+    <value>Messagingasa Service Referencias Visualizacon Datos</value>
+    <comment>DisplayName for DomainClass &apos;MessagingasaServiceReferenciasVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos/MessagingasaService.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos.MessagingasaService</value>
+    <comment>Description for DomainRole &apos;MessagingasaService&apos; on DomainRelationship &apos;MessagingasaServiceReferenciasVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos/MessagingasaService.DisplayName" xml:space="preserve">
+    <value>Messagingasa Service</value>
+    <comment>DisplayName for DomainRole &apos;MessagingasaService&apos; on DomainRelationship &apos;MessagingasaServiceReferenciasVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos/MessagingasaService.PropertyDisplayName" xml:space="preserve">
+    <value>Visualizacon Datos</value>
+    <comment>PropertyDisplayName for DomainRole &apos;MessagingasaService&apos; on DomainRelationship &apos;MessagingasaServiceReferenciasVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos/VisualizaconDatos.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos.VisualizaconDatos</value>
+    <comment>Description for DomainRole &apos;VisualizaconDatos&apos; on DomainRelationship &apos;MessagingasaServiceReferenciasVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos/VisualizaconDatos.DisplayName" xml:space="preserve">
+    <value>Visualizacon Datos</value>
+    <comment>DisplayName for DomainRole &apos;VisualizaconDatos&apos; on DomainRelationship &apos;MessagingasaServiceReferenciasVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessagingasaServiceReferenciasVisualizaconDatos/VisualizaconDatos.PropertyDisplayName" xml:space="preserve">
+    <value>Messagingasa Service</value>
+    <comment>PropertyDisplayName for DomainRole &apos;VisualizaconDatos&apos; on DomainRelationship &apos;MessagingasaServiceReferenciasVisualizaconDatos&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Location/westeurope.DisplayName" xml:space="preserve">
+    <value>westeurope</value>
+    <comment>Display name for EnumerationLiteral &apos;westeurope&apos; on DomainEnumeration &apos;Location&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Location/westeurope.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Location.westeurope</value>
+    <comment>Description for EnumerationLiteral &apos;westeurope&apos; on DomainEnumeration &apos;Location&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GrupoDeRecursosShape</value>
+    <comment>Description for DomainClass &apos;GrupoDeRecursosShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GrupoDeRecursosShape.DisplayName" xml:space="preserve">
+    <value>Grupo De Recursos Shape</value>
+    <comment>DisplayName for DomainClass &apos;GrupoDeRecursosShape&apos;</comment>
+  </data>
+  <data name="GrupoDeRecursosShapeNombreDefaultText" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTImage.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.CentroIoTImage</value>
+    <comment>Description for DomainClass &apos;CentroIoTImage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.CentroIoTImage.DisplayName" xml:space="preserve">
+    <value>Centro Io TImage</value>
+    <comment>DisplayName for DomainClass &apos;CentroIoTImage&apos;</comment>
+  </data>
+  <data name="CentroIoTImageNombreDefaultText" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.MAASImage.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.MAASImage</value>
+    <comment>Description for DomainClass &apos;MAASImage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MAASImage.DisplayName" xml:space="preserve">
+    <value>MAASImage</value>
+    <comment>DisplayName for DomainClass &apos;MAASImage&apos;</comment>
+  </data>
+  <data name="MAASImageNombreDefaultText" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsImage.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsImage</value>
+    <comment>Description for DomainClass &apos;DataAnalyticsImage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsImage.DisplayName" xml:space="preserve">
+    <value>Data Analytics Image</value>
+    <comment>DisplayName for DomainClass &apos;DataAnalyticsImage&apos;</comment>
+  </data>
+  <data name="DataAnalyticsImageNombreDefaultText" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.AlamcenamientoNoSQLImage.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.AlamcenamientoNoSQLImage</value>
+    <comment>Description for DomainClass &apos;AlamcenamientoNoSQLImage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AlamcenamientoNoSQLImage.DisplayName" xml:space="preserve">
+    <value>Alamcenamiento No SQLImage</value>
+    <comment>DisplayName for DomainClass &apos;AlamcenamientoNoSQLImage&apos;</comment>
+  </data>
+  <data name="AlamcenamientoNoSQLImageNombreDefaultText" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.VisualizacionImagen.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.VisualizacionImagen</value>
+    <comment>Description for DomainClass &apos;VisualizacionImagen&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.VisualizacionImagen.DisplayName" xml:space="preserve">
+    <value>Visualizacion Imagen</value>
+    <comment>DisplayName for DomainClass &apos;VisualizacionImagen&apos;</comment>
+  </data>
+  <data name="VisualizacionImagenNombreDefaultText" xml:space="preserve">
+    <value>Nombre</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.ConexionIotHubMAAS.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.ConexionIotHubMAAS</value>
+    <comment>Description for DomainClass &apos;ConexionIotHubMAAS&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.ConexionIotHubMAAS.DisplayName" xml:space="preserve">
+    <value>Conexion Iot Hub MAAS</value>
+    <comment>DisplayName for DomainClass &apos;ConexionIotHubMAAS&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIoTDataAnalytics.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.EntradaIoTDataAnalytics</value>
+    <comment>Description for DomainClass &apos;EntradaIoTDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.EntradaIoTDataAnalytics.DisplayName" xml:space="preserve">
+    <value>Entrada Io TData Analytics</value>
+    <comment>DisplayName for DomainClass &apos;EntradaIoTDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaNoSQLDataAnalytics.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.SalidaNoSQLDataAnalytics</value>
+    <comment>Description for DomainClass &apos;SalidaNoSQLDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SalidaNoSQLDataAnalytics.DisplayName" xml:space="preserve">
+    <value>Salida No SQLData Analytics</value>
+    <comment>DisplayName for DomainClass &apos;SalidaNoSQLDataAnalytics&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.ConexionMAASVisualizacion.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.ConexionMAASVisualizacion</value>
+    <comment>Description for DomainClass &apos;ConexionMAASVisualizacion&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.ConexionMAASVisualizacion.DisplayName" xml:space="preserve">
+    <value>Conexion MAASVisualizacion</value>
+    <comment>DisplayName for DomainClass &apos;ConexionMAASVisualizacion&apos;</comment>
+  </data>
+  <data name="FormatList" xml:space="preserve">
+    <value>IotDsl (*.IotDsl)|*.IotDsl</value>
+    <comment>A list of file format specifiers for the Save dialog box</comment>
+  </data>
+  <data name="ModelExplorerTitle" xml:space="preserve">
+    <value>IotDsl Explorer</value>
+    <comment>Model Explorer Toolwindow title</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDslDiagram.Description" xml:space="preserve">
+    <value>Description for Compañía.IotDsl.IotDslDiagram</value>
+    <comment>Description for DomainClass &apos;IotDslDiagram&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IotDslDiagram.DisplayName" xml:space="preserve">
+    <value>Minimal Language Diagram</value>
+    <comment>DisplayName for DomainClass &apos;IotDslDiagram&apos;</comment>
+  </data>
+  <data name="CloudToolboxTab" xml:space="preserve">
+    <value>Cloud</value>
+    <comment>Toolbox item tab name</comment>
+  </data>
+  <data name="GrupoDeRecursosToolToolboxItem" xml:space="preserve">
+    <value>GrupoDeRecursosTool</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="GrupoDeRecursosToolToolboxTooltip" xml:space="preserve">
+    <value>Grupo De Recursos Tool</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="CentroIoTToolToolboxItem" xml:space="preserve">
+    <value>CentroIoTTool</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="CentroIoTToolToolboxTooltip" xml:space="preserve">
+    <value>Centro Io TTool</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="MessagingasaServiceToolToolboxItem" xml:space="preserve">
+    <value>MessagingasaServiceTool</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="MessagingasaServiceToolToolboxTooltip" xml:space="preserve">
+    <value>Messagingasa Service Tool</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ConexionIotHubServiceBusToolToolboxItem" xml:space="preserve">
+    <value>ConexionIotHubServiceBusTool</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ConexionIotHubServiceBusToolToolboxTooltip" xml:space="preserve">
+    <value>Conexion Iot Hub Service Bus Tool</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="DataAnalyticsToolToolboxItem" xml:space="preserve">
+    <value>DataAnalyticsTool</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="DataAnalyticsToolToolboxTooltip" xml:space="preserve">
+    <value>Data Analytics Tool</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="EntradaIoTDataAnalyticsToolboxItem" xml:space="preserve">
+    <value>EntradaIoTDataAnalytics</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="EntradaIoTDataAnalyticsToolboxTooltip" xml:space="preserve">
+    <value>Entrada Io TData Analytics</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="AlamacenamientoNoSQLToolToolboxItem" xml:space="preserve">
+    <value>AlamacenamientoNoSQLTool</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="AlamacenamientoNoSQLToolToolboxTooltip" xml:space="preserve">
+    <value>Alamacenamiento No SQLTool</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="SalidaNoSqlDataAnalyticsToolboxItem" xml:space="preserve">
+    <value>SalidaNoSqlDataAnalytics</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="SalidaNoSqlDataAnalyticsToolboxTooltip" xml:space="preserve">
+    <value>Salida No Sql Data Analytics</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="VisualizacionDatosToolToolboxItem" xml:space="preserve">
+    <value>VisualizacionDatosTool</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="VisualizacionDatosToolToolboxTooltip" xml:space="preserve">
+    <value>Visualizacion Datos Tool</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ConexionMAASVisualizacionToolboxItem" xml:space="preserve">
+    <value>ConexionMAASVisualizacion</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ConexionMAASVisualizacionToolboxTooltip" xml:space="preserve">
+    <value>Conexion MAASVisualizacion</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="DispositivoToolboxTab" xml:space="preserve">
+    <value>Dispositivo</value>
+    <comment>Toolbox item tab name</comment>
+  </data>
+  <data name="UnresolvedToolboxItem" xml:space="preserve">
+    <value>ToolboxItem {0} was not found</value>
+    <comment>Invalid toolId</comment>
+  </data>
+  <data name="UnsupportedToolboxFormat" xml:space="preserve">
+    <value>Unsupported toolbox format: {0}</value>
+    <comment>Unsupported format Id</comment>
+  </data>
+  <data name="UnrecognizedElementType" xml:space="preserve">
+    <value>ElementType {0} is not recognized as a type of domain class which belongs to this domain model.</value>
+    <comment>Incorrect ElementType passed in to Model.CreateElement method</comment>
+  </data>
+  <data name="UnrecognizedElementLinkType" xml:space="preserve">
+    <value>ElementLinkType {0} is not recognized as a type of domain relationship which belongs to this domain model.</value>
+    <comment>Incorrect ElementLinkType passed in to Model.CreateElementLink method</comment>
+  </data>
+  <data name="AmbiguousSchema" xml:space="preserve">
+    <value>More than one schema found for target namespace &apos;{0}&apos;, use the first one at &apos;{1}&apos;.</value>
+    <comment>Serialization Warning: AmbiguousSchema</comment>
+  </data>
+  <data name="ExpectingFullFormRelationship" xml:space="preserve">
+    <value>Element &apos;{0}&apos; is treated as the target role-player of a relationship &apos;{1}&apos; instance, which should be serialized in full-form.</value>
+    <comment>Serialization Warning: ExpectingFullFormRelationship</comment>
+  </data>
+  <data name="ExpectingShortFormRelationship" xml:space="preserve">
+    <value>Instances of relationship &apos;{0}&apos; should be serialized in short-form.</value>
+    <comment>Serialization Warning: ExpectingShortFormRelationship</comment>
+  </data>
+  <data name="IgnoredPropertyValue" xml:space="preserve">
+    <value>Invalid property value &apos;{0}&apos; for property &apos;{1}&apos; with type &apos;{2}&apos;, ignored.</value>
+    <comment>Serialization Warning: IgnoredPropertyValue</comment>
+  </data>
+  <data name="MissingId" xml:space="preserve">
+    <value>Missing &apos;Id&apos; attribute, a new Guid &apos;{0}&apos; is auto-generated.</value>
+    <comment>Serialization Warning: MissingId</comment>
+  </data>
+  <data name="MonikerResolvedToDuplicateLink" xml:space="preserve">
+    <value>Resolving moniker &apos;{0}&apos; causes a duplicate link to be created, so the link and the moniker are ignored.</value>
+    <comment>Serialization Warning: MonikerResolvedToDuplicateLink</comment>
+  </data>
+  <data name="NoSchema" xml:space="preserve">
+    <value>Cannot find a schema that defines target namespace &apos;{0}&apos;, schema validation skipped.</value>
+    <comment>Serialization Warning: NoSchema</comment>
+  </data>
+  <data name="UnexpectedXmlElement" xml:space="preserve">
+    <value>Unexpected XML element &apos;{0}&apos;, ignored.</value>
+    <comment>Serialization Warning: UnexpectedXmlElement</comment>
+  </data>
+  <data name="AmbiguousMoniker" xml:space="preserve">
+    <value>Ambiguous moniker &apos;{0}&apos; encountered. It is used for both &apos;{1}&apos; and &apos;{2}&apos;.</value>
+    <comment>Serialization Error: AmbiguousMoniker</comment>
+  </data>
+  <data name="CannotMonikerizeElement" xml:space="preserve">
+    <value>Instances of DomainClass &apos;{0}&apos; cannot be serialized as a moniker.
+A DomainClass can be serialized as a moniker only if 
+1) it has a defined/inherited DomainProperty marked as IsMonikerKey=true, or 
+2) it is marked/inherited with SerializeId=true.</value>
+    <comment>Serialization Error: CannotMonikerizeElement</comment>
+  </data>
+  <data name="CannotOpenDocument" xml:space="preserve">
+    <value>Error encountered, check Error List window for details.</value>
+    <comment>Serialization Error: CannotOpenDocument</comment>
+  </data>
+  <data name="CannotSaveDocument" xml:space="preserve">
+    <value>Error encountered, check Error List window for details.</value>
+    <comment>Serialization Error: CannotSaveDocument</comment>
+  </data>
+  <data name="DanglingRelationship" xml:space="preserve">
+    <value>Relationship &apos;{0}&apos; instance is missing target role-player.</value>
+    <comment>Serialization Error: DanglingRelationship</comment>
+  </data>
+  <data name="InvalidPropertyValue" xml:space="preserve">
+    <value>Invalid property value &apos;{0}&apos; for property &apos;{1}&apos; with type &apos;{2}&apos;.</value>
+    <comment>Serialization Error: InvalidPropertyValue</comment>
+  </data>
+  <data name="MissingMoniker" xml:space="preserve">
+    <value>Missing moniker. A moniker is expected in attribute &apos;{0}&apos;.</value>
+    <comment>Serialization Error: MissingMoniker</comment>
+  </data>
+  <data name="MissingTransaction" xml:space="preserve">
+    <value>This must be called within the context of an active transaction.</value>
+    <comment>Serialization Error: MissingTransaction</comment>
+  </data>
+  <data name="UnresolvedMoniker" xml:space="preserve">
+    <value>Cannot resolve moniker &apos;{0}&apos;.</value>
+    <comment>Serialization Error: UnresolvedMoniker</comment>
+  </data>
+  <data name="VersionMismatch" xml:space="preserve">
+    <value>Unsupported version &apos;{0}&apos;, can only support &apos;{1}&apos;.</value>
+    <comment>Serialization Error: VersionMismatch</comment>
+  </data>
+  <data name="CannotCloseExistingDiagramDocument" xml:space="preserve">
+    <value>Diagram file &apos;{0}&apos; cannot be closed.</value>
+    <comment>User cancel closing diagram file. Hence, the DSL model file cannot be opened</comment>
+  </data>
+  <data name="BindingErrorOccurred" xml:space="preserve">
+    <value>Extensions for this designer may not be found as a MEF binding error has occurred. The error that occurred was:
+{0}</value>
+    <comment>MEF binding error occurred - exception message being logged in the error window so the user is aware.</comment>
+  </data>
+  <data name="InvalidSaveRootElementType" xml:space="preserve">
+    <value>&apos;{0}&apos; is not a valid root element type.</value>
+    <comment>Exception message used if an invalid root element type is passed to IDomainModelSerializer.SaveModel / SaveModelAndDiagram</comment>
+  </data>
+  <data name="InvalidSaveDiagramType" xml:space="preserve">
+    <value>&apos;{0}&apos; is not a valid diagram type.</value>
+    <comment>Exception message used if an invalid diagram type is passed to IDomainModelSerializer.SaveModelAndDiagram</comment>
+  </data>
+  <data name="MinimumMultiplicityMissingLink" xml:space="preserve">
+    <value>{0} {1} has no {2}.</value>
+    <comment>Multiplicity underflow validation.</comment>
+  </data>
+  <data name="SaveOperationCancelled" xml:space="preserve">
+    <value>Save operation cancelled.</value>
+    <comment>Message when save is cancelled on validation errors</comment>
+  </data>
+  <data name="SaveValidationFailed" xml:space="preserve">
+    <value>There were validation errors, continue save?</value>
+    <comment>Message when validation errors are found on save</comment>
+  </data>
+  <data name="UnloadableSaveValidationFailed" xml:space="preserve">
+    <value>There were validation errors. Continuing to save may cause the file to become unloadable, do you want to continue?</value>
+    <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="CentroIoTImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\..\..\iot-hub.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>CentroIoTImage shape image</comment>
+  </data>
+  <data name="MAASImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\..\..\service-bus.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>MAASImage shape image</comment>
+  </data>
+  <data name="DataAnalyticsImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\..\..\Big-Data.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>DataAnalyticsImage shape image</comment>
+  </data>
+  <data name="AlamcenamientoNoSQLImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\..\..\blob.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>AlamcenamientoNoSQLImage shape image</comment>
+  </data>
+  <data name="VisualizacionImagenImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\..\..\dashboard-icon-32.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>VisualizacionImagen shape image</comment>
+  </data>
+  <data name="GrupoDeRecursosToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="CentroIoTToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="MessagingasaServiceToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ConexionIotHubServiceBusToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="DataAnalyticsToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="EntradaIoTDataAnalyticsToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="AlamacenamientoNoSQLToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="SalidaNoSqlDataAnalyticsToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="VisualizacionDatosToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ConexionMAASVisualizacionToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ConexionMAASVisualizacionSourceCursor" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ConnectorSourceSearch.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Custom connection tool cursor</comment>
+  </data>
+  <data name="ConexionMAASVisualizacionTargetCursor" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ConnectorTargetSearch.cur;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Custom connection tool cursor</comment>
+  </data>
+</root>
+
+

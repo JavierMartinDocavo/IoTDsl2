@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<iotDslDiagram dslVersion="1.0.0.0" Id="eecd8497-934c-46e8-beb7-7014573bd299" absoluteBounds="0, 0, 11, 8.5" name="Sample">
+  <exampleModelMoniker Id="914e09f8-0723-415e-8c0c-73e73b4f0441" />
+  <nestedChildShapes>
+    <exampleShape Id="5a87b4e4-2db5-4103-aab9-7a57253c0d5b" absoluteBounds="0.5, 1.75, 2, 0.75">
+      <exampleElementMoniker name="/914e09f8-0723-415e-8c0c-73e73b4f0441/ExampleElement1" />
+    </exampleShape>
+    <exampleShape Id="f769b1c2-3ef6-48ff-b9e6-62af99e0ab24" absoluteBounds="3, 0.5, 2, 0.75">
+      <exampleElementMoniker name="/914e09f8-0723-415e-8c0c-73e73b4f0441/ExampleElement2" />
+    </exampleShape>
+    <exampleConnector Id="ca3191f5-ad82-4212-af68-eaf1a28b558f" edgePoints="[(1.5 : 1.75); (1.5 : 0.875); (3 : 0.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="c0a96887-74fc-4e89-9389-245ddd50aaa3">
+      <nodes>
+        <exampleShapeMoniker Id="5a87b4e4-2db5-4103-aab9-7a57253c0d5b" />
+        <exampleShapeMoniker Id="f769b1c2-3ef6-48ff-b9e6-62af99e0ab24" />
+      </nodes>
+    </exampleConnector>
+  </nestedChildShapes>
+</iotDslDiagram>
