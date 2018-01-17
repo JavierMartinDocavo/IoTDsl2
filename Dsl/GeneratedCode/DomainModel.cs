@@ -68,33 +68,30 @@ namespace Compañía.IotDsl
 			return new global::System.Type[]
 			{
 				typeof(IotDsl1),
-				typeof(GrupoDeRecursos),
-				typeof(CentroIoT),
+				typeof(ResourceGroup),
+				typeof(IoTCenter),
 				typeof(MessagingasaService),
 				typeof(DataAnalytics),
-				typeof(AlmacenamientoNoSQL),
-				typeof(VisualizaconDatos),
-				typeof(IotDsl1TieneGrupoDeRecursos),
-				typeof(GrupoDeRecursosTieneCentroIoT),
-				typeof(GrupoDeRecursosTieneMessagingasaService),
-				typeof(CentroIoTReferenciasMessagingasaService),
-				typeof(GrupoDeRecursosTieneDataAnalytics),
-				typeof(EntradaIotHub),
-				typeof(GrupoDeRecursosTieneAlmacenamientoNoSQL),
-				typeof(SalidaAlmacenamientoNoSQL),
-				typeof(GrupoDeRecursosTieneVisualizaconDatos),
-				typeof(MessagingasaServiceReferenciasVisualizaconDatos),
+				typeof(NoSQLStorage),
+				typeof(DashBoard),
+				typeof(Endpoints),
+				typeof(IotDsl1TieneResourceGroup),
+				typeof(ResourceGroupTieneIoTCenter),
+				typeof(ResourceGroupTieneMessagingasaService),
+				typeof(ResourceGroupTieneDataAnalytics),
+				typeof(ResourceGroupTieneNoSQLStorage),
+				typeof(ResourceGroupTieneDashBoard),
+				typeof(ResourceGroupTieneEndpoints),
+				typeof(IoTCenterReferenciasEndpoints),
 				typeof(IotDslDiagram),
-				typeof(ConexionIotHubMAAS),
-				typeof(EntradaIoTDataAnalytics),
-				typeof(SalidaNoSQLDataAnalytics),
-				typeof(ConexionMAASVisualizacion),
-				typeof(GrupoDeRecursosShape),
-				typeof(CentroIoTImage),
+				typeof(ConectionIotCenterEndpoint),
+				typeof(ResourceGroupShape),
+				typeof(IoTCenterImage),
 				typeof(MAASImage),
 				typeof(DataAnalyticsImage),
-				typeof(AlamcenamientoNoSQLImage),
-				typeof(VisualizacionImagen),
+				typeof(NoSQLStorageImage),
+				typeof(DashboardImage),
+				typeof(EndpointImage),
 				typeof(global::Compañía.IotDsl.FixUpDiagram),
 				typeof(global::Compañía.IotDsl.DecoratorPropertyChanged),
 				typeof(global::Compañía.IotDsl.ConnectorRolePlayerChanged),
@@ -109,13 +106,14 @@ namespace Compañía.IotDsl
 		{
 			return new DomainMemberInfo[]
 			{
-				new DomainMemberInfo(typeof(GrupoDeRecursos), "Nombre", GrupoDeRecursos.NombreDomainPropertyId, typeof(GrupoDeRecursos.NombrePropertyHandler)),
-				new DomainMemberInfo(typeof(GrupoDeRecursos), "Location", GrupoDeRecursos.LocationDomainPropertyId, typeof(GrupoDeRecursos.LocationPropertyHandler)),
-				new DomainMemberInfo(typeof(CentroIoT), "Nombre", CentroIoT.NombreDomainPropertyId, typeof(CentroIoT.NombrePropertyHandler)),
-				new DomainMemberInfo(typeof(MessagingasaService), "Nombre", MessagingasaService.NombreDomainPropertyId, typeof(MessagingasaService.NombrePropertyHandler)),
-				new DomainMemberInfo(typeof(DataAnalytics), "Nombre", DataAnalytics.NombreDomainPropertyId, typeof(DataAnalytics.NombrePropertyHandler)),
-				new DomainMemberInfo(typeof(AlmacenamientoNoSQL), "Nombre", AlmacenamientoNoSQL.NombreDomainPropertyId, typeof(AlmacenamientoNoSQL.NombrePropertyHandler)),
-				new DomainMemberInfo(typeof(VisualizaconDatos), "Nombre", VisualizaconDatos.NombreDomainPropertyId, typeof(VisualizaconDatos.NombrePropertyHandler)),
+				new DomainMemberInfo(typeof(ResourceGroup), "Name", ResourceGroup.NameDomainPropertyId, typeof(ResourceGroup.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(ResourceGroup), "Location", ResourceGroup.LocationDomainPropertyId, typeof(ResourceGroup.LocationPropertyHandler)),
+				new DomainMemberInfo(typeof(IoTCenter), "Name", IoTCenter.NameDomainPropertyId, typeof(IoTCenter.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(MessagingasaService), "Name", MessagingasaService.NameDomainPropertyId, typeof(MessagingasaService.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(DataAnalytics), "Name", DataAnalytics.NameDomainPropertyId, typeof(DataAnalytics.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(NoSQLStorage), "Name", NoSQLStorage.NameDomainPropertyId, typeof(NoSQLStorage.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(DashBoard), "Name", DashBoard.NameDomainPropertyId, typeof(DashBoard.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(Endpoints), "Name", Endpoints.NameDomainPropertyId, typeof(Endpoints.NamePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -126,26 +124,22 @@ namespace Compañía.IotDsl
 		{
 			return new DomainRolePlayerInfo[]
 			{
-				new DomainRolePlayerInfo(typeof(IotDsl1TieneGrupoDeRecursos), "IotDsl1", IotDsl1TieneGrupoDeRecursos.IotDsl1DomainRoleId),
-				new DomainRolePlayerInfo(typeof(IotDsl1TieneGrupoDeRecursos), "GrupoDeRecursos", IotDsl1TieneGrupoDeRecursos.GrupoDeRecursosDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneCentroIoT), "GrupoDeRecursos", GrupoDeRecursosTieneCentroIoT.GrupoDeRecursosDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneCentroIoT), "CentroIoT", GrupoDeRecursosTieneCentroIoT.CentroIoTDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneMessagingasaService), "GrupoDeRecursos", GrupoDeRecursosTieneMessagingasaService.GrupoDeRecursosDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneMessagingasaService), "MessagingasaService", GrupoDeRecursosTieneMessagingasaService.MessagingasaServiceDomainRoleId),
-				new DomainRolePlayerInfo(typeof(CentroIoTReferenciasMessagingasaService), "CentroIoT", CentroIoTReferenciasMessagingasaService.CentroIoTDomainRoleId),
-				new DomainRolePlayerInfo(typeof(CentroIoTReferenciasMessagingasaService), "MessagingasaService", CentroIoTReferenciasMessagingasaService.MessagingasaServiceDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneDataAnalytics), "GrupoDeRecursos", GrupoDeRecursosTieneDataAnalytics.GrupoDeRecursosDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneDataAnalytics), "DataAnalytics", GrupoDeRecursosTieneDataAnalytics.DataAnalyticsDomainRoleId),
-				new DomainRolePlayerInfo(typeof(EntradaIotHub), "DataAnalytics", EntradaIotHub.DataAnalyticsDomainRoleId),
-				new DomainRolePlayerInfo(typeof(EntradaIotHub), "CentroIoT", EntradaIotHub.CentroIoTDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneAlmacenamientoNoSQL), "GrupoDeRecursos", GrupoDeRecursosTieneAlmacenamientoNoSQL.GrupoDeRecursosDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneAlmacenamientoNoSQL), "AlmacenamientoNoSQL", GrupoDeRecursosTieneAlmacenamientoNoSQL.AlmacenamientoNoSQLDomainRoleId),
-				new DomainRolePlayerInfo(typeof(SalidaAlmacenamientoNoSQL), "DataAnalytics", SalidaAlmacenamientoNoSQL.DataAnalyticsDomainRoleId),
-				new DomainRolePlayerInfo(typeof(SalidaAlmacenamientoNoSQL), "AlmacenamientoNoSQL", SalidaAlmacenamientoNoSQL.AlmacenamientoNoSQLDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneVisualizaconDatos), "GrupoDeRecursos", GrupoDeRecursosTieneVisualizaconDatos.GrupoDeRecursosDomainRoleId),
-				new DomainRolePlayerInfo(typeof(GrupoDeRecursosTieneVisualizaconDatos), "VisualizaconDatos", GrupoDeRecursosTieneVisualizaconDatos.VisualizaconDatosDomainRoleId),
-				new DomainRolePlayerInfo(typeof(MessagingasaServiceReferenciasVisualizaconDatos), "MessagingasaService", MessagingasaServiceReferenciasVisualizaconDatos.MessagingasaServiceDomainRoleId),
-				new DomainRolePlayerInfo(typeof(MessagingasaServiceReferenciasVisualizaconDatos), "VisualizaconDatos", MessagingasaServiceReferenciasVisualizaconDatos.VisualizaconDatosDomainRoleId),
+				new DomainRolePlayerInfo(typeof(IotDsl1TieneResourceGroup), "IotDsl1", IotDsl1TieneResourceGroup.IotDsl1DomainRoleId),
+				new DomainRolePlayerInfo(typeof(IotDsl1TieneResourceGroup), "ResourceGroup", IotDsl1TieneResourceGroup.ResourceGroupDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneIoTCenter), "ResourceGroup", ResourceGroupTieneIoTCenter.ResourceGroupDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneIoTCenter), "IoTCenter", ResourceGroupTieneIoTCenter.IoTCenterDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneMessagingasaService), "ResourceGroup", ResourceGroupTieneMessagingasaService.ResourceGroupDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneMessagingasaService), "MessagingasaService", ResourceGroupTieneMessagingasaService.MessagingasaServiceDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneDataAnalytics), "ResourceGroup", ResourceGroupTieneDataAnalytics.ResourceGroupDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneDataAnalytics), "DataAnalytics", ResourceGroupTieneDataAnalytics.DataAnalyticsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneNoSQLStorage), "ResourceGroup", ResourceGroupTieneNoSQLStorage.ResourceGroupDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneNoSQLStorage), "NoSQLStorage", ResourceGroupTieneNoSQLStorage.NoSQLStorageDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneDashBoard), "ResourceGroup", ResourceGroupTieneDashBoard.ResourceGroupDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneDashBoard), "DashBoard", ResourceGroupTieneDashBoard.DashBoardDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneEndpoints), "ResourceGroup", ResourceGroupTieneEndpoints.ResourceGroupDomainRoleId),
+				new DomainRolePlayerInfo(typeof(ResourceGroupTieneEndpoints), "Endpoints", ResourceGroupTieneEndpoints.EndpointsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(IoTCenterReferenciasEndpoints), "IoTCenter", IoTCenterReferenciasEndpoints.IoTCenterDomainRoleId),
+				new DomainRolePlayerInfo(typeof(IoTCenterReferenciasEndpoints), "Endpoints", IoTCenterReferenciasEndpoints.EndpointsDomainRoleId),
 			};
 		}
 		#endregion
@@ -167,25 +161,24 @@ namespace Compañía.IotDsl
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(18);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(17);
 				createElementMap.Add(typeof(IotDsl1), 0);
-				createElementMap.Add(typeof(GrupoDeRecursos), 1);
-				createElementMap.Add(typeof(CentroIoT), 2);
+				createElementMap.Add(typeof(ResourceGroup), 1);
+				createElementMap.Add(typeof(IoTCenter), 2);
 				createElementMap.Add(typeof(MessagingasaService), 3);
 				createElementMap.Add(typeof(DataAnalytics), 4);
-				createElementMap.Add(typeof(AlmacenamientoNoSQL), 5);
-				createElementMap.Add(typeof(VisualizaconDatos), 6);
-				createElementMap.Add(typeof(IotDslDiagram), 7);
-				createElementMap.Add(typeof(ConexionIotHubMAAS), 8);
-				createElementMap.Add(typeof(EntradaIoTDataAnalytics), 9);
-				createElementMap.Add(typeof(SalidaNoSQLDataAnalytics), 10);
-				createElementMap.Add(typeof(ConexionMAASVisualizacion), 11);
-				createElementMap.Add(typeof(GrupoDeRecursosShape), 12);
-				createElementMap.Add(typeof(CentroIoTImage), 13);
-				createElementMap.Add(typeof(MAASImage), 14);
-				createElementMap.Add(typeof(DataAnalyticsImage), 15);
-				createElementMap.Add(typeof(AlamcenamientoNoSQLImage), 16);
-				createElementMap.Add(typeof(VisualizacionImagen), 17);
+				createElementMap.Add(typeof(NoSQLStorage), 5);
+				createElementMap.Add(typeof(DashBoard), 6);
+				createElementMap.Add(typeof(Endpoints), 7);
+				createElementMap.Add(typeof(IotDslDiagram), 8);
+				createElementMap.Add(typeof(ConectionIotCenterEndpoint), 9);
+				createElementMap.Add(typeof(ResourceGroupShape), 10);
+				createElementMap.Add(typeof(IoTCenterImage), 11);
+				createElementMap.Add(typeof(MAASImage), 12);
+				createElementMap.Add(typeof(DataAnalyticsImage), 13);
+				createElementMap.Add(typeof(NoSQLStorageImage), 14);
+				createElementMap.Add(typeof(DashboardImage), 15);
+				createElementMap.Add(typeof(EndpointImage), 16);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -200,23 +193,22 @@ namespace Compañía.IotDsl
 			switch (index)
 			{
 				case 0: return new IotDsl1(partition, propertyAssignments);
-				case 1: return new GrupoDeRecursos(partition, propertyAssignments);
-				case 2: return new CentroIoT(partition, propertyAssignments);
+				case 1: return new ResourceGroup(partition, propertyAssignments);
+				case 2: return new IoTCenter(partition, propertyAssignments);
 				case 3: return new MessagingasaService(partition, propertyAssignments);
 				case 4: return new DataAnalytics(partition, propertyAssignments);
-				case 5: return new AlmacenamientoNoSQL(partition, propertyAssignments);
-				case 6: return new VisualizaconDatos(partition, propertyAssignments);
-				case 7: return new IotDslDiagram(partition, propertyAssignments);
-				case 8: return new ConexionIotHubMAAS(partition, propertyAssignments);
-				case 9: return new EntradaIoTDataAnalytics(partition, propertyAssignments);
-				case 10: return new SalidaNoSQLDataAnalytics(partition, propertyAssignments);
-				case 11: return new ConexionMAASVisualizacion(partition, propertyAssignments);
-				case 12: return new GrupoDeRecursosShape(partition, propertyAssignments);
-				case 13: return new CentroIoTImage(partition, propertyAssignments);
-				case 14: return new MAASImage(partition, propertyAssignments);
-				case 15: return new DataAnalyticsImage(partition, propertyAssignments);
-				case 16: return new AlamcenamientoNoSQLImage(partition, propertyAssignments);
-				case 17: return new VisualizacionImagen(partition, propertyAssignments);
+				case 5: return new NoSQLStorage(partition, propertyAssignments);
+				case 6: return new DashBoard(partition, propertyAssignments);
+				case 7: return new Endpoints(partition, propertyAssignments);
+				case 8: return new IotDslDiagram(partition, propertyAssignments);
+				case 9: return new ConectionIotCenterEndpoint(partition, propertyAssignments);
+				case 10: return new ResourceGroupShape(partition, propertyAssignments);
+				case 11: return new IoTCenterImage(partition, propertyAssignments);
+				case 12: return new MAASImage(partition, propertyAssignments);
+				case 13: return new DataAnalyticsImage(partition, propertyAssignments);
+				case 14: return new NoSQLStorageImage(partition, propertyAssignments);
+				case 15: return new DashboardImage(partition, propertyAssignments);
+				case 16: return new EndpointImage(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -239,17 +231,15 @@ namespace Compañía.IotDsl
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(10);
-				createElementLinkMap.Add(typeof(IotDsl1TieneGrupoDeRecursos), 0);
-				createElementLinkMap.Add(typeof(GrupoDeRecursosTieneCentroIoT), 1);
-				createElementLinkMap.Add(typeof(GrupoDeRecursosTieneMessagingasaService), 2);
-				createElementLinkMap.Add(typeof(CentroIoTReferenciasMessagingasaService), 3);
-				createElementLinkMap.Add(typeof(GrupoDeRecursosTieneDataAnalytics), 4);
-				createElementLinkMap.Add(typeof(EntradaIotHub), 5);
-				createElementLinkMap.Add(typeof(GrupoDeRecursosTieneAlmacenamientoNoSQL), 6);
-				createElementLinkMap.Add(typeof(SalidaAlmacenamientoNoSQL), 7);
-				createElementLinkMap.Add(typeof(GrupoDeRecursosTieneVisualizaconDatos), 8);
-				createElementLinkMap.Add(typeof(MessagingasaServiceReferenciasVisualizaconDatos), 9);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(8);
+				createElementLinkMap.Add(typeof(IotDsl1TieneResourceGroup), 0);
+				createElementLinkMap.Add(typeof(ResourceGroupTieneIoTCenter), 1);
+				createElementLinkMap.Add(typeof(ResourceGroupTieneMessagingasaService), 2);
+				createElementLinkMap.Add(typeof(ResourceGroupTieneDataAnalytics), 3);
+				createElementLinkMap.Add(typeof(ResourceGroupTieneNoSQLStorage), 4);
+				createElementLinkMap.Add(typeof(ResourceGroupTieneDashBoard), 5);
+				createElementLinkMap.Add(typeof(ResourceGroupTieneEndpoints), 6);
+				createElementLinkMap.Add(typeof(IoTCenterReferenciasEndpoints), 7);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -264,16 +254,14 @@ namespace Compañía.IotDsl
 			}
 			switch (index)
 			{
-				case 0: return new IotDsl1TieneGrupoDeRecursos(partition, roleAssignments, propertyAssignments);
-				case 1: return new GrupoDeRecursosTieneCentroIoT(partition, roleAssignments, propertyAssignments);
-				case 2: return new GrupoDeRecursosTieneMessagingasaService(partition, roleAssignments, propertyAssignments);
-				case 3: return new CentroIoTReferenciasMessagingasaService(partition, roleAssignments, propertyAssignments);
-				case 4: return new GrupoDeRecursosTieneDataAnalytics(partition, roleAssignments, propertyAssignments);
-				case 5: return new EntradaIotHub(partition, roleAssignments, propertyAssignments);
-				case 6: return new GrupoDeRecursosTieneAlmacenamientoNoSQL(partition, roleAssignments, propertyAssignments);
-				case 7: return new SalidaAlmacenamientoNoSQL(partition, roleAssignments, propertyAssignments);
-				case 8: return new GrupoDeRecursosTieneVisualizaconDatos(partition, roleAssignments, propertyAssignments);
-				case 9: return new MessagingasaServiceReferenciasVisualizaconDatos(partition, roleAssignments, propertyAssignments);
+				case 0: return new IotDsl1TieneResourceGroup(partition, roleAssignments, propertyAssignments);
+				case 1: return new ResourceGroupTieneIoTCenter(partition, roleAssignments, propertyAssignments);
+				case 2: return new ResourceGroupTieneMessagingasaService(partition, roleAssignments, propertyAssignments);
+				case 3: return new ResourceGroupTieneDataAnalytics(partition, roleAssignments, propertyAssignments);
+				case 4: return new ResourceGroupTieneNoSQLStorage(partition, roleAssignments, propertyAssignments);
+				case 5: return new ResourceGroupTieneDashBoard(partition, roleAssignments, propertyAssignments);
+				case 6: return new ResourceGroupTieneEndpoints(partition, roleAssignments, propertyAssignments);
+				case 7: return new IoTCenterReferenciasEndpoints(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -444,12 +432,13 @@ namespace Compañía.IotDsl
 		public IotDslDeleteClosureBase()
 		{
 			#region Initialize DomainData Table
-			DomainRoles.Add(global::Compañía.IotDsl.IotDsl1TieneGrupoDeRecursos.GrupoDeRecursosDomainRoleId, true);
-			DomainRoles.Add(global::Compañía.IotDsl.GrupoDeRecursosTieneCentroIoT.CentroIoTDomainRoleId, true);
-			DomainRoles.Add(global::Compañía.IotDsl.GrupoDeRecursosTieneMessagingasaService.MessagingasaServiceDomainRoleId, true);
-			DomainRoles.Add(global::Compañía.IotDsl.GrupoDeRecursosTieneDataAnalytics.DataAnalyticsDomainRoleId, true);
-			DomainRoles.Add(global::Compañía.IotDsl.GrupoDeRecursosTieneAlmacenamientoNoSQL.AlmacenamientoNoSQLDomainRoleId, true);
-			DomainRoles.Add(global::Compañía.IotDsl.GrupoDeRecursosTieneVisualizaconDatos.VisualizaconDatosDomainRoleId, true);
+			DomainRoles.Add(global::Compañía.IotDsl.IotDsl1TieneResourceGroup.ResourceGroupDomainRoleId, true);
+			DomainRoles.Add(global::Compañía.IotDsl.ResourceGroupTieneIoTCenter.IoTCenterDomainRoleId, true);
+			DomainRoles.Add(global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService.MessagingasaServiceDomainRoleId, true);
+			DomainRoles.Add(global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics.DataAnalyticsDomainRoleId, true);
+			DomainRoles.Add(global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage.NoSQLStorageDomainRoleId, true);
+			DomainRoles.Add(global::Compañía.IotDsl.ResourceGroupTieneDashBoard.DashBoardDomainRoleId, true);
+			DomainRoles.Add(global::Compañía.IotDsl.ResourceGroupTieneEndpoints.EndpointsDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

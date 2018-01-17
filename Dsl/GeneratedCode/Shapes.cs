@@ -14,15 +14,15 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// DomainClass GrupoDeRecursosShape
-	/// Descripción de Compañía.IotDsl.GrupoDeRecursosShape
+	/// DomainClass ResourceGroupShape
+	/// Descripción de Compañía.IotDsl.ResourceGroupShape
 	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.GrupoDeRecursosShape.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.GrupoDeRecursosShape.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupShape.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupShape.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("86514027-2487-4ed0-8c55-0b3a1edcb019")]
-	public partial class GrupoDeRecursosShape : DslDiagrams::NodeShape
+	public partial class ResourceGroupShape : DslDiagrams::NodeShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -87,9 +87,9 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with GrupoDeRecursosShape.
+		/// Finds a decorator associated with ResourceGroupShape.
 		/// </summary>
-		public static DslDiagrams::Decorator FindGrupoDeRecursosShapeDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindResourceGroupShapeDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -157,8 +157,8 @@ namespace Compañía.IotDsl
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Nombre");
-			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("GrupoDeRecursosShapeNombreDefaultText");
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("ResourceGroupShapeNameDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -177,7 +177,7 @@ namespace Compañía.IotDsl
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Nombre");
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Name");
 			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				
@@ -206,7 +206,7 @@ namespace Compañía.IotDsl
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// GrupoDeRecursosShape domain class Id.
+		/// ResourceGroupShape domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x86514027, 0x2487, 0x4ed0, 0x8c, 0x55, 0x0b, 0x3a, 0x1e, 0xdc, 0xb0, 0x19);
 		/// <summary>
@@ -214,7 +214,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public GrupoDeRecursosShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ResourceGroupShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -224,7 +224,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public GrupoDeRecursosShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ResourceGroupShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -234,15 +234,15 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// DomainClass CentroIoTImage
-	/// Descripción de Compañía.IotDsl.CentroIoTImage
+	/// DomainClass IoTCenterImage
+	/// Descripción de Compañía.IotDsl.IoTCenterImage
 	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.CentroIoTImage.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.CentroIoTImage.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.IoTCenterImage.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.IoTCenterImage.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("e9a7014c-5f96-4b5e-8e5a-e2311eab2cd9")]
-	public partial class CentroIoTImage : DslDiagrams::ImageShape
+	public partial class IoTCenterImage : DslDiagrams::ImageShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -307,9 +307,9 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with CentroIoTImage.
+		/// Finds a decorator associated with IoTCenterImage.
 		/// </summary>
-		public static DslDiagrams::Decorator FindCentroIoTImageDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindIoTCenterImageDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -367,8 +367,8 @@ namespace Compañía.IotDsl
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Nombre");
-			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("CentroIoTImageNombreDefaultText");
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("IoTCenterImageNameDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -407,13 +407,13 @@ namespace Compañía.IotDsl
 			get
 			{
 				global::System.Resources.ResourceManager resourceManager = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager;
-				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("CentroIoTImageImage"));
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("IoTCenterImageImage"));
 			}
 		}
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// CentroIoTImage domain class Id.
+		/// IoTCenterImage domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xe9a7014c, 0x5f96, 0x4b5e, 0x8e, 0x5a, 0xe2, 0x31, 0x1e, 0xab, 0x2c, 0xd9);
 		/// <summary>
@@ -421,7 +421,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CentroIoTImage(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public IoTCenterImage(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -431,7 +431,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public CentroIoTImage(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public IoTCenterImage(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -574,8 +574,8 @@ namespace Compañía.IotDsl
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Nombre");
-			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("MAASImageNombreDefaultText");
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("MAASImageNameDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -781,8 +781,8 @@ namespace Compañía.IotDsl
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Nombre");
-			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("DataAnalyticsImageNombreDefaultText");
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("DataAnalyticsImageNameDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -855,15 +855,15 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// DomainClass AlamcenamientoNoSQLImage
-	/// Descripción de Compañía.IotDsl.AlamcenamientoNoSQLImage
+	/// DomainClass NoSQLStorageImage
+	/// Descripción de Compañía.IotDsl.NoSQLStorageImage
 	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.AlamcenamientoNoSQLImage.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.AlamcenamientoNoSQLImage.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.NoSQLStorageImage.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.NoSQLStorageImage.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("da79fc31-13d9-4e54-a0f3-fb56d7bac60e")]
-	public partial class AlamcenamientoNoSQLImage : DslDiagrams::ImageShape
+	public partial class NoSQLStorageImage : DslDiagrams::ImageShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -928,9 +928,9 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with AlamcenamientoNoSQLImage.
+		/// Finds a decorator associated with NoSQLStorageImage.
 		/// </summary>
-		public static DslDiagrams::Decorator FindAlamcenamientoNoSQLImageDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindNoSQLStorageImageDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -988,8 +988,8 @@ namespace Compañía.IotDsl
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Nombre");
-			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("AlamcenamientoNoSQLImageNombreDefaultText");
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("NoSQLStorageImageNameDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -1028,13 +1028,13 @@ namespace Compañía.IotDsl
 			get
 			{
 				global::System.Resources.ResourceManager resourceManager = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager;
-				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("AlamcenamientoNoSQLImageImage"));
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("NoSQLStorageImageImage"));
 			}
 		}
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// AlamcenamientoNoSQLImage domain class Id.
+		/// NoSQLStorageImage domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xda79fc31, 0x13d9, 0x4e54, 0xa0, 0xf3, 0xfb, 0x56, 0xd7, 0xba, 0xc6, 0x0e);
 		/// <summary>
@@ -1042,7 +1042,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AlamcenamientoNoSQLImage(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public NoSQLStorageImage(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -1052,7 +1052,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public AlamcenamientoNoSQLImage(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public NoSQLStorageImage(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -1062,15 +1062,15 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// DomainClass VisualizacionImagen
-	/// Descripción de Compañía.IotDsl.VisualizacionImagen
+	/// DomainClass DashboardImage
+	/// Descripción de Compañía.IotDsl.DashboardImage
 	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.VisualizacionImagen.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.VisualizacionImagen.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.DashboardImage.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.DashboardImage.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("7801f380-4c95-427d-9e04-643509adc33b")]
-	public partial class VisualizacionImagen : DslDiagrams::ImageShape
+	public partial class DashboardImage : DslDiagrams::ImageShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -1135,9 +1135,9 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with VisualizacionImagen.
+		/// Finds a decorator associated with DashboardImage.
 		/// </summary>
-		public static DslDiagrams::Decorator FindVisualizacionImagenDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindDashboardImageDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -1184,15 +1184,6 @@ namespace Compañía.IotDsl
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Nombre");
-			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("VisualizacionImagenNombreDefaultText");
-			field1.DefaultFocusable = true;
-			field1.DefaultAutoSize = true;
-			field1.AnchoringBehavior.MinimumHeightInLines = 1;
-			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
-			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			shapeFields.Add(field1);
-			
 		}
 		
 		/// <summary>
@@ -1204,8 +1195,14 @@ namespace Compañía.IotDsl
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "Nombre");
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.InnerTopLeft, DslDiagrams::PointD.Empty);
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("DashboardImageNameDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterBottomCenter, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				
 		}
@@ -1238,13 +1235,13 @@ namespace Compañía.IotDsl
 			get
 			{
 				global::System.Resources.ResourceManager resourceManager = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager;
-				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("VisualizacionImagenImage"));
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("DashboardImageImage"));
 			}
 		}
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// VisualizacionImagen domain class Id.
+		/// DashboardImage domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7801f380, 0x4c95, 0x427d, 0x9e, 0x04, 0x64, 0x35, 0x09, 0xad, 0xc3, 0x3b);
 		/// <summary>
@@ -1252,7 +1249,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public VisualizacionImagen(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public DashboardImage(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -1262,7 +1259,214 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public VisualizacionImagen(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public DashboardImage(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainClass EndpointImage
+	/// Descripción de Compañía.IotDsl.EndpointImage
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.EndpointImage.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.EndpointImage.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("b03f89a2-b394-470a-82b9-577cb85da4c8")]
+	public partial class EndpointImage : DslDiagrams::ImageShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with EndpointImage.
+		/// </summary>
+		public static DslDiagrams::Decorator FindEndpointImageDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		
+		/// <summary>
+		/// Shape instance initialization.
+		/// </summary>
+		public override void OnInitialize()
+		{
+			base.OnInitialize();
+			
+			// Create host shapes for outer decorators.
+			foreach(DslDiagrams::Decorator decorator in this.Decorators)
+			{
+				if(decorator.RequiresHost)
+				{
+					decorator.ConfigureHostShape(this);
+				}
+			}
+			
+		}
+		#endregion
+		#region Shape size
+		
+		/// <summary>
+		/// Default size for this shape.
+		/// </summary>
+		public override DslDiagrams::SizeD DefaultSize
+		{
+			get
+			{
+				return new DslDiagrams::SizeD(1, 0.6);
+			}
+		}
+		#endregion
+		#region Shape styles
+		#endregion
+		#region Decorators
+		/// <summary>
+		/// Initialize the collection of shape fields associated with this shape type.
+		/// </summary>
+		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
+		{
+			base.InitializeShapeFields(shapeFields);
+		}
+		
+		/// <summary>
+		/// Initialize the collection of decorators associated with this shape type.  This method also
+		/// creates shape fields for outer decorators, because these are not part of the shape fields collection
+		/// associated with the shape, so they must be created here rather than in InitializeShapeFields.
+		/// </summary>
+		protected override void InitializeDecorators(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields, global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators)
+		{
+			base.InitializeDecorators(shapeFields, decorators);
+			
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("Name");
+			field1.DefaultText = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager.GetString("EndpointImageNameDefaultText");
+			field1.DefaultFocusable = true;
+			field1.DefaultAutoSize = true;
+			field1.AnchoringBehavior.MinimumHeightInLines = 1;
+			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
+			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.OuterTopCenter, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator1);
+				
+		}
+		
+		/// <summary>
+		/// Ensure outer decorators are placed appropriately.  This is called during view fixup,
+		/// after the shape has been associated with the model element.
+		/// </summary>
+		public override void OnBoundsFixup(DslDiagrams::BoundsFixupState fixupState, int iteration, bool createdDuringViewFixup)
+		{
+			base.OnBoundsFixup(fixupState, iteration, createdDuringViewFixup);
+			
+			if(iteration == 0)
+			{
+				foreach(DslDiagrams::Decorator decorator in this.Decorators)
+				{
+					if(decorator.RequiresHost)
+					{
+						decorator.RepositionHostShape(decorator.GetHostShape(this));
+					}
+				}
+			}
+		}
+		#endregion
+		/// <summary>
+		/// Provide the specific Image for this Shape class
+		/// </summary>
+		protected override global::System.Drawing.Image Image
+		{
+			get
+			{
+				global::System.Resources.ResourceManager resourceManager = global::Compañía.IotDsl.IotDslDomainModel.SingletonResourceManager;
+				return DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EndpointImageImage"));
+			}
+		}
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// EndpointImage domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb03f89a2, 0xb394, 0x470a, 0x82, 0xb9, 0x57, 0x7c, 0xb8, 0x5d, 0xa4, 0xc8);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EndpointImage(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public EndpointImage(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
