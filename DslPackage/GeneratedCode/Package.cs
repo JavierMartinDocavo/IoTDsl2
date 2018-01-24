@@ -45,21 +45,13 @@ namespace Compañía.IotDsl
 					0xff00ff,
 					Index = 1)]
 	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
-					"@MessagingasaServiceToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
-					"Compañía.IotDsl.MessagingasaServiceToolToolboxItem", 
-					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"MessagingasaServiceTool", 
-					"@MessagingasaServiceToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
-					0xff00ff,
-					Index = 2)]
-	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
 					"@DataAnalyticsToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
 					"Compañía.IotDsl.DataAnalyticsToolToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"DataAnalyticsTool", 
 					"@DataAnalyticsToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
-					Index = 3)]
+					Index = 2)]
 	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
 					"@NoSQLStorageToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
 					"Compañía.IotDsl.NoSQLStorageToolToolboxItem", 
@@ -67,15 +59,15 @@ namespace Compañía.IotDsl
 					"NoSQLStorageTool", 
 					"@NoSQLStorageToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
-					Index = 4)]
+					Index = 3)]
 	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
-					"@DashboardToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
-					"Compañía.IotDsl.DashboardToolToolboxItem", 
+					"@AppServiceToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
+					"Compañía.IotDsl.AppServiceToolToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"DashboardTool", 
-					"@DashboardToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
+					"AppServiceTool", 
+					"@AppServiceToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
-					Index = 5)]
+					Index = 4)]
 	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
 					"@EndpointToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
 					"Compañía.IotDsl.EndpointToolToolboxItem", 
@@ -83,7 +75,7 @@ namespace Compañía.IotDsl
 					"EndpointTool", 
 					"@EndpointToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
-					Index = 6)]
+					Index = 5)]
 	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
 					"@IotCenterEndpointConectionToolboxItem;Compañía.IotDsl.Dsl.dll", 
 					"Compañía.IotDsl.IotCenterEndpointConectionToolboxItem", 
@@ -91,7 +83,23 @@ namespace Compañía.IotDsl
 					"IotCenterEndpointConection", 
 					"@IotCenterEndpointConectionToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
+					Index = 6)]
+	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
+					"@SQLStorageToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
+					"Compañía.IotDsl.SQLStorageToolToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"SQLStorageTool", 
+					"@SQLStorageToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
+					0xff00ff,
 					Index = 7)]
+	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
+					"@EndpointtoCloudServiceConnectionToolboxItem;Compañía.IotDsl.Dsl.dll", 
+					"Compañía.IotDsl.EndpointtoCloudServiceConnectionToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"EndpointtoCloudServiceConnection", 
+					"@EndpointtoCloudServiceConnectionToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
+					0xff00ff,
+					Index = 8)]
 	[VSShell::ProvideStaticToolboxGroup("@DeviceToolboxTab;Compañía.IotDsl.Dsl.dll", "Compañía.IotDsl.DeviceToolboxTab")]
 	[VSShell::ProvideEditorFactory(typeof(IotDslEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(IotDslEditorFactory), "." + Constants.DesignerFileExtension, 50)]

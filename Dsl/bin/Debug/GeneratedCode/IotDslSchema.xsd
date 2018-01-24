@@ -80,76 +80,31 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: ResourceGroupTieneMessagingasaService -->
-          <xsd:element name="messagingasaService" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ResourceGroupTieneEndpoint -->
+          <xsd:element name="endpoint" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of ResourceGroupTieneMessagingasaService</xsd:documentation>
+              <xsd:documentation>Instances of ResourceGroupTieneEndpoint</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="resourceGroupTieneMessagingasaService" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="resourceGroupTieneEndpoint" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of ResourceGroupTieneMessagingasaService needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of ResourceGroupTieneEndpoint needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: ResourceGroupTieneDataAnalytics -->
-          <xsd:element name="dataAnalytics" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ResourceGroupTieneCloudService -->
+          <xsd:element name="cloudService" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of ResourceGroupTieneDataAnalytics</xsd:documentation>
+              <xsd:documentation>Instances of ResourceGroupTieneCloudService</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="resourceGroupTieneDataAnalytics" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="resourceGroupTieneCloudService" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of ResourceGroupTieneDataAnalytics needs to be serialized in full-form]</xsd:documentation>
-                  </xsd:annotation>
-                </xsd:element>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
-          <!-- Relationship: ResourceGroupTieneNoSQLStorage -->
-          <xsd:element name="noSQLStorage" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of ResourceGroupTieneNoSQLStorage</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element ref="resourceGroupTieneNoSQLStorage" minOccurs="0" maxOccurs="unbounded">
-                  <xsd:annotation>
-                    <xsd:documentation>[Instance of ResourceGroupTieneNoSQLStorage needs to be serialized in full-form]</xsd:documentation>
-                  </xsd:annotation>
-                </xsd:element>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
-          <!-- Relationship: ResourceGroupTieneDashBoard -->
-          <xsd:element name="dashBoard" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of ResourceGroupTieneDashBoard</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element ref="resourceGroupTieneDashBoard" minOccurs="0" maxOccurs="unbounded">
-                  <xsd:annotation>
-                    <xsd:documentation>[Instance of ResourceGroupTieneDashBoard needs to be serialized in full-form]</xsd:documentation>
-                  </xsd:annotation>
-                </xsd:element>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
-          <!-- Relationship: ResourceGroupTieneEndpoints -->
-          <xsd:element name="endpoints" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of ResourceGroupTieneEndpoints</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element ref="resourceGroupTieneEndpoints" minOccurs="0" maxOccurs="unbounded">
-                  <xsd:annotation>
-                    <xsd:documentation>[Instance of ResourceGroupTieneEndpoints needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of ResourceGroupTieneCloudService needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -193,16 +148,16 @@
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: IoTCenterReferenciasEndpoints -->
-          <xsd:element name="endpoints" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: IoTCenterReferenciasEndpoint -->
+          <xsd:element name="endpoint" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of IoTCenterReferenciasEndpoints</xsd:documentation>
+              <xsd:documentation>Instances of IoTCenterReferenciasEndpoint</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="ioTCenterReferenciasEndpoints" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="ioTCenterReferenciasEndpoint" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of IoTCenterReferenciasEndpoints needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of IoTCenterReferenciasEndpoint needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -238,9 +193,60 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- MessagingasaService -->
-  <xsd:element name="messagingasaService" type="MessagingasaService" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="MessagingasaService">
+  <!-- Endpoint -->
+  <xsd:element name="endpoint" type="Endpoint" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Endpoint">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: EndpointReferenciasCloudService -->
+          <xsd:element name="cloudService" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instance of EndpointReferenciasCloudService</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="endpointReferenciasCloudService" minOccurs="0" maxOccurs="1">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of EndpointReferenciasCloudService needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" use="required" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Endpoint Moniker -->
+  <xsd:element name="monikerEndpoints" type="Moniker Endpoint" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="Moniker Endpoint">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Endpoint instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="name" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- CloudService -->
+  <xsd:element name="cloudService" type="CloudService" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="CloudService">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <!-- Id -->
@@ -255,11 +261,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- MessagingasaService Moniker -->
-  <xsd:element name="monikerServiceBus" type="Moniker MessagingasaService" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker MessagingasaService">
+  <!-- CloudService Moniker -->
+  <xsd:element name="monikerCloudService" type="Moniker CloudService" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="Moniker CloudService">
     <xsd:annotation>
-      <xsd:documentation>Moniker for MessagingasaService instance.</xsd:documentation>
+      <xsd:documentation>Moniker for CloudService instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -268,142 +274,114 @@
             <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SQLStorage -->
+  <xsd:element name="sQLStorage" type="SQLStorage" substitutionGroup="cloudService" />
+  <xsd:complexType name="SQLStorage">
+    <xsd:complexContent>
+      <xsd:extension base="CloudService">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- SQLStorage Moniker -->
+  <xsd:element name="monikerSQLStorage" type="Moniker SQLStorage" substitutionGroup="monikerCloudService" />
+  <xsd:complexType name="Moniker SQLStorage">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for SQLStorage instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="Moniker CloudService">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- NoSQlStorage -->
+  <xsd:element name="noSQlStorage" type="NoSQlStorage" substitutionGroup="cloudService" />
+  <xsd:complexType name="NoSQlStorage">
+    <xsd:complexContent>
+      <xsd:extension base="CloudService">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- NoSQlStorage Moniker -->
+  <xsd:element name="monikerNoSQlStorage" type="Moniker NoSQlStorage" substitutionGroup="monikerCloudService" />
+  <xsd:complexType name="Moniker NoSQlStorage">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for NoSQlStorage instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="Moniker CloudService">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AppService -->
+  <xsd:element name="appService" type="AppService" substitutionGroup="cloudService" />
+  <xsd:complexType name="AppService">
+    <xsd:complexContent>
+      <xsd:extension base="CloudService">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AppService Moniker -->
+  <xsd:element name="monikerAppService" type="Moniker AppService" substitutionGroup="monikerCloudService" />
+  <xsd:complexType name="Moniker AppService">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for AppService instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="Moniker CloudService">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
   <!-- DataAnalytics -->
-  <xsd:element name="dataAnalytics" type="DataAnalytics" substitutionGroup="core:modelElement" />
+  <xsd:element name="dataAnalytics" type="DataAnalytics" substitutionGroup="cloudService" />
   <xsd:complexType name="DataAnalytics">
     <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
+      <xsd:extension base="CloudService">
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <!-- Property: Name -->
-        <xsd:attribute name="name" type="xsd:string" use="required" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
   <!-- DataAnalytics Moniker -->
-  <xsd:element name="monikerDataAnalytics" type="Moniker DataAnalytics" substitutionGroup="core:modelElementMoniker" />
+  <xsd:element name="monikerDataAnalytics" type="Moniker DataAnalytics" substitutionGroup="monikerCloudService" />
   <xsd:complexType name="Moniker DataAnalytics">
     <xsd:annotation>
       <xsd:documentation>Moniker for DataAnalytics instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="name" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- NoSQLStorage -->
-  <xsd:element name="noSQLStorage" type="NoSQLStorage" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="NoSQLStorage">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-        <!-- Property: Name -->
-        <xsd:attribute name="name" type="xsd:string" use="required" />
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- NoSQLStorage Moniker -->
-  <xsd:element name="monikerAlmacenamientoNoSQL" type="Moniker NoSQLStorage" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker NoSQLStorage">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for NoSQLStorage instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="name" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- DashBoard -->
-  <xsd:element name="dashBoard" type="DashBoard" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="DashBoard">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-        <!-- Property: Name -->
-        <xsd:attribute name="name" type="xsd:string" use="required" />
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- DashBoard Moniker -->
-  <xsd:element name="monikerVisualizaconDatos" type="Moniker DashBoard" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker DashBoard">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for DashBoard instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="name" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- Endpoints -->
-  <xsd:element name="endpoints" type="Endpoints" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="Endpoints">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-        <!-- Property: Name -->
-        <xsd:attribute name="name" type="xsd:string" use="required" />
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- Endpoints Moniker -->
-  <xsd:element name="monikerEndpoints" type="Moniker Endpoints" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker Endpoints">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for Endpoints instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="name" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
+      <xsd:extension base="Moniker CloudService">
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -488,14 +466,14 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ResourceGroupTieneMessagingasaService -->
-  <xsd:element name="resourceGroupTieneMessagingasaService" type="ResourceGroupTieneMessagingasaService" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ResourceGroupTieneMessagingasaService">
+  <!-- ResourceGroupTieneEndpoint -->
+  <xsd:element name="resourceGroupTieneEndpoint" type="ResourceGroupTieneEndpoint" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ResourceGroupTieneEndpoint">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end MessagingasaService -->
-          <xsd:element ref="messagingasaService" minOccurs="1" maxOccurs="1">
+          <!-- Target end Endpoint -->
+          <xsd:element ref="endpoint" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -511,11 +489,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ResourceGroupTieneMessagingasaService Moniker -->
-  <xsd:element name="monikerGrupoDeRecursosTieneServiceBus" type="Moniker ResourceGroupTieneMessagingasaService" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker ResourceGroupTieneMessagingasaService">
+  <!-- ResourceGroupTieneEndpoint Moniker -->
+  <xsd:element name="monikerResourceGroupTieneEndpoints" type="Moniker ResourceGroupTieneEndpoint" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="Moniker ResourceGroupTieneEndpoint">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ResourceGroupTieneMessagingasaService instance.</xsd:documentation>
+      <xsd:documentation>Moniker for ResourceGroupTieneEndpoint instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -528,173 +506,13 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ResourceGroupTieneDataAnalytics -->
-  <xsd:element name="resourceGroupTieneDataAnalytics" type="ResourceGroupTieneDataAnalytics" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ResourceGroupTieneDataAnalytics">
+  <!-- IoTCenterReferenciasEndpoint -->
+  <xsd:element name="ioTCenterReferenciasEndpoint" type="IoTCenterReferenciasEndpoint" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="IoTCenterReferenciasEndpoint">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end DataAnalytics -->
-          <xsd:element ref="dataAnalytics" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ResourceGroupTieneDataAnalytics Moniker -->
-  <xsd:element name="monikerGrupoDeRecursosTieneDataAnalytics" type="Moniker ResourceGroupTieneDataAnalytics" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker ResourceGroupTieneDataAnalytics">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for ResourceGroupTieneDataAnalytics instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ResourceGroupTieneNoSQLStorage -->
-  <xsd:element name="resourceGroupTieneNoSQLStorage" type="ResourceGroupTieneNoSQLStorage" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ResourceGroupTieneNoSQLStorage">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end NoSQLStorage -->
-          <xsd:element ref="noSQLStorage" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ResourceGroupTieneNoSQLStorage Moniker -->
-  <xsd:element name="monikerGrupoDeRecursosTieneAlmacenamientoNoSQL" type="Moniker ResourceGroupTieneNoSQLStorage" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker ResourceGroupTieneNoSQLStorage">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for ResourceGroupTieneNoSQLStorage instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ResourceGroupTieneDashBoard -->
-  <xsd:element name="resourceGroupTieneDashBoard" type="ResourceGroupTieneDashBoard" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ResourceGroupTieneDashBoard">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end DashBoard -->
-          <xsd:element ref="dashBoard" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ResourceGroupTieneDashBoard Moniker -->
-  <xsd:element name="monikerGrupoDeRecursosTieneVisualizaconDatos" type="Moniker ResourceGroupTieneDashBoard" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker ResourceGroupTieneDashBoard">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for ResourceGroupTieneDashBoard instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ResourceGroupTieneEndpoints -->
-  <xsd:element name="resourceGroupTieneEndpoints" type="ResourceGroupTieneEndpoints" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ResourceGroupTieneEndpoints">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end Endpoints -->
-          <xsd:element ref="endpoints" minOccurs="1" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>[Target role-player]</xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-        </xsd:sequence>
-        <!-- Id -->
-        <xsd:attribute name="Id" type="xsd:string">
-          <xsd:annotation>
-            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- ResourceGroupTieneEndpoints Moniker -->
-  <xsd:element name="monikerResourceGroupTieneEndpoints" type="Moniker ResourceGroupTieneEndpoints" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker ResourceGroupTieneEndpoints">
-    <xsd:annotation>
-      <xsd:documentation>Moniker for ResourceGroupTieneEndpoints instance.</xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="Id" type="xsd:string" >
-          <xsd:annotation>
-            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-  
-  <!-- IoTCenterReferenciasEndpoints -->
-  <xsd:element name="ioTCenterReferenciasEndpoints" type="IoTCenterReferenciasEndpoints" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="IoTCenterReferenciasEndpoints">
-    <xsd:complexContent>
-      <xsd:extension base="core:ModelElement">
-        <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end Endpoints -->
+          <!-- Target end Endpoint -->
           <xsd:element ref="monikerEndpoints" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
@@ -711,11 +529,91 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- IoTCenterReferenciasEndpoints Moniker -->
-  <xsd:element name="monikerIoTCenterReferenciasEndpoints" type="Moniker IoTCenterReferenciasEndpoints" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="Moniker IoTCenterReferenciasEndpoints">
+  <!-- IoTCenterReferenciasEndpoint Moniker -->
+  <xsd:element name="monikerIoTCenterReferenciasEndpoints" type="Moniker IoTCenterReferenciasEndpoint" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="Moniker IoTCenterReferenciasEndpoint">
     <xsd:annotation>
-      <xsd:documentation>Moniker for IoTCenterReferenciasEndpoints instance.</xsd:documentation>
+      <xsd:documentation>Moniker for IoTCenterReferenciasEndpoint instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ResourceGroupTieneCloudService -->
+  <xsd:element name="resourceGroupTieneCloudService" type="ResourceGroupTieneCloudService" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ResourceGroupTieneCloudService">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end CloudService -->
+          <xsd:element ref="cloudService" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ResourceGroupTieneCloudService Moniker -->
+  <xsd:element name="monikerResourceGroupTieneCloudService" type="Moniker ResourceGroupTieneCloudService" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="Moniker ResourceGroupTieneCloudService">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ResourceGroupTieneCloudService instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndpointReferenciasCloudService -->
+  <xsd:element name="endpointReferenciasCloudService" type="EndpointReferenciasCloudService" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="EndpointReferenciasCloudService">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end CloudService -->
+          <xsd:element ref="monikerCloudService" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- EndpointReferenciasCloudService Moniker -->
+  <xsd:element name="monikerEndpointReferenciasCloudService" type="Moniker EndpointReferenciasCloudService" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="Moniker EndpointReferenciasCloudService">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for EndpointReferenciasCloudService instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

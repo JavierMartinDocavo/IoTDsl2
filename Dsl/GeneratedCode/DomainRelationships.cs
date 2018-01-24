@@ -490,991 +490,33 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// DomainRelationship ResourceGroupTieneMessagingasaService
-	/// Descripción de Compañía.IotDsl.ResourceGroupTieneMessagingasaService
+	/// DomainRelationship ResourceGroupTieneEndpoint
+	/// Descripción de Compañía.IotDsl.ResourceGroupTieneEndpoint
 	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneMessagingasaService.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneMessagingasaService.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("3b746ff3-8cfe-4f62-a3fc-c58ea4022c6b")]
-	public partial class ResourceGroupTieneMessagingasaService : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// ResourceGroupTieneMessagingasaService domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x3b746ff3, 0x8cfe, 0x4f62, 0xa3, 0xfc, 0xc5, 0x8e, 0xa4, 0x02, 0x2c, 0x6b);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a ResourceGroupTieneMessagingasaService link in the same Partition as the given ResourceGroup
-		/// </summary>
-		/// <param name="source">ResourceGroup to use as the source of the relationship.</param>
-		/// <param name="target">MessagingasaService to use as the target of the relationship.</param>
-		public ResourceGroupTieneMessagingasaService(ResourceGroup source, MessagingasaService target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ResourceGroupTieneMessagingasaService.ResourceGroupDomainRoleId, source), new DslModeling::RoleAssignment(ResourceGroupTieneMessagingasaService.MessagingasaServiceDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneMessagingasaService(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneMessagingasaService(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneMessagingasaService(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneMessagingasaService(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region ResourceGroup domain role code
-		
-		/// <summary>
-		/// ResourceGroup domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ResourceGroupDomainRoleId = new global::System.Guid(0xacc63f7d, 0x1a6a, 0x4067, 0xa9, 0x6b, 0x78, 0x93, 0x39, 0xff, 0xc9, 0xcf);
-		
-		/// <summary>
-		/// DomainRole ResourceGroup
-		/// Descripción de
-		/// Compañía.IotDsl.ResourceGroupTieneMessagingasaService.ResourceGroup
-		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneMessagingasaService/ResourceGroup.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneMessagingasaService/ResourceGroup.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "MessagingasaService", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneMessagingasaService/ResourceGroup.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("acc63f7d-1a6a-4067-a96b-789339ffc9cf")]
-		public virtual ResourceGroup ResourceGroup
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (ResourceGroup)DslModeling::DomainRoleInfo.GetRolePlayer(this, ResourceGroupDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ResourceGroupDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access ResourceGroup of a MessagingasaService
-		/// <summary>
-		/// Gets ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ResourceGroup GetResourceGroup(MessagingasaService element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, MessagingasaServiceDomainRoleId) as ResourceGroup;
-		}
-		
-		/// <summary>
-		/// Sets ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetResourceGroup(MessagingasaService element, ResourceGroup newResourceGroup)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, MessagingasaServiceDomainRoleId, newResourceGroup);
-		}
-		#endregion
-		#region MessagingasaService domain role code
-		
-		/// <summary>
-		/// MessagingasaService domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid MessagingasaServiceDomainRoleId = new global::System.Guid(0x2a8f543d, 0xc972, 0x4ec7, 0xb7, 0xa8, 0x6d, 0xb3, 0x31, 0xf8, 0xa6, 0x45);
-		
-		/// <summary>
-		/// DomainRole MessagingasaService
-		/// Descripción de
-		/// Compañía.IotDsl.ResourceGroupTieneMessagingasaService.MessagingasaService
-		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneMessagingasaService/MessagingasaService.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneMessagingasaService/MessagingasaService.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ResourceGroup", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneMessagingasaService/MessagingasaService.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("2a8f543d-c972-4ec7-b7a8-6db331f8a645")]
-		public virtual MessagingasaService MessagingasaService
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (MessagingasaService)DslModeling::DomainRoleInfo.GetRolePlayer(this, MessagingasaServiceDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, MessagingasaServiceDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access MessagingasaService of a ResourceGroup
-		/// <summary>
-		/// Gets a list of MessagingasaService.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<MessagingasaService> GetMessagingasaService(ResourceGroup element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<MessagingasaService>, MessagingasaService>(element, ResourceGroupDomainRoleId);
-		}
-		#endregion
-		#region ResourceGroup link accessor
-		/// <summary>
-		/// Get the list of ResourceGroupTieneMessagingasaService links to a ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService> GetLinksToMessagingasaService ( global::Compañía.IotDsl.ResourceGroup resourceGroupInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService>(resourceGroupInstance, global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService.ResourceGroupDomainRoleId);
-		}
-		#endregion
-		#region MessagingasaService link accessor
-		/// <summary>
-		/// Get the ResourceGroupTieneMessagingasaService link to a MessagingasaService.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService GetLinkToResourceGroup (global::Compañía.IotDsl.MessagingasaService messagingasaServiceInstance)
-		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService>(messagingasaServiceInstance, global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService.MessagingasaServiceDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of MessagingasaService not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region ResourceGroupTieneMessagingasaService instance accessors
-		
-		/// <summary>
-		/// Get any ResourceGroupTieneMessagingasaService links between a given ResourceGroup and a MessagingasaService.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService> GetLinks( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.MessagingasaService target )
-		{
-			global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService>();
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService>(source, global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService link in links )
-			{
-				if ( target.Equals(link.MessagingasaService) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one ResourceGroupTieneMessagingasaService link between a given ResourceGroupand a MessagingasaService.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService GetLink( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.MessagingasaService target )
-		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService>(source, global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneMessagingasaService link in links )
-			{
-				if ( target.Equals(link.MessagingasaService) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Compañía.IotDsl
-{
-	/// <summary>
-	/// DomainRelationship ResourceGroupTieneDataAnalytics
-	/// Descripción de Compañía.IotDsl.ResourceGroupTieneDataAnalytics
-	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneDataAnalytics.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneDataAnalytics.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("1b9fae46-85f1-4de3-bb51-e4adac5b1f2e")]
-	public partial class ResourceGroupTieneDataAnalytics : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// ResourceGroupTieneDataAnalytics domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x1b9fae46, 0x85f1, 0x4de3, 0xbb, 0x51, 0xe4, 0xad, 0xac, 0x5b, 0x1f, 0x2e);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a ResourceGroupTieneDataAnalytics link in the same Partition as the given ResourceGroup
-		/// </summary>
-		/// <param name="source">ResourceGroup to use as the source of the relationship.</param>
-		/// <param name="target">DataAnalytics to use as the target of the relationship.</param>
-		public ResourceGroupTieneDataAnalytics(ResourceGroup source, DataAnalytics target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ResourceGroupTieneDataAnalytics.ResourceGroupDomainRoleId, source), new DslModeling::RoleAssignment(ResourceGroupTieneDataAnalytics.DataAnalyticsDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneDataAnalytics(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneDataAnalytics(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneDataAnalytics(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneDataAnalytics(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region ResourceGroup domain role code
-		
-		/// <summary>
-		/// ResourceGroup domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ResourceGroupDomainRoleId = new global::System.Guid(0xaf2dbaf1, 0x305d, 0x4656, 0x99, 0x07, 0xae, 0xf1, 0xb9, 0x55, 0x96, 0x59);
-		
-		/// <summary>
-		/// DomainRole ResourceGroup
-		/// Descripción de Compañía.IotDsl.ResourceGroupTieneDataAnalytics.ResourceGroup
-		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneDataAnalytics/ResourceGroup.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneDataAnalytics/ResourceGroup.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "DataAnalytics", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneDataAnalytics/ResourceGroup.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("af2dbaf1-305d-4656-9907-aef1b9559659")]
-		public virtual ResourceGroup ResourceGroup
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (ResourceGroup)DslModeling::DomainRoleInfo.GetRolePlayer(this, ResourceGroupDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ResourceGroupDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access ResourceGroup of a DataAnalytics
-		/// <summary>
-		/// Gets ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ResourceGroup GetResourceGroup(DataAnalytics element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, DataAnalyticsDomainRoleId) as ResourceGroup;
-		}
-		
-		/// <summary>
-		/// Sets ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetResourceGroup(DataAnalytics element, ResourceGroup newResourceGroup)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, DataAnalyticsDomainRoleId, newResourceGroup);
-		}
-		#endregion
-		#region DataAnalytics domain role code
-		
-		/// <summary>
-		/// DataAnalytics domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid DataAnalyticsDomainRoleId = new global::System.Guid(0x7a1f4bb8, 0xd91d, 0x4880, 0x8f, 0xb8, 0xee, 0x20, 0x82, 0x5d, 0x37, 0xfd);
-		
-		/// <summary>
-		/// DomainRole DataAnalytics
-		/// Descripción de Compañía.IotDsl.ResourceGroupTieneDataAnalytics.DataAnalytics
-		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneDataAnalytics/DataAnalytics.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneDataAnalytics/DataAnalytics.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ResourceGroup", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneDataAnalytics/DataAnalytics.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("7a1f4bb8-d91d-4880-8fb8-ee20825d37fd")]
-		public virtual DataAnalytics DataAnalytics
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (DataAnalytics)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataAnalyticsDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataAnalyticsDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access DataAnalytics of a ResourceGroup
-		/// <summary>
-		/// Gets a list of DataAnalytics.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<DataAnalytics> GetDataAnalytics(ResourceGroup element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<DataAnalytics>, DataAnalytics>(element, ResourceGroupDomainRoleId);
-		}
-		#endregion
-		#region ResourceGroup link accessor
-		/// <summary>
-		/// Get the list of ResourceGroupTieneDataAnalytics links to a ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics> GetLinksToDataAnalytics ( global::Compañía.IotDsl.ResourceGroup resourceGroupInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics>(resourceGroupInstance, global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics.ResourceGroupDomainRoleId);
-		}
-		#endregion
-		#region DataAnalytics link accessor
-		/// <summary>
-		/// Get the ResourceGroupTieneDataAnalytics link to a DataAnalytics.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics GetLinkToResourceGroup (global::Compañía.IotDsl.DataAnalytics dataAnalyticsInstance)
-		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics>(dataAnalyticsInstance, global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics.DataAnalyticsDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of DataAnalytics not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region ResourceGroupTieneDataAnalytics instance accessors
-		
-		/// <summary>
-		/// Get any ResourceGroupTieneDataAnalytics links between a given ResourceGroup and a DataAnalytics.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics> GetLinks( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.DataAnalytics target )
-		{
-			global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics>();
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics>(source, global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics link in links )
-			{
-				if ( target.Equals(link.DataAnalytics) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one ResourceGroupTieneDataAnalytics link between a given ResourceGroupand a DataAnalytics.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics GetLink( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.DataAnalytics target )
-		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics>(source, global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneDataAnalytics link in links )
-			{
-				if ( target.Equals(link.DataAnalytics) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Compañía.IotDsl
-{
-	/// <summary>
-	/// DomainRelationship ResourceGroupTieneNoSQLStorage
-	/// Descripción de Compañía.IotDsl.ResourceGroupTieneNoSQLStorage
-	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneNoSQLStorage.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneNoSQLStorage.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("28745ab1-59d3-4f40-8042-a8ef463b98b3")]
-	public partial class ResourceGroupTieneNoSQLStorage : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// ResourceGroupTieneNoSQLStorage domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x28745ab1, 0x59d3, 0x4f40, 0x80, 0x42, 0xa8, 0xef, 0x46, 0x3b, 0x98, 0xb3);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a ResourceGroupTieneNoSQLStorage link in the same Partition as the given ResourceGroup
-		/// </summary>
-		/// <param name="source">ResourceGroup to use as the source of the relationship.</param>
-		/// <param name="target">NoSQLStorage to use as the target of the relationship.</param>
-		public ResourceGroupTieneNoSQLStorage(ResourceGroup source, NoSQLStorage target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ResourceGroupTieneNoSQLStorage.ResourceGroupDomainRoleId, source), new DslModeling::RoleAssignment(ResourceGroupTieneNoSQLStorage.NoSQLStorageDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneNoSQLStorage(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneNoSQLStorage(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneNoSQLStorage(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneNoSQLStorage(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region ResourceGroup domain role code
-		
-		/// <summary>
-		/// ResourceGroup domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ResourceGroupDomainRoleId = new global::System.Guid(0xcf820894, 0x4817, 0x446d, 0x83, 0x1f, 0xea, 0xfb, 0xc6, 0x7a, 0x52, 0x90);
-		
-		/// <summary>
-		/// DomainRole ResourceGroup
-		/// Descripción de Compañía.IotDsl.ResourceGroupTieneNoSQLStorage.ResourceGroup
-		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneNoSQLStorage/ResourceGroup.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneNoSQLStorage/ResourceGroup.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "NoSQLStorage", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneNoSQLStorage/ResourceGroup.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("cf820894-4817-446d-831f-eafbc67a5290")]
-		public virtual ResourceGroup ResourceGroup
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (ResourceGroup)DslModeling::DomainRoleInfo.GetRolePlayer(this, ResourceGroupDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ResourceGroupDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access ResourceGroup of a NoSQLStorage
-		/// <summary>
-		/// Gets ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ResourceGroup GetResourceGroup(NoSQLStorage element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, NoSQLStorageDomainRoleId) as ResourceGroup;
-		}
-		
-		/// <summary>
-		/// Sets ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetResourceGroup(NoSQLStorage element, ResourceGroup newResourceGroup)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, NoSQLStorageDomainRoleId, newResourceGroup);
-		}
-		#endregion
-		#region NoSQLStorage domain role code
-		
-		/// <summary>
-		/// NoSQLStorage domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid NoSQLStorageDomainRoleId = new global::System.Guid(0xa17dc33e, 0x2c60, 0x48ef, 0xbe, 0x8a, 0x84, 0xe9, 0x7a, 0xf6, 0x4d, 0x20);
-		
-		/// <summary>
-		/// DomainRole NoSQLStorage
-		/// Descripción de Compañía.IotDsl.ResourceGroupTieneNoSQLStorage.NoSQLStorage
-		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneNoSQLStorage/NoSQLStorage.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneNoSQLStorage/NoSQLStorage.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ResourceGroup", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneNoSQLStorage/NoSQLStorage.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("a17dc33e-2c60-48ef-be8a-84e97af64d20")]
-		public virtual NoSQLStorage NoSQLStorage
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (NoSQLStorage)DslModeling::DomainRoleInfo.GetRolePlayer(this, NoSQLStorageDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, NoSQLStorageDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access NoSQLStorage of a ResourceGroup
-		/// <summary>
-		/// Gets a list of NoSQLStorage.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<NoSQLStorage> GetNoSQLStorage(ResourceGroup element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<NoSQLStorage>, NoSQLStorage>(element, ResourceGroupDomainRoleId);
-		}
-		#endregion
-		#region ResourceGroup link accessor
-		/// <summary>
-		/// Get the list of ResourceGroupTieneNoSQLStorage links to a ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage> GetLinksToNoSQLStorage ( global::Compañía.IotDsl.ResourceGroup resourceGroupInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage>(resourceGroupInstance, global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage.ResourceGroupDomainRoleId);
-		}
-		#endregion
-		#region NoSQLStorage link accessor
-		/// <summary>
-		/// Get the ResourceGroupTieneNoSQLStorage link to a NoSQLStorage.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage GetLinkToResourceGroup (global::Compañía.IotDsl.NoSQLStorage noSQLStorageInstance)
-		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage>(noSQLStorageInstance, global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage.NoSQLStorageDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of NoSQLStorage not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region ResourceGroupTieneNoSQLStorage instance accessors
-		
-		/// <summary>
-		/// Get any ResourceGroupTieneNoSQLStorage links between a given ResourceGroup and a NoSQLStorage.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage> GetLinks( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.NoSQLStorage target )
-		{
-			global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage>();
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage>(source, global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage link in links )
-			{
-				if ( target.Equals(link.NoSQLStorage) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one ResourceGroupTieneNoSQLStorage link between a given ResourceGroupand a NoSQLStorage.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage GetLink( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.NoSQLStorage target )
-		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage>(source, global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneNoSQLStorage link in links )
-			{
-				if ( target.Equals(link.NoSQLStorage) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Compañía.IotDsl
-{
-	/// <summary>
-	/// DomainRelationship ResourceGroupTieneDashBoard
-	/// Descripción de Compañía.IotDsl.ResourceGroupTieneDashBoard
-	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneDashBoard.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneDashBoard.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("4c110331-ee40-4837-b20a-fae008920df9")]
-	public partial class ResourceGroupTieneDashBoard : DslModeling::ElementLink
-	{
-		#region Constructors, domain class Id
-		
-		/// <summary>
-		/// ResourceGroupTieneDashBoard domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4c110331, 0xee40, 0x4837, 0xb2, 0x0a, 0xfa, 0xe0, 0x08, 0x92, 0x0d, 0xf9);
-	
-				
-		/// <summary>
-		/// Constructor
-		/// Creates a ResourceGroupTieneDashBoard link in the same Partition as the given ResourceGroup
-		/// </summary>
-		/// <param name="source">ResourceGroup to use as the source of the relationship.</param>
-		/// <param name="target">DashBoard to use as the target of the relationship.</param>
-		public ResourceGroupTieneDashBoard(ResourceGroup source, DashBoard target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ResourceGroupTieneDashBoard.ResourceGroupDomainRoleId, source), new DslModeling::RoleAssignment(ResourceGroupTieneDashBoard.DashBoardDomainRoleId, target)}, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneDashBoard(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneDashBoard(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneDashBoard(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
-			: base(partition, roleAssignments, null)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new link is to be created.</param>
-		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneDashBoard(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, roleAssignments, propertyAssignments)
-		{
-		}
-		#endregion
-		#region ResourceGroup domain role code
-		
-		/// <summary>
-		/// ResourceGroup domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid ResourceGroupDomainRoleId = new global::System.Guid(0x3b13c68c, 0xf6eb, 0x4170, 0x88, 0x73, 0x48, 0x7c, 0xc6, 0x3d, 0xf6, 0x4a);
-		
-		/// <summary>
-		/// DomainRole ResourceGroup
-		/// Descripción de Compañía.IotDsl.ResourceGroupTieneDashBoard.ResourceGroup
-		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneDashBoard/ResourceGroup.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneDashBoard/ResourceGroup.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "DashBoard", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneDashBoard/ResourceGroup.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("3b13c68c-f6eb-4170-8873-487cc63df64a")]
-		public virtual ResourceGroup ResourceGroup
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (ResourceGroup)DslModeling::DomainRoleInfo.GetRolePlayer(this, ResourceGroupDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ResourceGroupDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access ResourceGroup of a DashBoard
-		/// <summary>
-		/// Gets ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ResourceGroup GetResourceGroup(DashBoard element)
-		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, DashBoardDomainRoleId) as ResourceGroup;
-		}
-		
-		/// <summary>
-		/// Sets ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetResourceGroup(DashBoard element, ResourceGroup newResourceGroup)
-		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, DashBoardDomainRoleId, newResourceGroup);
-		}
-		#endregion
-		#region DashBoard domain role code
-		
-		/// <summary>
-		/// DashBoard domain role Id.
-		/// </summary>
-		public static readonly global::System.Guid DashBoardDomainRoleId = new global::System.Guid(0x6a480f1c, 0xdfe1, 0x4b8f, 0x93, 0x30, 0x60, 0x31, 0xc2, 0x55, 0x26, 0xb4);
-		
-		/// <summary>
-		/// DomainRole DashBoard
-		/// Descripción de Compañía.IotDsl.ResourceGroupTieneDashBoard.DashBoard
-		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneDashBoard/DashBoard.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneDashBoard/DashBoard.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ResourceGroup", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneDashBoard/DashBoard.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("6a480f1c-dfe1-4b8f-9330-6031c25526b4")]
-		public virtual DashBoard DashBoard
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return (DashBoard)DslModeling::DomainRoleInfo.GetRolePlayer(this, DashBoardDomainRoleId);
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, DashBoardDomainRoleId, value);
-			}
-		}
-				
-		#endregion
-		#region Static methods to access DashBoard of a ResourceGroup
-		/// <summary>
-		/// Gets a list of DashBoard.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<DashBoard> GetDashBoard(ResourceGroup element)
-		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<DashBoard>, DashBoard>(element, ResourceGroupDomainRoleId);
-		}
-		#endregion
-		#region ResourceGroup link accessor
-		/// <summary>
-		/// Get the list of ResourceGroupTieneDashBoard links to a ResourceGroup.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneDashBoard> GetLinksToDashBoard ( global::Compañía.IotDsl.ResourceGroup resourceGroupInstance )
-		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneDashBoard>(resourceGroupInstance, global::Compañía.IotDsl.ResourceGroupTieneDashBoard.ResourceGroupDomainRoleId);
-		}
-		#endregion
-		#region DashBoard link accessor
-		/// <summary>
-		/// Get the ResourceGroupTieneDashBoard link to a DashBoard.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneDashBoard GetLinkToResourceGroup (global::Compañía.IotDsl.DashBoard dashBoardInstance)
-		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneDashBoard> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneDashBoard>(dashBoardInstance, global::Compañía.IotDsl.ResourceGroupTieneDashBoard.DashBoardDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of DashBoard not obeyed.");
-			if ( links.Count == 0 )
-			{
-				return null;
-			}
-			else
-			{
-				return links[0];
-			}
-		}
-		#endregion
-		#region ResourceGroupTieneDashBoard instance accessors
-		
-		/// <summary>
-		/// Get any ResourceGroupTieneDashBoard links between a given ResourceGroup and a DashBoard.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneDashBoard> GetLinks( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.DashBoard target )
-		{
-			global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneDashBoard> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneDashBoard>();
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneDashBoard> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneDashBoard>(source, global::Compañía.IotDsl.ResourceGroupTieneDashBoard.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneDashBoard link in links )
-			{
-				if ( target.Equals(link.DashBoard) )
-				{
-					outLinks.Add(link);
-				}
-			}
-			return outLinks.AsReadOnly();
-		}
-		/// <summary>
-		/// Get the one ResourceGroupTieneDashBoard link between a given ResourceGroupand a DashBoard.
-		/// </summary>
-		[global::System.Diagnostics.DebuggerStepThrough]
-		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneDashBoard GetLink( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.DashBoard target )
-		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneDashBoard> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneDashBoard>(source, global::Compañía.IotDsl.ResourceGroupTieneDashBoard.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneDashBoard link in links )
-			{
-				if ( target.Equals(link.DashBoard) )
-				{
-					return link;
-				}
-			}
-			return null;
-		}
-		
-		#endregion
-	}
-}
-namespace Compañía.IotDsl
-{
-	/// <summary>
-	/// DomainRelationship ResourceGroupTieneEndpoints
-	/// Descripción de Compañía.IotDsl.ResourceGroupTieneEndpoints
-	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneEndpoints.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneEndpoints.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneEndpoint.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneEndpoint.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
 	[DslModeling::DomainObjectId("dda76118-cfc4-45ab-abc3-2453f2962565")]
-	public partial class ResourceGroupTieneEndpoints : DslModeling::ElementLink
+	public partial class ResourceGroupTieneEndpoint : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// ResourceGroupTieneEndpoints domain class Id.
+		/// ResourceGroupTieneEndpoint domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xdda76118, 0xcfc4, 0x45ab, 0xab, 0xc3, 0x24, 0x53, 0xf2, 0x96, 0x25, 0x65);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a ResourceGroupTieneEndpoints link in the same Partition as the given ResourceGroup
+		/// Creates a ResourceGroupTieneEndpoint link in the same Partition as the given ResourceGroup
 		/// </summary>
 		/// <param name="source">ResourceGroup to use as the source of the relationship.</param>
-		/// <param name="target">Endpoints to use as the target of the relationship.</param>
-		public ResourceGroupTieneEndpoints(ResourceGroup source, Endpoints target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ResourceGroupTieneEndpoints.ResourceGroupDomainRoleId, source), new DslModeling::RoleAssignment(ResourceGroupTieneEndpoints.EndpointsDomainRoleId, target)}, null)
+		/// <param name="target">Endpoint to use as the target of the relationship.</param>
+		public ResourceGroupTieneEndpoint(ResourceGroup source, Endpoint target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ResourceGroupTieneEndpoint.ResourceGroupDomainRoleId, source), new DslModeling::RoleAssignment(ResourceGroupTieneEndpoint.EndpointDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -1483,7 +525,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneEndpoints(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public ResourceGroupTieneEndpoint(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -1494,7 +536,7 @@ namespace Compañía.IotDsl
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneEndpoints(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ResourceGroupTieneEndpoint(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -1504,7 +546,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ResourceGroupTieneEndpoints(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public ResourceGroupTieneEndpoint(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -1515,7 +557,7 @@ namespace Compañía.IotDsl
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ResourceGroupTieneEndpoints(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public ResourceGroupTieneEndpoint(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -1529,11 +571,11 @@ namespace Compañía.IotDsl
 		
 		/// <summary>
 		/// DomainRole ResourceGroup
-		/// Descripción de Compañía.IotDsl.ResourceGroupTieneEndpoints.ResourceGroup
+		/// Descripción de Compañía.IotDsl.ResourceGroupTieneEndpoint.ResourceGroup
 		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneEndpoints/ResourceGroup.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneEndpoints/ResourceGroup.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Endpoints", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneEndpoints/ResourceGroup.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneEndpoint/ResourceGroup.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneEndpoint/ResourceGroup.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Endpoint", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneEndpoint/ResourceGroup.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("8bc53bdd-9669-433d-b08e-87ff7c840665")]
 		public virtual ResourceGroup ResourceGroup
 		{
@@ -1550,15 +592,15 @@ namespace Compañía.IotDsl
 		}
 				
 		#endregion
-		#region Static methods to access ResourceGroup of a Endpoints
+		#region Static methods to access ResourceGroup of a Endpoint
 		/// <summary>
 		/// Gets ResourceGroup.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ResourceGroup GetResourceGroup(Endpoints element)
+		public static ResourceGroup GetResourceGroup(Endpoint element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, EndpointsDomainRoleId) as ResourceGroup;
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, EndpointDomainRoleId) as ResourceGroup;
 		}
 		
 		/// <summary>
@@ -1566,73 +608,73 @@ namespace Compañía.IotDsl
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetResourceGroup(Endpoints element, ResourceGroup newResourceGroup)
+		public static void SetResourceGroup(Endpoint element, ResourceGroup newResourceGroup)
 		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, EndpointsDomainRoleId, newResourceGroup);
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, EndpointDomainRoleId, newResourceGroup);
 		}
 		#endregion
-		#region Endpoints domain role code
+		#region Endpoint domain role code
 		
 		/// <summary>
-		/// Endpoints domain role Id.
+		/// Endpoint domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid EndpointsDomainRoleId = new global::System.Guid(0x74ee8cdb, 0x93ff, 0x42f6, 0xa8, 0x3c, 0x9d, 0xec, 0x62, 0xa6, 0x42, 0x67);
+		public static readonly global::System.Guid EndpointDomainRoleId = new global::System.Guid(0x74ee8cdb, 0x93ff, 0x42f6, 0xa8, 0x3c, 0x9d, 0xec, 0x62, 0xa6, 0x42, 0x67);
 		
 		/// <summary>
-		/// DomainRole Endpoints
-		/// Descripción de Compañía.IotDsl.ResourceGroupTieneEndpoints.Endpoints
+		/// DomainRole Endpoint
+		/// Descripción de Compañía.IotDsl.ResourceGroupTieneEndpoint.Endpoint
 		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneEndpoints/Endpoints.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneEndpoints/Endpoints.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ResourceGroup", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneEndpoints/Endpoints.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneEndpoint/Endpoint.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneEndpoint/Endpoint.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ResourceGroup", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneEndpoint/Endpoint.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
 		[DslModeling::DomainObjectId("74ee8cdb-93ff-42f6-a83c-9dec62a64267")]
-		public virtual Endpoints Endpoints
+		public virtual Endpoint Endpoint
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (Endpoints)DslModeling::DomainRoleInfo.GetRolePlayer(this, EndpointsDomainRoleId);
+				return (Endpoint)DslModeling::DomainRoleInfo.GetRolePlayer(this, EndpointDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, EndpointsDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, EndpointDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access Endpoints of a ResourceGroup
+		#region Static methods to access Endpoint of a ResourceGroup
 		/// <summary>
-		/// Gets a list of Endpoints.
+		/// Gets a list of Endpoint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<Endpoints> GetEndpoints(ResourceGroup element)
+		public static DslModeling::LinkedElementCollection<Endpoint> GetEndpoint(ResourceGroup element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Endpoints>, Endpoints>(element, ResourceGroupDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Endpoint>, Endpoint>(element, ResourceGroupDomainRoleId);
 		}
 		#endregion
 		#region ResourceGroup link accessor
 		/// <summary>
-		/// Get the list of ResourceGroupTieneEndpoints links to a ResourceGroup.
+		/// Get the list of ResourceGroupTieneEndpoint links to a ResourceGroup.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneEndpoints> GetLinksToEndpoints ( global::Compañía.IotDsl.ResourceGroup resourceGroupInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneEndpoint> GetLinksToEndpoint ( global::Compañía.IotDsl.ResourceGroup resourceGroupInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneEndpoints>(resourceGroupInstance, global::Compañía.IotDsl.ResourceGroupTieneEndpoints.ResourceGroupDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneEndpoint>(resourceGroupInstance, global::Compañía.IotDsl.ResourceGroupTieneEndpoint.ResourceGroupDomainRoleId);
 		}
 		#endregion
-		#region Endpoints link accessor
+		#region Endpoint link accessor
 		/// <summary>
-		/// Get the ResourceGroupTieneEndpoints link to a Endpoints.
+		/// Get the ResourceGroupTieneEndpoint link to a Endpoint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneEndpoints GetLinkToResourceGroup (global::Compañía.IotDsl.Endpoints endpointsInstance)
+		public static global::Compañía.IotDsl.ResourceGroupTieneEndpoint GetLinkToResourceGroup (global::Compañía.IotDsl.Endpoint endpointInstance)
 		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneEndpoints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneEndpoints>(endpointsInstance, global::Compañía.IotDsl.ResourceGroupTieneEndpoints.EndpointsDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Endpoints not obeyed.");
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneEndpoint> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneEndpoint>(endpointInstance, global::Compañía.IotDsl.ResourceGroupTieneEndpoint.EndpointDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Endpoint not obeyed.");
 			if ( links.Count == 0 )
 			{
 				return null;
@@ -1643,20 +685,20 @@ namespace Compañía.IotDsl
 			}
 		}
 		#endregion
-		#region ResourceGroupTieneEndpoints instance accessors
+		#region ResourceGroupTieneEndpoint instance accessors
 		
 		/// <summary>
-		/// Get any ResourceGroupTieneEndpoints links between a given ResourceGroup and a Endpoints.
+		/// Get any ResourceGroupTieneEndpoint links between a given ResourceGroup and a Endpoint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneEndpoints> GetLinks( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.Endpoints target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneEndpoint> GetLinks( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.Endpoint target )
 		{
-			global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneEndpoints> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneEndpoints>();
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneEndpoints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneEndpoints>(source, global::Compañía.IotDsl.ResourceGroupTieneEndpoints.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneEndpoints link in links )
+			global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneEndpoint> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneEndpoint>();
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneEndpoint> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneEndpoint>(source, global::Compañía.IotDsl.ResourceGroupTieneEndpoint.ResourceGroupDomainRoleId);
+			foreach ( global::Compañía.IotDsl.ResourceGroupTieneEndpoint link in links )
 			{
-				if ( target.Equals(link.Endpoints) )
+				if ( target.Equals(link.Endpoint) )
 				{
 					outLinks.Add(link);
 				}
@@ -1664,16 +706,16 @@ namespace Compañía.IotDsl
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one ResourceGroupTieneEndpoints link between a given ResourceGroupand a Endpoints.
+		/// Get the one ResourceGroupTieneEndpoint link between a given ResourceGroupand a Endpoint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.ResourceGroupTieneEndpoints GetLink( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.Endpoints target )
+		public static global::Compañía.IotDsl.ResourceGroupTieneEndpoint GetLink( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.Endpoint target )
 		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneEndpoints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneEndpoints>(source, global::Compañía.IotDsl.ResourceGroupTieneEndpoints.ResourceGroupDomainRoleId);
-			foreach ( global::Compañía.IotDsl.ResourceGroupTieneEndpoints link in links )
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneEndpoint> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneEndpoint>(source, global::Compañía.IotDsl.ResourceGroupTieneEndpoint.ResourceGroupDomainRoleId);
+			foreach ( global::Compañía.IotDsl.ResourceGroupTieneEndpoint link in links )
 			{
-				if ( target.Equals(link.Endpoints) )
+				if ( target.Equals(link.Endpoint) )
 				{
 					return link;
 				}
@@ -1687,33 +729,33 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// DomainRelationship IoTCenterReferenciasEndpoints
-	/// Descripción de Compañía.IotDsl.IoTCenterReferenciasEndpoints
+	/// DomainRelationship IoTCenterReferenciasEndpoint
+	/// Descripción de Compañía.IotDsl.IoTCenterReferenciasEndpoint
 	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.IoTCenterReferenciasEndpoints.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.IoTCenterReferenciasEndpoints.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.IoTCenterReferenciasEndpoint.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.IoTCenterReferenciasEndpoint.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship()]
 	[DslModeling::DomainObjectId("e09bf60c-aa20-45e9-850e-2b974bf05aa4")]
-	public partial class IoTCenterReferenciasEndpoints : DslModeling::ElementLink
+	public partial class IoTCenterReferenciasEndpoint : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// IoTCenterReferenciasEndpoints domain class Id.
+		/// IoTCenterReferenciasEndpoint domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xe09bf60c, 0xaa20, 0x45e9, 0x85, 0x0e, 0x2b, 0x97, 0x4b, 0xf0, 0x5a, 0xa4);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a IoTCenterReferenciasEndpoints link in the same Partition as the given IoTCenter
+		/// Creates a IoTCenterReferenciasEndpoint link in the same Partition as the given IoTCenter
 		/// </summary>
 		/// <param name="source">IoTCenter to use as the source of the relationship.</param>
-		/// <param name="target">Endpoints to use as the target of the relationship.</param>
-		public IoTCenterReferenciasEndpoints(IoTCenter source, Endpoints target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(IoTCenterReferenciasEndpoints.IoTCenterDomainRoleId, source), new DslModeling::RoleAssignment(IoTCenterReferenciasEndpoints.EndpointsDomainRoleId, target)}, null)
+		/// <param name="target">Endpoint to use as the target of the relationship.</param>
+		public IoTCenterReferenciasEndpoint(IoTCenter source, Endpoint target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(IoTCenterReferenciasEndpoint.IoTCenterDomainRoleId, source), new DslModeling::RoleAssignment(IoTCenterReferenciasEndpoint.EndpointDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -1722,7 +764,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public IoTCenterReferenciasEndpoints(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public IoTCenterReferenciasEndpoint(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -1733,7 +775,7 @@ namespace Compañía.IotDsl
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public IoTCenterReferenciasEndpoints(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public IoTCenterReferenciasEndpoint(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -1743,7 +785,7 @@ namespace Compañía.IotDsl
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public IoTCenterReferenciasEndpoints(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public IoTCenterReferenciasEndpoint(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -1754,7 +796,7 @@ namespace Compañía.IotDsl
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public IoTCenterReferenciasEndpoints(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public IoTCenterReferenciasEndpoint(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -1768,11 +810,11 @@ namespace Compañía.IotDsl
 		
 		/// <summary>
 		/// DomainRole IoTCenter
-		/// Descripción de Compañía.IotDsl.IoTCenterReferenciasEndpoints.IoTCenter
+		/// Descripción de Compañía.IotDsl.IoTCenterReferenciasEndpoint.IoTCenter
 		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.IoTCenterReferenciasEndpoints/IoTCenter.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.IoTCenterReferenciasEndpoints/IoTCenter.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Endpoints", PropertyDisplayNameKey="Compañía.IotDsl.IoTCenterReferenciasEndpoints/IoTCenter.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.IoTCenterReferenciasEndpoint/IoTCenter.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.IoTCenterReferenciasEndpoint/IoTCenter.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Endpoint", PropertyDisplayNameKey="Compañía.IotDsl.IoTCenterReferenciasEndpoint/IoTCenter.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("d5fb9485-7cbe-420a-9a22-89acf0267fda")]
 		public virtual IoTCenter IoTCenter
 		{
@@ -1789,15 +831,15 @@ namespace Compañía.IotDsl
 		}
 				
 		#endregion
-		#region Static methods to access IoTCenter of a Endpoints
+		#region Static methods to access IoTCenter of a Endpoint
 		/// <summary>
 		/// Gets IoTCenter.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static IoTCenter GetIoTCenter(Endpoints element)
+		public static IoTCenter GetIoTCenter(Endpoint element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, EndpointsDomainRoleId) as IoTCenter;
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, EndpointDomainRoleId) as IoTCenter;
 		}
 		
 		/// <summary>
@@ -1805,73 +847,73 @@ namespace Compañía.IotDsl
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetIoTCenter(Endpoints element, IoTCenter newIoTCenter)
+		public static void SetIoTCenter(Endpoint element, IoTCenter newIoTCenter)
 		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, EndpointsDomainRoleId, newIoTCenter);
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, EndpointDomainRoleId, newIoTCenter);
 		}
 		#endregion
-		#region Endpoints domain role code
+		#region Endpoint domain role code
 		
 		/// <summary>
-		/// Endpoints domain role Id.
+		/// Endpoint domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid EndpointsDomainRoleId = new global::System.Guid(0x2656a986, 0xefce, 0x4f91, 0x96, 0xff, 0x9d, 0x23, 0xe2, 0xe4, 0x91, 0x95);
+		public static readonly global::System.Guid EndpointDomainRoleId = new global::System.Guid(0x2656a986, 0xefce, 0x4f91, 0x96, 0xff, 0x9d, 0x23, 0xe2, 0xe4, 0x91, 0x95);
 		
 		/// <summary>
-		/// DomainRole Endpoints
-		/// Descripción de Compañía.IotDsl.IoTCenterReferenciasEndpoints.Endpoints
+		/// DomainRole Endpoint
+		/// Descripción de Compañía.IotDsl.IoTCenterReferenciasEndpoint.Endpoint
 		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.IoTCenterReferenciasEndpoints/Endpoints.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.IoTCenterReferenciasEndpoints/Endpoints.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "IoTCenter", PropertyDisplayNameKey="Compañía.IotDsl.IoTCenterReferenciasEndpoints/Endpoints.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.IoTCenterReferenciasEndpoint/Endpoint.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.IoTCenterReferenciasEndpoint/Endpoint.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "IoTCenter", PropertyDisplayNameKey="Compañía.IotDsl.IoTCenterReferenciasEndpoint/Endpoint.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
 		[DslModeling::DomainObjectId("2656a986-efce-4f91-96ff-9d23e2e49195")]
-		public virtual Endpoints Endpoints
+		public virtual Endpoint Endpoint
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (Endpoints)DslModeling::DomainRoleInfo.GetRolePlayer(this, EndpointsDomainRoleId);
+				return (Endpoint)DslModeling::DomainRoleInfo.GetRolePlayer(this, EndpointDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, EndpointsDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, EndpointDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access Endpoints of a IoTCenter
+		#region Static methods to access Endpoint of a IoTCenter
 		/// <summary>
-		/// Gets a list of Endpoints.
+		/// Gets a list of Endpoint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<Endpoints> GetEndpoints(IoTCenter element)
+		public static DslModeling::LinkedElementCollection<Endpoint> GetEndpoint(IoTCenter element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<Endpoints>, Endpoints>(element, IoTCenterDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Endpoint>, Endpoint>(element, IoTCenterDomainRoleId);
 		}
 		#endregion
 		#region IoTCenter link accessor
 		/// <summary>
-		/// Get the list of IoTCenterReferenciasEndpoints links to a IoTCenter.
+		/// Get the list of IoTCenterReferenciasEndpoint links to a IoTCenter.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints> GetLinksToEndpoints ( global::Compañía.IotDsl.IoTCenter ioTCenterInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint> GetLinksToEndpoint ( global::Compañía.IotDsl.IoTCenter ioTCenterInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints>(ioTCenterInstance, global::Compañía.IotDsl.IoTCenterReferenciasEndpoints.IoTCenterDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint>(ioTCenterInstance, global::Compañía.IotDsl.IoTCenterReferenciasEndpoint.IoTCenterDomainRoleId);
 		}
 		#endregion
-		#region Endpoints link accessor
+		#region Endpoint link accessor
 		/// <summary>
-		/// Get the IoTCenterReferenciasEndpoints link to a Endpoints.
+		/// Get the IoTCenterReferenciasEndpoint link to a Endpoint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.IoTCenterReferenciasEndpoints GetLinkToIoTCenter (global::Compañía.IotDsl.Endpoints endpointsInstance)
+		public static global::Compañía.IotDsl.IoTCenterReferenciasEndpoint GetLinkToIoTCenter (global::Compañía.IotDsl.Endpoint endpointInstance)
 		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints>(endpointsInstance, global::Compañía.IotDsl.IoTCenterReferenciasEndpoints.EndpointsDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Endpoints not obeyed.");
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint>(endpointInstance, global::Compañía.IotDsl.IoTCenterReferenciasEndpoint.EndpointDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Endpoint not obeyed.");
 			if ( links.Count == 0 )
 			{
 				return null;
@@ -1882,20 +924,20 @@ namespace Compañía.IotDsl
 			}
 		}
 		#endregion
-		#region IoTCenterReferenciasEndpoints instance accessors
+		#region IoTCenterReferenciasEndpoint instance accessors
 		
 		/// <summary>
-		/// Get any IoTCenterReferenciasEndpoints links between a given IoTCenter and a Endpoints.
+		/// Get any IoTCenterReferenciasEndpoint links between a given IoTCenter and a Endpoint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints> GetLinks( global::Compañía.IotDsl.IoTCenter source, global::Compañía.IotDsl.Endpoints target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint> GetLinks( global::Compañía.IotDsl.IoTCenter source, global::Compañía.IotDsl.Endpoint target )
 		{
-			global::System.Collections.Generic.List<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints>();
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints>(source, global::Compañía.IotDsl.IoTCenterReferenciasEndpoints.IoTCenterDomainRoleId);
-			foreach ( global::Compañía.IotDsl.IoTCenterReferenciasEndpoints link in links )
+			global::System.Collections.Generic.List<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint>();
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint>(source, global::Compañía.IotDsl.IoTCenterReferenciasEndpoint.IoTCenterDomainRoleId);
+			foreach ( global::Compañía.IotDsl.IoTCenterReferenciasEndpoint link in links )
 			{
-				if ( target.Equals(link.Endpoints) )
+				if ( target.Equals(link.Endpoint) )
 				{
 					outLinks.Add(link);
 				}
@@ -1903,16 +945,494 @@ namespace Compañía.IotDsl
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one IoTCenterReferenciasEndpoints link between a given IoTCenterand a Endpoints.
+		/// Get the one IoTCenterReferenciasEndpoint link between a given IoTCenterand a Endpoint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Compañía.IotDsl.IoTCenterReferenciasEndpoints GetLink( global::Compañía.IotDsl.IoTCenter source, global::Compañía.IotDsl.Endpoints target )
+		public static global::Compañía.IotDsl.IoTCenterReferenciasEndpoint GetLink( global::Compañía.IotDsl.IoTCenter source, global::Compañía.IotDsl.Endpoint target )
 		{
-			global::System.Collections.Generic.IList<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.IoTCenterReferenciasEndpoints>(source, global::Compañía.IotDsl.IoTCenterReferenciasEndpoints.IoTCenterDomainRoleId);
-			foreach ( global::Compañía.IotDsl.IoTCenterReferenciasEndpoints link in links )
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.IoTCenterReferenciasEndpoint>(source, global::Compañía.IotDsl.IoTCenterReferenciasEndpoint.IoTCenterDomainRoleId);
+			foreach ( global::Compañía.IotDsl.IoTCenterReferenciasEndpoint link in links )
 			{
-				if ( target.Equals(link.Endpoints) )
+				if ( target.Equals(link.Endpoint) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainRelationship ResourceGroupTieneCloudService
+	/// Descripción de Compañía.IotDsl.ResourceGroupTieneCloudService
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneCloudService.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneCloudService.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("c0540b71-30e1-4d69-9a47-12e985d750d1")]
+	public partial class ResourceGroupTieneCloudService : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// ResourceGroupTieneCloudService domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xc0540b71, 0x30e1, 0x4d69, 0x9a, 0x47, 0x12, 0xe9, 0x85, 0xd7, 0x50, 0xd1);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a ResourceGroupTieneCloudService link in the same Partition as the given ResourceGroup
+		/// </summary>
+		/// <param name="source">ResourceGroup to use as the source of the relationship.</param>
+		/// <param name="target">CloudService to use as the target of the relationship.</param>
+		public ResourceGroupTieneCloudService(ResourceGroup source, CloudService target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ResourceGroupTieneCloudService.ResourceGroupDomainRoleId, source), new DslModeling::RoleAssignment(ResourceGroupTieneCloudService.CloudServiceDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ResourceGroupTieneCloudService(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ResourceGroupTieneCloudService(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public ResourceGroupTieneCloudService(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public ResourceGroupTieneCloudService(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region ResourceGroup domain role code
+		
+		/// <summary>
+		/// ResourceGroup domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid ResourceGroupDomainRoleId = new global::System.Guid(0x7941d557, 0xc8b8, 0x4eb4, 0x8a, 0x4b, 0x1f, 0x34, 0x8e, 0xbf, 0x45, 0x46);
+		
+		/// <summary>
+		/// DomainRole ResourceGroup
+		/// Descripción de Compañía.IotDsl.ResourceGroupTieneCloudService.ResourceGroup
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneCloudService/ResourceGroup.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneCloudService/ResourceGroup.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "CloudService", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneCloudService/ResourceGroup.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("7941d557-c8b8-4eb4-8a4b-1f348ebf4546")]
+		public virtual ResourceGroup ResourceGroup
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (ResourceGroup)DslModeling::DomainRoleInfo.GetRolePlayer(this, ResourceGroupDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ResourceGroupDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access ResourceGroup of a CloudService
+		/// <summary>
+		/// Gets ResourceGroup.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static ResourceGroup GetResourceGroup(CloudService element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, CloudServiceDomainRoleId) as ResourceGroup;
+		}
+		
+		/// <summary>
+		/// Sets ResourceGroup.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetResourceGroup(CloudService element, ResourceGroup newResourceGroup)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, CloudServiceDomainRoleId, newResourceGroup);
+		}
+		#endregion
+		#region CloudService domain role code
+		
+		/// <summary>
+		/// CloudService domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid CloudServiceDomainRoleId = new global::System.Guid(0xe41e6e05, 0xb875, 0x4dd7, 0x94, 0xe7, 0xe4, 0xae, 0xeb, 0xd6, 0xb8, 0xba);
+		
+		/// <summary>
+		/// DomainRole CloudService
+		/// Descripción de Compañía.IotDsl.ResourceGroupTieneCloudService.CloudService
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.ResourceGroupTieneCloudService/CloudService.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.ResourceGroupTieneCloudService/CloudService.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ResourceGroup", PropertyDisplayNameKey="Compañía.IotDsl.ResourceGroupTieneCloudService/CloudService.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("e41e6e05-b875-4dd7-94e7-e4aeebd6b8ba")]
+		public virtual CloudService CloudService
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (CloudService)DslModeling::DomainRoleInfo.GetRolePlayer(this, CloudServiceDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, CloudServiceDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access CloudService of a ResourceGroup
+		/// <summary>
+		/// Gets a list of CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<CloudService> GetCloudService(ResourceGroup element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<CloudService>, CloudService>(element, ResourceGroupDomainRoleId);
+		}
+		#endregion
+		#region ResourceGroup link accessor
+		/// <summary>
+		/// Get the list of ResourceGroupTieneCloudService links to a ResourceGroup.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneCloudService> GetLinksToCloudService ( global::Compañía.IotDsl.ResourceGroup resourceGroupInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneCloudService>(resourceGroupInstance, global::Compañía.IotDsl.ResourceGroupTieneCloudService.ResourceGroupDomainRoleId);
+		}
+		#endregion
+		#region CloudService link accessor
+		/// <summary>
+		/// Get the ResourceGroupTieneCloudService link to a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.ResourceGroupTieneCloudService GetLinkToResourceGroup (global::Compañía.IotDsl.CloudService cloudServiceInstance)
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneCloudService> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneCloudService>(cloudServiceInstance, global::Compañía.IotDsl.ResourceGroupTieneCloudService.CloudServiceDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of CloudService not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region ResourceGroupTieneCloudService instance accessors
+		
+		/// <summary>
+		/// Get any ResourceGroupTieneCloudService links between a given ResourceGroup and a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.ResourceGroupTieneCloudService> GetLinks( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.CloudService target )
+		{
+			global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneCloudService> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.ResourceGroupTieneCloudService>();
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneCloudService> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneCloudService>(source, global::Compañía.IotDsl.ResourceGroupTieneCloudService.ResourceGroupDomainRoleId);
+			foreach ( global::Compañía.IotDsl.ResourceGroupTieneCloudService link in links )
+			{
+				if ( target.Equals(link.CloudService) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one ResourceGroupTieneCloudService link between a given ResourceGroupand a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.ResourceGroupTieneCloudService GetLink( global::Compañía.IotDsl.ResourceGroup source, global::Compañía.IotDsl.CloudService target )
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.ResourceGroupTieneCloudService> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.ResourceGroupTieneCloudService>(source, global::Compañía.IotDsl.ResourceGroupTieneCloudService.ResourceGroupDomainRoleId);
+			foreach ( global::Compañía.IotDsl.ResourceGroupTieneCloudService link in links )
+			{
+				if ( target.Equals(link.CloudService) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainRelationship EndpointReferenciasCloudService
+	/// Descripción de Compañía.IotDsl.EndpointReferenciasCloudService
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.EndpointReferenciasCloudService.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.EndpointReferenciasCloudService.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("f1cf8f3d-6cf1-41e5-8b29-d637d48bd1a2")]
+	public partial class EndpointReferenciasCloudService : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// EndpointReferenciasCloudService domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf1cf8f3d, 0x6cf1, 0x41e5, 0x8b, 0x29, 0xd6, 0x37, 0xd4, 0x8b, 0xd1, 0xa2);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a EndpointReferenciasCloudService link in the same Partition as the given Endpoint
+		/// </summary>
+		/// <param name="source">Endpoint to use as the source of the relationship.</param>
+		/// <param name="target">CloudService to use as the target of the relationship.</param>
+		public EndpointReferenciasCloudService(Endpoint source, CloudService target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(EndpointReferenciasCloudService.EndpointDomainRoleId, source), new DslModeling::RoleAssignment(EndpointReferenciasCloudService.CloudServiceDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public EndpointReferenciasCloudService(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public EndpointReferenciasCloudService(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public EndpointReferenciasCloudService(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public EndpointReferenciasCloudService(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Endpoint domain role code
+		
+		/// <summary>
+		/// Endpoint domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid EndpointDomainRoleId = new global::System.Guid(0xe1def1a8, 0xcbca, 0x4509, 0x87, 0x6a, 0x57, 0x21, 0x02, 0x69, 0x7d, 0xee);
+		
+		/// <summary>
+		/// DomainRole Endpoint
+		/// Descripción de Compañía.IotDsl.EndpointReferenciasCloudService.Endpoint
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.EndpointReferenciasCloudService/Endpoint.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.EndpointReferenciasCloudService/Endpoint.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "CloudService", PropertyDisplayNameKey="Compañía.IotDsl.EndpointReferenciasCloudService/Endpoint.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroOne)]
+		[DslModeling::DomainObjectId("e1def1a8-cbca-4509-876a-572102697dee")]
+		public virtual Endpoint Endpoint
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Endpoint)DslModeling::DomainRoleInfo.GetRolePlayer(this, EndpointDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, EndpointDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Endpoint of a CloudService
+		/// <summary>
+		/// Gets a list of Endpoint.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Endpoint> GetEndpoint(CloudService element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Endpoint>, Endpoint>(element, CloudServiceDomainRoleId);
+		}
+		#endregion
+		#region CloudService domain role code
+		
+		/// <summary>
+		/// CloudService domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid CloudServiceDomainRoleId = new global::System.Guid(0xc71c9d19, 0xc5e6, 0x48bc, 0xb3, 0xdc, 0x81, 0x7f, 0x34, 0x36, 0x8a, 0x51);
+		
+		/// <summary>
+		/// DomainRole CloudService
+		/// Descripción de Compañía.IotDsl.EndpointReferenciasCloudService.CloudService
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.EndpointReferenciasCloudService/CloudService.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.EndpointReferenciasCloudService/CloudService.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Endpoint", PropertyDisplayNameKey="Compañía.IotDsl.EndpointReferenciasCloudService/CloudService.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("c71c9d19-c5e6-48bc-b3dc-817f34368a51")]
+		public virtual CloudService CloudService
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (CloudService)DslModeling::DomainRoleInfo.GetRolePlayer(this, CloudServiceDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, CloudServiceDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access CloudService of a Endpoint
+		/// <summary>
+		/// Gets CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static CloudService GetCloudService(Endpoint element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, EndpointDomainRoleId) as CloudService;
+		}
+		
+		/// <summary>
+		/// Sets CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetCloudService(Endpoint element, CloudService newCloudService)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, EndpointDomainRoleId, newCloudService);
+		}
+		#endregion
+		#region Endpoint link accessor
+		/// <summary>
+		/// Get the EndpointReferenciasCloudService link to a Endpoint.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.EndpointReferenciasCloudService GetLinkToCloudService (global::Compañía.IotDsl.Endpoint endpointInstance)
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.EndpointReferenciasCloudService> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.EndpointReferenciasCloudService>(endpointInstance, global::Compañía.IotDsl.EndpointReferenciasCloudService.EndpointDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Endpoint not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region CloudService link accessor
+		/// <summary>
+		/// Get the list of EndpointReferenciasCloudService links to a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.EndpointReferenciasCloudService> GetLinksToEndpoint ( global::Compañía.IotDsl.CloudService cloudServiceInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.EndpointReferenciasCloudService>(cloudServiceInstance, global::Compañía.IotDsl.EndpointReferenciasCloudService.CloudServiceDomainRoleId);
+		}
+		#endregion
+		#region EndpointReferenciasCloudService instance accessors
+		
+		/// <summary>
+		/// Get any EndpointReferenciasCloudService links between a given Endpoint and a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.EndpointReferenciasCloudService> GetLinks( global::Compañía.IotDsl.Endpoint source, global::Compañía.IotDsl.CloudService target )
+		{
+			global::System.Collections.Generic.List<global::Compañía.IotDsl.EndpointReferenciasCloudService> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.EndpointReferenciasCloudService>();
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.EndpointReferenciasCloudService> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.EndpointReferenciasCloudService>(source, global::Compañía.IotDsl.EndpointReferenciasCloudService.EndpointDomainRoleId);
+			foreach ( global::Compañía.IotDsl.EndpointReferenciasCloudService link in links )
+			{
+				if ( target.Equals(link.CloudService) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one EndpointReferenciasCloudService link between a given Endpointand a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.EndpointReferenciasCloudService GetLink( global::Compañía.IotDsl.Endpoint source, global::Compañía.IotDsl.CloudService target )
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.EndpointReferenciasCloudService> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.EndpointReferenciasCloudService>(source, global::Compañía.IotDsl.EndpointReferenciasCloudService.EndpointDomainRoleId);
+			foreach ( global::Compañía.IotDsl.EndpointReferenciasCloudService link in links )
+			{
+				if ( target.Equals(link.CloudService) )
 				{
 					return link;
 				}
