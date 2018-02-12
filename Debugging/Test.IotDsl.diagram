@@ -1,1 +1,21 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<iotDslDiagram dslVersion="1.0.0.0" Id="a8cf4347-ce22-4b61-b221-102db7a1e556" absoluteBounds="0, 0, 11, 8.5" name="Test">
+  <exampleModelMoniker Id="e164dc9c-dcc0-445a-9691-0ee93df1c542" />
+  <nestedChildShapes>
+    <resourceGroupShape Id="b726abc1-d2ec-4fa3-9363-2727eab40088" absoluteBounds="1.625, 0.5, 8, 4">
+      <monikerGrupoDeRecursos name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest" />
+    </resourceGroupShape>
+    <sQLStorageImage Id="64b9799b-8ec8-45cd-abde-995c1a1c1f46" absoluteBounds="4.375, 2.375, 1, 1">
+      <monikerSQLStorage name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/sqlserverjmddsl" />
+      <relativeChildShapes />
+    </sQLStorageImage>
+    <noSQLStorageImage Id="3a7492df-0d88-4185-80f5-9466a02c9325" absoluteBounds="2.625, 1.5, 1, 1">
+      <monikerNoSQlStorage name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/dslteststorage" />
+      <relativeChildShapes />
+    </noSQLStorageImage>
+    <appServiceImage Id="555bc394-ce6d-49ce-a0bf-1ea46c64981a" absoluteBounds="6.375, 1.625, 1, 1">
+      <monikerAppService name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/dashboardjmdsl" />
+      <relativeChildShapes />
+    </appServiceImage>
+  </nestedChildShapes>
+</iotDslDiagram>

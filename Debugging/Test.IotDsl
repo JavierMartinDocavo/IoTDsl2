@@ -1,1 +1,20 @@
-﻿ 
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e164dc9c-dcc0-445a-9691-0ee93df1c542" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
+  <resourceGroups>
+    <iotDslHasResourceGroups Id="88c95fb1-9d13-4753-918f-c066dd16d8b1">
+      <resourceGroup Id="59268507-707d-4ecb-b382-14d34f0be67e" name="DslTest" location="westeurope">
+        <cloudServices>
+          <resourceGroupHasCloudServices Id="705d08b4-f29b-4348-a0e5-7ba640ddb83f">
+            <sQLStorage Id="0b874344-81eb-4c36-a493-b7b1855e2025" name="sqlserverjmddsl" user="jmddsl" password="Aa-1234567" />
+          </resourceGroupHasCloudServices>
+          <resourceGroupHasCloudServices Id="bffc2f29-e366-42e4-960f-04f4a75301f7">
+            <noSQLStorage Id="8a6af94d-0682-4ce7-9e86-cc56945188a6" name="dslteststorage" />
+          </resourceGroupHasCloudServices>
+          <resourceGroupHasCloudServices Id="f19a1a84-f79e-4fab-9223-2aacf152b636">
+            <appService Id="517ac7be-7e63-46f6-94fc-bed0211bb27c" name="dashboardjmdsl" />
+          </resourceGroupHasCloudServices>
+        </cloudServices>
+      </resourceGroup>
+    </iotDslHasResourceGroups>
+  </resourceGroups>
+</ioTDsl>

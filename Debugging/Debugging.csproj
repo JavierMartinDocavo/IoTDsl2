@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.10318</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4d107280-4372-48da-a70a-5875f4201023}</ProjectGuid>
+    <ProjectGuid>{4D107280-4372-48DA-A70A-5875F4201023}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Debugging</RootNamespace>
@@ -44,6 +44,11 @@
       <SubType>
       </SubType>
     </None>
+    <None Include="Cloud.ps1">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cloud.tt</DependentUpon>
+    </None>
     <None Include="IotDslReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IotDslReport.txt</LastGenOutput>
@@ -65,6 +70,10 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cloud.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Cloud.ps1</LastGenOutput>
+    </Content>
     <Content Include="IotDslReport.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

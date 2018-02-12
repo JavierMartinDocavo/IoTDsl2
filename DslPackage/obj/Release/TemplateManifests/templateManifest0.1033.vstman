@@ -1,0 +1,32 @@
+﻿<VSTemplateManifest Version="1.0" Locale="1033" xmlns="http://schemas.microsoft.com/developer/vstemplatemanifest/2015">
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>CSharp\1033\IotDsl</RelativePathOnDisk>
+    <TemplateFileName>CSharp.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>{406bf3a4-15ef-4904-84a9-00fd0e9224e4}</TemplateID>
+        <Name Package="{49ba1da3-920f-40fa-8997-ce9063e26429}" ID="103" />
+        <Description Package="{49ba1da3-920f-40fa-8997-ce9063e26429}" ID="102" />
+        <Icon Package="{49ba1da3-920f-40fa-8997-ce9063e26429}" ID="201" />
+        <ProjectType>CSharp</ProjectType>
+        <SortOrder>360</SortOrder>
+        <DefaultName>IotDsl.IotDsl</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+  <VSTemplateContainer TemplateType="Item">
+    <RelativePathOnDisk>VisualBasic\1033\IotDsl</RelativePathOnDisk>
+    <TemplateFileName>VisualBasic.vstemplate</TemplateFileName>
+    <VSTemplateHeader>
+      <TemplateData xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+        <TemplateID>{edc7de80-1e2c-4b0e-857b-5d76ec59e453}</TemplateID>
+        <Name Package="{49ba1da3-920f-40fa-8997-ce9063e26429}" ID="103" />
+        <Description Package="{49ba1da3-920f-40fa-8997-ce9063e26429}" ID="102" />
+        <Icon Package="{49ba1da3-920f-40fa-8997-ce9063e26429}" ID="201" />
+        <ProjectType>VisualBasic</ProjectType>
+        <SortOrder>360</SortOrder>
+        <DefaultName>IotDsl.IotDsl</DefaultName>
+      </TemplateData>
+    </VSTemplateHeader>
+  </VSTemplateContainer>
+</VSTemplateManifest>

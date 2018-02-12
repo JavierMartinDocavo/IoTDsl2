@@ -86,6 +86,19 @@ namespace Compañía.IotDsl
 			}
 		}
 		#endregion
+		#region Port shape support
+		/// <summary>
+		/// Indicates whether the diagram contains any ports.  Hit testing will not
+		/// check for ports if this is false.
+		/// </summary>
+		public override bool SupportsPorts
+		{
+			get
+			{
+				return true;
+			}
+		}
+		#endregion
 		#region Shape mapping
 		/// <summary>
 		/// Called during view fixup to ask the parent whether a shape should be created for the given child element.
@@ -191,7 +204,7 @@ namespace Compañía.IotDsl
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
 		protected override DslDiagrams::ShapeElement CreateChildShape(DslModeling::ModelElement element)
 		{
-			if(element is global::Compañía.IotDsl.NoSQlStorage)
+			if(element is global::Compañía.IotDsl.NoSQLStorage)
 			{
 				global::Compañía.IotDsl.NoSQLStorageImage newShape = new global::Compañía.IotDsl.NoSQLStorageImage(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
@@ -215,6 +228,18 @@ namespace Compañía.IotDsl
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::Compañía.IotDsl.RaspberryPi)
+			{
+				global::Compañía.IotDsl.RaspberryPiImage newShape = new global::Compañía.IotDsl.RaspberryPiImage(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.BME280)
+			{
+				global::Compañía.IotDsl.BME280Image newShape = new global::Compañía.IotDsl.BME280Image(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::Compañía.IotDsl.ResourceGroup)
 			{
 				global::Compañía.IotDsl.ResourceGroupShape newShape = new global::Compañía.IotDsl.ResourceGroupShape(this.Partition);
@@ -227,26 +252,43 @@ namespace Compañía.IotDsl
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Compañía.IotDsl.Endpoint)
-			{
-				global::Compañía.IotDsl.EndpointImage newShape = new global::Compañía.IotDsl.EndpointImage(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::Compañía.IotDsl.CloudService)
 			{
-				global::Compañía.IotDsl.GeometryShape1 newShape = new global::Compañía.IotDsl.GeometryShape1(this.Partition);
+				global::Compañía.IotDsl.CloudServiceShape newShape = new global::Compañía.IotDsl.CloudServiceShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Compañía.IotDsl.IoTCenterReferenciasEndpoint)
+			if(element is global::Compañía.IotDsl.Endpoint)
 			{
-				global::Compañía.IotDsl.ConectionIotCenterEndpoint newShape = new global::Compañía.IotDsl.ConectionIotCenterEndpoint(this.Partition);
+				global::Compañía.IotDsl.EndpointPort newShape = new global::Compañía.IotDsl.EndpointPort(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Compañía.IotDsl.EndpointReferenciasCloudService)
+			if(element is global::Compañía.IotDsl.Device)
+			{
+				global::Compañía.IotDsl.CloudServiceShape newShape = new global::Compañía.IotDsl.CloudServiceShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.Sensor)
+			{
+				global::Compañía.IotDsl.CloudServiceShape newShape = new global::Compañía.IotDsl.CloudServiceShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.EndpointReferencesCloudService)
 			{
 				global::Compañía.IotDsl.EndpointToCloudService newShape = new global::Compañía.IotDsl.EndpointToCloudService(this.Partition);
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.DeviceReferenciasSensor)
+			{
+				global::Compañía.IotDsl.DeviceToSensorConnection newShape = new global::Compañía.IotDsl.DeviceToSensorConnection(this.Partition);
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.IoTCenterReferencesDevices)
+			{
+				global::Compañía.IotDsl.DeviceToIoTCenter newShape = new global::Compañía.IotDsl.DeviceToIoTCenter(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -262,7 +304,6 @@ namespace Compañía.IotDsl
 			base.InitializeShapeFields(shapeFields);
 			global::Compañía.IotDsl.ResourceGroupShape.DecoratorsInitialized += ResourceGroupShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.IoTCenterImage.DecoratorsInitialized += IoTCenterImageDecoratorMap.OnDecoratorsInitialized;
-			global::Compañía.IotDsl.EndpointImage.DecoratorsInitialized += EndpointImageDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.NoSQLStorageImage.DecoratorsInitialized += NoSQLStorageImageDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.AppServiceImage.DecoratorsInitialized += AppServiceImageDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.DataAnalyticsImage.DecoratorsInitialized += DataAnalyticsImageDecoratorMap.OnDecoratorsInitialized;
@@ -301,24 +342,6 @@ namespace Compañía.IotDsl
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.IoTCenter.NameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for EndpointImage.
-		/// </summary>
-		internal static partial class EndpointImageDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for EndpointImage.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.Endpoint.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
@@ -386,9 +409,6 @@ namespace Compañía.IotDsl
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.CloudService.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.CloudService.NameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -414,8 +434,9 @@ namespace Compañía.IotDsl
 		
 		#region Connect actions
 		private bool changingMouseAction;
-		private global::Compañía.IotDsl.IotCenterEndpointConectionConnectAction iotCenterEndpointConectionConnectAction;
 		private global::Compañía.IotDsl.EndpointtoCloudServiceConnectionConnectAction endpointtoCloudServiceConnectionConnectAction;
+		private global::Compañía.IotDsl.DeviceToSensorConnectionConnectAction deviceToSensorConnectionConnectAction;
+		private global::Compañía.IotDsl.IoTCenterToDeviceToolConnectAction ioTCenterToDeviceToolConnectAction;
 		/// <summary>
 		/// Virtual method to provide a filter when to select the mouse action
 		/// </summary>
@@ -438,16 +459,7 @@ namespace Compañía.IotDsl
 			if(activeView != null)
 			{
 				DslDiagrams::MouseAction action = null;
-				if (SelectedToolboxItemSupportsFilterString(activeView, global::Compañía.IotDsl.IotDslToolboxHelper.IotCenterEndpointConectionFilterString))
-				{
-					if (this.iotCenterEndpointConectionConnectAction == null)
-					{
-						this.iotCenterEndpointConectionConnectAction = new global::Compañía.IotDsl.IotCenterEndpointConectionConnectAction(this);
-						this.iotCenterEndpointConectionConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
-					}
-					action = this.iotCenterEndpointConectionConnectAction;
-				} 
-				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Compañía.IotDsl.IotDslToolboxHelper.EndpointtoCloudServiceConnectionFilterString))
+				if (SelectedToolboxItemSupportsFilterString(activeView, global::Compañía.IotDsl.IotDslToolboxHelper.EndpointtoCloudServiceConnectionFilterString))
 				{
 					if (this.endpointtoCloudServiceConnectionConnectAction == null)
 					{
@@ -455,6 +467,24 @@ namespace Compañía.IotDsl
 						this.endpointtoCloudServiceConnectionConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
 					action = this.endpointtoCloudServiceConnectionConnectAction;
+				} 
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Compañía.IotDsl.IotDslToolboxHelper.DeviceToSensorConnectionFilterString))
+				{
+					if (this.deviceToSensorConnectionConnectAction == null)
+					{
+						this.deviceToSensorConnectionConnectAction = new global::Compañía.IotDsl.DeviceToSensorConnectionConnectAction(this);
+						this.deviceToSensorConnectionConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.deviceToSensorConnectionConnectAction;
+				} 
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Compañía.IotDsl.IotDslToolboxHelper.IoTCenterToDeviceToolFilterString))
+				{
+					if (this.ioTCenterToDeviceToolConnectAction == null)
+					{
+						this.ioTCenterToDeviceToolConnectAction = new global::Compañía.IotDsl.IoTCenterToDeviceToolConnectAction(this);
+						this.ioTCenterToDeviceToolConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.ioTCenterToDeviceToolConnectAction;
 				} 
 				else
 				{
@@ -513,15 +543,20 @@ namespace Compañía.IotDsl
 			{
 				if(disposing)
 				{
-					if(this.iotCenterEndpointConectionConnectAction != null)
-					{
-						this.iotCenterEndpointConectionConnectAction.Dispose();
-						this.iotCenterEndpointConectionConnectAction = null;
-					}
 					if(this.endpointtoCloudServiceConnectionConnectAction != null)
 					{
 						this.endpointtoCloudServiceConnectionConnectAction.Dispose();
 						this.endpointtoCloudServiceConnectionConnectAction = null;
+					}
+					if(this.deviceToSensorConnectionConnectAction != null)
+					{
+						this.deviceToSensorConnectionConnectAction.Dispose();
+						this.deviceToSensorConnectionConnectAction = null;
+					}
+					if(this.ioTCenterToDeviceToolConnectAction != null)
+					{
+						this.ioTCenterToDeviceToolConnectAction.Dispose();
+						this.ioTCenterToDeviceToolConnectAction = null;
 					}
 				}
 			}
@@ -576,16 +611,21 @@ namespace Compañía.IotDsl
 		/// <summary>
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.NoSQlStorage), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.NoSQLStorage), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DataAnalytics), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.AppService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.SQLStorage), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.RaspberryPi), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.BME280), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.ResourceGroup), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenter), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Endpoint), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.CloudService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenterReferenciasEndpoint), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.EndpointReferenciasCloudService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Endpoint), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Device), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Sensor), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.EndpointReferencesCloudService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DeviceReferenciasSensor), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenterReferencesDevices), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -601,9 +641,9 @@ namespace Compañía.IotDsl
 				{
 					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
 				} else
-				if(childElement is global::Compañía.IotDsl.NoSQlStorage)
+				if(childElement is global::Compañía.IotDsl.NoSQLStorage)
 				{
-					parentElement = GetParentForNoSQlStorage((global::Compañía.IotDsl.NoSQlStorage)childElement);
+					parentElement = GetParentForNoSQLStorage((global::Compañía.IotDsl.NoSQLStorage)childElement);
 				} else
 				if(childElement is global::Compañía.IotDsl.DataAnalytics)
 				{
@@ -617,6 +657,14 @@ namespace Compañía.IotDsl
 				{
 					parentElement = GetParentForSQLStorage((global::Compañía.IotDsl.SQLStorage)childElement);
 				} else
+				if(childElement is global::Compañía.IotDsl.RaspberryPi)
+				{
+					parentElement = GetParentForRaspberryPi((global::Compañía.IotDsl.RaspberryPi)childElement);
+				} else
+				if(childElement is global::Compañía.IotDsl.BME280)
+				{
+					parentElement = GetParentForBME280((global::Compañía.IotDsl.BME280)childElement);
+				} else
 				if(childElement is global::Compañía.IotDsl.ResourceGroup)
 				{
 					parentElement = GetParentForResourceGroup((global::Compañía.IotDsl.ResourceGroup)childElement);
@@ -625,13 +673,21 @@ namespace Compañía.IotDsl
 				{
 					parentElement = GetParentForIoTCenter((global::Compañía.IotDsl.IoTCenter)childElement);
 				} else
+				if(childElement is global::Compañía.IotDsl.CloudService)
+				{
+					parentElement = GetParentForCloudService((global::Compañía.IotDsl.CloudService)childElement);
+				} else
 				if(childElement is global::Compañía.IotDsl.Endpoint)
 				{
 					parentElement = GetParentForEndpoint((global::Compañía.IotDsl.Endpoint)childElement);
 				} else
-				if(childElement is global::Compañía.IotDsl.CloudService)
+				if(childElement is global::Compañía.IotDsl.Device)
 				{
-					parentElement = GetParentForCloudService((global::Compañía.IotDsl.CloudService)childElement);
+					parentElement = GetParentForDevice((global::Compañía.IotDsl.Device)childElement);
+				} else
+				if(childElement is global::Compañía.IotDsl.Sensor)
+				{
+					parentElement = GetParentForSensor((global::Compañía.IotDsl.Sensor)childElement);
 				} else
 				{
 					parentElement = null;
@@ -642,80 +698,105 @@ namespace Compañía.IotDsl
 					DslDiagrams::Diagram.FixUpDiagram(parentElement, childElement);
 				}
 			}
-			public static global::Compañía.IotDsl.IotDsl1 GetParentForResourceGroup( global::Compañía.IotDsl.ResourceGroup root )
+			public static global::Compañía.IotDsl.IoTDsl GetParentForResourceGroup( global::Compañía.IotDsl.ResourceGroup root )
 			{
 				// Segments 0 and 1
-				global::Compañía.IotDsl.IotDsl1 result = root.IotDsl1;
+				global::Compañía.IotDsl.IoTDsl result = root.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Compañía.IotDsl.IotDsl1 GetParentForIoTCenter( global::Compañía.IotDsl.IoTCenter root )
+			public static global::Compañía.IotDsl.IoTDsl GetParentForIoTCenter( global::Compañía.IotDsl.IoTCenter root )
 			{
 				// Segments 0 and 1
 				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
-				global::Compañía.IotDsl.IotDsl1 result = root2.IotDsl1;
+				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Compañía.IotDsl.IotDsl1 GetParentForEndpoint( global::Compañía.IotDsl.Endpoint root )
+			public static global::Compañía.IotDsl.IoTDsl GetParentForNoSQLStorage( global::Compañía.IotDsl.CloudService root )
 			{
 				// Segments 0 and 1
 				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
-				global::Compañía.IotDsl.IotDsl1 result = root2.IotDsl1;
+				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Compañía.IotDsl.IotDsl1 GetParentForNoSQlStorage( global::Compañía.IotDsl.CloudService root )
+			public static global::Compañía.IotDsl.IoTDsl GetParentForDataAnalytics( global::Compañía.IotDsl.CloudService root )
 			{
 				// Segments 0 and 1
 				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
-				global::Compañía.IotDsl.IotDsl1 result = root2.IotDsl1;
+				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Compañía.IotDsl.IotDsl1 GetParentForDataAnalytics( global::Compañía.IotDsl.CloudService root )
+			public static global::Compañía.IotDsl.IoTDsl GetParentForAppService( global::Compañía.IotDsl.CloudService root )
 			{
 				// Segments 0 and 1
 				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
-				global::Compañía.IotDsl.IotDsl1 result = root2.IotDsl1;
+				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Compañía.IotDsl.IotDsl1 GetParentForAppService( global::Compañía.IotDsl.CloudService root )
+			public static global::Compañía.IotDsl.IoTDsl GetParentForSQLStorage( global::Compañía.IotDsl.CloudService root )
 			{
 				// Segments 0 and 1
 				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
-				global::Compañía.IotDsl.IotDsl1 result = root2.IotDsl1;
+				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Compañía.IotDsl.IotDsl1 GetParentForSQLStorage( global::Compañía.IotDsl.CloudService root )
+			public static global::Compañía.IotDsl.IoTDsl GetParentForCloudService( global::Compañía.IotDsl.CloudService root )
 			{
 				// Segments 0 and 1
 				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
 				if ( root2 == null ) return null;
 				// Segments 2 and 3
-				global::Compañía.IotDsl.IotDsl1 result = root2.IotDsl1;
+				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
-			public static global::Compañía.IotDsl.IotDsl1 GetParentForCloudService( global::Compañía.IotDsl.CloudService root )
+			public static global::Compañía.IotDsl.IoTCenter GetParentForEndpoint( global::Compañía.IotDsl.Endpoint root )
 			{
 				// Segments 0 and 1
-				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
-				if ( root2 == null ) return null;
-				// Segments 2 and 3
-				global::Compañía.IotDsl.IotDsl1 result = root2.IotDsl1;
+				global::Compañía.IotDsl.IoTCenter result = root.IoTCenter;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Compañía.IotDsl.IoTDsl GetParentForRaspberryPi( global::Compañía.IotDsl.Device root )
+			{
+				// Segments 0 and 1
+				global::Compañía.IotDsl.IoTDsl result = root.IoTDsl;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Compañía.IotDsl.IoTDsl GetParentForBME280( global::Compañía.IotDsl.Sensor root )
+			{
+				// Segments 0 and 1
+				global::Compañía.IotDsl.IoTDsl result = root.IoTDsl;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Compañía.IotDsl.IoTDsl GetParentForDevice( global::Compañía.IotDsl.Device root )
+			{
+				// Segments 0 and 1
+				global::Compañía.IotDsl.IoTDsl result = root.IoTDsl;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Compañía.IotDsl.IoTDsl GetParentForSensor( global::Compañía.IotDsl.Sensor root )
+			{
+				// Segments 0 and 1
+				global::Compañía.IotDsl.IoTDsl result = root.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -810,7 +891,6 @@ namespace Compañía.IotDsl
 		/// so we can update the decorator host's bounds.
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenter), InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Endpoint), InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.CloudService), InitiallyDisabled=true)]
 		internal sealed class DecoratorPropertyChanged : DslModeling::ChangeRule
 		{
@@ -827,25 +907,12 @@ namespace Compañía.IotDsl
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.IoTCenter.DomainClassId);
 					}
 				}
-				else if (e.DomainProperty.Id == global::Compañía.IotDsl.Endpoint.NameDomainPropertyId)
-				{
-					DslDiagrams::Decorator decorator = global::Compañía.IotDsl.EndpointImage.FindEndpointImageDecorator("Name");
-					if(decorator != null)
-					{
-						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.Endpoint.DomainClassId);
-					}
-				}
 				else if (e.DomainProperty.Id == global::Compañía.IotDsl.CloudService.NameDomainPropertyId)
 				{
-					DslDiagrams::Decorator decorator = global::Compañía.IotDsl.DataAnalyticsImage.FindDataAnalyticsImageDecorator("Name");
+					DslDiagrams::Decorator decorator = global::Compañía.IotDsl.NoSQLStorageImage.FindNoSQLStorageImageDecorator("Name");
 					if(decorator != null)
 					{
-						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.DataAnalytics.DomainClassId);
-					}
-					decorator = global::Compañía.IotDsl.NoSQLStorageImage.FindNoSQLStorageImageDecorator("Name");
-					if(decorator != null)
-					{
-						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.NoSQlStorage.DomainClassId);
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.NoSQLStorage.DomainClassId);
 					}
 					decorator = global::Compañía.IotDsl.DataAnalyticsImage.FindDataAnalyticsImageDecorator("Name");
 					if(decorator != null)
@@ -860,7 +927,7 @@ namespace Compañía.IotDsl
 					decorator = global::Compañía.IotDsl.NoSQLStorageImage.FindNoSQLStorageImageDecorator("Name");
 					if(decorator != null)
 					{
-						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.NoSQlStorage.DomainClassId);
+						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.NoSQLStorage.DomainClassId);
 					}
 					decorator = global::Compañía.IotDsl.DataAnalyticsImage.FindDataAnalyticsImageDecorator("Name");
 					if(decorator != null)
@@ -889,8 +956,9 @@ namespace Compañía.IotDsl
 		/// <summary>
 		/// Reroute a connector when the role players of its underlying relationship change
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenterReferenciasEndpoint), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.EndpointReferenciasCloudService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.EndpointReferencesCloudService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DeviceReferenciasSensor), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenterReferencesDevices), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

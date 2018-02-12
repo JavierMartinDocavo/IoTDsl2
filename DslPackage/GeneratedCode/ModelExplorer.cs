@@ -67,7 +67,7 @@ namespace Compañía.IotDsl
 		///</summary>
 		protected override global::System.Guid RootElementDomainClassId
 		{
-			get { return global::Compañía.IotDsl.IotDsl1.DomainClassId; }
+			get { return global::Compañía.IotDsl.IoTDsl.DomainClassId; }
 		}
 		
 		/// <summary>

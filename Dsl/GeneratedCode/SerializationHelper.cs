@@ -309,10 +309,10 @@ namespace Compañía.IotDsl
 	{
 	
 		/// <summary>
-		/// Loads a IotDsl1 instance into the default partition of the given store, and ignore serialization result.
+		/// Loads a IoTDsl instance into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new IotDsl1 instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the IotDsl1 instance will be deserialized.</param>
+		/// <param name="store">The new IoTDsl instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the IoTDsl instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -324,8 +324,8 @@ namespace Compañía.IotDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded IotDsl1 instance.</returns>
-		public virtual IotDsl1 LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded IoTDsl instance.</returns>
+		public virtual IoTDsl LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -336,11 +336,11 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// Loads a IotDsl1 instance into the default partition of the given store.
+		/// Loads a IoTDsl instance into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new IotDsl1 instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the IotDsl1 instance will be deserialized.</param>
+		/// <param name="store">The new IoTDsl instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the IoTDsl instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -352,8 +352,8 @@ namespace Compañía.IotDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded IotDsl1 instance.</returns>
-		public virtual IotDsl1 LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded IoTDsl instance.</returns>
+		public virtual IoTDsl LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -364,11 +364,11 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Loads a IotDsl1 instance.
+		/// Loads a IoTDsl instance.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new IotDsl1 instance will be created.</param>
-		/// <param name="fileName">Name of the file from which the IotDsl1 instance will be deserialized.</param>
+		/// <param name="partition">Partition in which the new IoTDsl instance will be created.</param>
+		/// <param name="fileName">Name of the file from which the IoTDsl instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -380,9 +380,9 @@ namespace Compañía.IotDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded IotDsl1 instance.</returns>
+		/// <returns>The loaded IoTDsl instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		public virtual IotDsl1 LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		public virtual IoTDsl LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (string.IsNullOrEmpty(fileName))
@@ -396,11 +396,11 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Loads a IotDsl1 instance from a stream.
+		/// Loads a IoTDsl instance from a stream.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new IotDsl1 instance will be created.</param>
-		/// <param name="location">Source location associated with stream from which the IotDsl1 instance is to be loaded. Usually a file path, but can be any string, including null.</param>
+		/// <param name="partition">Partition in which the new IoTDsl instance will be created.</param>
+		/// <param name="location">Source location associated with stream from which the IoTDsl instance is to be loaded. Usually a file path, but can be any string, including null.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -412,10 +412,10 @@ namespace Compañía.IotDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <param name="stream">The Stream from which the IotDsl1 will be deserialized.</param>
-		/// <returns>The loaded IotDsl1 instance.</returns>
+		/// <param name="stream">The Stream from which the IoTDsl will be deserialized.</param>
+		/// <returns>The loaded IoTDsl instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		public virtual IotDsl1 LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
+		public virtual IoTDsl LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -432,10 +432,10 @@ namespace Compañía.IotDsl
 				throw new global::System.InvalidOperationException(IotDslDomainModel.SingletonResourceManager.GetString("MissingTransaction"));
 			}
 			
-			IotDsl1 modelRoot = null;
+			IoTDsl modelRoot = null;
 			DslModeling::DomainXmlSerializerDirectory directory = this.GetDirectory(partition.Store);
-			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(IotDsl1.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for IotDsl1!");
+			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(IoTDsl.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for IoTDsl!");
 			if (modelRootSerializer != null)
 			{
 				DslModeling::SerializationContext serializationContext = new DslModeling::SerializationContext(directory, location, serializationResult);
@@ -466,7 +466,7 @@ namespace Compañía.IotDsl
 								
 								reader.MoveToContent();
 									
-								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as IotDsl1;
+								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as IoTDsl;
 								if (modelRoot != null && !serializationResult.Failed)
 								{
 									this.ReadRootElement(serializationContext, modelRoot, reader, schemaResolver);
@@ -535,9 +535,9 @@ namespace Compañía.IotDsl
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">IotDsl1 instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the IotDsl1 instance will be saved.</param>
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, IotDsl1 modelRoot, string fileName)
+		/// <param name="modelRoot">IoTDsl instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the IoTDsl instance will be saved.</param>
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, IoTDsl modelRoot, string fileName)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -546,10 +546,10 @@ namespace Compañía.IotDsl
 		/// Saves the given model to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">IotDsl1 instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the IotDsl1 instance will be saved.</param>
+		/// <param name="modelRoot">IoTDsl instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the IoTDsl instance will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, IotDsl1 modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, IoTDsl modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
@@ -558,12 +558,12 @@ namespace Compañía.IotDsl
 		/// Saves the given model root to the given file, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">IotDsl1 instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the IotDsl1 instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the IotDsl1 instance.</param>
+		/// <param name="modelRoot">IoTDsl instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the IoTDsl instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the IoTDsl instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, IotDsl1 modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, IoTDsl modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -598,13 +598,13 @@ namespace Compañía.IotDsl
 		/// both can be saved without error before writing the content to disk, so we serialize the model into a in-memory stream first.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">IotDsl1 instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the IotDsl1 instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the IotDsl1 instance.</param>
+		/// <param name="modelRoot">IoTDsl instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the IoTDsl instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the IoTDsl instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		/// <returns>In-memory stream containing the serialized IotDsl1 instance.</returns>
+		/// <returns>In-memory stream containing the serialized IoTDsl instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, IotDsl1 modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, IoTDsl modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			global::System.Diagnostics.Debug.Assert(serializationResult != null);
@@ -670,19 +670,19 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Helper method to create and initialize a new IotDsl1.
+		/// Helper method to create and initialize a new IoTDsl.
 		/// </summary>
-		internal protected virtual IotDsl1 CreateModelHelper(DslModeling::Partition modelPartition)
+		internal protected virtual IoTDsl CreateModelHelper(DslModeling::Partition modelPartition)
 		{
-			IotDsl1 model = new IotDsl1(modelPartition);
+			IoTDsl model = new IoTDsl(modelPartition);
 			return model;
 		}
 		
 		/// <summary>
-		/// Loads a IotDsl1 instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
+		/// Loads a IoTDsl instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new IotDsl1 instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the IotDsl1 instance will be deserialized.</param>
+		/// <param name="store">The new IoTDsl instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the IoTDsl instance will be deserialized.</param>
 		/// <param name="diagramFileName">Name of the file from which the IotDslDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
@@ -695,18 +695,18 @@ namespace Compañía.IotDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded IotDsl1 instance.</returns>
-		public virtual IotDsl1 LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded IoTDsl instance.</returns>
+		public virtual IoTDsl LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			return this.LoadModelAndDiagram(new DslModeling::SerializationResult(), store, modelFileName, diagramFileName, schemaResolver, validationController, serializerLocator);
 		}
 		
 		/// <summary>
-		/// Loads a IotDsl1 instance and its associated diagram file into the default partition of the given store.
+		/// Loads a IoTDsl instance and its associated diagram file into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new IotDsl1 instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the IotDsl1 instance will be deserialized.</param>
+		/// <param name="store">The new IoTDsl instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the IoTDsl instance will be deserialized.</param>
 		/// <param name="diagramFileName">Name of the file from which the IotDslDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
@@ -719,8 +719,8 @@ namespace Compañía.IotDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded IotDsl1 instance.</returns>
-		public virtual IotDsl1 LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded IoTDsl instance.</returns>
+		public virtual IoTDsl LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null)
@@ -732,11 +732,11 @@ namespace Compañía.IotDsl
 		}
 			
 		/// <summary>
-		/// Loads a IotDsl1 instance and its associated diagram file.
+		/// Loads a IoTDsl instance and its associated diagram file.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="modelPartition">Partition in which the new IotDsl1 instance will be created.</param>
-		/// <param name="modelFileName">Name of the file from which the IotDsl1 instance will be deserialized.</param>
+		/// <param name="modelPartition">Partition in which the new IoTDsl instance will be created.</param>
+		/// <param name="modelFileName">Name of the file from which the IoTDsl instance will be deserialized.</param>
 		/// <param name="diagramPartition">Partition in which the new IotDslDiagram instance will be created.</param>
 		/// <param name="diagramFileName">Name of the file from which the IotDslDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
@@ -750,9 +750,9 @@ namespace Compañía.IotDsl
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded IotDsl1 instance.</returns>
+		/// <returns>The loaded IoTDsl instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
-		public virtual IotDsl1 LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		public virtual IoTDsl LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -765,7 +765,7 @@ namespace Compañía.IotDsl
 				throw new global::System.ArgumentNullException("diagramFileName");
 			#endregion
 	
-			IotDsl1 modelRoot;
+			IoTDsl modelRoot;
 	
 			// Ensure there is an outer transaction spanning both model and diagram load, so moniker resolution works properly.
 			if (!diagramPartition.Store.TransactionActive)
@@ -890,11 +890,11 @@ namespace Compañía.IotDsl
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">IotDsl1 instance to be saved.</param>
+		/// <param name="modelRoot">IoTDsl instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">IotDslDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, IotDsl1 modelRoot, string modelFileName, IotDslDiagram diagram, string diagramFileName)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, IoTDsl modelRoot, string modelFileName, IotDslDiagram diagram, string diagramFileName)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -903,28 +903,28 @@ namespace Compañía.IotDsl
 		/// Saves the given diagram to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">IotDsl1 instance to be saved.</param>
+		/// <param name="modelRoot">IoTDsl instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">IotDslDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, IotDsl1 modelRoot, string modelFileName, IotDslDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, IoTDsl modelRoot, string modelFileName, IotDslDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given IotDsl1 and IotDslDiagram to the given files, with specified encoding.
+		/// Saves the given IoTDsl and IotDslDiagram to the given files, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">IotDsl1 instance to be saved.</param>
+		/// <param name="modelRoot">IoTDsl instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
 		/// <param name="diagram">IotDslDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, IotDsl1 modelRoot, string modelFileName, IotDslDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, IoTDsl modelRoot, string modelFileName, IotDslDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -1296,7 +1296,7 @@ namespace Compañía.IotDsl
 		/// <param name="modelRoot">Root instance to be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the root instance.</param>
 		/// <returns>Model in XML form</returns>
-		public virtual string GetSerializedModelString(global::Compañía.IotDsl.IotDsl1 modelRoot, global::System.Text.Encoding encoding)
+		public virtual string GetSerializedModelString(global::Compañía.IotDsl.IoTDsl modelRoot, global::System.Text.Encoding encoding)
 		{
 			string result = string.Empty;
 			if (modelRoot == null)
@@ -1499,7 +1499,7 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	[DslValidation::ValidationState(DslValidation::ValidationState.Enabled)]
-	public partial class IotDsl1
+	public partial class IoTDsl
 	{
 		/// <summary>
 		/// Check to make sure all elements in the model will have unambiguous monikers when serialized.

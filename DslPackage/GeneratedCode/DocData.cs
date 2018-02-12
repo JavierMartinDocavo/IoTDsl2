@@ -305,7 +305,7 @@ namespace Compañía.IotDsl
 		protected override void Load(string fileName, bool isReload)
 		{
 			DslModeling::SerializationResult serializationResult = new DslModeling::SerializationResult();
-			global::Compañía.IotDsl.IotDsl1 modelRoot = null;
+			global::Compañía.IotDsl.IoTDsl modelRoot = null;
 			DslModeling::ISchemaResolver schemaResolver = new DslShell::ModelingSchemaResolver(this.ServiceProvider);
 			//clear the current root element
 			this.SetRootElement(null);
@@ -410,7 +410,7 @@ namespace Compañía.IotDsl
 		protected override void Save(string fileName)
 		{
 			DslModeling::SerializationResult serializationResult = new DslModeling::SerializationResult();
-			global::Compañía.IotDsl.IotDsl1 modelRoot = (global::Compañía.IotDsl.IotDsl1)this.RootElement;
+			global::Compañía.IotDsl.IoTDsl modelRoot = (global::Compañía.IotDsl.IoTDsl)this.RootElement;
 
 			
 			// Only save the diagrams if
@@ -556,7 +556,7 @@ namespace Compañía.IotDsl
 		{
 			get
 			{
-				global::Compañía.IotDsl.IotDsl1 modelRoot = this.RootElement as global::Compañía.IotDsl.IotDsl1;
+				global::Compañía.IotDsl.IoTDsl modelRoot = this.RootElement as global::Compañía.IotDsl.IoTDsl;
 				string modelFile = string.Empty;
 				if (modelRoot != null)
 				{

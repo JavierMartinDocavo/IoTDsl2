@@ -14,123 +14,6 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// DomainClass ConectionIotCenterEndpoint
-	/// Descripción de Compañía.IotDsl.ConectionIotCenterEndpoint
-	/// </summary>
-	[DslDesign::DisplayNameResource("Compañía.IotDsl.ConectionIotCenterEndpoint.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Compañía.IotDsl.ConectionIotCenterEndpoint.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
-	[global::System.CLSCompliant(true)]
-	[DslModeling::DomainObjectId("9bc99ef5-5981-4b57-a217-9d85c06fc2cc")]
-	public partial class ConectionIotCenterEndpoint : DslDiagrams::BinaryLinkShape
-	{
-		#region DiagramElement boilerplate
-		private static DslDiagrams::StyleSet classStyleSet;
-		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
-		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
-		
-		/// <summary>
-		/// Per-class style set for this shape.
-		/// </summary>
-		protected override DslDiagrams::StyleSet ClassStyleSet
-		{
-			get
-			{
-				if (classStyleSet == null)
-				{
-					classStyleSet = CreateClassStyleSet();
-				}
-				return classStyleSet;
-			}
-		}
-		
-		/// <summary>
-		/// Per-class ShapeFields for this shape.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
-		{
-			get
-			{
-				if (shapeFields == null)
-				{
-					shapeFields = CreateShapeFields();
-				}
-				return shapeFields;
-			}
-		}
-		
-		/// <summary>
-		/// Event fired when decorator initialization is complete for this shape type.
-		/// </summary>
-		public static event global::System.EventHandler DecoratorsInitialized;
-		
-		/// <summary>
-		/// List containing decorators used by this type.
-		/// </summary>
-		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
-		{
-			get 
-			{
-				if(decorators == null)
-				{
-					decorators = CreateDecorators();
-					
-					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
-					if(DecoratorsInitialized != null)
-					{
-						DecoratorsInitialized(this, global::System.EventArgs.Empty);
-					}
-				}
-				
-				return decorators; 
-			}
-		}
-		
-		/// <summary>
-		/// Finds a decorator associated with ConectionIotCenterEndpoint.
-		/// </summary>
-		public static DslDiagrams::Decorator FindConectionIotCenterEndpointDecorator(string decoratorName)
-		{	
-			if(decorators == null) return null;
-			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
-		}
-		
-		#endregion
-		
-		#region Connector styles
-		#endregion
-		
-		#region Constructors, domain class Id
-	
-		/// <summary>
-		/// ConectionIotCenterEndpoint domain class Id.
-		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x9bc99ef5, 0x5981, 0x4b57, 0xa2, 0x17, 0x9d, 0x85, 0xc0, 0x6f, 0xc2, 0xcc);
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="store">Store where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ConectionIotCenterEndpoint(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
-		{
-		}
-		
-		/// <summary>
-		/// Constructor
-		/// </summary>
-		/// <param name="partition">Partition where new element is to be created.</param>
-		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ConectionIotCenterEndpoint(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
-			: base(partition, propertyAssignments)
-		{
-		}
-		#endregion
-	}
-}
-namespace Compañía.IotDsl
-{
-	/// <summary>
 	/// DomainClass EndpointToCloudService
 	/// Descripción de Compañía.IotDsl.EndpointToCloudService
 	/// </summary>
@@ -239,6 +122,240 @@ namespace Compañía.IotDsl
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
 		public EndpointToCloudService(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainClass DeviceToSensorConnection
+	/// Descripción de Compañía.IotDsl.DeviceToSensorConnection
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.DeviceToSensorConnection.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.DeviceToSensorConnection.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("632aabd6-56d4-4858-99f0-2e208ea06bc0")]
+	public partial class DeviceToSensorConnection : DslDiagrams::BinaryLinkShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with DeviceToSensorConnection.
+		/// </summary>
+		public static DslDiagrams::Decorator FindDeviceToSensorConnectionDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		#endregion
+		
+		#region Connector styles
+		#endregion
+		
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// DeviceToSensorConnection domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x632aabd6, 0x56d4, 0x4858, 0x99, 0xf0, 0x2e, 0x20, 0x8e, 0xa0, 0x6b, 0xc0);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DeviceToSensorConnection(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DeviceToSensorConnection(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainClass DeviceToIoTCenter
+	/// Descripción de Compañía.IotDsl.DeviceToIoTCenter
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.DeviceToIoTCenter.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.DeviceToIoTCenter.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("49dba1f8-7716-4037-8c1a-b91f3297d4bb")]
+	public partial class DeviceToIoTCenter : DslDiagrams::BinaryLinkShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with DeviceToIoTCenter.
+		/// </summary>
+		public static DslDiagrams::Decorator FindDeviceToIoTCenterDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		#endregion
+		
+		#region Connector styles
+		#endregion
+		
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// DeviceToIoTCenter domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x49dba1f8, 0x7716, 0x4037, 0x8c, 0x1a, 0xb9, 0x1f, 0x32, 0x97, 0xd4, 0xbb);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DeviceToIoTCenter(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public DeviceToIoTCenter(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

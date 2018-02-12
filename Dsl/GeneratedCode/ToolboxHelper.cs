@@ -48,13 +48,17 @@ namespace Compañía.IotDsl
 		/// </remarks>
 		public const string ToolboxFilterString = "IotDsl.1.0";
 		/// <summary>
-		/// Toolbox item filter string used to identify IotCenterEndpointConection connector tool.
-		/// </summary>
-		public const string IotCenterEndpointConectionFilterString = "IotCenterEndpointConection.1.0";
-		/// <summary>
 		/// Toolbox item filter string used to identify EndpointtoCloudServiceConnection connector tool.
 		/// </summary>
 		public const string EndpointtoCloudServiceConnectionFilterString = "EndpointtoCloudServiceConnection.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify DeviceToSensorConnection connector tool.
+		/// </summary>
+		public const string DeviceToSensorConnectionFilterString = "DeviceToSensorConnection.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify IoTCenterToDeviceTool connector tool.
+		/// </summary>
+		public const string IoTCenterToDeviceToolFilterString = "IoTCenterToDeviceTool.1.0";
 
 	
 		private global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem> toolboxItemCache = new global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem>();
@@ -102,7 +106,7 @@ namespace Compañía.IotDsl
 		{
 			get
 			{
-				return 9;
+				return 8;
 			}
 		}
 		
@@ -210,23 +214,7 @@ namespace Compañía.IotDsl
 						resourceManager.GetString("CloudToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
 						"NoSQLStorageTool", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("NoSQLStorageToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::Compañía.IotDsl.NoSQlStorage.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
-						});
-					break;
-				case "Compañía.IotDsl.AppServiceToolToolboxItem":
-					// Add AppServiceTool shape tool.
-					result = new DslDesign::ModelingToolboxItem(
-						"Compañía.IotDsl.AppServiceToolToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						5, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("AppServiceToolToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("AppServiceToolToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
-						"Compañía.IotDsl.CloudToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("CloudToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"AppServiceTool", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("AppServiceToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						CreateElementToolPrototype(store, global::Compañía.IotDsl.AppService.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						CreateElementToolPrototype(store, global::Compañía.IotDsl.NoSQLStorage.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
@@ -235,7 +223,7 @@ namespace Compañía.IotDsl
 					// Add EndpointTool shape tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"Compañía.IotDsl.EndpointToolToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						6, // Position relative to other items in the same toolbox tab.
+						5, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("EndpointToolToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EndpointToolToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Compañía.IotDsl.CloudToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -247,29 +235,11 @@ namespace Compañía.IotDsl
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
-				case "Compañía.IotDsl.IotCenterEndpointConectionToolboxItem":
-
-					// Add IotCenterEndpointConection connector tool.
-					result = new DslDesign::ModelingToolboxItem(
-						"Compañía.IotDsl.IotCenterEndpointConectionToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						7, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("IotCenterEndpointConectionToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("IotCenterEndpointConectionToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
-						"Compañía.IotDsl.CloudToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
-						resourceManager.GetString("CloudToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"IotCenterEndpointConection", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("IotCenterEndpointConectionToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
-						null, // Connector toolbox items do not have an underlying data object.
-						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
-							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
-							new global::System.ComponentModel.ToolboxItemFilterAttribute(IotCenterEndpointConectionFilterString)
-						});
-					break;
 				case "Compañía.IotDsl.SQLStorageToolToolboxItem":
 					// Add SQLStorageTool shape tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"Compañía.IotDsl.SQLStorageToolToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						8, // Position relative to other items in the same toolbox tab.
+						6, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("SQLStorageToolToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("SQLStorageToolToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Compañía.IotDsl.CloudToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -286,7 +256,7 @@ namespace Compañía.IotDsl
 					// Add EndpointtoCloudServiceConnection connector tool.
 					result = new DslDesign::ModelingToolboxItem(
 						"Compañía.IotDsl.EndpointtoCloudServiceConnectionToolboxItem", // Unique identifier (non-localized) for the toolbox item.
-						9, // Position relative to other items in the same toolbox tab.
+						7, // Position relative to other items in the same toolbox tab.
 						resourceManager.GetString("EndpointtoCloudServiceConnectionToolboxItem", resourceCulture), // Localized display name for the item.
 						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("EndpointtoCloudServiceConnectionToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
 						"Compañía.IotDsl.CloudToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
@@ -297,6 +267,90 @@ namespace Compañía.IotDsl
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(EndpointtoCloudServiceConnectionFilterString)
+						});
+					break;
+				case "Compañía.IotDsl.AppServiceToolToolboxItem":
+					// Add AppServiceTool shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Compañía.IotDsl.AppServiceToolToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						8, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("AppServiceToolToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("AppServiceToolToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Compañía.IotDsl.CloudToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("CloudToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"AppServiceTool", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("AppServiceToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Compañía.IotDsl.AppService.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Compañía.IotDsl.RaspberryPiToolToolboxItem":
+					// Add RaspberryPiTool shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Compañía.IotDsl.RaspberryPiToolToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						1, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("RaspberryPiToolToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("RaspberryPiToolToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Compañía.IotDsl.DeviceToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("DeviceToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"RaspberryPiTool", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("RaspberryPiToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Compañía.IotDsl.RaspberryPi.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Compañía.IotDsl.DeviceToSensorConnectionToolboxItem":
+
+					// Add DeviceToSensorConnection connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Compañía.IotDsl.DeviceToSensorConnectionToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						2, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("DeviceToSensorConnectionToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("DeviceToSensorConnectionToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"Compañía.IotDsl.DeviceToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("DeviceToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"DeviceToSensorConnection", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("DeviceToSensorConnectionToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(DeviceToSensorConnectionFilterString)
+						});
+					break;
+				case "Compañía.IotDsl.bme280ToolboxItem":
+					// Add bme280 shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Compañía.IotDsl.bme280ToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						3, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("bme280ToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("bme280ToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Compañía.IotDsl.DeviceToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("DeviceToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"bme280", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("bme280ToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Compañía.IotDsl.BME280.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Compañía.IotDsl.IoTCenterToDeviceToolToolboxItem":
+
+					// Add IoTCenterToDeviceTool connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Compañía.IotDsl.IoTCenterToDeviceToolToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						4, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("IoTCenterToDeviceToolToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("IoTCenterToDeviceToolToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"Compañía.IotDsl.DeviceToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("DeviceToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"IoTCenterToDeviceTool", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("IoTCenterToDeviceToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(IoTCenterToDeviceToolFilterString)
 						});
 					break;
 				default:
