@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hubName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+  {
+    "apiVersion": "2016-02-03",
+    "type": "Microsoft.Devices/IotHubs",
+    "name": "[parameters('hubName')]",
+    "location": "westeurope",
+    "sku": {
+      "name": "F1",
+      "tier": "Free",
+      "capacity": 1
+    },
+    "properties": {
+      "location": "westeurope",
+  }}
+  ],
+  "outputs": {
+    "hubKeys": {
+      "value": "[listKeys(resourceId('Microsoft.Devices/IotHubs', parameters('hubName')), '2016-02-03')]",
+      "type": "object"
+    }
+  }
+}

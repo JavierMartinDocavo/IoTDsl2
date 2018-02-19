@@ -1,0 +1,58 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" lenguage="C#" hostspecific="True"#>
+<#@ output extension=".ps1" #>
+<#@ IotDsl processor="IotDslDirectiveProcessor" requires="fileName='Test.IotDsl'" #>
+<#@ include file="EF.utility.CS.ttinclude" #>
+Login-AzureRmAccount;
+<#
+foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
+foreach(IoTCenter iot in resourceGroup.IoTCenters){
+#>
+New-AzureRmResourceGroupDeployment -ResourceGroupName <#=resourceGroup.Name#> -TemplateFile <#=iot.Name#>.json -hubName <#=iot.Name#>;
+<#}#>
+<#
+var fileManager=EntityFrameworkTemplateFileManager.Create(this);
+foreach(IoTCenter iot in resourceGroup.IoTCenters){
+	 fileManager.StartNewFile(iot.Name+".json");
+#>
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "hubName": {
+      "type": "string"
+    }
+  },
+  "resources": [
+  {
+    "apiVersion": "2016-02-03",
+    "type": "Microsoft.Devices/IotHubs",
+    "name": "[parameters('hubName')]",
+    "location": "<#=resourceGroup.Location#>",
+    "sku": {
+      "name": "F1",
+      "tier": "Free",
+      "capacity": 1
+    },
+    "properties": {
+      "location": "<#=resourceGroup.Location#>",
+      "routing" :{
+<#
+foreach(Endpoint endpint in iot.Endpoints){
+
+}
+#>
+      }
+  }}
+  ],
+  "outputs": {
+    "hubKeys": {
+      "value": "[listKeys(resourceId('Microsoft.Devices/IotHubs', parameters('hubName')), '2016-02-03')]",
+      "type": "object"
+    }
+  }
+}
+
+<#
+}
+fileManager.Process();
+}#>

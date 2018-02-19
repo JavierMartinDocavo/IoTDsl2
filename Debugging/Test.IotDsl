@@ -3,6 +3,11 @@
   <resourceGroups>
     <iotDslHasResourceGroups Id="88c95fb1-9d13-4753-918f-c066dd16d8b1">
       <resourceGroup Id="59268507-707d-4ecb-b382-14d34f0be67e" name="DslTest" location="westeurope">
+        <ioTCenters>
+          <resourceGroupHasIoTCenters Id="95dee602-9c8c-411f-97d3-1b7ea55834e8">
+            <ioTCenter Id="66ce15af-c154-4f9a-8df6-deba072fb1b7" name="IoTjmdPrueba" />
+          </resourceGroupHasIoTCenters>
+        </ioTCenters>
         <cloudServices>
           <resourceGroupHasCloudServices Id="705d08b4-f29b-4348-a0e5-7ba640ddb83f">
             <sQLStorage Id="0b874344-81eb-4c36-a493-b7b1855e2025" name="sqlserverjmddsl" user="jmddsl" password="Aa-1234567" />
@@ -12,6 +17,9 @@
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="f19a1a84-f79e-4fab-9223-2aacf152b636">
             <appService Id="517ac7be-7e63-46f6-94fc-bed0211bb27c" name="dashboardjmdsl" />
+          </resourceGroupHasCloudServices>
+          <resourceGroupHasCloudServices Id="2a3cc403-e15b-4e90-90d7-feb0f3855039">
+            <dataAnalytics Id="9544a2c3-7ee7-41c1-b3c6-3df98d1082f2" name="DataAnalytics1" />
           </resourceGroupHasCloudServices>
         </cloudServices>
       </resourceGroup>

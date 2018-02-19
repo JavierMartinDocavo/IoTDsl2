@@ -1,0 +1,51 @@
+<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" lenguage="C#" hostspecific="True"#>
+<#@ output extension=".ps1" #>
+<#@ IotDsl processor="IotDslDirectiveProcessor" requires="fileName='Test.IotDsl'" #>
+<#@ include file="EF.utility.CS.ttinclude" #>
+Login-AzureRmAccount;
+<#
+foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
+  foreach(CloudService cloudService in resourceGroup.CloudServices){
+    if(cloudService is DataAnalytics){
+      DataAnalytics dataAnalytics = cloudService as DataAnalytics;
+#>
+New-AzureRmStreamAnalyticsJob -ResourceGroupName <#=resourceGroup.Name#> -File "<#=dataAnalytics.Name#>.json”;
+
+<#    }#>
+<#  }#>
+<#
+var fileManager=EntityFrameworkTemplateFileManager.Create(this);
+foreach(CloudService cloudService in resourceGroup.CloudServices){
+  if(cloudService is DataAnalytics){
+    DataAnalytics dataAnalytics = cloudService as DataAnalytics;
+	   fileManager.StartNewFile(dataAnalytics.Name+".json");
+#>
+{
+   "name":"<#=dataAnalytics.Name#>",
+   "location":"<#=resourceGroup.Location#>",
+   "properties":{
+      "sku":{
+         "name":"standard"
+      },
+      "eventsOutOfOrderPolicy":"drop",
+      "eventsOutOfOrderMaxDelayInSeconds":10,
+      "compatibilityLevel": "1.1",
+      "inputs":[
+
+      ],
+<#     /* "transformation":{
+         "name":"almacenamiento",
+         "properties":{
+            "streamingUnits":1,
+            "query":"SELECT date, temperature, humidity INTO medidas FROM sensors"
+          }
+      },*/#>
+      "outputs":[
+
+      ]
+   }
+}
+<#    }#>
+<#  }
+fileManager.Process();
+}#>

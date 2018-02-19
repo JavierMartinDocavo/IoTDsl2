@@ -49,6 +49,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cloud.tt</DependentUpon>
     </None>
+    <None Include="Cloud2.ps1">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cloud2.tt</DependentUpon>
+    </None>
+    <None Include="Cloud3.ps1">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cloud3.tt</DependentUpon>
+    </None>
+    <None Include="DataAnalytics1.json">
+      <DependentUpon>Cloud3.tt</DependentUpon>
+    </None>
     <None Include="IotDslReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IotDslReport.txt</LastGenOutput>
@@ -56,6 +69,9 @@
     <None Include="IotDslReportVB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IotDslReportVB.txt</LastGenOutput>
+    </None>
+    <None Include="IoTjmdPrueba.json">
+      <DependentUpon>Cloud2.tt</DependentUpon>
     </None>
     <None Include="Sample.IotDsl" />
     <None Include="Sample.IotDsl.diagram">
@@ -73,6 +89,14 @@
     <Content Include="Cloud.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cloud.ps1</LastGenOutput>
+    </Content>
+    <Content Include="Cloud2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Cloud2.ps1</LastGenOutput>
+    </Content>
+    <Content Include="Cloud3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Cloud3.ps1</LastGenOutput>
     </Content>
     <Content Include="IotDslReport.txt">
       <AutoGen>True</AutoGen>

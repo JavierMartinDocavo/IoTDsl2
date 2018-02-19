@@ -17,5 +17,13 @@
       <monikerAppService name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/dashboardjmdsl" />
       <relativeChildShapes />
     </appServiceImage>
+    <ioTCenterImage Id="34eafcdc-1370-434c-ac59-b7ef2c388b39" absoluteBounds="2.75, 3.25, 1, 1">
+      <monikerIotHub name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/IoTjmdPrueba" />
+      <relativeChildShapes />
+    </ioTCenterImage>
+    <dataAnalyticsImage Id="b20d4266-bf88-4361-b095-fd5ca1c6d85f" absoluteBounds="4.25, 0.875, 1, 1">
+      <monikerDataAnalytics name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/DataAnalytics1" />
+      <relativeChildShapes />
+    </dataAnalyticsImage>
   </nestedChildShapes>
 </iotDslDiagram>
