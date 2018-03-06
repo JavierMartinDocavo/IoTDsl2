@@ -1,28 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e164dc9c-dcc0-445a-9691-0ee93df1c542" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
   <resourceGroups>
-    <iotDslHasResourceGroups Id="88c95fb1-9d13-4753-918f-c066dd16d8b1">
-      <resourceGroup Id="59268507-707d-4ecb-b382-14d34f0be67e" name="DslTest" location="westeurope">
-        <ioTCenters>
-          <resourceGroupHasIoTCenters Id="95dee602-9c8c-411f-97d3-1b7ea55834e8">
-            <ioTCenter Id="66ce15af-c154-4f9a-8df6-deba072fb1b7" name="IoTjmdPrueba" />
-          </resourceGroupHasIoTCenters>
-        </ioTCenters>
+    <iotDslHasResourceGroups Id="b41aecfa-7a68-4d6e-8e4c-b6888a615675">
+      <resourceGroup Id="135e7e9d-f31f-4629-b7d7-d0f2ad0d80c5" name="ResourceGroup1" location="westeurope">
         <cloudServices>
-          <resourceGroupHasCloudServices Id="705d08b4-f29b-4348-a0e5-7ba640ddb83f">
-            <sQLStorage Id="0b874344-81eb-4c36-a493-b7b1855e2025" name="sqlserverjmddsl" user="jmddsl" password="Aa-1234567" />
+          <resourceGroupHasCloudServices Id="3fd4701c-fcda-4bfe-ba99-eca7d2093b02">
+            <ioTCenter Id="2eb4d122-7dc6-4fff-873b-583e86d21df7" name="IoTCenter1">
+              <endpoints>
+                <ioTCenterHasEndpoints Id="3bc395f5-0515-4c89-adc9-4a0c953a508a">
+                  <endpoint Id="47bc3edd-496c-4179-8c34-f87c42179eb1" name="">
+                    <cloudService>
+                      <endpointReferencesCloudService Id="c564b2c7-243b-430e-bd12-d7fcecd5ac92">
+                        <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/MessageService1" />
+                      </endpointReferencesCloudService>
+                    </cloudService>
+                  </endpoint>
+                </ioTCenterHasEndpoints>
+              </endpoints>
+              <devices>
+                <ioTCenterReferencesDevices Id="2d768acd-2956-4e7b-a24f-f5c85d21f1ba">
+                  <monikerRaspberryPi deviceId="/e164dc9c-dcc0-445a-9691-0ee93df1c542/RaspberryPi1" />
+                </ioTCenterReferencesDevices>
+              </devices>
+            </ioTCenter>
           </resourceGroupHasCloudServices>
-          <resourceGroupHasCloudServices Id="bffc2f29-e366-42e4-960f-04f4a75301f7">
-            <noSQLStorage Id="8a6af94d-0682-4ce7-9e86-cc56945188a6" name="dslteststorage" />
+          <resourceGroupHasCloudServices Id="e3485d1e-a5ca-485c-9cd4-4db6e4f02b7e">
+            <appService Id="3d88337f-99be-4a50-8914-b1c6c18d4fca" name="AppService1" />
           </resourceGroupHasCloudServices>
-          <resourceGroupHasCloudServices Id="f19a1a84-f79e-4fab-9223-2aacf152b636">
-            <appService Id="517ac7be-7e63-46f6-94fc-bed0211bb27c" name="dashboardjmdsl" />
+          <resourceGroupHasCloudServices Id="cb236cfc-8b7d-4bd2-a2e6-eef03a207d68">
+            <noSQLStorage Id="228626b5-4c93-4a07-8625-0b3ee72521ba" name="NoSQLStorage1" />
           </resourceGroupHasCloudServices>
-          <resourceGroupHasCloudServices Id="2a3cc403-e15b-4e90-90d7-feb0f3855039">
-            <dataAnalytics Id="9544a2c3-7ee7-41c1-b3c6-3df98d1082f2" name="DataAnalytics1" />
+          <resourceGroupHasCloudServices Id="cff30519-d986-42cd-8fed-d207e03149b8">
+            <messageService Id="b39f4ab3-d0c3-4d81-9607-3f1cfbb0a201" name="MessageService1" />
           </resourceGroupHasCloudServices>
         </cloudServices>
       </resourceGroup>
     </iotDslHasResourceGroups>
   </resourceGroups>
+  <devices>
+    <ioTDslHasDevices Id="294b7047-1525-48b5-85b5-20e9d6516c4f">
+      <raspberryPi Id="2e6d7597-ae29-4499-a80e-60878eddba39" deviceId="RaspberryPi1">
+        <sensor>
+          <deviceReferenciasSensor Id="71418009-5b2d-453a-8954-a28a09b19c73">
+            <monikerBME280 Id="ced83609-c8ba-4709-88cf-f468bedbeb90" />
+          </deviceReferenciasSensor>
+        </sensor>
+      </raspberryPi>
+    </ioTDslHasDevices>
+  </devices>
+  <sensors>
+    <ioTDslTieneSensors Id="b30c4cd9-d159-42f0-8e63-5a9c1b5b1caa">
+      <bME280 Id="ced83609-c8ba-4709-88cf-f468bedbeb90" refreshRate="0" />
+    </ioTDslTieneSensors>
+  </sensors>
 </ioTDsl>

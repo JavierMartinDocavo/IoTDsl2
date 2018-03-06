@@ -2,28 +2,55 @@
 <iotDslDiagram dslVersion="1.0.0.0" Id="a8cf4347-ce22-4b61-b221-102db7a1e556" absoluteBounds="0, 0, 11, 8.5" name="Test">
   <exampleModelMoniker Id="e164dc9c-dcc0-445a-9691-0ee93df1c542" />
   <nestedChildShapes>
-    <resourceGroupShape Id="b726abc1-d2ec-4fa3-9363-2727eab40088" absoluteBounds="1.625, 0.5, 8, 4">
-      <monikerGrupoDeRecursos name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest" />
+    <resourceGroupShape Id="6a9f299c-5635-4d1e-8ea2-779481ce01a0" absoluteBounds="0.5, 0.5, 8, 4">
+      <monikerGrupoDeRecursos name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1" />
     </resourceGroupShape>
-    <sQLStorageImage Id="64b9799b-8ec8-45cd-abde-995c1a1c1f46" absoluteBounds="4.375, 2.375, 1, 1">
-      <monikerSQLStorage name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/sqlserverjmddsl" />
-      <relativeChildShapes />
-    </sQLStorageImage>
-    <noSQLStorageImage Id="3a7492df-0d88-4185-80f5-9466a02c9325" absoluteBounds="2.625, 1.5, 1, 1">
-      <monikerNoSQlStorage name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/dslteststorage" />
-      <relativeChildShapes />
-    </noSQLStorageImage>
-    <appServiceImage Id="555bc394-ce6d-49ce-a0bf-1ea46c64981a" absoluteBounds="6.375, 1.625, 1, 1">
-      <monikerAppService name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/dashboardjmdsl" />
+    <ioTCenterImage Id="61f81f43-145f-4de5-91b3-fb3d3cda55fb" absoluteBounds="1, 0.875, 1, 1">
+      <monikerIotHub name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/IoTCenter1" />
+      <relativeChildShapes>
+        <endpointPort Id="52a86b40-1953-4c7b-bcf0-a137925241d9" absoluteBounds="1.875, 1.25, 0.25, 0.25">
+          <monikerEndpoints name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/IoTCenter1/" />
+        </endpointPort>
+      </relativeChildShapes>
+    </ioTCenterImage>
+    <raspberryPiImage Id="488a3324-c4b5-44f6-8aa4-f6f4f70d9e1b" absoluteBounds="1.375, 5, 1.3748281002044678, 0.78115236759185791">
+      <monikerRaspberryPi deviceId="/e164dc9c-dcc0-445a-9691-0ee93df1c542/RaspberryPi1" />
+    </raspberryPiImage>
+    <bME280Image Id="6e6ee681-aedc-49e0-b0cf-7194d180d454" absoluteBounds="4.75, 5.5, 1, 1">
+      <monikerBME280 Id="ced83609-c8ba-4709-88cf-f468bedbeb90" />
+    </bME280Image>
+    <deviceToSensorConnection Id="db43eb9d-cf90-45ba-bac2-5ec10b48f0b1" edgePoints="[(2.74982810020447 : 5.64057618379593); (4.75 : 5.64057618379593)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <monikerDeviceReferenciasSensor Id="71418009-5b2d-453a-8954-a28a09b19c73" />
+      <nodes>
+        <monikerRaspberryPiImage Id="488a3324-c4b5-44f6-8aa4-f6f4f70d9e1b" />
+        <monikerBME280Image Id="6e6ee681-aedc-49e0-b0cf-7194d180d454" />
+      </nodes>
+    </deviceToSensorConnection>
+    <deviceToIoTCenter Id="8d3fc695-8574-4e96-9f41-ec381417b299" edgePoints="[(1.6875 : 1.875); (1.6875 : 5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <monikerIoTCenterReferenciasDevice Id="2d768acd-2956-4e7b-a24f-f5c85d21f1ba" />
+      <nodes>
+        <monikerIoTCenterImage Id="61f81f43-145f-4de5-91b3-fb3d3cda55fb" />
+        <monikerRaspberryPiImage Id="488a3324-c4b5-44f6-8aa4-f6f4f70d9e1b" />
+      </nodes>
+    </deviceToIoTCenter>
+    <appServiceImage Id="45682877-2bd3-492a-8879-a830b04002dd" absoluteBounds="6.625, 0.625, 1, 1">
+      <monikerAppService name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/AppService1" />
       <relativeChildShapes />
     </appServiceImage>
-    <ioTCenterImage Id="34eafcdc-1370-434c-ac59-b7ef2c388b39" absoluteBounds="2.75, 3.25, 1, 1">
-      <monikerIotHub name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/IoTjmdPrueba" />
+    <noSQLStorageImage Id="f115d444-2607-460b-b4dc-9a67b12769d0" absoluteBounds="4.125, 0.75, 1, 1">
+      <monikerNoSQlStorage name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/NoSQLStorage1" />
       <relativeChildShapes />
-    </ioTCenterImage>
-    <dataAnalyticsImage Id="b20d4266-bf88-4361-b095-fd5ca1c6d85f" absoluteBounds="4.25, 0.875, 1, 1">
-      <monikerDataAnalytics name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/DslTest/DataAnalytics1" />
+    </noSQLStorageImage>
+    <messageServiceImage Id="1a3eef89-67b3-427b-85fc-3e470f8de871" absoluteBounds="5, 2.25, 1, 1">
+      <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/MessageService1" />
       <relativeChildShapes />
-    </dataAnalyticsImage>
+    </messageServiceImage>
+    <endpointToCloudService Id="9a2204b6-37e3-4820-889c-bb54db9b4e4e" edgePoints="[(2.125 : 1.375); (2.5 : 1.375); (2.5 : 2.875); (5 : 2.875)]" manuallyRouted="true" fixedFrom="Caller" fixedTo="Caller">
+      <monikerEndpointReferenciasCloudService Id="c564b2c7-243b-430e-bd12-d7fcecd5ac92" />
+      <nodes>
+        <monikerEndpointPort Id="52a86b40-1953-4c7b-bcf0-a137925241d9" />
+        <monikerServiceBusImage Id="1a3eef89-67b3-427b-85fc-3e470f8de871" />
+      </nodes>
+    </endpointToCloudService>
   </nestedChildShapes>
 </iotDslDiagram>

@@ -4,14 +4,18 @@
 <#@ include file="EF.utility.CS.ttinclude" #>
 Login-AzureRmAccount;
 <#
+var fileManager=EntityFrameworkTemplateFileManager.Create(this);
 foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
-foreach(IoTCenter iot in resourceGroup.IoTCenters){
+foreach(CloudService cloudService in resourceGroup.CloudServices){
+if(cloudService is IoTCenter){
+IoTCenter iot = cloudService as IoTCenter;
 #>
 New-AzureRmResourceGroupDeployment -ResourceGroupName <#=resourceGroup.Name#> -TemplateFile <#=iot.Name#>.json -hubName <#=iot.Name#>;
-<#}#>
+<#}}#>
 <#
-var fileManager=EntityFrameworkTemplateFileManager.Create(this);
-foreach(IoTCenter iot in resourceGroup.IoTCenters){
+foreach(CloudService cloudService in resourceGroup.CloudServices){
+if(cloudService is IoTCenter){
+IoTCenter iot = cloudService as IoTCenter;
 	 fileManager.StartNewFile(iot.Name+".json");
 #>
 {
@@ -36,11 +40,55 @@ foreach(IoTCenter iot in resourceGroup.IoTCenters){
     "properties": {
       "location": "<#=resourceGroup.Location#>",
       "routing" :{
+		"endpoints":{
+			"serviceBusQueues":[
 <#
-foreach(Endpoint endpint in iot.Endpoints){
+foreach(Endpoint endpoint in iot.Endpoints){
+	if(endpoint.CloudService is MessageService){
+		MessageService serviceBus = endpoint.CloudService as MessageService;
+#>
+				{
+					"connectionString": "<#=serviceBus.ConnectionString#>",
+					"name":"<#=serviceBus.Name#>endpoint",
+					"resourceGroup": "<#=resourceGroup.Name#>"
+				}
+<#
+	}
+}
+#>
+			],
+			"serviceBusTopics":[
+<#
+foreach(Endpoint endpoint in iot.Endpoints){
 
 }
 #>
+			],
+			"eventHubs":[
+<#
+foreach(Endpoint endpoint in iot.Endpoints){
+
+}
+#>
+			]
+		},
+		"routes": [
+<#
+foreach(Endpoint endpoint in iot.Endpoints){
+#>
+			{
+				"name":"<#=endpoint.CloudService.Name#>route",
+				"source":"DeviceMessages",
+				"condition":"true",
+				"endpointNames":[
+					"<#=endpoint.CloudService.Name#>endpoint"
+				],
+				"isEnabled":true
+			}
+<#
+}
+#>
+		]
       }
   }}
   ],
@@ -54,5 +102,7 @@ foreach(Endpoint endpint in iot.Endpoints){
 
 <#
 }
+}
+}
 fileManager.Process();
-}#>
+#>

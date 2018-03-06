@@ -26,7 +26,7 @@ namespace Compañía.IotDsl
         internal static bool CanAcceptSourceAndTarget (ModelElement sourceElement, ModelElement targetElement)
         {
             bool accept = true;
-            if (targetElement is CloudService)
+            if (targetElement is CloudService && !(targetElement is IoTCenter))
             {
                 CloudService cloud = targetElement as CloudService;
                 IoTCenter iot;
@@ -39,7 +39,7 @@ namespace Compañía.IotDsl
                     endp = sourceElement as Endpoint;
                     iot = endp.IoTCenter;
                 }
-                foreach (Endpoint endpoint in cloud.Endpoints)
+                foreach (Endpoint endpoint in cloud.ConnectedEndpoints)
                 {
                     //If a connection between the obtained CloudService and IoTCenter already exists the connection is not allowed
                     if (endpoint.IoTCenter == iot && accept)

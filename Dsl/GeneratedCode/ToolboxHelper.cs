@@ -106,7 +106,7 @@ namespace Compañía.IotDsl
 		{
 			get
 			{
-				return 8;
+				return 9;
 			}
 		}
 		
@@ -281,6 +281,22 @@ namespace Compañía.IotDsl
 						"AppServiceTool", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("AppServiceToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Compañía.IotDsl.AppService.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Compañía.IotDsl.ServiceBusToolToolboxItem":
+					// Add ServiceBusTool shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Compañía.IotDsl.ServiceBusToolToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						9, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("ServiceBusToolToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("ServiceBusToolToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Compañía.IotDsl.CloudToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("CloudToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"ServiceBusTool", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("ServiceBusToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Compañía.IotDsl.MessageService.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});

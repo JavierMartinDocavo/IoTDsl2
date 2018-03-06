@@ -19,6 +19,32 @@
     },
     "properties": {
       "location": "westeurope",
+      "routing" :{
+		"endpoints":{
+			"serviceBusQueues":[
+				{
+					"connectionString": "",
+					"name":"MessageService1endpoint",
+					"resourceGroup": "ResourceGroup1"
+				}
+			],
+			"serviceBusTopics":[
+			],
+			"eventHubs":[
+			]
+		},
+		"routes": [
+			{
+				"name":"MessageService1route",
+				"source":"DeviceMessages",
+				"condition":"true",
+				"endpointNames":[
+					"MessageService1endpoint"
+				],
+				"isEnabled":true
+			}
+		]
+      }
   }}
   ],
   "outputs": {
@@ -28,3 +54,4 @@
     }
   }
 }
+

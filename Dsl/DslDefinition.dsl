@@ -2,6 +2,23 @@
 <Dsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="6cefa6ae-2700-42e9-9ae8-a85721e9161b" Description="Description for Compañía.IotDsl.IotDsl" Name="IotDsl" DisplayName="IotDsl" Namespace="Compañía.IotDsl" ProductName="IotDsl" CompanyName="Compañía" PackageGuid="49ba1da3-920f-40fa-8997-ce9063e26429" PackageNamespace="Compañía.IotDsl" xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/DslDefinitionModel">
   <Classes>
     <DomainClass Id="9d864e78-9706-4d92-8373-e01c4838d0bb" Description="The root in which all other elements are embedded. Appears as a diagram." Name="IoTDsl" DisplayName="Io TDsl" Namespace="Compañía.IotDsl">
+      <Properties>
+        <DomainProperty Id="bcaf719f-53eb-4477-b29e-8259e76b80b9" Description="Descripción de Compañía.IotDsl.IoTDsl.Provider" Name="Provider" DisplayName="Provider">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="66cd36f4-a293-4922-9a62-098215a35f82" Description="Descripción de Compañía.IotDsl.IoTDsl.Subscription" Name="Subscription" DisplayName="Subscription">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="cba818bd-3db8-4ea0-a4fd-8fb4d6cad3cc" Description="Descripción de Compañía.IotDsl.IoTDsl.Service Plan" Name="ServicePlan" DisplayName="Service Plan">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
@@ -45,14 +62,6 @@
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
-            <DomainClassMoniker Name="IoTCenter" />
-          </Index>
-          <LinkCreationPaths>
-            <DomainPath>ResourceGroupHasIoTCenters.IoTCenters</DomainPath>
-          </LinkCreationPaths>
-        </ElementMergeDirective>
-        <ElementMergeDirective>
-          <Index>
             <DomainClassMoniker Name="CloudService" />
           </Index>
           <LinkCreationPaths>
@@ -62,13 +71,9 @@
       </ElementMergeDirectives>
     </DomainClass>
     <DomainClass Id="524e847c-b507-4bd4-9679-f74a7cb0a251" Description="Descripción de Compañía.IotDsl.IoTCenter" Name="IoTCenter" DisplayName="Io TCenter" Namespace="Compañía.IotDsl">
-      <Properties>
-        <DomainProperty Id="959df3d1-9ff7-4805-90d5-8a013681b895" Description="Descripción de Compañía.IotDsl.IoTCenter.Name" Name="Name" DisplayName="Name" IsElementName="true">
-          <Type>
-            <ExternalTypeMoniker Name="/System/String" />
-          </Type>
-        </DomainProperty>
-      </Properties>
+      <BaseClass>
+        <DomainClassMoniker Name="CloudService" />
+      </BaseClass>
       <ElementMergeDirectives>
         <ElementMergeDirective>
           <Index>
@@ -92,6 +97,11 @@
     <DomainClass Id="048d73b8-38ac-4094-8d21-2819e5f949a2" Description="Descripción de Compañía.IotDsl.CloudService" Name="CloudService" DisplayName="Cloud Service" Namespace="Compañía.IotDsl">
       <Properties>
         <DomainProperty Id="e6739753-6c87-4ac7-afae-eb12327ef005" Description="Descripción de Compañía.IotDsl.CloudService.Name" Name="Name" DisplayName="Name" IsElementName="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="6c204aac-1bd4-48d4-accf-c5cf7d364edd" Description="Descripción de Compañía.IotDsl.CloudService.Connection String" Name="ConnectionString" DisplayName="Connection String">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -195,6 +205,11 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
+    <DomainClass Id="ced8a559-94bb-4ad3-90f0-ac386cd86054" Description="Descripción de Compañía.IotDsl.MessageService" Name="MessageService" DisplayName="Message Service" Namespace="Compañía.IotDsl">
+      <BaseClass>
+        <DomainClassMoniker Name="CloudService" />
+      </BaseClass>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="7aafb2c6-a999-48dd-a91d-5dd686b2a897" Description="Descripción de Compañía.IotDsl.IotDslHasResourceGroups" Name="IotDslHasResourceGroups" DisplayName="Iot Dsl Has Resource Groups" Namespace="Compañía.IotDsl" IsEmbedding="true">
@@ -209,22 +224,6 @@
         <DomainRole Id="7b3da52c-33aa-44e4-9981-1242c4edba84" Description="Descripción de Compañía.IotDsl.IotDslHasResourceGroups.ResourceGroup" Name="ResourceGroup" DisplayName="Resource Group" PropertyName="IoTDsl" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Io TDsl">
           <RolePlayer>
             <DomainClassMoniker Name="ResourceGroup" />
-          </RolePlayer>
-        </DomainRole>
-      </Target>
-    </DomainRelationship>
-    <DomainRelationship Id="79b8c6cc-0624-4c3c-99cd-5a168a6c9ca3" Description="Descripción de Compañía.IotDsl.ResourceGroupHasIoTCenters" Name="ResourceGroupHasIoTCenters" DisplayName="Resource Group Has Io TCenters" Namespace="Compañía.IotDsl" IsEmbedding="true">
-      <Source>
-        <DomainRole Id="d724805d-c88b-4354-bf67-333dbf573a61" Description="Descripción de Compañía.IotDsl.ResourceGroupHasIoTCenters.ResourceGroup" Name="ResourceGroup" DisplayName="Resource Group" PropertyName="IoTCenters" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Io TCenters">
-          <RolePlayer>
-            <DomainClassMoniker Name="ResourceGroup" />
-          </RolePlayer>
-        </DomainRole>
-      </Source>
-      <Target>
-        <DomainRole Id="8bce4ddb-3934-4e00-98ff-ba4e629084c9" Description="Descripción de Compañía.IotDsl.ResourceGroupHasIoTCenters.IoTCenter" Name="IoTCenter" DisplayName="Io TCenter" PropertyName="ResourceGroup" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Resource Group">
-          <RolePlayer>
-            <DomainClassMoniker Name="IoTCenter" />
           </RolePlayer>
         </DomainRole>
       </Target>
@@ -254,7 +253,7 @@
         </DomainRole>
       </Source>
       <Target>
-        <DomainRole Id="c71c9d19-c5e6-48bc-b3dc-817f34368a51" Description="Descripción de Compañía.IotDsl.EndpointReferencesCloudService.CloudService" Name="CloudService" DisplayName="Cloud Service" PropertyName="Endpoints" PropertyDisplayName="Endpoints">
+        <DomainRole Id="c71c9d19-c5e6-48bc-b3dc-817f34368a51" Description="Descripción de Compañía.IotDsl.EndpointReferencesCloudService.CloudService" Name="CloudService" DisplayName="Cloud Service" PropertyName="ConnectedEndpoints" PropertyDisplayName="Connected Endpoints">
           <RolePlayer>
             <DomainClassMoniker Name="CloudService" />
           </RolePlayer>
@@ -363,6 +362,7 @@
         <EnumerationLiteral Description="Descripción de Compañía.IotDsl.Location.westeurope" Name="westeurope" Value="" />
       </Literals>
     </DomainEnumeration>
+    <DomainEnumeration Name="Provider" Namespace="Compañía.IotDsl" Description="Descripción de Compañía.IotDsl.Provider" />
   </Types>
   <Shapes>
     <GeometryShape Id="86514027-2487-4ed0-8c55-0b3a1edcb019" Description="Descripción de Compañía.IotDsl.ResourceGroupShape" Name="ResourceGroupShape" DisplayName="Resource Group Shape" Namespace="Compañía.IotDsl" FixedTooltipText="Resource Group Shape" InitialWidth="8" InitialHeight="4" Geometry="Rectangle">
@@ -370,11 +370,6 @@
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <ImageShape Id="e9a7014c-5f96-4b5e-8e5a-e2311eab2cd9" Description="Descripción de Compañía.IotDsl.IoTCenterImage" Name="IoTCenterImage" DisplayName="Io TCenter Image" Namespace="Compañía.IotDsl" FixedTooltipText="Io TCenter Image" InitialWidth="1" InitialHeight="1" Image="Resources\pngexports\iotcenter.png">
-      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
-      </ShapeHasDecorators>
-    </ImageShape>
     <ImageShape Id="137abd33-ba0d-4ccb-89b8-5b803417d8d5" Description="Descripción de Compañía.IotDsl.DataAnalyticsImage" Name="DataAnalyticsImage" DisplayName="Data Analytics Image" Namespace="Compañía.IotDsl" FixedTooltipText="Data Analytics Image" InitialWidth="1" InitialHeight="1" Image="Resources\pngexports\analytics.png">
       <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
@@ -403,6 +398,16 @@
     </Port>
     <ImageShape Id="4135b2f7-ac8b-4b76-bf6d-8d863ba1d752" Description="Descripción de Compañía.IotDsl.RaspberryPiImage" Name="RaspberryPiImage" DisplayName="Raspberry Pi Image" Namespace="Compañía.IotDsl" FixedTooltipText="Raspberry Pi Image" InitialHeight="1" Image="Resources\pngexports\raspberrypi.png" />
     <ImageShape Id="fc8c966d-c83c-43c9-a908-1fff68786539" Description="Descripción de Compañía.IotDsl.BME280Image" Name="BME280Image" DisplayName="BME280 Image" Namespace="Compañía.IotDsl" FixedTooltipText="BME280 Image" InitialWidth="1" InitialHeight="1" Image="Resources\pngexports\bme280.png" />
+    <ImageShape Id="31eaabad-c573-47cb-bca1-faf706cc866d" Description="Descripción de Compañía.IotDsl.IoTCenterImage" Name="IoTCenterImage" DisplayName="Io TCenter Image" Namespace="Compañía.IotDsl" FixedTooltipText="Io TCenter Image" InitialWidth="1" InitialHeight="1" Image="Resources\pngexports\iotcenter.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="d3c59f1d-1938-47da-a059-401f1805bd70" Description="Descripción de Compañía.IotDsl.MessageServiceImage" Name="MessageServiceImage" DisplayName="Message Service Image" Namespace="Compañía.IotDsl" FixedTooltipText="Message Service Image" InitialHeight="1.5" Image="Resources\pngexports\messageservice.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+    </ImageShape>
   </Shapes>
   <Connectors>
     <Connector Id="f70a14ee-d9b8-43b8-8785-877b5175f4c1" Description="Descripción de Compañía.IotDsl.EndpointToCloudService" Name="EndpointToCloudService" DisplayName="Endpoint To Cloud Service" Namespace="Compañía.IotDsl" FixedTooltipText="Endpoint To Cloud Service" />
@@ -423,6 +428,15 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="sensors">
             <DomainRelationshipMoniker Name="IoTDslTieneSensors" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="provider">
+            <DomainPropertyMoniker Name="IoTDsl/Provider" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="subscription">
+            <DomainPropertyMoniker Name="IoTDsl/Subscription" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="servicePlan">
+            <DomainPropertyMoniker Name="IoTDsl/ServicePlan" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="IotDslDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="iotDslDiagramMoniker" ElementName="iotDslDiagram" MonikerTypeName="IotDslDiagramMoniker">
@@ -437,9 +451,6 @@
           <XmlPropertyData XmlName="location">
             <DomainPropertyMoniker Name="ResourceGroup/Location" />
           </XmlPropertyData>
-          <XmlRelationshipData UseFullForm="true" RoleElementName="ioTCenters">
-            <DomainRelationshipMoniker Name="ResourceGroupHasIoTCenters" />
-          </XmlRelationshipData>
           <XmlRelationshipData UseFullForm="true" RoleElementName="cloudServices">
             <DomainRelationshipMoniker Name="ResourceGroupHasCloudServices" />
           </XmlRelationshipData>
@@ -451,12 +462,9 @@
       <XmlClassData TypeName="IotDslHasResourceGroups" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerExampleModelTieneGrupoDeRecursos" ElementName="iotDslHasResourceGroups" MonikerTypeName="MonikerIotDsl1TieneResourceGroup">
         <DomainRelationshipMoniker Name="IotDslHasResourceGroups" />
       </XmlClassData>
-      <XmlClassData TypeName="IoTCenter" MonikerAttributeName="name" SerializeId="true" MonikerElementName="monikerIotHub" ElementName="ioTCenter" MonikerTypeName="MonikerIoTCenter">
+      <XmlClassData TypeName="IoTCenter" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerIotHub" ElementName="ioTCenter" MonikerTypeName="MonikerIoTCenter">
         <DomainClassMoniker Name="IoTCenter" />
         <ElementData>
-          <XmlPropertyData XmlName="name" IsMonikerKey="true">
-            <DomainPropertyMoniker Name="IoTCenter/Name" />
-          </XmlPropertyData>
           <XmlRelationshipData UseFullForm="true" RoleElementName="endpoints">
             <DomainRelationshipMoniker Name="IoTCenterHasEndpoints" />
           </XmlRelationshipData>
@@ -464,12 +472,6 @@
             <DomainRelationshipMoniker Name="IoTCenterReferencesDevices" />
           </XmlRelationshipData>
         </ElementData>
-      </XmlClassData>
-      <XmlClassData TypeName="ResourceGroupHasIoTCenters" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerGrupoDeRecursosTieneIotHub" ElementName="resourceGroupHasIoTCenters" MonikerTypeName="MonikerResourceGroupTieneIoTCenter">
-        <DomainRelationshipMoniker Name="ResourceGroupHasIoTCenters" />
-      </XmlClassData>
-      <XmlClassData TypeName="IoTCenterImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerIotHubImage" ElementName="ioTCenterImage" MonikerTypeName="MonikerIoTCenterImage">
-        <ImageShapeMoniker Name="IoTCenterImage" />
       </XmlClassData>
       <XmlClassData TypeName="DataAnalyticsImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerDataAnalyticsImage" ElementName="dataAnalyticsImage" MonikerTypeName="MonikerDataAnalyticsImage">
         <ImageShapeMoniker Name="DataAnalyticsImage" />
@@ -496,6 +498,9 @@
         <ElementData>
           <XmlPropertyData XmlName="name" IsMonikerKey="true">
             <DomainPropertyMoniker Name="CloudService/Name" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="connectionString">
+            <DomainPropertyMoniker Name="CloudService/ConnectionString" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
@@ -612,6 +617,15 @@
       <XmlClassData TypeName="DeviceToIoTCenter" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerDeviceToIoTCenter" ElementName="deviceToIoTCenter" MonikerTypeName="MonikerDeviceToIoTCenter">
         <ConnectorMoniker Name="DeviceToIoTCenter" />
       </XmlClassData>
+      <XmlClassData TypeName="IoTCenterImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerIoTCenterImage" ElementName="ioTCenterImage" MonikerTypeName="MonikerIoTCenterImage">
+        <ImageShapeMoniker Name="IoTCenterImage" />
+      </XmlClassData>
+      <XmlClassData TypeName="MessageService" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerServiceBus" ElementName="messageService" MonikerTypeName="MonikerServiceBus">
+        <DomainClassMoniker Name="MessageService" />
+      </XmlClassData>
+      <XmlClassData TypeName="MessageServiceImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerServiceBusImage" ElementName="messageServiceImage" MonikerTypeName="MonikerServiceBusImage">
+        <ImageShapeMoniker Name="MessageServiceImage" />
+      </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="IotDslExplorer" />
@@ -693,21 +707,6 @@
           </PropertyDisplayed>
         </DecoratorMap>
         <GeometryShapeMoniker Name="ResourceGroupShape" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="IoTCenter" />
-        <ParentElementPath>
-          <DomainPath>ResourceGroupHasIoTCenters.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="IoTCenterImage/Name" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="IoTCenter/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <ImageShapeMoniker Name="IoTCenterImage" />
       </ShapeMap>
       <ShapeMap>
         <DomainClassMoniker Name="NoSQLStorage" />
@@ -843,6 +842,36 @@
         </ParentElementPath>
         <GeometryShapeMoniker Name="CloudServiceShape" />
       </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="IoTCenter" />
+        <ParentElementPath>
+          <DomainPath>ResourceGroupHasCloudServices.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="IoTCenterImage/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="CloudService/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="IoTCenterImage" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="MessageService" />
+        <ParentElementPath>
+          <DomainPath>ResourceGroupHasCloudServices.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="MessageServiceImage/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="CloudService/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="MessageServiceImage" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -888,8 +917,11 @@
       <ConnectionTool Name="EndpointtoCloudServiceConnection" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Connection Endpoint to Cloud Service" Tooltip="Endpointto Cloud Service Connection" HelpKeyword="EndpointtoCloudServiceConnection">
         <ConnectionBuilderMoniker Name="IotDsl/GeneradorEndpointReferenciasCloudService" />
       </ConnectionTool>
-      <ElementTool Name="AppServiceTool" ToolboxIcon="Resources\bmpexports\dashboard.bmp" Caption="App Service" Tooltip="App Service Tool" HelpKeyword="AppServiceTool">
+      <ElementTool Name="AppServiceTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="App Service" Tooltip="App Service Tool" HelpKeyword="AppServiceTool">
         <DomainClassMoniker Name="AppService" />
+      </ElementTool>
+      <ElementTool Name="ServiceBusTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="ServiceBusTool" Tooltip="Service Bus Tool" HelpKeyword="ServiceBusTool">
+        <DomainClassMoniker Name="MessageService" />
       </ElementTool>
     </ToolboxTab>
     <ToolboxTab TabText="Device">

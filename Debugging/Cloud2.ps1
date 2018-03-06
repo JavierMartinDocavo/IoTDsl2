@@ -1,3 +1,3 @@
 ﻿
 Login-AzureRmAccount;
-New-AzureRmResourceGroupDeployment -ResourceGroupName DslTest -TemplateFile IoTjmdPrueba.json -hubName IoTjmdPrueba;
+New-AzureRmResourceGroupDeployment -ResourceGroupName ResourceGroup1 -TemplateFile IoTCenter1.json -hubName IoTCenter1;

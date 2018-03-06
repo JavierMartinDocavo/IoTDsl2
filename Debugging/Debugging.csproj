@@ -36,6 +36,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeviceRegistration.cs">
+      <DependentUpon>Devices.tt</DependentUpon>
+    </Compile>
+    <Compile Include="iotdslmodeldevice.cs">
+      <DependentUpon>Devices.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -59,25 +65,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cloud3.tt</DependentUpon>
     </None>
-    <None Include="DataAnalytics1.json">
-      <DependentUpon>Cloud3.tt</DependentUpon>
+    <None Include="Devices.ps1">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Devices.tt</DependentUpon>
     </None>
-    <None Include="IotDslReport.tt">
+    <None Include="Devices.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IotDslReport.txt</LastGenOutput>
+      <LastGenOutput>Devices.ps1</LastGenOutput>
+    </None>
+    <None Include="IoTCenter1.json">
+      <DependentUpon>Cloud2.tt</DependentUpon>
     </None>
     <None Include="IotDslReportVB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IotDslReportVB.txt</LastGenOutput>
     </None>
-    <None Include="IoTjmdPrueba.json">
-      <DependentUpon>Cloud2.tt</DependentUpon>
+    <None Include="MessageService1.json">
+      <DependentUpon>Cloud.tt</DependentUpon>
     </None>
     <None Include="Sample.IotDsl" />
     <None Include="Sample.IotDsl.diagram">
       <DependentUpon>Sample.IotDsl</DependentUpon>
     </None>
-    <None Include="Test.IotDsl" />
+    <None Include="Test.IotDsl">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Test.IotDsl.diagram">
       <DependentUpon>Test.IotDsl</DependentUpon>
     </None>
@@ -97,11 +110,6 @@
     <Content Include="Cloud3.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cloud3.ps1</LastGenOutput>
-    </Content>
-    <Content Include="IotDslReport.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IotDslReport.tt</DependentUpon>
     </Content>
     <Content Include="IotDslReportVB.txt">
       <AutoGen>True</AutoGen>

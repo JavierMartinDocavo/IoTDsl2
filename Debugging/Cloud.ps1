@@ -1,12 +1,11 @@
-﻿Login-AzureRmAccount;
+﻿
+Login-AzureRmAccount;
 #Resource group creation
-New-AzureRmResourceGroup -Name DslTest -Location westeurope;
-#SQL storage resources
-New-AzureRmSqlServer -ResourceGroupName DslTest -ServerName sqlserverjmddslserver -Location westeurope -SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList jmddsl, $(ConvertTo-SecureString -String Aa-1234567 -AsPlainText -Force));
-New-AzureRmSqlServerFirewallRule –ResourceGroupName DslTest -ServerName sqlserverjmddslserver -FirewallRuleName "Allowsome" -StartIpAddress 0.0.0.0 -EndIpAddress 255.255.255.255;
-New-AzureRmSqlDatabase  -ResourceGroupName DslTest -ServerName sqlserverjmddslserver -DatabaseName sqlserverjmddsldb -RequestedServiceObjectiveName "S0";
-#NoSQL storage resources
-New-AzureRmStorageAccount -ResourceGroupNAme DslTest -Name dslteststorage -SkuName Standard_LRS -Location westeurope -Kind Storage;
+New-AzureRmResourceGroup -Name ResourceGroup1 -Location westeurope;
+#ServiceBus resources
+New-AzureRmResourceGroupDeployment -ResourceGroupName ResourceGroup1 -TemplateFile MessageService1.json -namespaces_servicebusjmd_name MessageService1 -queues_iothubque_name MessageService1Queue;
 #App service resources
-New-AzureRmAppServicePlan -ResourceGroupName DslTest -Name dashboardjmdslplan -Location westeurope -Tier "free";
-New-AzureRmWebApp -ResourceGroupName DslTest -Name dashboardjmdsl -Location westeurope -AppServicePlan dashboardjmdslplan;
+New-AzureRmAppServicePlan -ResourceGroupName ResourceGroup1 -Name AppService1plan -Location westeurope -Tier "free";
+New-AzureRmWebApp -ResourceGroupName ResourceGroup1 -Name AppService1 -Location westeurope -AppServicePlan AppService1plan;
+#NoSQL storage resources
+New-AzureRmStorageAccount -ResourceGroupNAme ResourceGroup1 -Name NoSQLStorage1 -SkuName Standard_LRS -Location westeurope -Kind Storage;
