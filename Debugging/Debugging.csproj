@@ -36,19 +36,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeviceRegistration.cs">
-      <DependentUpon>Devices.tt</DependentUpon>
+    <Compile Include="DeviceRegistration4.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeviceRegistration4.tt</DependentUpon>
     </Compile>
-    <Compile Include="iotdslmodeldevice.cs">
-      <DependentUpon>Devices.tt</DependentUpon>
+    <Compile Include="Devices5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Devices5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HomeController.cs">
+      <DependentUpon>Devices5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IoTHub.cs">
+      <DependentUpon>Devices5.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaspberryPi1.cs">
+      <DependentUpon>Devices5.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Dsl\GeneratedCode\IotDslSchema.xsd">
       <Link>IotDslSchema.xsd</Link>
       <SubType>
       </SubType>
+    </None>
+    <None Include="AppService1ServiceBus.json">
+      <DependentUpon>Cloud.tt</DependentUpon>
     </None>
     <None Include="Cloud.ps1">
       <AutoGen>True</AutoGen>
@@ -65,14 +81,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Cloud3.tt</DependentUpon>
     </None>
-    <None Include="Devices.ps1">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Devices.tt</DependentUpon>
-    </None>
-    <None Include="Devices.tt">
+    <None Include="DeviceRegistration4.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Devices.ps1</LastGenOutput>
+      <LastGenOutput>DeviceRegistration4.cs</LastGenOutput>
+    </None>
+    <None Include="Index.cshtml">
+      <DependentUpon>Devices5.tt</DependentUpon>
     </None>
     <None Include="IoTCenter1.json">
       <DependentUpon>Cloud2.tt</DependentUpon>
@@ -80,9 +94,6 @@
     <None Include="IotDslReportVB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IotDslReportVB.txt</LastGenOutput>
-    </None>
-    <None Include="MessageService1.json">
-      <DependentUpon>Cloud.tt</DependentUpon>
     </None>
     <None Include="Sample.IotDsl" />
     <None Include="Sample.IotDsl.diagram">
@@ -110,6 +121,10 @@
     <Content Include="Cloud3.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cloud3.ps1</LastGenOutput>
+    </Content>
+    <Content Include="Devices5.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Devices5.cs</LastGenOutput>
     </Content>
     <Content Include="IotDslReportVB.txt">
       <AutoGen>True</AutoGen>

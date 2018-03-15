@@ -1,3 +1,4 @@
+﻿
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace DeviceRegistration
 		static void Main(string[] args)
 		{
 			var devices = new List<KeyValuePair<string,string>>(){
-				new KeyValuePair<string,string>("iotdslmodeldevice",""),
+				new KeyValuePair<string,string>("RaspberryPi1",""),
 			};
 			foreach(KeyValuePair<string,string> device in devices){
 				registryManager = RegistryManager.CreateFromConnectionString(device.Value);

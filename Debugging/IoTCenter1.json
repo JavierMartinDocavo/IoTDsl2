@@ -24,7 +24,7 @@
 			"serviceBusQueues":[
 				{
 					"connectionString": "",
-					"name":"MessageService1endpoint",
+					"name":"AppService1ServiceBusendpoint",
 					"resourceGroup": "ResourceGroup1"
 				}
 			],
@@ -35,11 +35,11 @@
 		},
 		"routes": [
 			{
-				"name":"MessageService1route",
+				"name":"AppService1ServiceBusroute",
 				"source":"DeviceMessages",
 				"condition":"true",
 				"endpointNames":[
-					"MessageService1endpoint"
+					"AppService1ServiceBusendpoint"
 				],
 				"isEnabled":true
 			}

@@ -1,0 +1,349 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" lenguage="C#" hostspecific="True"#>
+<#@ IotDsl processor="IotDslDirectiveProcessor" requires="fileName='Test.IotDsl'" #>
+<#@ include file="EF.utility.CS.ttinclude" #>
+<#
+var fileManager=EntityFrameworkTemplateFileManager.Create(this);
+#>
+<#
+foreach(Device device in this.IoTDsl.Devices)
+{
+	fileManager.StartNewFile(device.deviceId+".cs");
+#>
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+
+using Microsoft.Azure.Devices.Client;
+using Newtonsoft.Json;
+using BuildAzure.IoT.Adafruit.BME280;
+
+using System.Diagnostics;
+using System.Threading.Tasks;
+using System.Text;
+
+namespace IoTWeatherHubDevice
+{
+	public sealed partial class <#=device.deviceId#>
+	{
+		static string deviceId = "<#=device.deviceId#>";
+		static List<DeviceClient> deviceClientList;
+
+		public MainPage()
+		{
+
+			deviceClientList = new List<DeviceClient>()
+			{
+<#
+foreach(IoTCenter hub in device.IoTCenters){
+	IoTCenterHasDevices relation = IoTCenterHasDevices.GetLink(hub,device);
+#>
+				DeviceClient.Create("<#=hub.Name#>.azure-devices.net", newDeviceAuthenticationWithRegistrySymetricKey(deviceId, "<#=relation.DeviceKey#>"), TransportType.Mqtt);
+<#
+}
+#>
+			};
+<#
+
+foreach(Sensor sensor in device.Sensors)
+{
+	if(sensor is BME280)
+	{
+#>
+			<#=sensor.SensorId#>ToCloudMessage();
+<#
+	}
+}
+#>
+		}
+
+<#
+foreach(Sensor sensor in device.Sensors)
+{
+	if(sensor is BME280)
+	{
+		BME280 bme280 = sensor as BME280;	
+#>
+		private async void <#=bme280.SensorId#>ToCloudMessage()
+		{
+			BME280Sensor sensor = new BME280Sensor();
+			await sensor.Initialize();
+<#
+		if(bme280.Temperature)
+		{
+#>
+			float temperature = 0.00f;
+<#
+		}
+#>
+<#
+		if(bme280.Humidity)
+		{
+#>
+			float humidity = 0.00f;
+<#
+		}
+#><#
+		if(bme280.Pressure)
+		{
+#>
+			float pressure = 0.00f;
+<#
+		}
+#><#
+		if(bme280.Altitude)
+		{
+#>
+			float altitude = 0.00f;
+<#
+		}
+#>
+			while(true)
+			{
+<#
+		if(bme280.Temperature)
+		{
+#>
+				temperature = await sensor.ReadTemperature();
+<#
+		}
+#>
+<#
+		if(bme280.Humidity)
+		{
+#>
+				humidity = await sensor.ReadHumidity();
+<#
+		}
+#><#
+		if(bme280.Pressure)
+		{
+#>
+				pressure = await sensor.ReadPressure();
+<#
+		}
+#><#
+		if(bme280.Altitude)
+		{
+#>
+				altitude = await sensor.ReadAltitude();
+<#
+		}
+#>
+				var sensorData = new
+				{
+					deviceID = deviceId,
+					sensorId = "<#=bme280.SensorId#>",
+					date = String.Format("{0},{1},{2}",
+										DateTime.Now.ToLocalTime().TimeOfDay.Hours,
+										DateTime.Now.ToLocalTime().TimeOfDay.Minutes,
+										DateTime.Now.ToLocalTime().TimeOfDay.Seconds),
+<#
+		if(bme280.Temperature)
+		{
+#>
+					temperature = Math.Round(temperature, 2),
+<#
+		}
+#>
+<#
+		if(bme280.Humidity)
+		{
+#>
+					humidity = Math.Round(humidity, 2),
+<#
+		}
+#><#
+		if(bme280.Pressure)
+		{
+#>
+					pressure = Math.Round(pressure,2),
+<#
+		}
+#><#
+		if(bme280.Altitude)
+		{
+#>
+					altitude = Math.Round(altitude, 2)
+<#
+		}
+#>
+				};
+				var messageString = JsonConvert.SerializeObject(sensorData);
+				var message = new Message(byteArray: Encoding.ASCII.GetBytes(messageString));
+				foreach(DeviceClient deviceClient in deviceClientList)
+					await deviceClient.SendEventAsync(message);
+                Debug.WriteLine("{0} > Sending message: {1}", DateTime.Now, messageString);
+                Task.Delay(<#=bme280.RefreshRate#>).Wait();
+			}
+		}
+<#
+	}
+}
+#>
+	}
+}
+<#
+}
+#>
+<#
+foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups)
+{
+	foreach(CloudService cloudService in resourceGroup.CloudServices)
+	{
+		if(cloudService is AppService)
+		{
+			AppService appService = cloudService as AppService;
+			fileManager.StartNewFile("HomeController.cs");
+#>
+﻿using IoTHubTempWebApp.Hubs;
+using Microsoft.AspNet.SignalR;
+using Microsoft.ServiceBus.Messaging;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
+
+namespace IoTHubTempWebApp.Controllers
+{
+    public class HomeController : Controller
+    {
+        private string connectionString = "<#=appService.MessageService.ConnectionString#>";
+        private string queueName = "<#=appService.MessageService#>"
+        private IHubContext _hubContext;
+
+        public HomeController()
+        {
+            _hubContext = GlobalHost.ConnectionManager.GetHubContext<IoTHub>();
+        }
+
+        public ActionResult Index()
+        {
+            Task task = Task.Run(() =>
+            {
+
+                QueueClient client = QueueClient.CreateFromConnectionString(connectionString, queueName, ReceiveMode.ReceiveAndDelete);
+
+                client.OnMessage(message =>
+                {
+                    Stream stream = message.GetBody<Stream>();
+                    StreamReader reader = new StreamReader(stream, Encoding.ASCII);
+                    string s = reader.ReadToEnd();
+                    _hubContext.Clients.All.ioTHubNotification(s);
+
+                });
+            });
+
+            task.Wait();
+
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+    }
+}
+<#
+			fileManager.StartNewFile("IoTHub.cs");
+#>
+﻿using Microsoft.AspNet.SignalR;
+
+namespace IoTHubTempWebApp.Hubs
+{
+    public class IoTHub : Hub
+    {
+        public void IoTHubNotification(string value)
+        {
+            Clients.All.iotHubNotification(value);
+        }
+    }
+}
+<#
+			fileManager.StartNewFile("Index.cshtml");
+#>
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="chart_div"></div>
+
+<script>
+
+    var data = [];
+    var chart;
+
+    google.charts.load('current', { packages: ['corechart', 'line'] });
+    google.charts.setOnLoadCallback(loadChart);
+
+    var hub = $.connection.ioTHub;
+    $.connection.hub.start();
+
+    hub.client.iotHubNotification = function (d) {
+        console.log(d);
+        var pi = JSON.parse(d);
+        var time = pi.date.split(',');
+        var temp = pi.temperature;
+        var humid = pi.humidity;
+
+        data.addRows([[[parseInt(time[0]), parseInt(time[1]), parseInt(time[2])], temp, humid]]);
+
+        var options = {
+            height: 250,
+            hAxis: {
+                title: 'Time'
+            },
+            vAxis: {
+                title: 'Temperature / Humidity',
+                gridlines: { count: 22 } 
+            }
+        };
+
+        chart.draw(data, options);
+    };
+
+    function loadChart() {
+        data = new google.visualization.DataTable();
+        data.addColumn('timeofday', 'Time');
+        data.addColumn('number', 'Temperature');
+        data.addColumn('number', 'Humidity');
+
+        var options = {
+            height: 250,
+            hAxis: {
+                title: 'Time'
+            },
+            vAxis: {
+                title: 'Temperarture / Humidity',
+                gridlines: { count: 22 } 
+            }
+        };
+
+        chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+<#
+		}
+	}
+}
+#>
+<#
+fileManager.Process();
+#>

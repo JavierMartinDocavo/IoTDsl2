@@ -169,16 +169,16 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: IoTCenterReferencesDevices -->
+          <!-- Relationship: IoTCenterHasDevices -->
           <xsd:element name="devices" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of IoTCenterReferencesDevices</xsd:documentation>
+              <xsd:documentation>Instances of IoTCenterHasDevices</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="ioTCenterReferencesDevices" minOccurs="0" maxOccurs="unbounded">
+                <xsd:element ref="ioTCenterHasDevices" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of IoTCenterReferencesDevices needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of IoTCenterHasDevices needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -213,16 +213,16 @@
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: EndpointReferencesCloudService -->
+          <!-- Relationship: EndpointConnectsCloudService -->
           <xsd:element name="cloudService" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instance of EndpointReferencesCloudService</xsd:documentation>
+              <xsd:documentation>Instance of EndpointConnectsCloudService</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="endpointReferencesCloudService" minOccurs="0" maxOccurs="1">
+                <xsd:element ref="endpointConnectsCloudService" minOccurs="0" maxOccurs="1">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of EndpointReferencesCloudService needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of EndpointConnectsCloudService needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -357,6 +357,23 @@
   <xsd:complexType name="AppService">
     <xsd:complexContent>
       <xsd:extension base="CloudService">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: AppServiceReferenciasMessageService -->
+          <xsd:element name="messageService" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instance of AppServiceReferenciasMessageService</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="appServiceReferenciasMessageService" minOccurs="0" maxOccurs="1">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of AppServiceReferenciasMessageService needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
           <xsd:annotation>
@@ -493,16 +510,16 @@
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: DeviceReferenciasSensor -->
-          <xsd:element name="sensor" minOccurs="0" maxOccurs="1">
+          <!-- Relationship: DeviceReferenciasSensors -->
+          <xsd:element name="sensors" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instance of DeviceReferenciasSensor</xsd:documentation>
+              <xsd:documentation>Instances of DeviceReferenciasSensors</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element ref="deviceReferenciasSensor" minOccurs="0" maxOccurs="1">
+                <xsd:element ref="deviceReferenciasSensors" minOccurs="0" maxOccurs="unbounded">
                   <xsd:annotation>
-                    <xsd:documentation>[Instance of DeviceReferenciasSensor needs to be serialized in full-form]</xsd:documentation>
+                    <xsd:documentation>[Instance of DeviceReferenciasSensors needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -582,6 +599,8 @@
             <xsd:documentation>Refresh rate of the sensors in miliseconds</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: SensorId -->
+        <xsd:attribute name="sensorId" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -745,9 +764,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- EndpointReferencesCloudService -->
-  <xsd:element name="endpointReferencesCloudService" type="EndpointReferencesCloudService" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="EndpointReferencesCloudService">
+  <!-- EndpointConnectsCloudService -->
+  <xsd:element name="endpointConnectsCloudService" type="EndpointConnectsCloudService" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="EndpointConnectsCloudService">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -768,11 +787,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- EndpointReferencesCloudService Moniker -->
+  <!-- EndpointConnectsCloudService Moniker -->
   <xsd:element name="monikerEndpointReferenciasCloudService" type="MonikerEndpointReferenciasCloudService" substitutionGroup="core:modelElementMoniker" />
   <xsd:complexType name="MonikerEndpointReferenciasCloudService">
     <xsd:annotation>
-      <xsd:documentation>Moniker for EndpointReferencesCloudService instance.</xsd:documentation>
+      <xsd:documentation>Moniker for EndpointConnectsCloudService instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -905,9 +924,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- DeviceReferenciasSensor -->
-  <xsd:element name="deviceReferenciasSensor" type="DeviceReferenciasSensor" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="DeviceReferenciasSensor">
+  <!-- DeviceReferenciasSensors -->
+  <xsd:element name="deviceReferenciasSensors" type="DeviceReferenciasSensors" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="DeviceReferenciasSensors">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -928,11 +947,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- DeviceReferenciasSensor Moniker -->
+  <!-- DeviceReferenciasSensors Moniker -->
   <xsd:element name="monikerDeviceReferenciasSensor" type="MonikerDeviceReferenciasSensor" substitutionGroup="core:modelElementMoniker" />
   <xsd:complexType name="MonikerDeviceReferenciasSensor">
     <xsd:annotation>
-      <xsd:documentation>Moniker for DeviceReferenciasSensor instance.</xsd:documentation>
+      <xsd:documentation>Moniker for DeviceReferenciasSensors instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -945,9 +964,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- IoTCenterReferencesDevices -->
-  <xsd:element name="ioTCenterReferencesDevices" type="IoTCenterReferencesDevices" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="IoTCenterReferencesDevices">
+  <!-- IoTCenterHasDevices -->
+  <xsd:element name="ioTCenterHasDevices" type="IoTCenterHasDevices" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="IoTCenterHasDevices">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
@@ -964,15 +983,57 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <!-- Property: DeviceKey -->
+        <xsd:attribute name="deviceKey" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- IoTCenterReferencesDevices Moniker -->
+  <!-- IoTCenterHasDevices Moniker -->
   <xsd:element name="monikerIoTCenterReferenciasDevice" type="MonikerIoTCenterReferenciasDevice" substitutionGroup="core:modelElementMoniker" />
   <xsd:complexType name="MonikerIoTCenterReferenciasDevice">
     <xsd:annotation>
-      <xsd:documentation>Moniker for IoTCenterReferencesDevices instance.</xsd:documentation>
+      <xsd:documentation>Moniker for IoTCenterHasDevices instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AppServiceReferenciasMessageService -->
+  <xsd:element name="appServiceReferenciasMessageService" type="AppServiceReferenciasMessageService" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="AppServiceReferenciasMessageService">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end MessageService -->
+          <xsd:element ref="monikerServiceBus" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AppServiceReferenciasMessageService Moniker -->
+  <xsd:element name="monikerAppServiceReferenciasMessageService" type="MonikerAppServiceReferenciasMessageService" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="MonikerAppServiceReferenciasMessageService">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for AppServiceReferenciasMessageService instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

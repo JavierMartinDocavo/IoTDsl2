@@ -2027,7 +2027,7 @@ namespace Compañía.IotDsl
 							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </endpoints>
 						}
 						break;
-					case "devices":	// Relationship "IoTCenterReferencesDevices"
+					case "devices":	// Relationship "IoTCenterHasDevices"
 						if (reader.IsEmptyElement)
 						{	// No instance of this relationship, just skip
 							DslModeling::SerializationUtilities.Skip(reader);
@@ -2035,7 +2035,7 @@ namespace Compañía.IotDsl
 						else
 						{
 							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <devices>
-							ReadIoTCenterReferencesDevicesInstances(serializationContext, element, reader);
+							ReadIoTCenterHasDevicesInstances(serializationContext, element, reader);
 							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </devices>
 						}
 						break;
@@ -2092,7 +2092,7 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Reads all instances of relationship IoTCenterReferencesDevices.
+		/// Reads all instances of relationship IoTCenterHasDevices.
 		/// </summary>
 		/// <remarks>
 		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
@@ -2103,29 +2103,29 @@ namespace Compañía.IotDsl
 		/// <param name="element">In-memory IoTCenter instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806")]
-		private static void ReadIoTCenterReferencesDevicesInstances(DslModeling::SerializationContext serializationContext, IoTCenter element, global::System.Xml.XmlReader reader)
+		private static void ReadIoTCenterHasDevicesInstances(DslModeling::SerializationContext serializationContext, IoTCenter element, global::System.Xml.XmlReader reader)
 		{
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				DslModeling::DomainClassXmlSerializer newIoTCenterReferencesDevicesSerializer = serializationContext.Directory.GetSerializer(IoTCenterReferencesDevices.DomainClassId);
-				global::System.Diagnostics.Debug.Assert(newIoTCenterReferencesDevicesSerializer != null, "Cannot find serializer for IoTCenterReferencesDevices!");
-				IoTCenterReferencesDevices newIoTCenterReferencesDevices = newIoTCenterReferencesDevicesSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as IoTCenterReferencesDevices;
-				if (newIoTCenterReferencesDevices != null)
+				DslModeling::DomainClassXmlSerializer newIoTCenterHasDevicesSerializer = serializationContext.Directory.GetSerializer(IoTCenterHasDevices.DomainClassId);
+				global::System.Diagnostics.Debug.Assert(newIoTCenterHasDevicesSerializer != null, "Cannot find serializer for IoTCenterHasDevices!");
+				IoTCenterHasDevices newIoTCenterHasDevices = newIoTCenterHasDevicesSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as IoTCenterHasDevices;
+				if (newIoTCenterHasDevices != null)
 				{
-					DslModeling::DomainRoleInfo.SetRolePlayer (newIoTCenterReferencesDevices, IoTCenterReferencesDevices.IoTCenterDomainRoleId, element);
-					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newIoTCenterReferencesDevices.GetDomainClass().Id);	
-					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newIoTCenterReferencesDevices.GetDomainClass().Name + "!");
-					targetSerializer.Read(serializationContext, newIoTCenterReferencesDevices, reader);
+					DslModeling::DomainRoleInfo.SetRolePlayer (newIoTCenterHasDevices, IoTCenterHasDevices.IoTCenterDomainRoleId, element);
+					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newIoTCenterHasDevices.GetDomainClass().Id);	
+					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newIoTCenterHasDevices.GetDomainClass().Name + "!");
+					targetSerializer.Read(serializationContext, newIoTCenterHasDevices, reader);
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
-					DslModeling::DomainClassXmlSerializer newDeviceMonikerOfIoTCenterReferencesDevicesSerializer = serializationContext.Directory.GetSerializer(Device.DomainClassId);
-					global::System.Diagnostics.Debug.Assert(newDeviceMonikerOfIoTCenterReferencesDevicesSerializer != null, "Cannot find serializer for Device!");
-					DslModeling::Moniker newDeviceMonikerOfIoTCenterReferencesDevices = newDeviceMonikerOfIoTCenterReferencesDevicesSerializer.TryCreateMonikerInstance(serializationContext, reader, element, IoTCenterReferencesDevices.DomainClassId, element.Partition);
-					if (newDeviceMonikerOfIoTCenterReferencesDevices != null)
+					DslModeling::DomainClassXmlSerializer newDeviceMonikerOfIoTCenterHasDevicesSerializer = serializationContext.Directory.GetSerializer(Device.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newDeviceMonikerOfIoTCenterHasDevicesSerializer != null, "Cannot find serializer for Device!");
+					DslModeling::Moniker newDeviceMonikerOfIoTCenterHasDevices = newDeviceMonikerOfIoTCenterHasDevicesSerializer.TryCreateMonikerInstance(serializationContext, reader, element, IoTCenterHasDevices.DomainClassId, element.Partition);
+					if (newDeviceMonikerOfIoTCenterHasDevices != null)
 					{
-						IotDslSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(IoTCenterReferencesDevices));
-						new IoTCenterReferencesDevices(element.Partition, new DslModeling::RoleAssignment(IoTCenterReferencesDevices.IoTCenterDomainRoleId, element), new DslModeling::RoleAssignment(IoTCenterReferencesDevices.DeviceDomainRoleId, newDeviceMonikerOfIoTCenterReferencesDevices));
+						IotDslSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(IoTCenterHasDevices));
+						new IoTCenterHasDevices(element.Partition, new DslModeling::RoleAssignment(IoTCenterHasDevices.IoTCenterDomainRoleId, element), new DslModeling::RoleAssignment(IoTCenterHasDevices.DeviceDomainRoleId, newDeviceMonikerOfIoTCenterHasDevices));
 						DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
 					}
 					else
@@ -2555,19 +2555,19 @@ namespace Compañía.IotDsl
 				writer.WriteEndElement();
 			}
 	
-			// IoTCenterReferencesDevices
-			global::System.Collections.ObjectModel.ReadOnlyCollection<IoTCenterReferencesDevices> allIoTCenterReferencesDevicesInstances = IoTCenterReferencesDevices.GetLinksToDevices(element);
-			if (!serializationContext.Result.Failed && allIoTCenterReferencesDevicesInstances.Count > 0)
+			// IoTCenterHasDevices
+			global::System.Collections.ObjectModel.ReadOnlyCollection<IoTCenterHasDevices> allIoTCenterHasDevicesInstances = IoTCenterHasDevices.GetLinksToDevices(element);
+			if (!serializationContext.Result.Failed && allIoTCenterHasDevicesInstances.Count > 0)
 			{
 				writer.WriteStartElement("devices");
-				foreach (IoTCenterReferencesDevices eachIoTCenterReferencesDevicesInstance in allIoTCenterReferencesDevicesInstances)
+				foreach (IoTCenterHasDevices eachIoTCenterHasDevicesInstance in allIoTCenterHasDevicesInstances)
 				{
 					if (serializationContext.Result.Failed)
 						break;
 	
-					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachIoTCenterReferencesDevicesInstance.GetDomainClass().Id);
-					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachIoTCenterReferencesDevicesInstance.GetDomainClass().Name + "!");
-					relSerializer.Write(serializationContext, eachIoTCenterReferencesDevicesInstance, writer);
+					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachIoTCenterHasDevicesInstance.GetDomainClass().Id);
+					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachIoTCenterHasDevicesInstance.GetDomainClass().Name + "!");
+					relSerializer.Write(serializationContext, eachIoTCenterHasDevicesInstance, writer);
 				}
 				writer.WriteEndElement();
 			}
@@ -2879,7 +2879,7 @@ namespace Compañía.IotDsl
 					else
 					{
 						DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <cloudService>
-						ReadEndpointReferencesCloudServiceInstance(serializationContext, element, reader);
+						ReadEndpointConnectsCloudServiceInstance(serializationContext, element, reader);
 						DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </cloudService>
 					}
 				}
@@ -2887,7 +2887,7 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Reads instance of relationship EndpointReferencesCloudService.
+		/// Reads instance of relationship EndpointConnectsCloudService.
 		/// </summary>
 		/// <remarks>
 		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
@@ -2899,9 +2899,9 @@ namespace Compañía.IotDsl
 		/// <param name="element">In-memory Endpoint instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806")]
-		private static void ReadEndpointReferencesCloudServiceInstance(DslModeling::SerializationContext serializationContext, Endpoint element, global::System.Xml.XmlReader reader)
+		private static void ReadEndpointConnectsCloudServiceInstance(DslModeling::SerializationContext serializationContext, Endpoint element, global::System.Xml.XmlReader reader)
 		{
-			if (DslModeling::DomainRoleInfo.GetElementLinks<EndpointReferencesCloudService> (element, EndpointReferencesCloudService.EndpointDomainRoleId).Count > 0)
+			if (DslModeling::DomainRoleInfo.GetElementLinks<EndpointConnectsCloudService> (element, EndpointConnectsCloudService.EndpointDomainRoleId).Count > 0)
 			{	// Only allow one instance, which already exists, so skip everything
 				DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
 				return;
@@ -2909,26 +2909,26 @@ namespace Compañía.IotDsl
 	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				DslModeling::DomainClassXmlSerializer newEndpointReferencesCloudServiceSerializer = serializationContext.Directory.GetSerializer(EndpointReferencesCloudService.DomainClassId);
-				global::System.Diagnostics.Debug.Assert(newEndpointReferencesCloudServiceSerializer != null, "Cannot find serializer for EndpointReferencesCloudService!");
-				EndpointReferencesCloudService newEndpointReferencesCloudService = newEndpointReferencesCloudServiceSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as EndpointReferencesCloudService;
-				if (newEndpointReferencesCloudService != null)
+				DslModeling::DomainClassXmlSerializer newEndpointConnectsCloudServiceSerializer = serializationContext.Directory.GetSerializer(EndpointConnectsCloudService.DomainClassId);
+				global::System.Diagnostics.Debug.Assert(newEndpointConnectsCloudServiceSerializer != null, "Cannot find serializer for EndpointConnectsCloudService!");
+				EndpointConnectsCloudService newEndpointConnectsCloudService = newEndpointConnectsCloudServiceSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as EndpointConnectsCloudService;
+				if (newEndpointConnectsCloudService != null)
 				{
-					DslModeling::DomainRoleInfo.SetRolePlayer (newEndpointReferencesCloudService, EndpointReferencesCloudService.EndpointDomainRoleId, element);
-					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newEndpointReferencesCloudService.GetDomainClass().Id);	
-					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newEndpointReferencesCloudService.GetDomainClass().Name + "!");
-					targetSerializer.Read(serializationContext, newEndpointReferencesCloudService, reader);
+					DslModeling::DomainRoleInfo.SetRolePlayer (newEndpointConnectsCloudService, EndpointConnectsCloudService.EndpointDomainRoleId, element);
+					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newEndpointConnectsCloudService.GetDomainClass().Id);	
+					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newEndpointConnectsCloudService.GetDomainClass().Name + "!");
+					targetSerializer.Read(serializationContext, newEndpointConnectsCloudService, reader);
 					break;	// Only allow one instance.
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
-					DslModeling::DomainClassXmlSerializer newCloudServiceMonikerOfEndpointReferencesCloudServiceSerializer = serializationContext.Directory.GetSerializer(CloudService.DomainClassId);
-					global::System.Diagnostics.Debug.Assert(newCloudServiceMonikerOfEndpointReferencesCloudServiceSerializer != null, "Cannot find serializer for CloudService!");
-					DslModeling::Moniker newCloudServiceMonikerOfEndpointReferencesCloudService = newCloudServiceMonikerOfEndpointReferencesCloudServiceSerializer.TryCreateMonikerInstance(serializationContext, reader, element, EndpointReferencesCloudService.DomainClassId, element.Partition);
-					if (newCloudServiceMonikerOfEndpointReferencesCloudService != null)
+					DslModeling::DomainClassXmlSerializer newCloudServiceMonikerOfEndpointConnectsCloudServiceSerializer = serializationContext.Directory.GetSerializer(CloudService.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newCloudServiceMonikerOfEndpointConnectsCloudServiceSerializer != null, "Cannot find serializer for CloudService!");
+					DslModeling::Moniker newCloudServiceMonikerOfEndpointConnectsCloudService = newCloudServiceMonikerOfEndpointConnectsCloudServiceSerializer.TryCreateMonikerInstance(serializationContext, reader, element, EndpointConnectsCloudService.DomainClassId, element.Partition);
+					if (newCloudServiceMonikerOfEndpointConnectsCloudService != null)
 					{
-						IotDslSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(EndpointReferencesCloudService));
-						new EndpointReferencesCloudService(element.Partition, new DslModeling::RoleAssignment(EndpointReferencesCloudService.EndpointDomainRoleId, element), new DslModeling::RoleAssignment(EndpointReferencesCloudService.CloudServiceDomainRoleId, newCloudServiceMonikerOfEndpointReferencesCloudService));
+						IotDslSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(EndpointConnectsCloudService));
+						new EndpointConnectsCloudService(element.Partition, new DslModeling::RoleAssignment(EndpointConnectsCloudService.EndpointDomainRoleId, element), new DslModeling::RoleAssignment(EndpointConnectsCloudService.CloudServiceDomainRoleId, newCloudServiceMonikerOfEndpointConnectsCloudService));
 						DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
 						break;	// Only allow one instance.
 					}
@@ -3368,14 +3368,14 @@ namespace Compañía.IotDsl
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]		
 		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, Endpoint element, global::System.Xml.XmlWriter writer)
 		{
-			// EndpointReferencesCloudService
-			EndpointReferencesCloudService theEndpointReferencesCloudServiceInstance = EndpointReferencesCloudService.GetLinkToCloudService(element);
-			if (!serializationContext.Result.Failed && theEndpointReferencesCloudServiceInstance != null)
+			// EndpointConnectsCloudService
+			EndpointConnectsCloudService theEndpointConnectsCloudServiceInstance = EndpointConnectsCloudService.GetLinkToCloudService(element);
+			if (!serializationContext.Result.Failed && theEndpointConnectsCloudServiceInstance != null)
 			{
 				writer.WriteStartElement("cloudService");
-				DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(theEndpointReferencesCloudServiceInstance.GetDomainClass().Id);
-				global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + theEndpointReferencesCloudServiceInstance.GetDomainClass().Name + "!");
-				relSerializer.Write(serializationContext, theEndpointReferencesCloudServiceInstance, writer);
+				DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(theEndpointConnectsCloudServiceInstance.GetDomainClass().Id);
+				global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + theEndpointConnectsCloudServiceInstance.GetDomainClass().Name + "!");
+				relSerializer.Write(serializationContext, theEndpointConnectsCloudServiceInstance, writer);
 				writer.WriteEndElement();
 			}
 	
@@ -5544,7 +5544,7 @@ namespace Compañía.IotDsl
 					// model elements.
 					while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 					{
-						base.ReadElements(serializationContext, element, reader);
+						ReadElements(serializationContext, element, reader);
 						if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 						{
 							// Encountered one unknown XML element, skip it and keep reading.
@@ -5559,6 +5559,124 @@ namespace Compañía.IotDsl
 			DslModeling::SerializationUtilities.Skip(reader);
 		}
 		
+	
+		/// <summary>
+		/// This methods deserializes nested XML elements inside the passed-in element.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the current element does have nested XML elements, and the call will position the 
+		/// reader at the open tag of the first child XML element.
+		/// This method will read as many child XML elements as it can. It returns under three circumstances:
+		/// 1) When an unknown child XML element is encountered. In this case, this method will position the reader at the open 
+		///    tag of the unknown element. This implies that if the first child XML element is unknown, this method should return 
+		///    immediately and do nothing.
+		/// 2) When all child XML elemnets are read. In this case, the reader will be positioned at the end tag of the parent element.
+		/// 3) EOF.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory AppService instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadElements(serializationContext, element, reader);
+	
+			AppService instanceOfAppService = element as AppService;
+			global::System.Diagnostics.Debug.Assert(instanceOfAppService != null, "Expecting an instance of AppService!");
+	
+			// Read child model elements (which are always serialized as nested XML elements).
+			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+				ReadChildElements(serializationContext, instanceOfAppService, reader);
+		}
+	
+		/// <summary>
+		/// This method deserializes all child model elements.
+		/// </summary>
+		/// <remarks>
+		/// The caller will position the reader at the open tag of the first child XML element to deserialized.
+		/// This method will read as many child elements as it can. It returns under three circumstances:
+		/// 1) When an unknown child XML element is encountered. In this case, this method will position the reader at the 
+		///    open tag of the unknown element. This implies that if the first child XML element is unknown, this method 
+		///    should return immediately and do nothing.
+		/// 2) When all child XML elemnets are read. In this case, the reader will be positioned at the end tag of the parent element.
+		/// 3) EOF.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="element">In-memory AppService instance that will get the deserialized data.</param>
+		private static void ReadChildElements(DslModeling::SerializationContext serializationContext, AppService element, global::System.Xml.XmlReader reader)
+		{
+			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+			{
+				if (string.Compare(reader.LocalName, "messageService", global::System.StringComparison.CurrentCulture) == 0)
+				{
+					if (reader.IsEmptyElement)
+					{	// No instance of this relationship, just skip
+						DslModeling::SerializationUtilities.Skip(reader);
+					}
+					else
+					{
+						DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <messageService>
+						ReadAppServiceReferenciasMessageServiceInstance(serializationContext, element, reader);
+						DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </messageService>
+					}
+				}
+			}
+		}
+	
+		/// <summary>
+		/// Reads instance of relationship AppServiceReferenciasMessageService.
+		/// </summary>
+		/// <remarks>
+		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
+		/// either the first instance, or a bogus tag. This method will deserialize only the first valid instance and ignore all the
+		/// rest tags (because the multiplicity allows only one instance). When the method returns, the reader will be positioned at 
+		/// the end tag of the relationship (or EOF if somehow that happens).
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory AppService instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806")]
+		private static void ReadAppServiceReferenciasMessageServiceInstance(DslModeling::SerializationContext serializationContext, AppService element, global::System.Xml.XmlReader reader)
+		{
+			if (DslModeling::DomainRoleInfo.GetElementLinks<AppServiceReferenciasMessageService> (element, AppServiceReferenciasMessageService.AppServiceDomainRoleId).Count > 0)
+			{	// Only allow one instance, which already exists, so skip everything
+				DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
+				return;
+			}
+	
+			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+			{
+				DslModeling::DomainClassXmlSerializer newAppServiceReferenciasMessageServiceSerializer = serializationContext.Directory.GetSerializer(AppServiceReferenciasMessageService.DomainClassId);
+				global::System.Diagnostics.Debug.Assert(newAppServiceReferenciasMessageServiceSerializer != null, "Cannot find serializer for AppServiceReferenciasMessageService!");
+				AppServiceReferenciasMessageService newAppServiceReferenciasMessageService = newAppServiceReferenciasMessageServiceSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as AppServiceReferenciasMessageService;
+				if (newAppServiceReferenciasMessageService != null)
+				{
+					DslModeling::DomainRoleInfo.SetRolePlayer (newAppServiceReferenciasMessageService, AppServiceReferenciasMessageService.AppServiceDomainRoleId, element);
+					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newAppServiceReferenciasMessageService.GetDomainClass().Id);	
+					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newAppServiceReferenciasMessageService.GetDomainClass().Name + "!");
+					targetSerializer.Read(serializationContext, newAppServiceReferenciasMessageService, reader);
+					break;	// Only allow one instance.
+				}
+				else
+				{	// Maybe the relationship is serialized in short-form by mistake.
+					DslModeling::DomainClassXmlSerializer newMessageServiceMonikerOfAppServiceReferenciasMessageServiceSerializer = serializationContext.Directory.GetSerializer(MessageService.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newMessageServiceMonikerOfAppServiceReferenciasMessageServiceSerializer != null, "Cannot find serializer for MessageService!");
+					DslModeling::Moniker newMessageServiceMonikerOfAppServiceReferenciasMessageService = newMessageServiceMonikerOfAppServiceReferenciasMessageServiceSerializer.TryCreateMonikerInstance(serializationContext, reader, element, AppServiceReferenciasMessageService.DomainClassId, element.Partition);
+					if (newMessageServiceMonikerOfAppServiceReferenciasMessageService != null)
+					{
+						IotDslSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(AppServiceReferenciasMessageService));
+						new AppServiceReferenciasMessageService(element.Partition, new DslModeling::RoleAssignment(AppServiceReferenciasMessageService.AppServiceDomainRoleId, element), new DslModeling::RoleAssignment(AppServiceReferenciasMessageService.MessageServiceDomainRoleId, newMessageServiceMonikerOfAppServiceReferenciasMessageService));
+						DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
+						break;	// Only allow one instance.
+					}
+					else
+					{	// Unknown element, skip.
+						DslModeling::SerializationUtilities.Skip(reader);
+					}
+				}
+			}
+		}
 	
 		#region TryCreateInstance
 		/// <summary>
@@ -5926,10 +6044,53 @@ namespace Compañía.IotDsl
 			if (!serializationContext.Result.Failed)
 			{
 				// Write 1) properties serialized as nested XML elements and 2) child model elements into XML.
-				base.WriteElements(serializationContext, element, writer);
+				WriteElements(serializationContext, element, writer);
 			}
 	
 			writer.WriteEndElement();
+		}
+	
+		/// <summary>
+		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">AppService instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param>        
+		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WriteElements(serializationContext, element, writer);
+	
+			AppService instance = element as AppService;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of AppService!");
+	
+			// Write child model elements (which are always serialized as nested XML elements).
+			if (!serializationContext.Result.Failed)
+				WriteChildElements(serializationContext, instance, writer);
+		}
+		
+	
+		/// <summary>
+		/// Serialize all child model elements.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">AppService instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]		
+		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, AppService element, global::System.Xml.XmlWriter writer)
+		{
+			// AppServiceReferenciasMessageService
+			AppServiceReferenciasMessageService theAppServiceReferenciasMessageServiceInstance = AppServiceReferenciasMessageService.GetLinkToMessageService(element);
+			if (!serializationContext.Result.Failed && theAppServiceReferenciasMessageServiceInstance != null)
+			{
+				writer.WriteStartElement("messageService");
+				DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(theAppServiceReferenciasMessageServiceInstance.GetDomainClass().Id);
+				global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + theAppServiceReferenciasMessageServiceInstance.GetDomainClass().Name + "!");
+				relSerializer.Write(serializationContext, theAppServiceReferenciasMessageServiceInstance, writer);
+				writer.WriteEndElement();
+			}
+	
 		}
 		#endregion
 	
@@ -8556,7 +8717,7 @@ namespace Compañía.IotDsl
 		{
 			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				if (string.Compare(reader.LocalName, "sensor", global::System.StringComparison.CurrentCulture) == 0)
+				if (string.Compare(reader.LocalName, "sensors", global::System.StringComparison.CurrentCulture) == 0)
 				{
 					if (reader.IsEmptyElement)
 					{	// No instance of this relationship, just skip
@@ -8564,59 +8725,50 @@ namespace Compañía.IotDsl
 					}
 					else
 					{
-						DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <sensor>
-						ReadDeviceReferenciasSensorInstance(serializationContext, element, reader);
-						DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </sensor>
+						DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <sensors>
+						ReadDeviceReferenciasSensorsInstances(serializationContext, element, reader);
+						DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </sensors>
 					}
 				}
 			}
 		}
 	
 		/// <summary>
-		/// Reads instance of relationship DeviceReferenciasSensor.
+		/// Reads all instances of relationship DeviceReferenciasSensors.
 		/// </summary>
 		/// <remarks>
 		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
-		/// either the first instance, or a bogus tag. This method will deserialize only the first valid instance and ignore all the
-		/// rest tags (because the multiplicity allows only one instance). When the method returns, the reader will be positioned at 
-		/// the end tag of the relationship (or EOF if somehow that happens).
+		/// either the first instance, or a bogus tag. This method will deserialize all instances and ignore all bogus tags. When the
+		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="element">In-memory Device instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1806")]
-		private static void ReadDeviceReferenciasSensorInstance(DslModeling::SerializationContext serializationContext, Device element, global::System.Xml.XmlReader reader)
+		private static void ReadDeviceReferenciasSensorsInstances(DslModeling::SerializationContext serializationContext, Device element, global::System.Xml.XmlReader reader)
 		{
-			if (DslModeling::DomainRoleInfo.GetElementLinks<DeviceReferenciasSensor> (element, DeviceReferenciasSensor.DeviceDomainRoleId).Count > 0)
-			{	// Only allow one instance, which already exists, so skip everything
-				DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
-				return;
-			}
-	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				DslModeling::DomainClassXmlSerializer newDeviceReferenciasSensorSerializer = serializationContext.Directory.GetSerializer(DeviceReferenciasSensor.DomainClassId);
-				global::System.Diagnostics.Debug.Assert(newDeviceReferenciasSensorSerializer != null, "Cannot find serializer for DeviceReferenciasSensor!");
-				DeviceReferenciasSensor newDeviceReferenciasSensor = newDeviceReferenciasSensorSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as DeviceReferenciasSensor;
-				if (newDeviceReferenciasSensor != null)
+				DslModeling::DomainClassXmlSerializer newDeviceReferenciasSensorsSerializer = serializationContext.Directory.GetSerializer(DeviceReferenciasSensors.DomainClassId);
+				global::System.Diagnostics.Debug.Assert(newDeviceReferenciasSensorsSerializer != null, "Cannot find serializer for DeviceReferenciasSensors!");
+				DeviceReferenciasSensors newDeviceReferenciasSensors = newDeviceReferenciasSensorsSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as DeviceReferenciasSensors;
+				if (newDeviceReferenciasSensors != null)
 				{
-					DslModeling::DomainRoleInfo.SetRolePlayer (newDeviceReferenciasSensor, DeviceReferenciasSensor.DeviceDomainRoleId, element);
-					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newDeviceReferenciasSensor.GetDomainClass().Id);	
-					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newDeviceReferenciasSensor.GetDomainClass().Name + "!");
-					targetSerializer.Read(serializationContext, newDeviceReferenciasSensor, reader);
-					break;	// Only allow one instance.
+					DslModeling::DomainRoleInfo.SetRolePlayer (newDeviceReferenciasSensors, DeviceReferenciasSensors.DeviceDomainRoleId, element);
+					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newDeviceReferenciasSensors.GetDomainClass().Id);	
+					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newDeviceReferenciasSensors.GetDomainClass().Name + "!");
+					targetSerializer.Read(serializationContext, newDeviceReferenciasSensors, reader);
 				}
 				else
 				{	// Maybe the relationship is serialized in short-form by mistake.
-					DslModeling::DomainClassXmlSerializer newSensorMonikerOfDeviceReferenciasSensorSerializer = serializationContext.Directory.GetSerializer(Sensor.DomainClassId);
-					global::System.Diagnostics.Debug.Assert(newSensorMonikerOfDeviceReferenciasSensorSerializer != null, "Cannot find serializer for Sensor!");
-					DslModeling::Moniker newSensorMonikerOfDeviceReferenciasSensor = newSensorMonikerOfDeviceReferenciasSensorSerializer.TryCreateMonikerInstance(serializationContext, reader, element, DeviceReferenciasSensor.DomainClassId, element.Partition);
-					if (newSensorMonikerOfDeviceReferenciasSensor != null)
+					DslModeling::DomainClassXmlSerializer newSensorMonikerOfDeviceReferenciasSensorsSerializer = serializationContext.Directory.GetSerializer(Sensor.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newSensorMonikerOfDeviceReferenciasSensorsSerializer != null, "Cannot find serializer for Sensor!");
+					DslModeling::Moniker newSensorMonikerOfDeviceReferenciasSensors = newSensorMonikerOfDeviceReferenciasSensorsSerializer.TryCreateMonikerInstance(serializationContext, reader, element, DeviceReferenciasSensors.DomainClassId, element.Partition);
+					if (newSensorMonikerOfDeviceReferenciasSensors != null)
 					{
-						IotDslSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(DeviceReferenciasSensor));
-						new DeviceReferenciasSensor(element.Partition, new DslModeling::RoleAssignment(DeviceReferenciasSensor.DeviceDomainRoleId, element), new DslModeling::RoleAssignment(DeviceReferenciasSensor.SensorDomainRoleId, newSensorMonikerOfDeviceReferenciasSensor));
+						IotDslSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(DeviceReferenciasSensors));
+						new DeviceReferenciasSensors(element.Partition, new DslModeling::RoleAssignment(DeviceReferenciasSensors.DeviceDomainRoleId, element), new DslModeling::RoleAssignment(DeviceReferenciasSensors.SensorDomainRoleId, newSensorMonikerOfDeviceReferenciasSensors));
 						DslModeling::SerializationUtilities.Skip(reader);	// Moniker contains no child XML elements, so just skip.
-						break;	// Only allow one instance.
 					}
 					else
 					{	// Unknown element, skip.
@@ -9054,14 +9206,20 @@ namespace Compañía.IotDsl
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]		
 		private static void WriteChildElements(DslModeling::SerializationContext serializationContext, Device element, global::System.Xml.XmlWriter writer)
 		{
-			// DeviceReferenciasSensor
-			DeviceReferenciasSensor theDeviceReferenciasSensorInstance = DeviceReferenciasSensor.GetLinkToSensor(element);
-			if (!serializationContext.Result.Failed && theDeviceReferenciasSensorInstance != null)
+			// DeviceReferenciasSensors
+			global::System.Collections.ObjectModel.ReadOnlyCollection<DeviceReferenciasSensors> allDeviceReferenciasSensorsInstances = DeviceReferenciasSensors.GetLinksToSensors(element);
+			if (!serializationContext.Result.Failed && allDeviceReferenciasSensorsInstances.Count > 0)
 			{
-				writer.WriteStartElement("sensor");
-				DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(theDeviceReferenciasSensorInstance.GetDomainClass().Id);
-				global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + theDeviceReferenciasSensorInstance.GetDomainClass().Name + "!");
-				relSerializer.Write(serializationContext, theDeviceReferenciasSensorInstance, writer);
+				writer.WriteStartElement("sensors");
+				foreach (DeviceReferenciasSensors eachDeviceReferenciasSensorsInstance in allDeviceReferenciasSensorsInstances)
+				{
+					if (serializationContext.Result.Failed)
+						break;
+	
+					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachDeviceReferenciasSensorsInstance.GetDomainClass().Id);
+					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachDeviceReferenciasSensorsInstance.GetDomainClass().Name + "!");
+					relSerializer.Write(serializationContext, eachDeviceReferenciasSensorsInstance, writer);
+				}
 				writer.WriteEndElement();
 			}
 	
@@ -9895,6 +10053,23 @@ namespace Compañía.IotDsl
 					}
 				}
 			}
+			// SensorId
+			if (!serializationContext.Result.Failed)
+			{
+				string attribSensorId = IotDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "sensorId");
+				if (attribSensorId != null)
+				{
+					global::System.String valueOfSensorId;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribSensorId, out valueOfSensorId))
+					{
+						instanceOfSensor.SensorId = valueOfSensorId;
+					}
+					else
+					{	// Invalid property value, ignored.
+						IotDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "sensorId", typeof(global::System.String), attribSensorId);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -10328,6 +10503,17 @@ namespace Compañía.IotDsl
 				if (!serializationContext.Result.Failed)
 				{
 					IotDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "refreshRate", serializedPropValue);
+				}
+			}
+			// SensorId
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfSensor.SensorId;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						IotDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "sensorId", propValue);
+	
 				}
 			}
 		}
@@ -13275,15 +13461,15 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// Serializer EndpointReferencesCloudServiceSerializer for DomainClass EndpointReferencesCloudService.
+	/// Serializer EndpointConnectsCloudServiceSerializer for DomainClass EndpointConnectsCloudService.
 	/// </summary>
-	public partial class EndpointReferencesCloudServiceSerializer : DslModeling::DomainRelationshipXmlSerializer
+	public partial class EndpointConnectsCloudServiceSerializer : DslModeling::DomainRelationshipXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// EndpointReferencesCloudServiceSerializer Constructor
+		/// EndpointConnectsCloudServiceSerializer Constructor
 		/// </summary>
-		public EndpointReferencesCloudServiceSerializer ()
+		public EndpointConnectsCloudServiceSerializer ()
 			: base ()
 		{
 		}
@@ -13309,16 +13495,16 @@ namespace Compañía.IotDsl
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of EndpointReferencesCloudService.
+		/// This is the XML tag name used to serialize an instance of EndpointConnectsCloudService.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"endpointReferencesCloudService"; }
+			get { return @"endpointConnectsCloudService"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of EndpointReferencesCloudService.
+		/// This is the XML tag name used to serialize a monikerized instance of EndpointConnectsCloudService.
 		/// </summary>
 		public override string MonikerTagName
 		{
@@ -13327,7 +13513,7 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of EndpointReferencesCloudService in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of EndpointConnectsCloudService in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -13338,16 +13524,16 @@ namespace Compañía.IotDsl
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one EndpointReferencesCloudService instance from XML.
+		/// Public Read() method that deserializes one EndpointConnectsCloudService instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the EndpointReferencesCloudService element that is about to be deserialized. 
+		/// of the EndpointConnectsCloudService element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory EndpointReferencesCloudService instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory EndpointConnectsCloudService instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -13395,7 +13581,7 @@ namespace Compañía.IotDsl
 				}
 				else
 				{
-					IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "EndpointReferencesCloudService");
+					IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "EndpointConnectsCloudService");
 				}
 			}
 	
@@ -13419,7 +13605,7 @@ namespace Compañía.IotDsl
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory EndpointReferencesCloudService instance that will link to the target CloudService instance.</param>
+		/// <param name="element">In-memory EndpointConnectsCloudService instance that will link to the target CloudService instance.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -13442,11 +13628,11 @@ namespace Compañía.IotDsl
 	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((EndpointReferencesCloudService)element).Endpoint, EndpointReferencesCloudService.DomainClassId, element.Partition);
+				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((EndpointConnectsCloudService)element).Endpoint, EndpointConnectsCloudService.DomainClassId, element.Partition);
 				if (targetRoleMoniker != null)
 				{
 					// Attach the target role-player moniker.
-					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, EndpointReferencesCloudService.CloudServiceDomainRoleId, targetRoleMoniker);
+					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, EndpointConnectsCloudService.CloudServiceDomainRoleId, targetRoleMoniker);
 					// Moniker tag has no child XML elements in it, so just skip to the next element.
 					DslModeling::SerializationUtilities.Skip(reader);
 					break;
@@ -13457,7 +13643,7 @@ namespace Compañía.IotDsl
 			}
 			if (targetRoleMoniker == null)
 			{
-				IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "EndpointReferencesCloudService");
+				IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "EndpointConnectsCloudService");
 			}
 		}
 	
@@ -13469,7 +13655,7 @@ namespace Compañía.IotDsl
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory EndpointReferencesCloudService instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory EndpointConnectsCloudService instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -13494,7 +13680,7 @@ namespace Compañía.IotDsl
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory EndpointReferencesCloudService instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory EndpointConnectsCloudService instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -13505,8 +13691,8 @@ namespace Compañía.IotDsl
 	
 		#region TryCreateInstance & TryCreateDerivedInstance
 		/// <summary>
-		/// This method creates a correct instance of EndpointReferencesCloudService based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized EndpointReferencesCloudService, a new EndpointReferencesCloudService instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of EndpointConnectsCloudService based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized EndpointConnectsCloudService, a new EndpointConnectsCloudService instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -13516,7 +13702,7 @@ namespace Compañía.IotDsl
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created EndpointReferencesCloudService instance, or null if the reader is not pointing to a serialized EndpointReferencesCloudService instance.</returns>
+		/// <returns>Created EndpointConnectsCloudService instance, or null if the reader is not pointing to a serialized EndpointConnectsCloudService instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -13535,9 +13721,9 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// This method creates a correct derived instance of EndpointReferencesCloudService based on the tag currently pointed by the reader.
+		/// This method creates a correct derived instance of EndpointConnectsCloudService based on the tag currently pointed by the reader.
 		/// Note that the difference between this method and the above one is that this method will never create an instance of the
-		/// EndpointReferencesCloudService type itself, only derived types are checked.
+		/// EndpointConnectsCloudService type itself, only derived types are checked.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -13546,7 +13732,7 @@ namespace Compañía.IotDsl
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <returns>Created instance that derives from EndpointReferencesCloudService, or null if the reader is not pointing to such a serialized instance.</returns>
+		/// <returns>Created instance that derives from EndpointConnectsCloudService, or null if the reader is not pointing to such a serialized instance.</returns>
 		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -13578,18 +13764,18 @@ namespace Compañía.IotDsl
 			{
 				string localName = reader.LocalName;
 				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "EndpointReferencesCloudService" instance.
+				{	// New "EndpointConnectsCloudService" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "EndpointReferencesCloudService".
+				{	// Check for derived classes of "EndpointConnectsCloudService".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived relationship instance.
-						EndpointReferencesCloudServiceSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as EndpointReferencesCloudServiceSerializer;
+						EndpointConnectsCloudServiceSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as EndpointConnectsCloudServiceSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -13600,8 +13786,8 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// This method creates an instance of EndpointReferencesCloudService based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of EndpointReferencesCloudService.
+		/// This method creates an instance of EndpointConnectsCloudService based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of EndpointConnectsCloudService.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -13609,8 +13795,8 @@ namespace Compañía.IotDsl
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new EndpointReferencesCloudService instance should be created.</param>	
-		/// <returns>Created EndpointReferencesCloudService instance.</returns>
+		/// <param name="partition">Partition in which new EndpointConnectsCloudService instance should be created.</param>	
+		/// <returns>Created EndpointConnectsCloudService instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -13627,11 +13813,11 @@ namespace Compañía.IotDsl
 					id = new global::System.Guid (idStr);
 				}
 				// Create the link with place-holder role-players.
-				return new EndpointReferencesCloudService(
+				return new EndpointConnectsCloudService(
 					partition,
 					new DslModeling::RoleAssignment[] {
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (EndpointReferencesCloudService.EndpointDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (EndpointReferencesCloudService.CloudServiceDomainRoleId)
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (EndpointConnectsCloudService.EndpointDomainRoleId), 
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (EndpointConnectsCloudService.CloudServiceDomainRoleId)
 					},
 					new DslModeling::PropertyAssignment[] {
 						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
@@ -13654,12 +13840,12 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from EndpointReferencesCloudService, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from EndpointConnectsCloudService, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from EndpointReferencesCloudService.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from EndpointConnectsCloudService.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -13668,7 +13854,7 @@ namespace Compañía.IotDsl
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(EndpointReferencesCloudService.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(EndpointConnectsCloudService.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -13700,7 +13886,7 @@ namespace Compañía.IotDsl
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including EndpointReferencesCloudService itself) instance of EndpointReferencesCloudService based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including EndpointConnectsCloudService itself) instance of EndpointConnectsCloudService based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -13734,18 +13920,18 @@ namespace Compañía.IotDsl
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "EndpointReferencesCloudService" moniker instance.
+				{	// New "EndpointConnectsCloudService" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "EndpointReferencesCloudService".
+				{	// Check for derived classes of "EndpointConnectsCloudService".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						EndpointReferencesCloudServiceSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as EndpointReferencesCloudServiceSerializer;
+						EndpointConnectsCloudServiceSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as EndpointConnectsCloudServiceSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -13756,7 +13942,7 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of EndpointReferencesCloudService based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of EndpointConnectsCloudService based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -13781,7 +13967,7 @@ namespace Compañía.IotDsl
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, EndpointReferencesCloudService.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, EndpointConnectsCloudService.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -13805,12 +13991,12 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from EndpointReferencesCloudService, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from EndpointConnectsCloudService, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from EndpointReferencesCloudService.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from EndpointConnectsCloudService.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -13819,7 +14005,7 @@ namespace Compañía.IotDsl
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(EndpointReferencesCloudService.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(EndpointConnectsCloudService.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -13845,13 +14031,13 @@ namespace Compañía.IotDsl
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized EndpointReferencesCloudService instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized EndpointConnectsCloudService instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">EndpointReferencesCloudService instance to be monikerized.</param>
+		/// <param name="element">EndpointConnectsCloudService instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the EndpointReferencesCloudService instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the EndpointReferencesCloudService instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the EndpointConnectsCloudService instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the EndpointConnectsCloudService instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -13880,10 +14066,10 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one EndpointReferencesCloudService instance into XML.
+		/// Public Write() method that serializes one EndpointConnectsCloudService instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">EndpointReferencesCloudService instance to be serialized.</param>
+		/// <param name="element">EndpointConnectsCloudService instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -13932,8 +14118,8 @@ namespace Compañía.IotDsl
 			}
 	
 			// Write the target role-player instance.
-			EndpointReferencesCloudService instance = element as EndpointReferencesCloudService;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of EndpointReferencesCloudService!");
+			EndpointConnectsCloudService instance = element as EndpointConnectsCloudService;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of EndpointConnectsCloudService!");
 	
 			DslModeling::ModelElement targetElement = instance.CloudService;
 			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
@@ -13953,7 +14139,7 @@ namespace Compañía.IotDsl
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">EndpointReferencesCloudService instance to be serialized.</param>
+		/// <param name="element">EndpointConnectsCloudService instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -13968,7 +14154,7 @@ namespace Compañía.IotDsl
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">EndpointReferencesCloudService instance to be serialized.</param>
+		/// <param name="element">EndpointConnectsCloudService instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
@@ -13981,11 +14167,11 @@ namespace Compañía.IotDsl
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given EndpointReferencesCloudService instance.
+		/// This method calculates a moniker to a given EndpointConnectsCloudService instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">EndpointReferencesCloudService instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the EndpointReferencesCloudService instance.</returns>
+		/// <param name="element">EndpointConnectsCloudService instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the EndpointConnectsCloudService instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -13997,8 +14183,8 @@ namespace Compañía.IotDsl
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			EndpointReferencesCloudService instance = element as EndpointReferencesCloudService;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of EndpointReferencesCloudService!");
+			EndpointConnectsCloudService instance = element as EndpointConnectsCloudService;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of EndpointConnectsCloudService!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -14009,7 +14195,7 @@ namespace Compañía.IotDsl
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">EndpointReferencesCloudService instance to get moniker qualifier from.</param>
+		/// <param name="element">EndpointConnectsCloudService instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -14060,14 +14246,14 @@ namespace Compañía.IotDsl
 			DslModeling::MonikerKey key = null;
 			if (DslModeling::SimpleMonikerResolver.IsFullyQualified(monikerString))
 			{
-				key = new DslModeling::MonikerKey(monikerString, EndpointReferencesCloudService.DomainClassId, domainClassId, store);
+				key = new DslModeling::MonikerKey(monikerString, EndpointConnectsCloudService.DomainClassId, domainClassId, store);
 			}
 			else
 			{
 				DslModeling::DomainClassXmlSerializer sourceSerializer = serializationContext.Directory.GetSerializer(sourceElement.GetDomainClass().Id);
 				global::System.Diagnostics.Debug.Assert(sourceSerializer != null, "Cannot find serializer for " + sourceElement.GetDomainClass().Name + "!");
 				string sourceQualifier = sourceSerializer.GetMonikerQualifier(serializationContext.Directory, sourceElement);
-				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), EndpointReferencesCloudService.DomainClassId, domainClassId, store);
+				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), EndpointConnectsCloudService.DomainClassId, domainClassId, store);
 			}
 			return new DslModeling::Moniker(key, store);
 		}
@@ -16504,15 +16690,15 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// Serializer DeviceReferenciasSensorSerializer for DomainClass DeviceReferenciasSensor.
+	/// Serializer DeviceReferenciasSensorsSerializer for DomainClass DeviceReferenciasSensors.
 	/// </summary>
-	public partial class DeviceReferenciasSensorSerializer : DslModeling::DomainRelationshipXmlSerializer
+	public partial class DeviceReferenciasSensorsSerializer : DslModeling::DomainRelationshipXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// DeviceReferenciasSensorSerializer Constructor
+		/// DeviceReferenciasSensorsSerializer Constructor
 		/// </summary>
-		public DeviceReferenciasSensorSerializer ()
+		public DeviceReferenciasSensorsSerializer ()
 			: base ()
 		{
 		}
@@ -16538,16 +16724,16 @@ namespace Compañía.IotDsl
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of DeviceReferenciasSensor.
+		/// This is the XML tag name used to serialize an instance of DeviceReferenciasSensors.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"deviceReferenciasSensor"; }
+			get { return @"deviceReferenciasSensors"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of DeviceReferenciasSensor.
+		/// This is the XML tag name used to serialize a monikerized instance of DeviceReferenciasSensors.
 		/// </summary>
 		public override string MonikerTagName
 		{
@@ -16556,7 +16742,7 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of DeviceReferenciasSensor in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of DeviceReferenciasSensors in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -16567,16 +16753,16 @@ namespace Compañía.IotDsl
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one DeviceReferenciasSensor instance from XML.
+		/// Public Read() method that deserializes one DeviceReferenciasSensors instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the DeviceReferenciasSensor element that is about to be deserialized. 
+		/// of the DeviceReferenciasSensors element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory DeviceReferenciasSensor instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory DeviceReferenciasSensors instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -16624,7 +16810,7 @@ namespace Compañía.IotDsl
 				}
 				else
 				{
-					IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "DeviceReferenciasSensor");
+					IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "DeviceReferenciasSensors");
 				}
 			}
 	
@@ -16648,7 +16834,7 @@ namespace Compañía.IotDsl
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory DeviceReferenciasSensor instance that will link to the target Sensor instance.</param>
+		/// <param name="element">In-memory DeviceReferenciasSensors instance that will link to the target Sensor instance.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -16671,11 +16857,11 @@ namespace Compañía.IotDsl
 	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((DeviceReferenciasSensor)element).Device, DeviceReferenciasSensor.DomainClassId, element.Partition);
+				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((DeviceReferenciasSensors)element).Device, DeviceReferenciasSensors.DomainClassId, element.Partition);
 				if (targetRoleMoniker != null)
 				{
 					// Attach the target role-player moniker.
-					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, DeviceReferenciasSensor.SensorDomainRoleId, targetRoleMoniker);
+					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, DeviceReferenciasSensors.SensorDomainRoleId, targetRoleMoniker);
 					// Moniker tag has no child XML elements in it, so just skip to the next element.
 					DslModeling::SerializationUtilities.Skip(reader);
 					break;
@@ -16686,7 +16872,7 @@ namespace Compañía.IotDsl
 			}
 			if (targetRoleMoniker == null)
 			{
-				IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "DeviceReferenciasSensor");
+				IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "DeviceReferenciasSensors");
 			}
 		}
 	
@@ -16698,7 +16884,7 @@ namespace Compañía.IotDsl
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory DeviceReferenciasSensor instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory DeviceReferenciasSensors instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -16723,7 +16909,7 @@ namespace Compañía.IotDsl
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory DeviceReferenciasSensor instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory DeviceReferenciasSensors instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -16734,8 +16920,8 @@ namespace Compañía.IotDsl
 	
 		#region TryCreateInstance & TryCreateDerivedInstance
 		/// <summary>
-		/// This method creates a correct instance of DeviceReferenciasSensor based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized DeviceReferenciasSensor, a new DeviceReferenciasSensor instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of DeviceReferenciasSensors based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized DeviceReferenciasSensors, a new DeviceReferenciasSensors instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -16745,7 +16931,7 @@ namespace Compañía.IotDsl
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created DeviceReferenciasSensor instance, or null if the reader is not pointing to a serialized DeviceReferenciasSensor instance.</returns>
+		/// <returns>Created DeviceReferenciasSensors instance, or null if the reader is not pointing to a serialized DeviceReferenciasSensors instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -16764,9 +16950,9 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// This method creates a correct derived instance of DeviceReferenciasSensor based on the tag currently pointed by the reader.
+		/// This method creates a correct derived instance of DeviceReferenciasSensors based on the tag currently pointed by the reader.
 		/// Note that the difference between this method and the above one is that this method will never create an instance of the
-		/// DeviceReferenciasSensor type itself, only derived types are checked.
+		/// DeviceReferenciasSensors type itself, only derived types are checked.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -16775,7 +16961,7 @@ namespace Compañía.IotDsl
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <returns>Created instance that derives from DeviceReferenciasSensor, or null if the reader is not pointing to such a serialized instance.</returns>
+		/// <returns>Created instance that derives from DeviceReferenciasSensors, or null if the reader is not pointing to such a serialized instance.</returns>
 		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -16807,18 +16993,18 @@ namespace Compañía.IotDsl
 			{
 				string localName = reader.LocalName;
 				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "DeviceReferenciasSensor" instance.
+				{	// New "DeviceReferenciasSensors" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "DeviceReferenciasSensor".
+				{	// Check for derived classes of "DeviceReferenciasSensors".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived relationship instance.
-						DeviceReferenciasSensorSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as DeviceReferenciasSensorSerializer;
+						DeviceReferenciasSensorsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as DeviceReferenciasSensorsSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -16829,8 +17015,8 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// This method creates an instance of DeviceReferenciasSensor based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of DeviceReferenciasSensor.
+		/// This method creates an instance of DeviceReferenciasSensors based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of DeviceReferenciasSensors.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -16838,8 +17024,8 @@ namespace Compañía.IotDsl
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new DeviceReferenciasSensor instance should be created.</param>	
-		/// <returns>Created DeviceReferenciasSensor instance.</returns>
+		/// <param name="partition">Partition in which new DeviceReferenciasSensors instance should be created.</param>	
+		/// <returns>Created DeviceReferenciasSensors instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -16856,11 +17042,11 @@ namespace Compañía.IotDsl
 					id = new global::System.Guid (idStr);
 				}
 				// Create the link with place-holder role-players.
-				return new DeviceReferenciasSensor(
+				return new DeviceReferenciasSensors(
 					partition,
 					new DslModeling::RoleAssignment[] {
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (DeviceReferenciasSensor.DeviceDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (DeviceReferenciasSensor.SensorDomainRoleId)
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (DeviceReferenciasSensors.DeviceDomainRoleId), 
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (DeviceReferenciasSensors.SensorDomainRoleId)
 					},
 					new DslModeling::PropertyAssignment[] {
 						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
@@ -16883,12 +17069,12 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from DeviceReferenciasSensor, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from DeviceReferenciasSensors, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from DeviceReferenciasSensor.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from DeviceReferenciasSensors.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -16897,7 +17083,7 @@ namespace Compañía.IotDsl
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(DeviceReferenciasSensor.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(DeviceReferenciasSensors.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -16929,7 +17115,7 @@ namespace Compañía.IotDsl
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including DeviceReferenciasSensor itself) instance of DeviceReferenciasSensor based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including DeviceReferenciasSensors itself) instance of DeviceReferenciasSensors based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -16963,18 +17149,18 @@ namespace Compañía.IotDsl
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "DeviceReferenciasSensor" moniker instance.
+				{	// New "DeviceReferenciasSensors" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "DeviceReferenciasSensor".
+				{	// Check for derived classes of "DeviceReferenciasSensors".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						DeviceReferenciasSensorSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as DeviceReferenciasSensorSerializer;
+						DeviceReferenciasSensorsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as DeviceReferenciasSensorsSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -16985,7 +17171,7 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of DeviceReferenciasSensor based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of DeviceReferenciasSensors based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -17010,7 +17196,7 @@ namespace Compañía.IotDsl
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, DeviceReferenciasSensor.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, DeviceReferenciasSensors.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -17034,12 +17220,12 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from DeviceReferenciasSensor, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from DeviceReferenciasSensors, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from DeviceReferenciasSensor.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from DeviceReferenciasSensors.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -17048,7 +17234,7 @@ namespace Compañía.IotDsl
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(DeviceReferenciasSensor.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(DeviceReferenciasSensors.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -17074,13 +17260,13 @@ namespace Compañía.IotDsl
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized DeviceReferenciasSensor instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized DeviceReferenciasSensors instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">DeviceReferenciasSensor instance to be monikerized.</param>
+		/// <param name="element">DeviceReferenciasSensors instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the DeviceReferenciasSensor instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the DeviceReferenciasSensor instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the DeviceReferenciasSensors instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the DeviceReferenciasSensors instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -17109,10 +17295,10 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one DeviceReferenciasSensor instance into XML.
+		/// Public Write() method that serializes one DeviceReferenciasSensors instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">DeviceReferenciasSensor instance to be serialized.</param>
+		/// <param name="element">DeviceReferenciasSensors instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -17161,8 +17347,8 @@ namespace Compañía.IotDsl
 			}
 	
 			// Write the target role-player instance.
-			DeviceReferenciasSensor instance = element as DeviceReferenciasSensor;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of DeviceReferenciasSensor!");
+			DeviceReferenciasSensors instance = element as DeviceReferenciasSensors;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of DeviceReferenciasSensors!");
 	
 			DslModeling::ModelElement targetElement = instance.Sensor;
 			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
@@ -17182,7 +17368,7 @@ namespace Compañía.IotDsl
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">DeviceReferenciasSensor instance to be serialized.</param>
+		/// <param name="element">DeviceReferenciasSensors instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -17197,7 +17383,7 @@ namespace Compañía.IotDsl
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">DeviceReferenciasSensor instance to be serialized.</param>
+		/// <param name="element">DeviceReferenciasSensors instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
@@ -17210,11 +17396,11 @@ namespace Compañía.IotDsl
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given DeviceReferenciasSensor instance.
+		/// This method calculates a moniker to a given DeviceReferenciasSensors instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">DeviceReferenciasSensor instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the DeviceReferenciasSensor instance.</returns>
+		/// <param name="element">DeviceReferenciasSensors instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the DeviceReferenciasSensors instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -17226,8 +17412,8 @@ namespace Compañía.IotDsl
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			DeviceReferenciasSensor instance = element as DeviceReferenciasSensor;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of DeviceReferenciasSensor!");
+			DeviceReferenciasSensors instance = element as DeviceReferenciasSensors;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of DeviceReferenciasSensors!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -17238,7 +17424,7 @@ namespace Compañía.IotDsl
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">DeviceReferenciasSensor instance to get moniker qualifier from.</param>
+		/// <param name="element">DeviceReferenciasSensors instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -17289,14 +17475,14 @@ namespace Compañía.IotDsl
 			DslModeling::MonikerKey key = null;
 			if (DslModeling::SimpleMonikerResolver.IsFullyQualified(monikerString))
 			{
-				key = new DslModeling::MonikerKey(monikerString, DeviceReferenciasSensor.DomainClassId, domainClassId, store);
+				key = new DslModeling::MonikerKey(monikerString, DeviceReferenciasSensors.DomainClassId, domainClassId, store);
 			}
 			else
 			{
 				DslModeling::DomainClassXmlSerializer sourceSerializer = serializationContext.Directory.GetSerializer(sourceElement.GetDomainClass().Id);
 				global::System.Diagnostics.Debug.Assert(sourceSerializer != null, "Cannot find serializer for " + sourceElement.GetDomainClass().Name + "!");
 				string sourceQualifier = sourceSerializer.GetMonikerQualifier(serializationContext.Directory, sourceElement);
-				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), DeviceReferenciasSensor.DomainClassId, domainClassId, store);
+				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), DeviceReferenciasSensors.DomainClassId, domainClassId, store);
 			}
 			return new DslModeling::Moniker(key, store);
 		}
@@ -17378,15 +17564,15 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	/// <summary>
-	/// Serializer IoTCenterReferencesDevicesSerializer for DomainClass IoTCenterReferencesDevices.
+	/// Serializer IoTCenterHasDevicesSerializer for DomainClass IoTCenterHasDevices.
 	/// </summary>
-	public partial class IoTCenterReferencesDevicesSerializer : DslModeling::DomainRelationshipXmlSerializer
+	public partial class IoTCenterHasDevicesSerializer : DslModeling::DomainRelationshipXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// IoTCenterReferencesDevicesSerializer Constructor
+		/// IoTCenterHasDevicesSerializer Constructor
 		/// </summary>
-		public IoTCenterReferencesDevicesSerializer ()
+		public IoTCenterHasDevicesSerializer ()
 			: base ()
 		{
 		}
@@ -17412,16 +17598,16 @@ namespace Compañía.IotDsl
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of IoTCenterReferencesDevices.
+		/// This is the XML tag name used to serialize an instance of IoTCenterHasDevices.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"ioTCenterReferencesDevices"; }
+			get { return @"ioTCenterHasDevices"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of IoTCenterReferencesDevices.
+		/// This is the XML tag name used to serialize a monikerized instance of IoTCenterHasDevices.
 		/// </summary>
 		public override string MonikerTagName
 		{
@@ -17430,7 +17616,7 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of IoTCenterReferencesDevices in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of IoTCenterHasDevices in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -17441,16 +17627,16 @@ namespace Compañía.IotDsl
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one IoTCenterReferencesDevices instance from XML.
+		/// Public Read() method that deserializes one IoTCenterHasDevices instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the IoTCenterReferencesDevices element that is about to be deserialized. 
+		/// of the IoTCenterHasDevices element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory IoTCenterReferencesDevices instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory IoTCenterHasDevices instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -17468,7 +17654,7 @@ namespace Compañía.IotDsl
 			
 			// Read properties serialized as XML attributes.
 			ReadPropertiesFromAttributes(serializationContext, element, reader);
-				
+	
 			// Read nested XML elements, which include at least the monikerized instance of target role-player Device
 			if (!serializationContext.Result.Failed)
 			{
@@ -17498,7 +17684,7 @@ namespace Compañía.IotDsl
 				}
 				else
 				{
-					IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "IoTCenterReferencesDevices");
+					IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "IoTCenterHasDevices");
 				}
 			}
 	
@@ -17522,7 +17708,7 @@ namespace Compañía.IotDsl
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory IoTCenterReferencesDevices instance that will link to the target Device instance.</param>
+		/// <param name="element">In-memory IoTCenterHasDevices instance that will link to the target Device instance.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -17545,11 +17731,11 @@ namespace Compañía.IotDsl
 	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((IoTCenterReferencesDevices)element).IoTCenter, IoTCenterReferencesDevices.DomainClassId, element.Partition);
+				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((IoTCenterHasDevices)element).IoTCenter, IoTCenterHasDevices.DomainClassId, element.Partition);
 				if (targetRoleMoniker != null)
 				{
 					// Attach the target role-player moniker.
-					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, IoTCenterReferencesDevices.DeviceDomainRoleId, targetRoleMoniker);
+					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, IoTCenterHasDevices.DeviceDomainRoleId, targetRoleMoniker);
 					// Moniker tag has no child XML elements in it, so just skip to the next element.
 					DslModeling::SerializationUtilities.Skip(reader);
 					break;
@@ -17560,7 +17746,7 @@ namespace Compañía.IotDsl
 			}
 			if (targetRoleMoniker == null)
 			{
-				IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "IoTCenterReferencesDevices");
+				IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "IoTCenterHasDevices");
 			}
 		}
 	
@@ -17572,7 +17758,7 @@ namespace Compañía.IotDsl
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory IoTCenterReferencesDevices instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory IoTCenterHasDevices instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -17580,7 +17766,26 @@ namespace Compañía.IotDsl
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			// There is no property to read; do nothing
+			IoTCenterHasDevices instanceOfIoTCenterHasDevices = element as IoTCenterHasDevices;
+			global::System.Diagnostics.Debug.Assert(instanceOfIoTCenterHasDevices != null, "Expecting an instance of IoTCenterHasDevices");
+	
+			// DeviceKey
+			if (!serializationContext.Result.Failed)
+			{
+				string attribDeviceKey = IotDslSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "deviceKey");
+				if (attribDeviceKey != null)
+				{
+					global::System.String valueOfDeviceKey;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribDeviceKey, out valueOfDeviceKey))
+					{
+						instanceOfIoTCenterHasDevices.DeviceKey = valueOfDeviceKey;
+					}
+					else
+					{	// Invalid property value, ignored.
+						IotDslSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "deviceKey", typeof(global::System.String), attribDeviceKey);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -17597,7 +17802,7 @@ namespace Compañía.IotDsl
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory IoTCenterReferencesDevices instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory IoTCenterHasDevices instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -17608,8 +17813,8 @@ namespace Compañía.IotDsl
 	
 		#region TryCreateInstance & TryCreateDerivedInstance
 		/// <summary>
-		/// This method creates a correct instance of IoTCenterReferencesDevices based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized IoTCenterReferencesDevices, a new IoTCenterReferencesDevices instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of IoTCenterHasDevices based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized IoTCenterHasDevices, a new IoTCenterHasDevices instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -17619,7 +17824,7 @@ namespace Compañía.IotDsl
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created IoTCenterReferencesDevices instance, or null if the reader is not pointing to a serialized IoTCenterReferencesDevices instance.</returns>
+		/// <returns>Created IoTCenterHasDevices instance, or null if the reader is not pointing to a serialized IoTCenterHasDevices instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -17638,9 +17843,9 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// This method creates a correct derived instance of IoTCenterReferencesDevices based on the tag currently pointed by the reader.
+		/// This method creates a correct derived instance of IoTCenterHasDevices based on the tag currently pointed by the reader.
 		/// Note that the difference between this method and the above one is that this method will never create an instance of the
-		/// IoTCenterReferencesDevices type itself, only derived types are checked.
+		/// IoTCenterHasDevices type itself, only derived types are checked.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -17649,7 +17854,7 @@ namespace Compañía.IotDsl
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <returns>Created instance that derives from IoTCenterReferencesDevices, or null if the reader is not pointing to such a serialized instance.</returns>
+		/// <returns>Created instance that derives from IoTCenterHasDevices, or null if the reader is not pointing to such a serialized instance.</returns>
 		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -17681,18 +17886,18 @@ namespace Compañía.IotDsl
 			{
 				string localName = reader.LocalName;
 				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "IoTCenterReferencesDevices" instance.
+				{	// New "IoTCenterHasDevices" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "IoTCenterReferencesDevices".
+				{	// Check for derived classes of "IoTCenterHasDevices".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived relationship instance.
-						IoTCenterReferencesDevicesSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as IoTCenterReferencesDevicesSerializer;
+						IoTCenterHasDevicesSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as IoTCenterHasDevicesSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -17703,8 +17908,8 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// This method creates an instance of IoTCenterReferencesDevices based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of IoTCenterReferencesDevices.
+		/// This method creates an instance of IoTCenterHasDevices based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of IoTCenterHasDevices.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -17712,8 +17917,8 @@ namespace Compañía.IotDsl
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new IoTCenterReferencesDevices instance should be created.</param>	
-		/// <returns>Created IoTCenterReferencesDevices instance.</returns>
+		/// <param name="partition">Partition in which new IoTCenterHasDevices instance should be created.</param>	
+		/// <returns>Created IoTCenterHasDevices instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -17730,11 +17935,11 @@ namespace Compañía.IotDsl
 					id = new global::System.Guid (idStr);
 				}
 				// Create the link with place-holder role-players.
-				return new IoTCenterReferencesDevices(
+				return new IoTCenterHasDevices(
 					partition,
 					new DslModeling::RoleAssignment[] {
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (IoTCenterReferencesDevices.IoTCenterDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (IoTCenterReferencesDevices.DeviceDomainRoleId)
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (IoTCenterHasDevices.IoTCenterDomainRoleId), 
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (IoTCenterHasDevices.DeviceDomainRoleId)
 					},
 					new DslModeling::PropertyAssignment[] {
 						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
@@ -17757,12 +17962,12 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from IoTCenterReferencesDevices, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from IoTCenterHasDevices, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from IoTCenterReferencesDevices.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from IoTCenterHasDevices.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -17771,7 +17976,7 @@ namespace Compañía.IotDsl
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(IoTCenterReferencesDevices.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(IoTCenterHasDevices.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -17803,7 +18008,7 @@ namespace Compañía.IotDsl
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including IoTCenterReferencesDevices itself) instance of IoTCenterReferencesDevices based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including IoTCenterHasDevices itself) instance of IoTCenterHasDevices based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -17837,18 +18042,18 @@ namespace Compañía.IotDsl
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "IoTCenterReferencesDevices" moniker instance.
+				{	// New "IoTCenterHasDevices" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "IoTCenterReferencesDevices".
+				{	// Check for derived classes of "IoTCenterHasDevices".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						IoTCenterReferencesDevicesSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as IoTCenterReferencesDevicesSerializer;
+						IoTCenterHasDevicesSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as IoTCenterHasDevicesSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -17859,7 +18064,7 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of IoTCenterReferencesDevices based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of IoTCenterHasDevices based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -17884,7 +18089,7 @@ namespace Compañía.IotDsl
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, IoTCenterReferencesDevices.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, IoTCenterHasDevices.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -17908,12 +18113,12 @@ namespace Compañía.IotDsl
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from IoTCenterReferencesDevices, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from IoTCenterHasDevices, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from IoTCenterReferencesDevices.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from IoTCenterHasDevices.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -17922,7 +18127,7 @@ namespace Compañía.IotDsl
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(IoTCenterReferencesDevices.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(IoTCenterHasDevices.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -17948,13 +18153,13 @@ namespace Compañía.IotDsl
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized IoTCenterReferencesDevices instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized IoTCenterHasDevices instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">IoTCenterReferencesDevices instance to be monikerized.</param>
+		/// <param name="element">IoTCenterHasDevices instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the IoTCenterReferencesDevices instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the IoTCenterReferencesDevices instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the IoTCenterHasDevices instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the IoTCenterHasDevices instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -17983,10 +18188,10 @@ namespace Compañía.IotDsl
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one IoTCenterReferencesDevices instance into XML.
+		/// Public Write() method that serializes one IoTCenterHasDevices instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">IoTCenterReferencesDevices instance to be serialized.</param>
+		/// <param name="element">IoTCenterHasDevices instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -18035,8 +18240,8 @@ namespace Compañía.IotDsl
 			}
 	
 			// Write the target role-player instance.
-			IoTCenterReferencesDevices instance = element as IoTCenterReferencesDevices;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of IoTCenterReferencesDevices!");
+			IoTCenterHasDevices instance = element as IoTCenterHasDevices;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of IoTCenterHasDevices!");
 	
 			DslModeling::ModelElement targetElement = instance.Device;
 			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
@@ -18056,7 +18261,7 @@ namespace Compañía.IotDsl
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">IoTCenterReferencesDevices instance to be serialized.</param>
+		/// <param name="element">IoTCenterHasDevices instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -18064,14 +18269,27 @@ namespace Compañía.IotDsl
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			// There are no properties; do nothing
+			IoTCenterHasDevices instanceOfIoTCenterHasDevices = element as IoTCenterHasDevices;
+			global::System.Diagnostics.Debug.Assert(instanceOfIoTCenterHasDevices != null, "Expecting an instance of IoTCenterHasDevices");
+	
+			// DeviceKey
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfIoTCenterHasDevices.DeviceKey;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						IotDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "deviceKey", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">IoTCenterReferencesDevices instance to be serialized.</param>
+		/// <param name="element">IoTCenterHasDevices instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
@@ -18084,11 +18302,11 @@ namespace Compañía.IotDsl
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given IoTCenterReferencesDevices instance.
+		/// This method calculates a moniker to a given IoTCenterHasDevices instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">IoTCenterReferencesDevices instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the IoTCenterReferencesDevices instance.</returns>
+		/// <param name="element">IoTCenterHasDevices instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the IoTCenterHasDevices instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -18100,8 +18318,8 @@ namespace Compañía.IotDsl
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			IoTCenterReferencesDevices instance = element as IoTCenterReferencesDevices;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of IoTCenterReferencesDevices!");
+			IoTCenterHasDevices instance = element as IoTCenterHasDevices;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of IoTCenterHasDevices!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -18112,7 +18330,7 @@ namespace Compañía.IotDsl
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">IoTCenterReferencesDevices instance to get moniker qualifier from.</param>
+		/// <param name="element">IoTCenterHasDevices instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -18163,14 +18381,14 @@ namespace Compañía.IotDsl
 			DslModeling::MonikerKey key = null;
 			if (DslModeling::SimpleMonikerResolver.IsFullyQualified(monikerString))
 			{
-				key = new DslModeling::MonikerKey(monikerString, IoTCenterReferencesDevices.DomainClassId, domainClassId, store);
+				key = new DslModeling::MonikerKey(monikerString, IoTCenterHasDevices.DomainClassId, domainClassId, store);
 			}
 			else
 			{
 				DslModeling::DomainClassXmlSerializer sourceSerializer = serializationContext.Directory.GetSerializer(sourceElement.GetDomainClass().Id);
 				global::System.Diagnostics.Debug.Assert(sourceSerializer != null, "Cannot find serializer for " + sourceElement.GetDomainClass().Name + "!");
 				string sourceQualifier = sourceSerializer.GetMonikerQualifier(serializationContext.Directory, sourceElement);
-				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), IoTCenterReferencesDevices.DomainClassId, domainClassId, store);
+				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), IoTCenterHasDevices.DomainClassId, domainClassId, store);
 			}
 			return new DslModeling::Moniker(key, store);
 		}
@@ -18196,6 +18414,880 @@ namespace Compañía.IotDsl
 			if (targetElement == null)
 				throw new global::System.ArgumentNullException ("targetElement");
 			global::System.Diagnostics.Debug.Assert (targetElement is Device, "Expecting an instance of Device!");
+			#endregion
+			
+			// full form reference
+			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
+			global::System.Diagnostics.Debug.Assert(targetSerializer != null, "Cannot find serializer for " + targetElement.GetDomainClass().Name + "!");
+			string targetMoniker = targetSerializer.CalculateQualifiedName(serializationContext.Directory, targetElement);
+			string targetQualifier = targetSerializer.GetMonikerQualifier(serializationContext.Directory, targetElement);
+			
+			if (!string.IsNullOrEmpty(targetQualifier))
+			{
+				DslModeling::DomainClassXmlSerializer sourceSerializer = serializationContext.Directory.GetSerializer(sourceElement.GetDomainClass().Id);
+				global::System.Diagnostics.Debug.Assert(sourceSerializer != null, "Cannot find serializer for " + sourceElement.GetDomainClass().Name + "!");
+				string sourceQualifier = sourceSerializer.GetMonikerQualifier(serializationContext.Directory, sourceElement);
+				if (string.Compare(targetQualifier, sourceQualifier, global::System.StringComparison.CurrentCulture) == 0)
+				{
+					// See if we can create a short form reference by omitting the qualifier
+					global::System.Diagnostics.Debug.Assert(targetMoniker.StartsWith(targetQualifier + "/", global::System.StringComparison.CurrentCulture));
+					string shortFormTargetMoniker = targetMoniker.Substring(targetQualifier.Length + 1);
+					if (!DslModeling::SimpleMonikerResolver.IsFullyQualified(shortFormTargetMoniker))
+						targetMoniker = shortFormTargetMoniker;
+				}
+			}
+	
+			return targetMoniker;
+		}
+		#endregion
+		
+		#region Overrides to provide metadata at runtime
+		/// <summary>
+		/// Exposes whether serializers derived from this class are serializing Id.
+		/// </summary>
+		public override bool SerializesId
+		{
+			get
+			{
+				return true;
+			}
+		}
+	
+		/// <summary>
+		/// Exposes whether serializers derived from this class are serializing this relationship in full form.
+		/// </summary>
+		public override bool UsesFullForm
+		{
+			get
+			{
+				return true;
+			}
+		}
+		#endregion
+	}
+}
+
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// Serializer AppServiceReferenciasMessageServiceSerializer for DomainClass AppServiceReferenciasMessageService.
+	/// </summary>
+	public partial class AppServiceReferenciasMessageServiceSerializer : DslModeling::DomainRelationshipXmlSerializer
+	{
+		#region Constructor
+		/// <summary>
+		/// AppServiceReferenciasMessageServiceSerializer Constructor
+		/// </summary>
+		public AppServiceReferenciasMessageServiceSerializer ()
+			: base ()
+		{
+		}
+		#endregion
+	
+		
+		#region Miscellaneous methods
+	
+		/// <summary>
+		/// Reset the serializer
+		/// </summary>
+		/// <remarks>
+		/// Clear the cached information about any derived classes so that it is recalculated.
+		/// </remarks>
+		public override void Reset()
+		{
+			base.Reset();
+			this.derivedClasses = null;
+			this.derivedClassMonikers = null;
+		}
+	
+		#endregion
+	
+		#region Public Properties
+		/// <summary>
+		/// This is the XML tag name used to serialize an instance of AppServiceReferenciasMessageService.
+		/// </summary>
+		public override string XmlTagName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get { return @"appServiceReferenciasMessageService"; }
+		}
+	
+		/// <summary>
+		/// This is the XML tag name used to serialize a monikerized instance of AppServiceReferenciasMessageService.
+		/// </summary>
+		public override string MonikerTagName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get { return @"monikerAppServiceReferenciasMessageService"; }
+		}
+		
+		/// <summary>
+		/// This is the name of the XML attribute that stores the moniker of AppServiceReferenciasMessageService in a serialized monikerized instance.
+		/// </summary>
+		public override string MonikerAttributeName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get { return @"Id"; }
+		}
+		#endregion
+	
+		#region Read Methods
+		/// <summary>
+		/// Public Read() method that deserializes one AppServiceReferenciasMessageService instance from XML.
+		/// </summary>
+		/// <remarks>
+		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
+		/// of the AppServiceReferenciasMessageService element that is about to be deserialized. 
+		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
+		/// or the close tag of the parent element (or EOF).
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory AppServiceReferenciasMessageService instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException ("element");
+			global::System.Diagnostics.Debug.Assert (reader != null);
+			if (reader == null)
+				throw new global::System.ArgumentNullException ("reader");
+			#endregion
+			
+			// Read properties serialized as XML attributes.
+			ReadPropertiesFromAttributes(serializationContext, element, reader);
+				
+			// Read nested XML elements, which include at least the monikerized instance of target role-player MessageService
+			if (!serializationContext.Result.Failed)
+			{
+				if (!reader.IsEmptyElement)
+				{
+					// Read to the start of the first child element.
+					DslModeling::SerializationUtilities.SkipToFirstChild(reader);
+					
+					// Read any extension element data under this XML element
+					IotDslSerializationHelper.Instance.ReadExtensions(serializationContext, element, reader);
+					
+					// Read target role-player MessageService.
+					ReadTargetRolePlayer(serializationContext, element, reader);
+	
+					// Read nested XML elements, they can be either properties serialized as XML elements, or child 
+					// model elements.
+					while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+					{
+						ReadElements(serializationContext, element, reader);
+						if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+						{
+							// Encountered one unknown XML element, skip it and keep reading.
+							IotDslSerializationBehaviorSerializationMessages.UnexpectedXmlElement(serializationContext, reader);
+							DslModeling::SerializationUtilities.Skip(reader);
+						}
+					}
+				}
+				else
+				{
+					IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "AppServiceReferenciasMessageService");
+				}
+			}
+	
+			// Advance the reader to the next element (open tag of the next sibling, end tag of the parent, or EOF)
+			DslModeling::SerializationUtilities.Skip(reader);
+		}
+		
+	
+		/// <summary>
+		/// This method reads the target role player MessageService.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at the open tag of the first child XML element.
+		/// This method will read only one target role player instance. The method will skip any child XML element it encounters until it reaches:
+		/// 1) The open tag of the target role player.
+		/// 2) The end tag of the parent element (dangling relationship).
+		/// 3) EOF (dangling relationship).
+		/// After the call, the reader is positioned at:
+		/// 1) The open tag of the next child element after the target role player.
+		/// 2) The end tag of the parent element.
+		/// 3) EOF.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory AppServiceReferenciasMessageService instance that will link to the target MessageService instance.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException ("element");
+			global::System.Diagnostics.Debug.Assert (reader != null);
+			if (reader == null)
+				throw new global::System.ArgumentNullException ("reader");
+			#endregion
+	
+			// Read the monikerized instance of target role-player MessageService
+			DslModeling::Moniker targetRoleMoniker = null;
+			DslModeling::DomainClassXmlSerializer targetRoleSerializer = serializationContext.Directory.GetSerializer(MessageService.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(targetRoleSerializer != null, "Cannot find serializer for MessageService!");
+	
+			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+			{
+				targetRoleMoniker = targetRoleSerializer.TryCreateMonikerInstance(serializationContext, reader, ((AppServiceReferenciasMessageService)element).AppService, AppServiceReferenciasMessageService.DomainClassId, element.Partition);
+				if (targetRoleMoniker != null)
+				{
+					// Attach the target role-player moniker.
+					DslModeling::DomainRoleInfo.SetRolePlayerMoniker (element as DslModeling::ElementLink, AppServiceReferenciasMessageService.MessageServiceDomainRoleId, targetRoleMoniker);
+					// Moniker tag has no child XML elements in it, so just skip to the next element.
+					DslModeling::SerializationUtilities.Skip(reader);
+					break;
+				}
+				// Encountered one unknown XML element, skip it and keep reading.
+				IotDslSerializationBehaviorSerializationMessages.UnexpectedXmlElement(serializationContext, reader);
+				DslModeling::SerializationUtilities.Skip(reader);
+			}
+			if (targetRoleMoniker == null)
+			{
+				IotDslSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "AppServiceReferenciasMessageService");
+			}
+		}
+	
+		/// <summary>
+		/// This method deserializes all properties that are serialized as XML attributes.
+		/// </summary>
+		/// <remarks>
+		/// Because this method only handles properties serialized as XML attributes, the passed-in reader shouldn't be moved inside this method.
+		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory AppServiceReferenciasMessageService instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+	
+			// There is no property to read; do nothing
+		}
+	
+		/// <summary>
+		/// This methods deserializes nested XML elements inside the passed-in element.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the current element does have nested XML elements, and the call will position the 
+		/// reader at the open tag of the first child XML element.
+		/// This method will read as many child XML elements as it can. It returns under three circumstances:
+		/// 1) When an unknown child XML element is encountered. In this case, this method will position the reader at the open 
+		///    tag of the unknown element. This implies that if the first child XML element is unknown, this method should return 
+		///    immediately and do nothing.
+		/// 2) When all child XML elemnets are read. In this case, the reader will be positioned at the end tag of the parent element.
+		/// 3) EOF.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory AppServiceReferenciasMessageService instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			// Always call the base class so any extensions are deserialized
+			base.ReadElements(serializationContext, element, reader);
+	
+		}
+	
+		#region TryCreateInstance & TryCreateDerivedInstance
+		/// <summary>
+		/// This method creates a correct instance of AppServiceReferenciasMessageService based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized AppServiceReferenciasMessageService, a new AppServiceReferenciasMessageService instance will be created in the given partition, otherwise 
+		/// null is returned.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
+		/// not move the reader; the reader should remain at the same position when this method returns.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="partition">Partition in which new elements should be created.</param>	
+		/// <returns>Created AppServiceReferenciasMessageService instance, or null if the reader is not pointing to a serialized AppServiceReferenciasMessageService instance.</returns>
+		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (reader != null);
+			if (reader == null)
+				throw new global::System.ArgumentNullException ("reader");
+			global::System.Diagnostics.Debug.Assert (partition != null);
+			if (partition == null)
+				throw new global::System.ArgumentNullException ("partition");
+			#endregion
+	
+			return this.InternalTryCreateInstance(serializationContext, reader, partition, false /* include the type itself */);
+		}
+	
+		/// <summary>
+		/// This method creates a correct derived instance of AppServiceReferenciasMessageService based on the tag currently pointed by the reader.
+		/// Note that the difference between this method and the above one is that this method will never create an instance of the
+		/// AppServiceReferenciasMessageService type itself, only derived types are checked.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
+		/// not move the reader; the reader should remain at the same position when this method returns.
+		/// </remarks>		
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="partition">Partition in which new elements should be created.</param>
+		/// <returns>Created instance that derives from AppServiceReferenciasMessageService, or null if the reader is not pointing to such a serialized instance.</returns>
+		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (reader != null);
+			if (reader == null)
+				throw new global::System.ArgumentNullException ("reader");
+			global::System.Diagnostics.Debug.Assert (partition != null);
+			if (partition == null)
+				throw new global::System.ArgumentNullException ("partition");
+			#endregion
+	
+			return this.InternalTryCreateInstance(serializationContext, reader, partition, true /* derived types only */) as DslModeling::ElementLink;
+		}
+	
+		/// <summary>
+		/// Internal helper method for TryCreateInstance() and TryCreateDerivedInstance().
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="partition">Partition in which new elements should be created.</param>
+		/// <param name="derivedTypesOnly">If true, this method will only check derived types, but not the domain class iitself.</param>
+		private DslModeling::ModelElement InternalTryCreateInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition, bool derivedTypesOnly)
+		{
+			DslModeling::ModelElement result = null;
+			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+			{
+				string localName = reader.LocalName;
+				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
+				{	// New "AppServiceReferenciasMessageService" instance.
+					result = this.CreateInstance(serializationContext, reader, partition);
+				}
+				else
+				{	// Check for derived classes of "AppServiceReferenciasMessageService".
+					if (this.derivedClasses == null)
+						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
+					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
+					DslModeling::DomainClassInfo derivedClass = null;
+					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
+					{	// New derived relationship instance.
+						AppServiceReferenciasMessageServiceSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as AppServiceReferenciasMessageServiceSerializer;
+						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
+						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
+					}
+				}
+			}
+	
+			return result;
+		}
+	
+		/// <summary>
+		/// This method creates an instance of AppServiceReferenciasMessageService based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of AppServiceReferenciasMessageService.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
+		/// not move the reader; the reader should remain at the same position when this method returns.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="partition">Partition in which new AppServiceReferenciasMessageService instance should be created.</param>	
+		/// <returns>Created AppServiceReferenciasMessageService instance.</returns>
+		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
+		{
+			string idStr = reader.GetAttribute ("Id");
+			try
+			{
+				global::System.Guid id;
+				if (string.IsNullOrEmpty(idStr))
+				{	// Create a default Id.
+					id = global::System.Guid.NewGuid();
+					IotDslSerializationBehaviorSerializationMessages.MissingId(serializationContext, reader, id);
+				}
+				else
+				{
+					id = new global::System.Guid (idStr);
+				}
+				// Create the link with place-holder role-players.
+				return new AppServiceReferenciasMessageService(
+					partition,
+					new DslModeling::RoleAssignment[] {
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (AppServiceReferenciasMessageService.AppServiceDomainRoleId), 
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (AppServiceReferenciasMessageService.MessageServiceDomainRoleId)
+					},
+					new DslModeling::PropertyAssignment[] {
+						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
+					}
+				);
+			}
+			catch (global::System.ArgumentNullException /* anEx */)
+			{	
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
+			}
+			catch (global::System.FormatException /* fEx */)
+			{
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
+			}
+			catch (global::System.OverflowException /* ofEx */)
+			{
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
+			}
+			return null;
+		}
+	
+		/// <summary>
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from AppServiceReferenciasMessageService, created on demand.
+		/// </summary>
+		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
+	
+		/// <summary>
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from AppServiceReferenciasMessageService.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
+		private void ConstructDerivedClassesLookupTable(DslModeling::SerializationContext serializationContext, DslModeling::DomainDataDirectory domainDataDirectory)
+		{
+			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
+			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
+	
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(AppServiceReferenciasMessageService.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
+	
+			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
+			if (descendents != null)
+			{
+				foreach (DslModeling::DomainClassInfo descendent in descendents)
+				{
+					global::System.Type descendentType = descendent.ImplementationClass;
+					if (!descendentType.IsAbstract)
+					{
+						DslModeling::DomainClassXmlSerializer descendentSerializer = serializationContext.Directory.GetSerializer(descendent.Id);
+						if (descendentSerializer != null)
+						{
+							string descendentXmlTagName = descendentSerializer.XmlTagName;
+							if (!string.IsNullOrEmpty (descendentXmlTagName))
+							{
+								global::System.Diagnostics.Debug.Assert(!this.derivedClasses.ContainsKey (descendentXmlTagName));
+								this.derivedClasses.Add (descendentXmlTagName, descendent);
+							}
+						}
+					}
+					else
+					{   // Ignore abstract derived classes because they cannot be instantiated directly.
+					}
+				}
+			}
+		}
+		#endregion
+	
+		#region TryCreateMonikerInstance
+		/// <summary>
+		/// This method creates a Moniker of the correct derived (including AppServiceReferenciasMessageService itself) instance of AppServiceReferenciasMessageService based on the tag currently pointed by the reader.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
+		/// not move the reader; the reader should remain at the same position when this method returns.
+		/// </remarks>		
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="sourceRolePlayer">The source role-player instance from which the moniker being created is referenced.</param>
+		/// <param name="relDomainClassId">The DomainClass Id of the relationship that connects the sourceRolePlayer to the moniker being created.</param>
+		/// <param name="partition">The new Moniker should be created in the Store associated with this partition.</param>			
+		/// <returns>Created ModelRoot instance, or null if the reader is not pointing to a correct monikerized instance.</returns>
+		public override DslModeling::Moniker TryCreateMonikerInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::ModelElement sourceRolePlayer, global::System.Guid relDomainClassId, DslModeling::Partition partition)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (reader != null);
+			if (reader == null)
+				throw new global::System.ArgumentNullException ("reader");
+			global::System.Diagnostics.Debug.Assert (sourceRolePlayer != null);
+			if (sourceRolePlayer == null)
+				throw new global::System.ArgumentNullException ("sourceRolePlayer");
+			global::System.Diagnostics.Debug.Assert (partition != null);
+			if (partition == null)
+				throw new global::System.ArgumentNullException ("partition");
+			#endregion
+	
+			DslModeling::Moniker result = null;
+			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+			{
+				string localName = reader.LocalName;
+				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
+				{	// New "AppServiceReferenciasMessageService" moniker instance.
+					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
+				}
+				else
+				{	// Check for derived classes of "AppServiceReferenciasMessageService".
+					if (this.derivedClassMonikers == null)
+						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
+					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
+					DslModeling::DomainClassInfo derivedClass = null;
+					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
+					{	// New derived class moniker instance.
+						AppServiceReferenciasMessageServiceSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as AppServiceReferenciasMessageServiceSerializer;
+						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
+						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
+					}
+				}
+			}
+	
+			return result;
+		}
+		
+		/// <summary>
+		/// This method creates a Moniker of AppServiceReferenciasMessageService based on the tag currently pointed by the reader.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
+		/// not move the reader; the reader should remain at the same position when this method returns.
+		/// </remarks>		
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="sourceRolePlayer">The source role-player instance from which the moniker being created is referenced.</param>
+		/// <param name="relDomainClassId">The DomainClass Id of the relationship that connects the sourceRolePlayer to the moniker being created.</param>
+		/// <param name="partition">The new Moniker should be created in the Store associated with this partition.</param>			
+		/// <returns>Created ModelRoot instance, or null if the reader is not pointing to a correct monikerized instance.</returns>
+		protected override DslModeling::Moniker CreateMonikerInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::ModelElement sourceRolePlayer, global::System.Guid relDomainClassId, DslModeling::Partition partition)
+		{
+			string monikerString = IotDslSerializationHelper.Instance.ReadAttribute(serializationContext, sourceRolePlayer, reader, this.MonikerAttributeName);
+	
+			if (string.IsNullOrEmpty(monikerString))
+			{	
+				IotDslSerializationBehaviorSerializationMessages.MissingMoniker(serializationContext, reader, this.MonikerAttributeName);
+				return null;
+			}
+			try
+			{	// Normalize the Id.
+				global::System.Guid id = new global::System.Guid(monikerString);
+				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, AppServiceReferenciasMessageService.DomainClassId, partition.Store), partition.Store);
+				// Set location info if possible.
+				result.Location = serializationContext.Location;
+				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
+				if (xmlLineInfo != null)
+				{
+					result.Line = xmlLineInfo.LineNumber;
+					result.Column = xmlLineInfo.LinePosition;
+				}
+				return result;
+			}
+			catch (global::System.FormatException /* fEx */)
+			{
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, this.MonikerAttributeName, typeof(global::System.Guid), monikerString);
+				return null;
+			}
+			catch (global::System.OverflowException /* oEx */)
+			{	
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, this.MonikerAttributeName, typeof(global::System.Guid), monikerString);
+				return null;
+			}
+		}
+	
+		/// <summary>
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from AppServiceReferenciasMessageService, created on demand.
+		/// </summary>
+		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
+	
+		/// <summary>
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from AppServiceReferenciasMessageService.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
+		private void ConstructDerivedClassMonikersLookupTable(DslModeling::SerializationContext serializationContext, DslModeling::DomainDataDirectory domainDataDirectory)
+		{
+			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
+			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
+	
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(AppServiceReferenciasMessageService.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
+	
+			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
+			if (descendents != null)
+			{
+				foreach (DslModeling::DomainClassInfo descendent in descendents)
+				{
+					DslModeling::DomainClassXmlSerializer descendentSerializer = serializationContext.Directory.GetSerializer(descendent.Id);
+					if (descendentSerializer != null)
+					{
+						string descendentMonikerTagName = descendentSerializer.MonikerTagName;
+						if (!string.IsNullOrEmpty (descendentMonikerTagName))
+						{
+							global::System.Diagnostics.Debug.Assert(!this.derivedClassMonikers.ContainsKey (descendentMonikerTagName));
+							this.derivedClassMonikers.Add (descendentMonikerTagName, descendent);
+						}
+					}
+				}
+			}
+		}
+		#endregion
+		#endregion
+	
+		#region Write Methods
+		/// <summary>
+		/// Public WriteMoniker() method that writes a monikerized AppServiceReferenciasMessageService instance into XML.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">AppServiceReferenciasMessageService instance to be monikerized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param>
+		/// <param name="sourceRolePlayer">Source element that references the AppServiceReferenciasMessageService instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the AppServiceReferenciasMessageService instance being monikerized.</param>
+		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException ("element");
+			global::System.Diagnostics.Debug.Assert (writer != null);
+			if (writer == null)
+				throw new global::System.ArgumentNullException ("writer");
+			global::System.Diagnostics.Debug.Assert (sourceRolePlayer != null);
+			if (sourceRolePlayer == null)
+				throw new global::System.ArgumentNullException ("sourceRolePlayer");
+			global::System.Diagnostics.Debug.Assert (relSerializer != null);
+			if (relSerializer == null)
+				throw new global::System.ArgumentNullException ("relSerializer");
+			#endregion
+			
+			string monikerString = this.CalculateQualifiedName(serializationContext.Directory, element);
+			global::System.Diagnostics.Debug.Assert(!string.IsNullOrEmpty(monikerString));
+			writer.WriteStartElement(this.MonikerTagName);
+			IotDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, this.MonikerAttributeName, monikerString);
+			writer.WriteEndElement();
+		}
+		
+		/// <summary>
+		/// Public Write() method that serializes one AppServiceReferenciasMessageService instance into XML.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">AppServiceReferenciasMessageService instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param>
+		/// <param name="rootElementSettings">
+		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
+		/// information like schema target namespace, version, etc.
+		/// This should only be passed for root-level elements. Null should be passed for rest elements (and ideally call the Write() method 
+		/// without this parameter).
+		/// </param>
+		public override void Write(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::RootElementSettings rootElementSettings)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException ("element");
+			global::System.Diagnostics.Debug.Assert (writer != null);
+			if (writer == null)
+				throw new global::System.ArgumentNullException ("writer");
+			#endregion
+	
+			// Write start of element, including schema target namespace if specified.
+			if (rootElementSettings != null && !string.IsNullOrEmpty(rootElementSettings.SchemaTargetNamespace))
+			{
+				writer.WriteStartElement(this.XmlTagName, rootElementSettings.SchemaTargetNamespace);
+				DslModeling::SerializationUtilities.WriteDomainModelNamespaces(serializationContext.Directory, writer, rootElementSettings.SchemaTargetNamespace);
+			}
+			else
+			{
+				writer.WriteStartElement(this.XmlTagName);
+			}
+				
+			// Write version info (in the format 1.2.3.4), if necessary
+			if (rootElementSettings != null && rootElementSettings.Version != null)
+				writer.WriteAttributeString("dslVersion", rootElementSettings.Version.ToString(4));
+	
+			// Write out element Id.
+			writer.WriteAttributeString("Id", element.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture));
+	
+			WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			// Write out any extension data if this is the root element
+			if (rootElementSettings != null && !serializationContext.Result.Failed)
+			{
+				IotDslSerializationHelper.Instance.WriteExtensions(serializationContext, element, writer);
+			}
+	
+			// Write the target role-player instance.
+			AppServiceReferenciasMessageService instance = element as AppServiceReferenciasMessageService;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of AppServiceReferenciasMessageService!");
+	
+			DslModeling::ModelElement targetElement = instance.MessageService;
+			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
+			global::System.Diagnostics.Debug.Assert(targetSerializer != null, "Cannot find serializer for " + targetElement.GetDomainClass().Name + "!");
+			targetSerializer.WriteMoniker(serializationContext, targetElement, writer, instance.AppService, this);
+	
+			if (!serializationContext.Result.Failed)
+			{
+				// Write 1) properties serialized as nested XML elements and 2) child model elements into XML.
+				WriteElements(serializationContext, element, writer);
+			}
+	
+			writer.WriteEndElement();
+		}
+	
+		/// <summary>
+		/// Write all properties that need to be serialized as XML attributes.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">AppServiceReferenciasMessageService instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param> 
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
+		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			// There are no properties; do nothing
+		}
+	
+		/// <summary>
+		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">AppServiceReferenciasMessageService instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param>        
+		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
+		{
+			// Always call the base class so any extensions are serialized
+			base.WriteElements(serializationContext, element, writer);
+	
+		}
+		
+		#endregion
+	
+		#region Moniker Support
+		/// <summary>
+		/// This method calculates a moniker to a given AppServiceReferenciasMessageService instance.
+		/// </summary>
+		/// <param name="directory">Directory to look up serializer based on model element type.</param>
+		/// <param name="element">AppServiceReferenciasMessageService instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the AppServiceReferenciasMessageService instance.</returns>
+		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (directory != null);
+			if (directory == null)
+				throw new global::System.ArgumentNullException ("directory");
+			global::System.Diagnostics.Debug.Assert(element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException("element");
+			#endregion	
+			
+			AppServiceReferenciasMessageService instance = element as AppServiceReferenciasMessageService;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of AppServiceReferenciasMessageService!");
+	
+			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
+		}
+	
+		/// <summary>
+		/// A domain class can be monikerized in different ways: standard /qualifier/key mechanism, custom moniker, or element ID. If the domain class is serialized
+		/// using standard /qualifier/key mechanism, this method returns the qualifier of the moniker; if the domain class uses other ways for monikerization, this method
+		/// returns empty string.
+		/// </summary>
+		/// <param name="directory">Directory to look up serializer based on model element type.</param>
+		/// <param name="element">AppServiceReferenciasMessageService instance to get moniker qualifier from.</param>
+		/// <returns>
+		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
+		/// element is not monikerized using standard /qualifier/key mechanism.
+		/// </returns>
+		public override string GetMonikerQualifier(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (directory != null);
+			if (directory == null)
+				throw new global::System.ArgumentNullException ("directory");
+			global::System.Diagnostics.Debug.Assert(element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException("element");
+			#endregion	
+			
+			return string.Empty;
+		}
+		#endregion
+	
+		#region Monikerization Support
+		/// <summary>
+		/// Calculates a Moniker, given a reference to a MessageService
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="sourceElement">Instance of AppService that contains the given serialized reference</param>
+		/// <param name="domainClassId">DomainClassId of the model element that the given moniker string will be resolved to.</param>
+		/// <param name="monikerString">Serialized string reference to an instance of MessageService</param>
+		/// <param name="store">Store where the Moniker will be created</param>
+		/// <returns>A Moniker encapsulating the serialized string reference of MessageService instance</returns>
+		public override DslModeling::Moniker MonikerizeReference(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement sourceElement, global::System.Guid domainClassId, string monikerString, DslModeling::Store store)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert(serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException("serializationContext");
+			global::System.Diagnostics.Debug.Assert(sourceElement != null);
+			if (sourceElement == null)
+				throw new global::System.ArgumentNullException ("sourceElement");
+			global::System.Diagnostics.Debug.Assert (sourceElement is AppService, "Expecting an instance of AppService!");
+			global::System.Diagnostics.Debug.Assert (!string.IsNullOrEmpty (monikerString));
+			if (string.IsNullOrEmpty (monikerString))
+				throw new global::System.ArgumentNullException ("monikerString");
+			global::System.Diagnostics.Debug.Assert(store != null);
+			if (store == null)
+				throw new global::System.ArgumentNullException ("store");
+			#endregion
+			
+			DslModeling::MonikerKey key = null;
+			if (DslModeling::SimpleMonikerResolver.IsFullyQualified(monikerString))
+			{
+				key = new DslModeling::MonikerKey(monikerString, AppServiceReferenciasMessageService.DomainClassId, domainClassId, store);
+			}
+			else
+			{
+				DslModeling::DomainClassXmlSerializer sourceSerializer = serializationContext.Directory.GetSerializer(sourceElement.GetDomainClass().Id);
+				global::System.Diagnostics.Debug.Assert(sourceSerializer != null, "Cannot find serializer for " + sourceElement.GetDomainClass().Name + "!");
+				string sourceQualifier = sourceSerializer.GetMonikerQualifier(serializationContext.Directory, sourceElement);
+				key = new DslModeling::MonikerKey(string.Format(global::System.Globalization.CultureInfo.CurrentCulture, "{0}/{1}", sourceQualifier, monikerString), AppServiceReferenciasMessageService.DomainClassId, domainClassId, store);
+			}
+			return new DslModeling::Moniker(key, store);
+		}
+	
+		/// <summary>
+		/// Calculates a monikerized string reference to a MessageService.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="sourceElement">Source side of reference relationship. The referenced target element will be serialized.</param>
+		/// <param name="targetElement">Target side of relationship that will be serialized.</param>
+		/// <returns>A monikerized string reference to target element.</returns>		
+		public override string SerializeReference(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement sourceElement, DslModeling::ModelElement targetElement)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert(serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException("serializationContext");
+			global::System.Diagnostics.Debug.Assert(sourceElement != null);
+			if (sourceElement == null)
+				throw new global::System.ArgumentNullException ("sourceElement");
+			global::System.Diagnostics.Debug.Assert (sourceElement is AppService, "Expecting an instance of AppService!");
+			global::System.Diagnostics.Debug.Assert(targetElement != null);
+			if (targetElement == null)
+				throw new global::System.ArgumentNullException ("targetElement");
+			global::System.Diagnostics.Debug.Assert (targetElement is MessageService, "Expecting an instance of MessageService!");
 			#endregion
 			
 			// full form reference
@@ -26134,6 +27226,569 @@ namespace Compañía.IotDsl
 namespace Compañía.IotDsl
 {
 	/// <summary>
+	/// Serializer AppServiceToMessageConnectionSerializer for DomainClass AppServiceToMessageConnection.
+	/// </summary>
+	public partial class AppServiceToMessageConnectionSerializer : DslDiagrams::BinaryLinkShapeSerializer
+	{
+		#region Constructor
+		/// <summary>
+		/// AppServiceToMessageConnectionSerializer Constructor
+		/// </summary>
+		public AppServiceToMessageConnectionSerializer ()
+			: base ()
+		{
+		}
+		#endregion
+	
+		
+		#region Miscellaneous methods
+	
+		/// <summary>
+		/// Reset the serializer
+		/// </summary>
+		/// <remarks>
+		/// Clear the cached information about any derived classes so that it is recalculated.
+		/// </remarks>
+		public override void Reset()
+		{
+			base.Reset();
+			this.derivedClasses = null;
+			this.derivedClassMonikers = null;
+		}
+	
+		#endregion
+	
+		#region Public Properties
+		/// <summary>
+		/// This is the XML tag name used to serialize an instance of AppServiceToMessageConnection.
+		/// </summary>
+		public override string XmlTagName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get { return @"appServiceToMessageConnection"; }
+		}
+	
+		/// <summary>
+		/// This is the XML tag name used to serialize a monikerized instance of AppServiceToMessageConnection.
+		/// </summary>
+		public override string MonikerTagName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get { return @"monikerAppServiceToMessageConnection"; }
+		}
+		
+		/// <summary>
+		/// This is the name of the XML attribute that stores the moniker of AppServiceToMessageConnection in a serialized monikerized instance.
+		/// </summary>
+		public override string MonikerAttributeName
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get { return @"Id"; }
+		}
+		#endregion
+	
+		#region Read Methods
+		/// <summary>
+		/// Public Read() method that deserializes one AppServiceToMessageConnection instance from XML.
+		/// </summary>
+		/// <remarks>
+		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
+		/// of the AppServiceToMessageConnection element that is about to be deserialized. 
+		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
+		/// or the close tag of the parent element (or EOF).
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory AppServiceToMessageConnection instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException ("element");
+			global::System.Diagnostics.Debug.Assert (reader != null);
+			if (reader == null)
+				throw new global::System.ArgumentNullException ("reader");
+			#endregion
+			
+			// Read properties serialized as XML attributes.
+			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
+	
+			// Read nested XML elements.
+			if (!serializationContext.Result.Failed)
+			{
+				if (!reader.IsEmptyElement)
+				{
+					// Read to the start of the first child element.
+					DslModeling::SerializationUtilities.SkipToFirstChild(reader);
+					
+					// Read any extension element data under this XML element
+					IotDslSerializationHelper.Instance.ReadExtensions(serializationContext, element, reader);
+					
+					// Read nested XML elements, they can be either properties serialized as XML elements, or child 
+					// model elements.
+					while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+					{
+						base.ReadElements(serializationContext, element, reader);
+						if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+						{
+							// Encountered one unknown XML element, skip it and keep reading.
+							IotDslSerializationBehaviorSerializationMessages.UnexpectedXmlElement(serializationContext, reader);
+							DslModeling::SerializationUtilities.Skip(reader);
+						}
+					}
+				}
+			}
+	
+			// Advance the reader to the next element (open tag of the next sibling, end tag of the parent, or EOF)
+			DslModeling::SerializationUtilities.Skip(reader);
+		}
+		
+	
+		#region TryCreateInstance
+		/// <summary>
+		/// This method creates a correct instance of AppServiceToMessageConnection based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized AppServiceToMessageConnection, a new AppServiceToMessageConnection instance will be created in the given partition, otherwise 
+		/// null is returned.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
+		/// not move the reader; the reader should remain at the same position when this method returns.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="partition">Partition in which new elements should be created.</param>	
+		/// <returns>Created AppServiceToMessageConnection instance, or null if the reader is not pointing to a serialized AppServiceToMessageConnection instance.</returns>
+		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (reader != null);
+			if (reader == null)
+				throw new global::System.ArgumentNullException ("reader");
+			global::System.Diagnostics.Debug.Assert (partition != null);
+			if (partition == null)
+				throw new global::System.ArgumentNullException ("partition");
+			#endregion
+	
+			DslModeling::ModelElement result = null;
+			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+			{
+				string localName = reader.LocalName;
+				if (string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
+				{	// New "AppServiceToMessageConnection" instance.
+					result = this.CreateInstance(serializationContext, reader, partition);
+				}
+				else
+				{	// Check for derived classes of "AppServiceToMessageConnection".
+					if (this.derivedClasses == null)
+						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
+					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
+					DslModeling::DomainClassInfo derivedClass = null;
+					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
+					{	// New derived class instance.
+						AppServiceToMessageConnectionSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as AppServiceToMessageConnectionSerializer;
+						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
+						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
+					}
+				}
+			}
+	
+			return result;
+		}
+	
+		/// <summary>
+		/// This method creates an instance of AppServiceToMessageConnection based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of AppServiceToMessageConnection.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
+		/// not move the reader; the reader should remain at the same position when this method returns.
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="partition">Partition in which new AppServiceToMessageConnection instance should be created.</param>	
+		/// <returns>Created AppServiceToMessageConnection instance.</returns>
+		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
+		{
+			string idStr = reader.GetAttribute ("Id");
+			try
+			{
+				global::System.Guid id;
+				if (string.IsNullOrEmpty(idStr))
+				{	// Create a default Id.
+					id = global::System.Guid.NewGuid();
+					IotDslSerializationBehaviorSerializationMessages.MissingId(serializationContext, reader, id);
+				}
+				else
+				{
+					id = new global::System.Guid (idStr);
+				}
+				return new AppServiceToMessageConnection(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
+			}
+			catch (global::System.ArgumentNullException /* anEx */)
+			{	
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
+			}
+			catch (global::System.FormatException /* fEx */)
+			{
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
+			}
+			catch (global::System.OverflowException /* ofEx */)
+			{
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "Id", typeof(global::System.Guid), idStr);
+			}
+			return null;
+		}
+	
+		/// <summary>
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from AppServiceToMessageConnection, created on demand.
+		/// </summary>
+		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
+	
+		/// <summary>
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from AppServiceToMessageConnection.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
+		private void ConstructDerivedClassesLookupTable(DslModeling::SerializationContext serializationContext, DslModeling::DomainDataDirectory domainDataDirectory)
+		{
+			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
+			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
+	
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(AppServiceToMessageConnection.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
+	
+			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
+			if (descendents != null)
+			{
+				foreach (DslModeling::DomainClassInfo descendent in descendents)
+				{
+					global::System.Type descendentType = descendent.ImplementationClass;
+					if (!descendentType.IsAbstract)
+					{
+						DslModeling::DomainClassXmlSerializer descendentSerializer = serializationContext.Directory.GetSerializer(descendent.Id);
+						if (descendentSerializer != null)
+						{
+							string descendentXmlTagName = descendentSerializer.XmlTagName;
+							if (!string.IsNullOrEmpty (descendentXmlTagName))
+							{
+								global::System.Diagnostics.Debug.Assert(!this.derivedClasses.ContainsKey (descendentXmlTagName));
+								this.derivedClasses.Add (descendentXmlTagName, descendent);
+							}
+						}
+					}
+					else
+					{   // Ignore abstract derived classes because they cannot be instantiated directly.
+					}
+				}
+			}
+		}
+		#endregion
+	
+		#region TryCreateMonikerInstance
+		/// <summary>
+		/// This method creates a Moniker of the correct derived (including AppServiceToMessageConnection itself) instance of AppServiceToMessageConnection based on the tag currently pointed by the reader.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
+		/// not move the reader; the reader should remain at the same position when this method returns.
+		/// </remarks>		
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="sourceRolePlayer">The source role-player instance from which the moniker being created is referenced.</param>
+		/// <param name="relDomainClassId">The DomainClass Id of the relationship that connects the sourceRolePlayer to the moniker being created.</param>
+		/// <param name="partition">The new Moniker should be created in the Store associated with this partition.</param>			
+		/// <returns>Created ModelRoot instance, or null if the reader is not pointing to a correct monikerized instance.</returns>
+		public override DslModeling::Moniker TryCreateMonikerInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::ModelElement sourceRolePlayer, global::System.Guid relDomainClassId, DslModeling::Partition partition)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (reader != null);
+			if (reader == null)
+				throw new global::System.ArgumentNullException ("reader");
+			global::System.Diagnostics.Debug.Assert (sourceRolePlayer != null);
+			if (sourceRolePlayer == null)
+				throw new global::System.ArgumentNullException ("sourceRolePlayer");
+			global::System.Diagnostics.Debug.Assert (partition != null);
+			if (partition == null)
+				throw new global::System.ArgumentNullException ("partition");
+			#endregion
+	
+			DslModeling::Moniker result = null;
+			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+			{
+				string localName = reader.LocalName;
+				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
+				{	// New "AppServiceToMessageConnection" moniker instance.
+					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
+				}
+				else
+				{	// Check for derived classes of "AppServiceToMessageConnection".
+					if (this.derivedClassMonikers == null)
+						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
+					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
+					DslModeling::DomainClassInfo derivedClass = null;
+					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
+					{	// New derived class moniker instance.
+						AppServiceToMessageConnectionSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as AppServiceToMessageConnectionSerializer;
+						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
+						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
+					}
+				}
+			}
+	
+			return result;
+		}
+		
+		/// <summary>
+		/// This method creates a Moniker of AppServiceToMessageConnection based on the tag currently pointed by the reader.
+		/// </summary>
+		/// <remarks>
+		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
+		/// not move the reader; the reader should remain at the same position when this method returns.
+		/// </remarks>		
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		/// <param name="sourceRolePlayer">The source role-player instance from which the moniker being created is referenced.</param>
+		/// <param name="relDomainClassId">The DomainClass Id of the relationship that connects the sourceRolePlayer to the moniker being created.</param>
+		/// <param name="partition">The new Moniker should be created in the Store associated with this partition.</param>			
+		/// <returns>Created ModelRoot instance, or null if the reader is not pointing to a correct monikerized instance.</returns>
+		protected override DslModeling::Moniker CreateMonikerInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::ModelElement sourceRolePlayer, global::System.Guid relDomainClassId, DslModeling::Partition partition)
+		{
+			string monikerString = IotDslSerializationHelper.Instance.ReadAttribute(serializationContext, sourceRolePlayer, reader, this.MonikerAttributeName);
+	
+			if (string.IsNullOrEmpty(monikerString))
+			{	
+				IotDslSerializationBehaviorSerializationMessages.MissingMoniker(serializationContext, reader, this.MonikerAttributeName);
+				return null;
+			}
+			try
+			{	// Normalize the Id.
+				global::System.Guid id = new global::System.Guid(monikerString);
+				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, AppServiceToMessageConnection.DomainClassId, partition.Store), partition.Store);
+				// Set location info if possible.
+				result.Location = serializationContext.Location;
+				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
+				if (xmlLineInfo != null)
+				{
+					result.Line = xmlLineInfo.LineNumber;
+					result.Column = xmlLineInfo.LinePosition;
+				}
+				return result;
+			}
+			catch (global::System.FormatException /* fEx */)
+			{
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, this.MonikerAttributeName, typeof(global::System.Guid), monikerString);
+				return null;
+			}
+			catch (global::System.OverflowException /* oEx */)
+			{	
+				IotDslSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, this.MonikerAttributeName, typeof(global::System.Guid), monikerString);
+				return null;
+			}
+		}
+	
+		/// <summary>
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from AppServiceToMessageConnection, created on demand.
+		/// </summary>
+		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
+	
+		/// <summary>
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from AppServiceToMessageConnection.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
+		private void ConstructDerivedClassMonikersLookupTable(DslModeling::SerializationContext serializationContext, DslModeling::DomainDataDirectory domainDataDirectory)
+		{
+			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
+			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
+	
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(AppServiceToMessageConnection.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
+	
+			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
+			if (descendents != null)
+			{
+				foreach (DslModeling::DomainClassInfo descendent in descendents)
+				{
+					DslModeling::DomainClassXmlSerializer descendentSerializer = serializationContext.Directory.GetSerializer(descendent.Id);
+					if (descendentSerializer != null)
+					{
+						string descendentMonikerTagName = descendentSerializer.MonikerTagName;
+						if (!string.IsNullOrEmpty (descendentMonikerTagName))
+						{
+							global::System.Diagnostics.Debug.Assert(!this.derivedClassMonikers.ContainsKey (descendentMonikerTagName));
+							this.derivedClassMonikers.Add (descendentMonikerTagName, descendent);
+						}
+					}
+				}
+			}
+		}
+		#endregion
+		#endregion
+	
+		#region Write Methods
+		/// <summary>
+		/// Public WriteMoniker() method that writes a monikerized AppServiceToMessageConnection instance into XML.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">AppServiceToMessageConnection instance to be monikerized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param>
+		/// <param name="sourceRolePlayer">Source element that references the AppServiceToMessageConnection instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the AppServiceToMessageConnection instance being monikerized.</param>
+		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException ("element");
+			global::System.Diagnostics.Debug.Assert (writer != null);
+			if (writer == null)
+				throw new global::System.ArgumentNullException ("writer");
+			global::System.Diagnostics.Debug.Assert (sourceRolePlayer != null);
+			if (sourceRolePlayer == null)
+				throw new global::System.ArgumentNullException ("sourceRolePlayer");
+			global::System.Diagnostics.Debug.Assert (relSerializer != null);
+			if (relSerializer == null)
+				throw new global::System.ArgumentNullException ("relSerializer");
+			#endregion
+			
+			string monikerString = this.CalculateQualifiedName(serializationContext.Directory, element);
+			global::System.Diagnostics.Debug.Assert(!string.IsNullOrEmpty(monikerString));
+			writer.WriteStartElement(this.MonikerTagName);
+			IotDslSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, this.MonikerAttributeName, monikerString);
+			writer.WriteEndElement();
+		}
+		
+		/// <summary>
+		/// Public Write() method that serializes one AppServiceToMessageConnection instance into XML.
+		/// </summary>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">AppServiceToMessageConnection instance to be serialized.</param>
+		/// <param name="writer">XmlWriter to write serialized data to.</param>
+		/// <param name="rootElementSettings">
+		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
+		/// information like schema target namespace, version, etc.
+		/// This should only be passed for root-level elements. Null should be passed for rest elements (and ideally call the Write() method 
+		/// without this parameter).
+		/// </param>
+		public override void Write(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::RootElementSettings rootElementSettings)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (serializationContext != null);
+			if (serializationContext == null)
+				throw new global::System.ArgumentNullException ("serializationContext");
+			global::System.Diagnostics.Debug.Assert (element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException ("element");
+			global::System.Diagnostics.Debug.Assert (writer != null);
+			if (writer == null)
+				throw new global::System.ArgumentNullException ("writer");
+			#endregion
+	
+			// Write start of element, including schema target namespace if specified.
+			if (rootElementSettings != null && !string.IsNullOrEmpty(rootElementSettings.SchemaTargetNamespace))
+			{
+				writer.WriteStartElement(this.XmlTagName, rootElementSettings.SchemaTargetNamespace);
+				DslModeling::SerializationUtilities.WriteDomainModelNamespaces(serializationContext.Directory, writer, rootElementSettings.SchemaTargetNamespace);
+			}
+			else
+			{
+				writer.WriteStartElement(this.XmlTagName);
+			}
+				
+			// Write version info (in the format 1.2.3.4), if necessary
+			if (rootElementSettings != null && rootElementSettings.Version != null)
+				writer.WriteAttributeString("dslVersion", rootElementSettings.Version.ToString(4));
+	
+			// Write out element Id.
+			writer.WriteAttributeString("Id", element.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture));
+	
+			base.WritePropertiesAsAttributes(serializationContext, element, writer);
+	
+			// Write out any extension data if this is the root element
+			if (rootElementSettings != null && !serializationContext.Result.Failed)
+			{
+				IotDslSerializationHelper.Instance.WriteExtensions(serializationContext, element, writer);
+			}
+	
+			if (!serializationContext.Result.Failed)
+			{
+				// Write 1) properties serialized as nested XML elements and 2) child model elements into XML.
+				base.WriteElements(serializationContext, element, writer);
+			}
+	
+			writer.WriteEndElement();
+		}
+		#endregion
+	
+		#region Moniker Support
+		/// <summary>
+		/// This method calculates a moniker to a given AppServiceToMessageConnection instance.
+		/// </summary>
+		/// <param name="directory">Directory to look up serializer based on model element type.</param>
+		/// <param name="element">AppServiceToMessageConnection instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the AppServiceToMessageConnection instance.</returns>
+		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (directory != null);
+			if (directory == null)
+				throw new global::System.ArgumentNullException ("directory");
+			global::System.Diagnostics.Debug.Assert(element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException("element");
+			#endregion	
+			
+			AppServiceToMessageConnection instance = element as AppServiceToMessageConnection;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of AppServiceToMessageConnection!");
+	
+			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
+		}
+	
+		/// <summary>
+		/// A domain class can be monikerized in different ways: standard /qualifier/key mechanism, custom moniker, or element ID. If the domain class is serialized
+		/// using standard /qualifier/key mechanism, this method returns the qualifier of the moniker; if the domain class uses other ways for monikerization, this method
+		/// returns empty string.
+		/// </summary>
+		/// <param name="directory">Directory to look up serializer based on model element type.</param>
+		/// <param name="element">AppServiceToMessageConnection instance to get moniker qualifier from.</param>
+		/// <returns>
+		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
+		/// element is not monikerized using standard /qualifier/key mechanism.
+		/// </returns>
+		public override string GetMonikerQualifier(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
+		{
+			#region Check Parameters
+			global::System.Diagnostics.Debug.Assert (directory != null);
+			if (directory == null)
+				throw new global::System.ArgumentNullException ("directory");
+			global::System.Diagnostics.Debug.Assert(element != null);
+			if (element == null)
+				throw new global::System.ArgumentNullException("element");
+			#endregion	
+			
+			return string.Empty;
+		}
+		#endregion
+	}
+}
+
+namespace Compañía.IotDsl
+{
+	/// <summary>
 	/// Serializer IotDslDiagramSerializer for DomainClass IotDslDiagram.
 	/// </summary>
 	public partial class IotDslDiagramSerializer : DslDiagrams::DiagramSerializer
@@ -26756,7 +28411,7 @@ namespace Compañía.IotDsl
 				{
 					global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainXmlSerializerDirectoryEntry> customSerializerTypes = this.CustomSerializerTypes;
 					int customSerializerCount = (customSerializerTypes == null ? 0 : customSerializerTypes.Count);
-					IotDslSerializationBehavior.serializerTypes = new global::System.Collections.Generic.List<DslModeling::DomainXmlSerializerDirectoryEntry>(40 + customSerializerCount);
+					IotDslSerializationBehavior.serializerTypes = new global::System.Collections.Generic.List<DslModeling::DomainXmlSerializerDirectoryEntry>(42 + customSerializerCount);
 	
 					#region Serializers defined in this model
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(IoTDsl.DomainClassId, typeof(IoTDslSerializer)));
@@ -26778,12 +28433,13 @@ namespace Compañía.IotDsl
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(MessageService.DomainClassId, typeof(MessageServiceSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(IotDslHasResourceGroups.DomainClassId, typeof(IotDslHasResourceGroupsSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ResourceGroupHasCloudServices.DomainClassId, typeof(ResourceGroupHasCloudServicesSerializer)));
-					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(EndpointReferencesCloudService.DomainClassId, typeof(EndpointReferencesCloudServiceSerializer)));
+					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(EndpointConnectsCloudService.DomainClassId, typeof(EndpointConnectsCloudServiceSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(IoTCenterHasEndpoints.DomainClassId, typeof(IoTCenterHasEndpointsSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(IoTDslHasDevices.DomainClassId, typeof(IoTDslHasDevicesSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(IoTDslTieneSensors.DomainClassId, typeof(IoTDslTieneSensorsSerializer)));
-					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(DeviceReferenciasSensor.DomainClassId, typeof(DeviceReferenciasSensorSerializer)));
-					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(IoTCenterReferencesDevices.DomainClassId, typeof(IoTCenterReferencesDevicesSerializer)));
+					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(DeviceReferenciasSensors.DomainClassId, typeof(DeviceReferenciasSensorsSerializer)));
+					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(IoTCenterHasDevices.DomainClassId, typeof(IoTCenterHasDevicesSerializer)));
+					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(AppServiceReferenciasMessageService.DomainClassId, typeof(AppServiceReferenciasMessageServiceSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ResourceGroupShape.DomainClassId, typeof(ResourceGroupShapeSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(DataAnalyticsImage.DomainClassId, typeof(DataAnalyticsImageSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(NoSQLStorageImage.DomainClassId, typeof(NoSQLStorageImageSerializer)));
@@ -26798,6 +28454,7 @@ namespace Compañía.IotDsl
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(EndpointToCloudService.DomainClassId, typeof(EndpointToCloudServiceSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(DeviceToSensorConnection.DomainClassId, typeof(DeviceToSensorConnectionSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(DeviceToIoTCenter.DomainClassId, typeof(DeviceToIoTCenterSerializer)));
+					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(AppServiceToMessageConnection.DomainClassId, typeof(AppServiceToMessageConnectionSerializer)));
 					IotDslSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(IotDslDiagram.DomainClassId, typeof(IotDslDiagramSerializer)));
 					#endregion
 					

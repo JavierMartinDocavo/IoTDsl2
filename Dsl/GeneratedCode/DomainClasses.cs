@@ -915,14 +915,14 @@ namespace Compañía.IotDsl
 		
 		/// <summary>
 		/// Gets a list of Devices.
-		/// Descripción de Compañía.IotDsl.IoTCenterReferencesDevices.IoTCenter
+		/// Descripción de Compañía.IotDsl.IoTCenterHasDevices.IoTCenter
 		/// </summary>
 		public virtual DslModeling::LinkedElementCollection<Device> Devices
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Device>, Device>(global::Compañía.IotDsl.IoTCenterReferencesDevices.IoTCenterDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Device>, Device>(global::Compañía.IotDsl.IoTCenterHasDevices.IoTCenterDomainRoleId);
 			}
 		}
 		#endregion
@@ -1156,19 +1156,19 @@ namespace Compañía.IotDsl
 		#region CloudService opposite domain role accessor
 		/// <summary>
 		/// Gets or sets CloudService.
-		/// Descripción de Compañía.IotDsl.EndpointReferencesCloudService.Endpoint
+		/// Descripción de Compañía.IotDsl.EndpointConnectsCloudService.Endpoint
 		/// </summary>
 		public virtual CloudService CloudService
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Compañía.IotDsl.EndpointReferencesCloudService.EndpointDomainRoleId) as CloudService;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Compañía.IotDsl.EndpointConnectsCloudService.EndpointDomainRoleId) as CloudService;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.EndpointReferencesCloudService.EndpointDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.EndpointConnectsCloudService.EndpointDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -1431,14 +1431,14 @@ namespace Compañía.IotDsl
 		
 		/// <summary>
 		/// Gets a list of ConnectedEndpoints.
-		/// Descripción de Compañía.IotDsl.EndpointReferencesCloudService.CloudService
+		/// Descripción de Compañía.IotDsl.EndpointConnectsCloudService.CloudService
 		/// </summary>
 		public virtual DslModeling::LinkedElementCollection<Endpoint> ConnectedEndpoints
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<Endpoint>, Endpoint>(global::Compañía.IotDsl.EndpointReferencesCloudService.CloudServiceDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Endpoint>, Endpoint>(global::Compañía.IotDsl.EndpointConnectsCloudService.CloudServiceDomainRoleId);
 			}
 		}
 		#endregion
@@ -1737,6 +1737,25 @@ namespace Compañía.IotDsl
 		public AppService(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
+		}
+		#endregion
+		#region MessageService opposite domain role accessor
+		/// <summary>
+		/// Gets or sets MessageService.
+		/// Descripción de Compañía.IotDsl.AppServiceReferenciasMessageService.AppService
+		/// </summary>
+		public virtual MessageService MessageService
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Compañía.IotDsl.AppServiceReferenciasMessageService.AppServiceDomainRoleId) as MessageService;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.AppServiceReferenciasMessageService.AppServiceDomainRoleId, value);
+			}
 		}
 		#endregion
 	}
@@ -2052,22 +2071,18 @@ namespace Compañía.IotDsl
 			}
 		}
 		#endregion
-		#region Sensor opposite domain role accessor
+		#region Sensors opposite domain role accessor
+		
 		/// <summary>
-		/// Gets or sets Sensor.
-		/// Descripción de Compañía.IotDsl.DeviceReferenciasSensor.Device
+		/// Gets a list of Sensors.
+		/// Descripción de Compañía.IotDsl.DeviceReferenciasSensors.Device
 		/// </summary>
-		public virtual Sensor Sensor
+		public virtual DslModeling::LinkedElementCollection<Sensor> Sensors
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Compañía.IotDsl.DeviceReferenciasSensor.DeviceDomainRoleId) as Sensor;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.DeviceReferenciasSensor.DeviceDomainRoleId, value);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Sensor>, Sensor>(global::Compañía.IotDsl.DeviceReferenciasSensors.DeviceDomainRoleId);
 			}
 		}
 		#endregion
@@ -2075,14 +2090,14 @@ namespace Compañía.IotDsl
 		
 		/// <summary>
 		/// Gets a list of IoTCenters.
-		/// Descripción de Compañía.IotDsl.IoTCenterReferencesDevices.Device
+		/// Descripción de Compañía.IotDsl.IoTCenterHasDevices.Device
 		/// </summary>
 		public virtual DslModeling::LinkedElementCollection<IoTCenter> IoTCenters
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<IoTCenter>, IoTCenter>(global::Compañía.IotDsl.IoTCenterReferencesDevices.DeviceDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<IoTCenter>, IoTCenter>(global::Compañía.IotDsl.IoTCenterHasDevices.DeviceDomainRoleId);
 			}
 		}
 		#endregion
@@ -2255,6 +2270,93 @@ namespace Compañía.IotDsl
 		}
 		
 		#endregion
+		#region SensorId domain property code
+		
+		/// <summary>
+		/// SensorId domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid SensorIdDomainPropertyId = new global::System.Guid(0x5a019f39, 0xb3a6, 0x472b, 0x93, 0xf0, 0x6c, 0xa4, 0x2a, 0xe9, 0x0d, 0x4b);
+		
+		/// <summary>
+		/// Storage for SensorId
+		/// </summary>
+		private global::System.String sensorIdPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of SensorId domain property.
+		/// Descripción de Compañía.IotDsl.Sensor.Sensor Id
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.Sensor/SensorId.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Sensor/SensorId.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("5a019f39-b3a6-472b-93f0-6ca42ae90d4b")]
+		public global::System.String SensorId
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return sensorIdPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				SensorIdPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Sensor.SensorId domain property.
+		/// </summary>
+		internal sealed partial class SensorIdPropertyHandler : DslModeling::DomainPropertyValueHandler<Sensor, global::System.String>
+		{
+			private SensorIdPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Sensor.SensorId domain property value handler.
+			/// </summary>
+			public static readonly SensorIdPropertyHandler Instance = new SensorIdPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Sensor.SensorId domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return SensorIdDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(Sensor element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.sensorIdPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Sensor element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.sensorIdPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region IoTDsl opposite domain role accessor
 		/// <summary>
 		/// Gets or sets IoTDsl.
@@ -2277,19 +2379,19 @@ namespace Compañía.IotDsl
 		#region Device opposite domain role accessor
 		/// <summary>
 		/// Gets or sets Device.
-		/// Descripción de Compañía.IotDsl.DeviceReferenciasSensor.Sensor
+		/// Descripción de Compañía.IotDsl.DeviceReferenciasSensors.Sensor
 		/// </summary>
 		public virtual Device Device
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Compañía.IotDsl.DeviceReferenciasSensor.SensorDomainRoleId) as Device;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Compañía.IotDsl.DeviceReferenciasSensors.SensorDomainRoleId) as Device;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.DeviceReferenciasSensor.SensorDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.DeviceReferenciasSensors.SensorDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -2725,6 +2827,26 @@ namespace Compañía.IotDsl
 		public MessageService(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
+		}
+		#endregion
+		#region AppService opposite domain role accessor
+		/// <summary>
+		/// Gets or sets AppService.
+		/// Descripción de
+		/// Compañía.IotDsl.AppServiceReferenciasMessageService.MessageService
+		/// </summary>
+		public virtual AppService AppService
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Compañía.IotDsl.AppServiceReferenciasMessageService.MessageServiceDomainRoleId) as AppService;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.AppServiceReferenciasMessageService.MessageServiceDomainRoleId, value);
+			}
 		}
 		#endregion
 	}

@@ -2009,7 +2009,7 @@ namespace Compañía.IotDsl
 		{
 			get
 			{
-				return new DslDiagrams::SizeD(1.5, 1.5);
+				return new DslDiagrams::SizeD(1, 1);
 			}
 		}
 		#endregion

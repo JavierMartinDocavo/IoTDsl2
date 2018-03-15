@@ -22,7 +22,7 @@ namespace Compañía.IotDsl
         {
             Device device = sourceElement as Device;
             Sensor sensor = targetElement as Sensor;
-            device.Sensor = sensor;
+            sensor.Device = device;
         }
     }
 }

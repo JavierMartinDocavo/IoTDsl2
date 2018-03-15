@@ -73,7 +73,7 @@ namespace Compañía.IotDsl
 
                         
                 }
-                //If there is no empty Endpoint, a new one is created
+                //If there are no empty Endpoints, a new one is created
                 if (!added)
                 {
                     endpoint = new Endpoint(iotCenter.Partition);
@@ -82,7 +82,20 @@ namespace Compañía.IotDsl
             }
             //The connection between the CloudService and the Endpoint is established
             CloudService cloudService = targetElement as CloudService;
-            endpoint.CloudService = cloudService;
+            if(cloudService is AppService)
+            {
+                AppService app = cloudService as AppService;
+                MessageService messageService = new MessageService(cloudService.ResourceGroup.Partition);
+                messageService.ResourceGroup = cloudService.ResourceGroup;
+                messageService.Name = app.Name + "ServiceBus";
+                messageService.AppService = app;
+                endpoint.CloudService = messageService;
+            }
+            else
+            {
+                endpoint.CloudService = cloudService;
+            }
+
         }
     }
 }

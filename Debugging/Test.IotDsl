@@ -7,31 +7,37 @@
           <resourceGroupHasCloudServices Id="3fd4701c-fcda-4bfe-ba99-eca7d2093b02">
             <ioTCenter Id="2eb4d122-7dc6-4fff-873b-583e86d21df7" name="IoTCenter1">
               <endpoints>
-                <ioTCenterHasEndpoints Id="3bc395f5-0515-4c89-adc9-4a0c953a508a">
-                  <endpoint Id="47bc3edd-496c-4179-8c34-f87c42179eb1" name="">
+                <ioTCenterHasEndpoints Id="290c699f-05ac-491d-bc2a-8d97f3e07252">
+                  <endpoint Id="b311bb4f-808b-463e-afbb-ca06cfed7fea" name="">
                     <cloudService>
-                      <endpointReferencesCloudService Id="c564b2c7-243b-430e-bd12-d7fcecd5ac92">
-                        <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/MessageService1" />
-                      </endpointReferencesCloudService>
+                      <endpointConnectsCloudService Id="7b1e0894-803c-4845-b3d3-f67841cf3f09">
+                        <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/AppService1ServiceBus" />
+                      </endpointConnectsCloudService>
                     </cloudService>
                   </endpoint>
                 </ioTCenterHasEndpoints>
               </endpoints>
               <devices>
-                <ioTCenterReferencesDevices Id="2d768acd-2956-4e7b-a24f-f5c85d21f1ba">
+                <ioTCenterHasDevices Id="ec38dde5-778c-4d17-be1d-f34ad15f67b0" deviceKey="pruebadeclave">
                   <monikerRaspberryPi deviceId="/e164dc9c-dcc0-445a-9691-0ee93df1c542/RaspberryPi1" />
-                </ioTCenterReferencesDevices>
+                </ioTCenterHasDevices>
               </devices>
             </ioTCenter>
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="e3485d1e-a5ca-485c-9cd4-4db6e4f02b7e">
-            <appService Id="3d88337f-99be-4a50-8914-b1c6c18d4fca" name="AppService1" />
+            <appService Id="3d88337f-99be-4a50-8914-b1c6c18d4fca" name="AppService1">
+              <messageService>
+                <appServiceReferenciasMessageService Id="2f972cbd-c4e4-4fa1-bb4e-dfe12f0f28cd">
+                  <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/AppService1ServiceBus" />
+                </appServiceReferenciasMessageService>
+              </messageService>
+            </appService>
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="cb236cfc-8b7d-4bd2-a2e6-eef03a207d68">
             <noSQLStorage Id="228626b5-4c93-4a07-8625-0b3ee72521ba" name="NoSQLStorage1" />
           </resourceGroupHasCloudServices>
-          <resourceGroupHasCloudServices Id="cff30519-d986-42cd-8fed-d207e03149b8">
-            <messageService Id="b39f4ab3-d0c3-4d81-9607-3f1cfbb0a201" name="MessageService1" />
+          <resourceGroupHasCloudServices Id="d77117ab-e218-4056-832a-33b4fc70e512">
+            <messageService Id="ef0840e7-4160-4e08-92df-6edb3778ba74" name="AppService1ServiceBus" />
           </resourceGroupHasCloudServices>
         </cloudServices>
       </resourceGroup>
@@ -40,17 +46,17 @@
   <devices>
     <ioTDslHasDevices Id="294b7047-1525-48b5-85b5-20e9d6516c4f">
       <raspberryPi Id="2e6d7597-ae29-4499-a80e-60878eddba39" deviceId="RaspberryPi1">
-        <sensor>
-          <deviceReferenciasSensor Id="71418009-5b2d-453a-8954-a28a09b19c73">
+        <sensors>
+          <deviceReferenciasSensors Id="90bc91f6-0ab5-4e96-a057-a780c0676483">
             <monikerBME280 Id="ced83609-c8ba-4709-88cf-f468bedbeb90" />
-          </deviceReferenciasSensor>
-        </sensor>
+          </deviceReferenciasSensors>
+        </sensors>
       </raspberryPi>
     </ioTDslHasDevices>
   </devices>
   <sensors>
     <ioTDslTieneSensors Id="b30c4cd9-d159-42f0-8e63-5a9c1b5b1caa">
-      <bME280 Id="ced83609-c8ba-4709-88cf-f468bedbeb90" refreshRate="0" />
+      <bME280 Id="ced83609-c8ba-4709-88cf-f468bedbeb90" refreshRate="10000" sensorId="iotdslbme280" humidity="false" altitude="false" />
     </ioTDslTieneSensors>
   </sensors>
 </ioTDsl>
