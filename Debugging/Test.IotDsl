@@ -2,16 +2,16 @@
 <ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e164dc9c-dcc0-445a-9691-0ee93df1c542" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
   <resourceGroups>
     <iotDslHasResourceGroups Id="b41aecfa-7a68-4d6e-8e4c-b6888a615675">
-      <resourceGroup Id="135e7e9d-f31f-4629-b7d7-d0f2ad0d80c5" name="ResourceGroup1" location="westeurope">
+      <resourceGroup Id="135e7e9d-f31f-4629-b7d7-d0f2ad0d80c5" name="jmdbecaresourcegroup" location="westeurope">
         <cloudServices>
           <resourceGroupHasCloudServices Id="3fd4701c-fcda-4bfe-ba99-eca7d2093b02">
-            <ioTCenter Id="2eb4d122-7dc6-4fff-873b-583e86d21df7" name="IoTCenter1">
+            <ioTCenter Id="2eb4d122-7dc6-4fff-873b-583e86d21df7" name="jmdbecaiothub">
               <endpoints>
                 <ioTCenterHasEndpoints Id="290c699f-05ac-491d-bc2a-8d97f3e07252">
                   <endpoint Id="b311bb4f-808b-463e-afbb-ca06cfed7fea" name="">
                     <cloudService>
-                      <endpointConnectsCloudService Id="7b1e0894-803c-4845-b3d3-f67841cf3f09">
-                        <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/AppService1ServiceBus" />
+                      <endpointConnectsCloudService Id="74e85bef-91d6-4d20-8b32-c3b5718816cb">
+                        <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/jmdbecaresourcegroup/jmdbecaappserviceServiceBus" />
                       </endpointConnectsCloudService>
                     </cloudService>
                   </endpoint>
@@ -19,25 +19,25 @@
               </endpoints>
               <devices>
                 <ioTCenterHasDevices Id="ec38dde5-778c-4d17-be1d-f34ad15f67b0" deviceKey="pruebadeclave">
-                  <monikerRaspberryPi deviceId="/e164dc9c-dcc0-445a-9691-0ee93df1c542/RaspberryPi1" />
+                  <monikerRaspberryPi deviceId="/e164dc9c-dcc0-445a-9691-0ee93df1c542/becajmdraspberry" />
                 </ioTCenterHasDevices>
               </devices>
             </ioTCenter>
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="e3485d1e-a5ca-485c-9cd4-4db6e4f02b7e">
-            <appService Id="3d88337f-99be-4a50-8914-b1c6c18d4fca" name="AppService1">
+            <appService Id="3d88337f-99be-4a50-8914-b1c6c18d4fca" name="jmdbecaappservice">
               <messageService>
-                <appServiceReferenciasMessageService Id="2f972cbd-c4e4-4fa1-bb4e-dfe12f0f28cd">
-                  <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/AppService1ServiceBus" />
+                <appServiceReferenciasMessageService Id="e916ef30-1756-4262-8876-d8713d55e942">
+                  <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/jmdbecaresourcegroup/jmdbecaappserviceServiceBus" />
                 </appServiceReferenciasMessageService>
               </messageService>
             </appService>
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="cb236cfc-8b7d-4bd2-a2e6-eef03a207d68">
-            <noSQLStorage Id="228626b5-4c93-4a07-8625-0b3ee72521ba" name="NoSQLStorage1" />
+            <noSQLStorage Id="228626b5-4c93-4a07-8625-0b3ee72521ba" name="jmdbecanosqlstorage" />
           </resourceGroupHasCloudServices>
-          <resourceGroupHasCloudServices Id="d77117ab-e218-4056-832a-33b4fc70e512">
-            <messageService Id="ef0840e7-4160-4e08-92df-6edb3778ba74" name="AppService1ServiceBus" />
+          <resourceGroupHasCloudServices Id="1d3af5eb-aa92-4e81-a326-e446b1ff6b26">
+            <messageService Id="f7fc2ad8-238b-445c-90df-eef810a24788" name="jmdbecaappserviceServiceBus" connectionString="Endpoint=sb://jmdbecaappserviceservicebus.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=kHFi0/RbVu9yMLugI+3j1RW3vUy0N4tU7MHdKvEdkiU=;EntityPath=jmdbecaappserviceservicebusqueue" />
           </resourceGroupHasCloudServices>
         </cloudServices>
       </resourceGroup>
@@ -45,7 +45,7 @@
   </resourceGroups>
   <devices>
     <ioTDslHasDevices Id="294b7047-1525-48b5-85b5-20e9d6516c4f">
-      <raspberryPi Id="2e6d7597-ae29-4499-a80e-60878eddba39" deviceId="RaspberryPi1">
+      <raspberryPi Id="2e6d7597-ae29-4499-a80e-60878eddba39" deviceId="becajmdraspberry">
         <sensors>
           <deviceReferenciasSensors Id="90bc91f6-0ab5-4e96-a057-a780c0676483">
             <monikerBME280 Id="ced83609-c8ba-4709-88cf-f468bedbeb90" />

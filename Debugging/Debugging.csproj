@@ -63,9 +63,6 @@
       <SubType>
       </SubType>
     </None>
-    <None Include="AppService1ServiceBus.json">
-      <DependentUpon>Cloud.tt</DependentUpon>
-    </None>
     <None Include="Cloud.ps1">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,12 +85,15 @@
     <None Include="Index.cshtml">
       <DependentUpon>Devices5.tt</DependentUpon>
     </None>
-    <None Include="IoTCenter1.json">
-      <DependentUpon>Cloud2.tt</DependentUpon>
-    </None>
     <None Include="IotDslReportVB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IotDslReportVB.txt</LastGenOutput>
+    </None>
+    <None Include="jmdbecaappserviceServiceBus.json">
+      <DependentUpon>Cloud.tt</DependentUpon>
+    </None>
+    <None Include="jmdbecaiothub.json">
+      <DependentUpon>Cloud2.tt</DependentUpon>
     </None>
     <None Include="Sample.IotDsl" />
     <None Include="Sample.IotDsl.diagram">

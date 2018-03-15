@@ -48,7 +48,7 @@ foreach(Endpoint endpoint in iot.Endpoints){
 		MessageService serviceBus = endpoint.CloudService as MessageService;
 #>
 				{
-					"connectionString": "<#=serviceBus.ConnectionString#>",
+					"connectionString": "[concat('<#=serviceBus.ConnectionString#>')]",
 					"name":"<#=serviceBus.Name#>endpoint",
 					"resourceGroup": "<#=resourceGroup.Name#>"
 				}

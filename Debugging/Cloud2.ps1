@@ -1,3 +1,3 @@
 ﻿
 Login-AzureRmAccount;
-New-AzureRmResourceGroupDeployment -ResourceGroupName ResourceGroup1 -TemplateFile IoTCenter1.json -hubName IoTCenter1;
+New-AzureRmResourceGroupDeployment -ResourceGroupName jmdbecaresourcegroup -TemplateFile jmdbecaiothub.json -hubName jmdbecaiothub;

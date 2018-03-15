@@ -3,61 +3,62 @@
   <exampleModelMoniker Id="e164dc9c-dcc0-445a-9691-0ee93df1c542" />
   <nestedChildShapes>
     <resourceGroupShape Id="6a9f299c-5635-4d1e-8ea2-779481ce01a0" absoluteBounds="0.5, 0.5, 8, 4">
-      <monikerGrupoDeRecursos name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1" />
+      <monikerGrupoDeRecursos name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/jmdbecaresourcegroup" />
     </resourceGroupShape>
     <ioTCenterImage Id="61f81f43-145f-4de5-91b3-fb3d3cda55fb" absoluteBounds="1, 0.875, 1, 1">
-      <monikerIotHub name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/IoTCenter1" />
+      <monikerIotHub name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/jmdbecaresourcegroup/jmdbecaiothub" />
       <relativeChildShapes>
         <endpointPort Id="59658286-6c94-4ebe-84f1-bc135a4af497" absoluteBounds="1.875, 1.46875, 0.25, 0.25">
-          <monikerEndpoints name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/IoTCenter1/" />
+          <monikerEndpoints name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/jmdbecaresourcegroup/jmdbecaiothub/" />
         </endpointPort>
       </relativeChildShapes>
     </ioTCenterImage>
     <raspberryPiImage Id="488a3324-c4b5-44f6-8aa4-f6f4f70d9e1b" absoluteBounds="1.375, 5, 1.3748281002044678, 0.78115236759185791">
-      <monikerRaspberryPi deviceId="/e164dc9c-dcc0-445a-9691-0ee93df1c542/RaspberryPi1" />
+      <monikerRaspberryPi deviceId="/e164dc9c-dcc0-445a-9691-0ee93df1c542/becajmdraspberry" />
     </raspberryPiImage>
     <bME280Image Id="6e6ee681-aedc-49e0-b0cf-7194d180d454" absoluteBounds="4.75, 5.5, 1, 1">
       <monikerBME280 Id="ced83609-c8ba-4709-88cf-f468bedbeb90" />
     </bME280Image>
     <appServiceImage Id="45682877-2bd3-492a-8879-a830b04002dd" absoluteBounds="6.75, 1.375, 1, 1">
-      <monikerAppService name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/AppService1" />
+      <monikerAppService name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/jmdbecaresourcegroup/jmdbecaappservice" />
       <relativeChildShapes />
     </appServiceImage>
     <noSQLStorageImage Id="f115d444-2607-460b-b4dc-9a67b12769d0" absoluteBounds="5, 0.625, 1, 1">
-      <monikerNoSQlStorage name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/NoSQLStorage1" />
+      <monikerNoSQlStorage name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/jmdbecaresourcegroup/jmdbecanosqlstorage" />
       <relativeChildShapes />
     </noSQLStorageImage>
-    <deviceToSensorConnection Id="489b6d2c-3318-4e15-a85c-3ba01cf07920" edgePoints="[(2.74982810020447 : 5.64057618379593); (4.75 : 5.64057618379593)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <deviceToSensorConnection Id="489b6d2c-3318-4e15-a85c-3ba01cf07920" edgePoints="[(2.74982810020447 : 5.64057618379593); (4.75 : 5.64057618379593)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <monikerDeviceReferenciasSensor Id="90bc91f6-0ab5-4e96-a057-a780c0676483" />
       <nodes>
         <monikerRaspberryPiImage Id="488a3324-c4b5-44f6-8aa4-f6f4f70d9e1b" />
         <monikerBME280Image Id="6e6ee681-aedc-49e0-b0cf-7194d180d454" />
       </nodes>
     </deviceToSensorConnection>
-    <messageServiceImage Id="35d0b344-ee15-43e3-8cae-87e6b6294a32" absoluteBounds="4.125, 3, 1, 1">
-      <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/ResourceGroup1/AppService1ServiceBus" />
-      <relativeChildShapes />
-    </messageServiceImage>
-    <appServiceToMessageConnection Id="1bbb11d7-4eca-4556-b335-cfb3e7d9791a" edgePoints="[(7.25 : 2.375); (7.25 : 3.54); (5.125 : 3.54)]" fixedFrom="Algorithm" fixedTo="Caller">
-      <monikerAppServiceReferenciasMessageService Id="2f972cbd-c4e4-4fa1-bb4e-dfe12f0f28cd" />
-      <nodes>
-        <monikerVisualizacionImagen Id="45682877-2bd3-492a-8879-a830b04002dd" />
-        <monikerServiceBusImage Id="35d0b344-ee15-43e3-8cae-87e6b6294a32" />
-      </nodes>
-    </appServiceToMessageConnection>
-    <endpointToCloudService Id="45bd4ecf-c2f3-45f9-9e84-2d867e33de72" edgePoints="[(2.125 : 1.59375); (2.5 : 1.59375); (2.5 : 3.48235294117647); (4.125 : 3.48235294117647)]" fixedFrom="Caller" fixedTo="NotFixed">
-      <monikerEndpointReferenciasCloudService Id="7b1e0894-803c-4845-b3d3-f67841cf3f09" />
-      <nodes>
-        <monikerEndpointPort Id="59658286-6c94-4ebe-84f1-bc135a4af497" />
-        <monikerServiceBusImage Id="35d0b344-ee15-43e3-8cae-87e6b6294a32" />
-      </nodes>
-    </endpointToCloudService>
-    <deviceToIoTCenter Id="4a6290a9-f0a9-40af-8209-0ca742e250e4" edgePoints="[(1.6875 : 1.875); (1.6875 : 5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <deviceToIoTCenter Id="4a6290a9-f0a9-40af-8209-0ca742e250e4" edgePoints="[(1.6875 : 1.875); (1.6875 : 5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <monikerIoTCenterReferenciasDevice Id="ec38dde5-778c-4d17-be1d-f34ad15f67b0" />
+      <relativeChildShapes />
       <nodes>
         <monikerIoTCenterImage Id="61f81f43-145f-4de5-91b3-fb3d3cda55fb" />
         <monikerRaspberryPiImage Id="488a3324-c4b5-44f6-8aa4-f6f4f70d9e1b" />
       </nodes>
     </deviceToIoTCenter>
+    <messageServiceImage Id="f290fbb9-7883-4d20-af3a-3b81795d7411" absoluteBounds="4, 2.875, 1, 1">
+      <monikerServiceBus name="/e164dc9c-dcc0-445a-9691-0ee93df1c542/jmdbecaresourcegroup/jmdbecaappserviceServiceBus" />
+      <relativeChildShapes />
+    </messageServiceImage>
+    <appServiceToMessageConnection Id="8145a9e1-3087-4d7e-922e-75b0c42d400d" edgePoints="[(6.75 : 1.875); (4.5 : 1.875); (4.5 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <monikerAppServiceReferenciasMessageService Id="e916ef30-1756-4262-8876-d8713d55e942" />
+      <nodes>
+        <monikerVisualizacionImagen Id="45682877-2bd3-492a-8879-a830b04002dd" />
+        <monikerServiceBusImage Id="f290fbb9-7883-4d20-af3a-3b81795d7411" />
+      </nodes>
+    </appServiceToMessageConnection>
+    <endpointToCloudService Id="c3b10e09-4d25-4a85-96de-0d9f7aa3a532" edgePoints="[(2.125 : 1.59375); (4.25 : 1.59375); (4.25 : 2.875)]" fixedFrom="Caller" fixedTo="Algorithm">
+      <monikerEndpointReferenciasCloudService Id="74e85bef-91d6-4d20-8b32-c3b5718816cb" />
+      <nodes>
+        <monikerEndpointPort Id="59658286-6c94-4ebe-84f1-bc135a4af497" />
+        <monikerServiceBusImage Id="f290fbb9-7883-4d20-af3a-3b81795d7411" />
+      </nodes>
+    </endpointToCloudService>
   </nestedChildShapes>
 </iotDslDiagram>

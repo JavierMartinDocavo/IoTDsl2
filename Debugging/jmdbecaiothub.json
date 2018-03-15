@@ -22,11 +22,12 @@
       "routing" :{
 		"endpoints":{
 			"serviceBusQueues":[
-				{
-					"connectionString": "",
-					"name":"AppService1ServiceBusendpoint",
-					"resourceGroup": "ResourceGroup1"
-				}
+                {
+                    "connectionString": "[concat('Endpoint=sb://jmdbecaappserviceservicebus.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=kHFi0/RbVu9yMLugI+3j1RW3vUy0N4tU7MHdKvEdkiU=;EntityPath=jmdbecaappserviceservicebusqueue')]",
+                    "name": "jmdbecaappserviceServiceBusendpoint",
+                    "resourceGroup": "jmdbecaresourcegroup",
+                    "subscriptionId": "f53c2e80-22fe-4b10-9758-2ae712295faf"
+                }
 			],
 			"serviceBusTopics":[
 			],
@@ -35,11 +36,11 @@
 		},
 		"routes": [
 			{
-				"name":"AppService1ServiceBusroute",
+				"name":"jmdbecaappserviceServiceBusroute",
 				"source":"DeviceMessages",
 				"condition":"true",
 				"endpointNames":[
-					"AppService1ServiceBusendpoint"
+					"jmdbecaappserviceServiceBusendpoint"
 				],
 				"isEnabled":true
 			}
