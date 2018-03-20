@@ -108,6 +108,9 @@ namespace Compañía.IotDsl
 				typeof(BME280Image),
 				typeof(IoTCenterImage),
 				typeof(MessageServiceImage),
+				typeof(WebAppImage),
+				typeof(ApiRESTImage),
+				typeof(PhoneAppImage),
 				typeof(EndpointPort),
 				typeof(global::Compañía.IotDsl.FixUpDiagram),
 				typeof(global::Compañía.IotDsl.DecoratorPropertyChanged),
@@ -190,7 +193,7 @@ namespace Compañía.IotDsl
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(33);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(36);
 				createElementMap.Add(typeof(IoTDsl), 0);
 				createElementMap.Add(typeof(ResourceGroup), 1);
 				createElementMap.Add(typeof(IoTCenter), 2);
@@ -223,7 +226,10 @@ namespace Compañía.IotDsl
 				createElementMap.Add(typeof(BME280Image), 29);
 				createElementMap.Add(typeof(IoTCenterImage), 30);
 				createElementMap.Add(typeof(MessageServiceImage), 31);
-				createElementMap.Add(typeof(EndpointPort), 32);
+				createElementMap.Add(typeof(WebAppImage), 32);
+				createElementMap.Add(typeof(ApiRESTImage), 33);
+				createElementMap.Add(typeof(PhoneAppImage), 34);
+				createElementMap.Add(typeof(EndpointPort), 35);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -269,7 +275,10 @@ namespace Compañía.IotDsl
 				case 29: return new BME280Image(partition, propertyAssignments);
 				case 30: return new IoTCenterImage(partition, propertyAssignments);
 				case 31: return new MessageServiceImage(partition, propertyAssignments);
-				case 32: return new EndpointPort(partition, propertyAssignments);
+				case 32: return new WebAppImage(partition, propertyAssignments);
+				case 33: return new ApiRESTImage(partition, propertyAssignments);
+				case 34: return new PhoneAppImage(partition, propertyAssignments);
+				case 35: return new EndpointPort(partition, propertyAssignments);
 				default: return null;
 			}
 		}

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e164dc9c-dcc0-445a-9691-0ee93df1c542" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
+<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e164dc9c-dcc0-445a-9691-0ee93df1c542" subscription="f53c2e80-22fe-4b10-9758-2ae712295faf" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
   <resourceGroups>
     <iotDslHasResourceGroups Id="b41aecfa-7a68-4d6e-8e4c-b6888a615675">
       <resourceGroup Id="135e7e9d-f31f-4629-b7d7-d0f2ad0d80c5" name="jmdbecaresourcegroup" location="westeurope">

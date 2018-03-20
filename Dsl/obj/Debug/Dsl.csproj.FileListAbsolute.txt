@@ -66,9 +66,9 @@ D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\bin\Debug\es\Microsoft.VisualStud
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\bin\Debug\es\Microsoft.VisualStudio.TextTemplating.VSHost.15.0.resources.dll
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\bin\Debug\es\Microsoft.VisualStudio.Shell.15.0.resources.dll
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\bin\Debug\es\Microsoft.VisualStudio.GraphModel.resources.dll
+D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Dsl.csprojResolveAssemblyReference.cache
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Compañía.IotDsl.GeneratedCode.DomainModelResx.resources
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Dsl.csproj.GenerateResource.Cache
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Dsl.csproj.CoreCompileInputs.cache
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Compañía.IotDsl.Dsl.dll
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Compañía.IotDsl.Dsl.pdb
-D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Dsl.csprojResolveAssemblyReference.cache

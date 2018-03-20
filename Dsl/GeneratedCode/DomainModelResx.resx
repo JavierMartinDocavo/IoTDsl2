@@ -817,6 +817,42 @@
     <value>Name</value>
     <comment>Text decorator default text</comment>
   </data>
+  <data name="Compañía.IotDsl.WebAppImage.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.WebAppImage</value>
+    <comment>Description for DomainClass &apos;WebAppImage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.WebAppImage.DisplayName" xml:space="preserve">
+    <value>Web App Image</value>
+    <comment>DisplayName for DomainClass &apos;WebAppImage&apos;</comment>
+  </data>
+  <data name="WebAppImageNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.ApiRESTImage.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.ApiRESTImage</value>
+    <comment>Description for DomainClass &apos;ApiRESTImage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.ApiRESTImage.DisplayName" xml:space="preserve">
+    <value>Api RESTImage</value>
+    <comment>DisplayName for DomainClass &apos;ApiRESTImage&apos;</comment>
+  </data>
+  <data name="ApiRESTImageNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.PhoneAppImage.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.PhoneAppImage</value>
+    <comment>Description for DomainClass &apos;PhoneAppImage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.PhoneAppImage.DisplayName" xml:space="preserve">
+    <value>Phone App Image</value>
+    <comment>DisplayName for DomainClass &apos;PhoneAppImage&apos;</comment>
+  </data>
+  <data name="PhoneAppImageNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="Compañía.IotDsl.EndpointToCloudService.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.EndpointToCloudService</value>
     <comment>Description for DomainClass &apos;EndpointToCloudService&apos;</comment>
@@ -943,6 +979,30 @@
   </data>
   <data name="ServiceBusToolToolboxTooltip" xml:space="preserve">
     <value>Service Bus Tool</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="WebAppToolToolboxItem" xml:space="preserve">
+    <value>Web Application</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="WebAppToolToolboxTooltip" xml:space="preserve">
+    <value>Web Application to visualize data</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ApiRESTToolToolboxItem" xml:space="preserve">
+    <value>REST API</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ApiRESTToolToolboxTooltip" xml:space="preserve">
+    <value>REST API to obtain data</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="PhoneAppToolToolboxItem" xml:space="preserve">
+    <value>Phone Application</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="PhoneAppToolToolboxTooltip" xml:space="preserve">
+    <value>Phone Application to visualize data</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="DeviceToolboxTab" xml:space="preserve">
@@ -1142,6 +1202,18 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\pngexports\messageservice.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>MessageServiceImage shape image</comment>
   </data>
+  <data name="WebAppImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\dashboard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>WebAppImage shape image</comment>
+  </data>
+  <data name="ApiRESTImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\dashboard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>ApiRESTImage shape image</comment>
+  </data>
+  <data name="PhoneAppImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\phoneapp.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>PhoneAppImage shape image</comment>
+  </data>
   <data name="ResourceGroupToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
@@ -1175,6 +1247,18 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="ServiceBusToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="WebAppToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ApiRESTToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="PhoneAppToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

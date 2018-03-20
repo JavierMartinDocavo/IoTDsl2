@@ -436,6 +436,21 @@
         <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
       </ShapeHasDecorators>
     </ImageShape>
+    <ImageShape Id="3f1f962b-45fe-44f0-81ca-e2eb81cab820" Description="Descripción de Compañía.IotDsl.WebAppImage" Name="WebAppImage" DisplayName="Web App Image" Namespace="Compañía.IotDsl" FixedTooltipText="Web App Image" InitialWidth="1" InitialHeight="1" Image="Resources\pngexports\dashboard.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="1d608593-aa57-4258-8c78-0750bab42fde" Description="Descripción de Compañía.IotDsl.ApiRESTImage" Name="ApiRESTImage" DisplayName="Api RESTImage" Namespace="Compañía.IotDsl" FixedTooltipText="Api RESTImage" InitialWidth="1" InitialHeight="1" Image="Resources\pngexports\dashboard.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+    </ImageShape>
+    <ImageShape Id="cc47049e-7e20-4093-aacb-9ce53a961f41" Description="Descripción de Compañía.IotDsl.PhoneAppImage" Name="PhoneAppImage" DisplayName="Phone App Image" Namespace="Compañía.IotDsl" FixedTooltipText="Phone App Image" InitialWidth="1" InitialHeight="1" Image="Resources\pngexports\phoneapp.png">
+      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
+      </ShapeHasDecorators>
+    </ImageShape>
   </Shapes>
   <Connectors>
     <Connector Id="f70a14ee-d9b8-43b8-8785-877b5175f4c1" Description="Descripción de Compañía.IotDsl.EndpointToCloudService" Name="EndpointToCloudService" DisplayName="Endpoint To Cloud Service" Namespace="Compañía.IotDsl" FixedTooltipText="Endpoint To Cloud Service" />
@@ -677,6 +692,15 @@
       </XmlClassData>
       <XmlClassData TypeName="AppServiceToMessageConnection" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerAppServiceToMessageConnection" ElementName="appServiceToMessageConnection" MonikerTypeName="MonikerAppServiceToMessageConnection">
         <ConnectorMoniker Name="AppServiceToMessageConnection" />
+      </XmlClassData>
+      <XmlClassData TypeName="WebAppImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerWebAppImage" ElementName="webAppImage" MonikerTypeName="MonikerWebAppImage">
+        <ImageShapeMoniker Name="WebAppImage" />
+      </XmlClassData>
+      <XmlClassData TypeName="ApiRESTImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerApiRESTImage" ElementName="apiRESTImage" MonikerTypeName="MonikerApiRESTImage">
+        <ImageShapeMoniker Name="ApiRESTImage" />
+      </XmlClassData>
+      <XmlClassData TypeName="PhoneAppImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerPhoneAppImage" ElementName="phoneAppImage" MonikerTypeName="MonikerPhoneAppImage">
+        <ImageShapeMoniker Name="PhoneAppImage" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -943,6 +967,59 @@
         </DecoratorMap>
         <ImageShapeMoniker Name="MessageServiceImage" />
       </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="WebApp" />
+        <ParentElementPath>
+          <DomainPath>ResourceGroupHasCloudServices.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="WebAppImage/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="CloudService/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="WebAppImage" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="ApiREST" />
+        <ParentElementPath>
+          <DomainPath>ResourceGroupHasCloudServices.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="WebAppImage/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="CloudService/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ApiRESTImage/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="CloudService/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="ApiRESTImage" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="PhoneApp" />
+        <ParentElementPath>
+          <DomainPath>ResourceGroupHasCloudServices.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="PhoneAppImage/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="CloudService/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <ImageShapeMoniker Name="PhoneAppImage" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -1005,6 +1082,15 @@
       </ElementTool>
       <ElementTool Name="ServiceBusTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="ServiceBusTool" Tooltip="Service Bus Tool" HelpKeyword="ServiceBusTool">
         <DomainClassMoniker Name="MessageService" />
+      </ElementTool>
+      <ElementTool Name="WebAppTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Web Application" Tooltip="Web Application to visualize data" HelpKeyword="WebAppTool">
+        <DomainClassMoniker Name="WebApp" />
+      </ElementTool>
+      <ElementTool Name="ApiRESTTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="REST API" Tooltip="REST API to obtain data" HelpKeyword="ApiRESTTool">
+        <DomainClassMoniker Name="ApiREST" />
+      </ElementTool>
+      <ElementTool Name="PhoneAppTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Phone Application" Tooltip="Phone Application to visualize data" HelpKeyword="PhoneAppTool">
+        <DomainClassMoniker Name="PhoneApp" />
       </ElementTool>
     </ToolboxTab>
     <ToolboxTab TabText="Device">

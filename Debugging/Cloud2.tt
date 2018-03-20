@@ -50,7 +50,8 @@ foreach(Endpoint endpoint in iot.Endpoints){
 				{
 					"connectionString": "[concat('<#=serviceBus.ConnectionString#>')]",
 					"name":"<#=serviceBus.Name#>endpoint",
-					"resourceGroup": "<#=resourceGroup.Name#>"
+					"resourceGroup": "<#=resourceGroup.Name#>",
+					"subscriptionId": "<#=this.IoTDsl.Subscription#>"
 				}
 <#
 	}

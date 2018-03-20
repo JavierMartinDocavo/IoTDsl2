@@ -100,6 +100,30 @@ namespace Compañía.IotDsl
 					"@ServiceBusToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
 					Index = 8)]
+	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
+					"@WebAppToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
+					"Compañía.IotDsl.WebAppToolToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"WebAppTool", 
+					"@WebAppToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
+					0xff00ff,
+					Index = 9)]
+	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
+					"@ApiRESTToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
+					"Compañía.IotDsl.ApiRESTToolToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ApiRESTTool", 
+					"@ApiRESTToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
+					0xff00ff,
+					Index = 10)]
+	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.CloudToolboxTab",
+					"@PhoneAppToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
+					"Compañía.IotDsl.PhoneAppToolToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"PhoneAppTool", 
+					"@PhoneAppToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
+					0xff00ff,
+					Index = 11)]
 	[VSShell::ProvideStaticToolboxGroup("@DeviceToolboxTab;Compañía.IotDsl.Dsl.dll", "Compañía.IotDsl.DeviceToolboxTab")]
 	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.DeviceToolboxTab",
 					"@RaspberryPiToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
@@ -108,7 +132,7 @@ namespace Compañía.IotDsl
 					"RaspberryPiTool", 
 					"@RaspberryPiToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
-					Index = 9)]
+					Index = 12)]
 	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.DeviceToolboxTab",
 					"@DeviceToSensorConnectionToolboxItem;Compañía.IotDsl.Dsl.dll", 
 					"Compañía.IotDsl.DeviceToSensorConnectionToolboxItem", 
@@ -116,7 +140,7 @@ namespace Compañía.IotDsl
 					"DeviceToSensorConnection", 
 					"@DeviceToSensorConnectionToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
-					Index = 10)]
+					Index = 13)]
 	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.DeviceToolboxTab",
 					"@bme280ToolboxItem;Compañía.IotDsl.Dsl.dll", 
 					"Compañía.IotDsl.bme280ToolboxItem", 
@@ -124,7 +148,7 @@ namespace Compañía.IotDsl
 					"bme280", 
 					"@bme280ToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
-					Index = 11)]
+					Index = 14)]
 	[VSShell::ProvideStaticToolboxItem("Compañía.IotDsl.DeviceToolboxTab",
 					"@IoTCenterToDeviceToolToolboxItem;Compañía.IotDsl.Dsl.dll", 
 					"Compañía.IotDsl.IoTCenterToDeviceToolToolboxItem", 
@@ -132,7 +156,7 @@ namespace Compañía.IotDsl
 					"IoTCenterToDeviceTool", 
 					"@IoTCenterToDeviceToolToolboxBitmap;Compañía.IotDsl.Dsl.dll", 
 					0xff00ff,
-					Index = 12)]
+					Index = 15)]
 	[VSShell::ProvideEditorFactory(typeof(IotDslEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(IotDslEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(IotDslEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer
