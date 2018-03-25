@@ -106,7 +106,7 @@ namespace Compañía.IotDsl
 		{
 			get
 			{
-				return 12;
+				return 13;
 			}
 		}
 		
@@ -345,6 +345,22 @@ namespace Compañía.IotDsl
 						"PhoneAppTool", // F1 help keyword for the toolbox item.
 						resourceManager.GetString("PhoneAppToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Compañía.IotDsl.PhoneApp.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Compañía.IotDsl.LineGraphToolToolboxItem":
+					// Add LineGraphTool shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Compañía.IotDsl.LineGraphToolToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						13, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("LineGraphToolToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("LineGraphToolToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Compañía.IotDsl.CloudToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("CloudToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"LineGraphTool", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("LineGraphToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Compañía.IotDsl.LineGraph.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});

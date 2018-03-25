@@ -2248,3 +2248,481 @@ namespace Compañía.IotDsl
 		#endregion
 	}
 }
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainRelationship AppServiceHasGraph
+	/// Descripción de Compañía.IotDsl.AppServiceHasGraph
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.AppServiceHasGraph.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.AppServiceHasGraph.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("ec6f2fff-6d97-43b5-90ec-eb721d98cedd")]
+	public partial class AppServiceHasGraph : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// AppServiceHasGraph domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xec6f2fff, 0x6d97, 0x43b5, 0x90, 0xec, 0xeb, 0x72, 0x1d, 0x98, 0xce, 0xdd);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a AppServiceHasGraph link in the same Partition as the given AppService
+		/// </summary>
+		/// <param name="source">AppService to use as the source of the relationship.</param>
+		/// <param name="target">Graph to use as the target of the relationship.</param>
+		public AppServiceHasGraph(AppService source, Graph target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(AppServiceHasGraph.AppServiceDomainRoleId, source), new DslModeling::RoleAssignment(AppServiceHasGraph.GraphDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public AppServiceHasGraph(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public AppServiceHasGraph(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public AppServiceHasGraph(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public AppServiceHasGraph(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region AppService domain role code
+		
+		/// <summary>
+		/// AppService domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid AppServiceDomainRoleId = new global::System.Guid(0x4cebc2ae, 0x0e5a, 0x422f, 0xa7, 0x01, 0xc7, 0x3a, 0x7c, 0x81, 0xf5, 0x40);
+		
+		/// <summary>
+		/// DomainRole AppService
+		/// Descripción de Compañía.IotDsl.AppServiceHasGraph.AppService
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.AppServiceHasGraph/AppService.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.AppServiceHasGraph/AppService.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Graphs", PropertyDisplayNameKey="Compañía.IotDsl.AppServiceHasGraph/AppService.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("4cebc2ae-0e5a-422f-a701-c73a7c81f540")]
+		public virtual AppService AppService
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (AppService)DslModeling::DomainRoleInfo.GetRolePlayer(this, AppServiceDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, AppServiceDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access AppService of a Graph
+		/// <summary>
+		/// Gets AppService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static AppService GetAppService(Graph element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, GraphDomainRoleId) as AppService;
+		}
+		
+		/// <summary>
+		/// Sets AppService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetAppService(Graph element, AppService newAppService)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, GraphDomainRoleId, newAppService);
+		}
+		#endregion
+		#region Graph domain role code
+		
+		/// <summary>
+		/// Graph domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid GraphDomainRoleId = new global::System.Guid(0xb43386ab, 0x1733, 0x4239, 0xbc, 0x51, 0xd9, 0x12, 0xec, 0xc4, 0x04, 0xbf);
+		
+		/// <summary>
+		/// DomainRole Graph
+		/// Descripción de Compañía.IotDsl.AppServiceHasGraph.Graph
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.AppServiceHasGraph/Graph.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.AppServiceHasGraph/Graph.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "AppService", PropertyDisplayNameKey="Compañía.IotDsl.AppServiceHasGraph/Graph.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("b43386ab-1733-4239-bc51-d912ecc404bf")]
+		public virtual Graph Graph
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Graph)DslModeling::DomainRoleInfo.GetRolePlayer(this, GraphDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, GraphDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Graphs of a AppService
+		/// <summary>
+		/// Gets a list of Graphs.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Graph> GetGraphs(AppService element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Graph>, Graph>(element, AppServiceDomainRoleId);
+		}
+		#endregion
+		#region AppService link accessor
+		/// <summary>
+		/// Get the list of AppServiceHasGraph links to a AppService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.AppServiceHasGraph> GetLinksToGraphs ( global::Compañía.IotDsl.AppService appServiceInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.AppServiceHasGraph>(appServiceInstance, global::Compañía.IotDsl.AppServiceHasGraph.AppServiceDomainRoleId);
+		}
+		#endregion
+		#region Graph link accessor
+		/// <summary>
+		/// Get the AppServiceHasGraph link to a Graph.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.AppServiceHasGraph GetLinkToAppService (global::Compañía.IotDsl.Graph graphInstance)
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.AppServiceHasGraph> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.AppServiceHasGraph>(graphInstance, global::Compañía.IotDsl.AppServiceHasGraph.GraphDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Graph not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region AppServiceHasGraph instance accessors
+		
+		/// <summary>
+		/// Get any AppServiceHasGraph links between a given AppService and a Graph.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.AppServiceHasGraph> GetLinks( global::Compañía.IotDsl.AppService source, global::Compañía.IotDsl.Graph target )
+		{
+			global::System.Collections.Generic.List<global::Compañía.IotDsl.AppServiceHasGraph> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.AppServiceHasGraph>();
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.AppServiceHasGraph> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.AppServiceHasGraph>(source, global::Compañía.IotDsl.AppServiceHasGraph.AppServiceDomainRoleId);
+			foreach ( global::Compañía.IotDsl.AppServiceHasGraph link in links )
+			{
+				if ( target.Equals(link.Graph) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one AppServiceHasGraph link between a given AppServiceand a Graph.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.AppServiceHasGraph GetLink( global::Compañía.IotDsl.AppService source, global::Compañía.IotDsl.Graph target )
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.AppServiceHasGraph> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.AppServiceHasGraph>(source, global::Compañía.IotDsl.AppServiceHasGraph.AppServiceDomainRoleId);
+			foreach ( global::Compañía.IotDsl.AppServiceHasGraph link in links )
+			{
+				if ( target.Equals(link.Graph) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainRelationship GraphHasVariables
+	/// Descripción de Compañía.IotDsl.GraphHasVariables
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.GraphHasVariables.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.GraphHasVariables.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("ac2fb143-5671-43c0-bce5-72b3680c113f")]
+	public partial class GraphHasVariables : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// GraphHasVariables domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xac2fb143, 0x5671, 0x43c0, 0xbc, 0xe5, 0x72, 0xb3, 0x68, 0x0c, 0x11, 0x3f);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a GraphHasVariables link in the same Partition as the given Graph
+		/// </summary>
+		/// <param name="source">Graph to use as the source of the relationship.</param>
+		/// <param name="target">Variable to use as the target of the relationship.</param>
+		public GraphHasVariables(Graph source, Variable target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(GraphHasVariables.GraphDomainRoleId, source), new DslModeling::RoleAssignment(GraphHasVariables.VariableDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public GraphHasVariables(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public GraphHasVariables(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public GraphHasVariables(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public GraphHasVariables(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Graph domain role code
+		
+		/// <summary>
+		/// Graph domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid GraphDomainRoleId = new global::System.Guid(0x6630f719, 0xa7de, 0x4870, 0x9b, 0xb7, 0xee, 0x2b, 0x7e, 0xa2, 0x2a, 0xb6);
+		
+		/// <summary>
+		/// DomainRole Graph
+		/// Descripción de Compañía.IotDsl.GraphHasVariables.Graph
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.GraphHasVariables/Graph.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.GraphHasVariables/Graph.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Variables", PropertyDisplayNameKey="Compañía.IotDsl.GraphHasVariables/Graph.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("6630f719-a7de-4870-9bb7-ee2b7ea22ab6")]
+		public virtual Graph Graph
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Graph)DslModeling::DomainRoleInfo.GetRolePlayer(this, GraphDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, GraphDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Graph of a Variable
+		/// <summary>
+		/// Gets Graph.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static Graph GetGraph(Variable element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, VariableDomainRoleId) as Graph;
+		}
+		
+		/// <summary>
+		/// Sets Graph.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetGraph(Variable element, Graph newGraph)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, VariableDomainRoleId, newGraph);
+		}
+		#endregion
+		#region Variable domain role code
+		
+		/// <summary>
+		/// Variable domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid VariableDomainRoleId = new global::System.Guid(0xa692dbdc, 0xe54d, 0x4590, 0x85, 0x02, 0x37, 0x2e, 0xd4, 0x7f, 0x1c, 0xff);
+		
+		/// <summary>
+		/// DomainRole Variable
+		/// Descripción de Compañía.IotDsl.GraphHasVariables.Variable
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.GraphHasVariables/Variable.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.GraphHasVariables/Variable.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Graph", PropertyDisplayNameKey="Compañía.IotDsl.GraphHasVariables/Variable.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("a692dbdc-e54d-4590-8502-372ed47f1cff")]
+		public virtual Variable Variable
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (Variable)DslModeling::DomainRoleInfo.GetRolePlayer(this, VariableDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, VariableDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Variables of a Graph
+		/// <summary>
+		/// Gets a list of Variables.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<Variable> GetVariables(Graph element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<Variable>, Variable>(element, GraphDomainRoleId);
+		}
+		#endregion
+		#region Graph link accessor
+		/// <summary>
+		/// Get the list of GraphHasVariables links to a Graph.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.GraphHasVariables> GetLinksToVariables ( global::Compañía.IotDsl.Graph graphInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.GraphHasVariables>(graphInstance, global::Compañía.IotDsl.GraphHasVariables.GraphDomainRoleId);
+		}
+		#endregion
+		#region Variable link accessor
+		/// <summary>
+		/// Get the GraphHasVariables link to a Variable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.GraphHasVariables GetLinkToGraph (global::Compañía.IotDsl.Variable variableInstance)
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.GraphHasVariables> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.GraphHasVariables>(variableInstance, global::Compañía.IotDsl.GraphHasVariables.VariableDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Variable not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region GraphHasVariables instance accessors
+		
+		/// <summary>
+		/// Get any GraphHasVariables links between a given Graph and a Variable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.GraphHasVariables> GetLinks( global::Compañía.IotDsl.Graph source, global::Compañía.IotDsl.Variable target )
+		{
+			global::System.Collections.Generic.List<global::Compañía.IotDsl.GraphHasVariables> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.GraphHasVariables>();
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.GraphHasVariables> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.GraphHasVariables>(source, global::Compañía.IotDsl.GraphHasVariables.GraphDomainRoleId);
+			foreach ( global::Compañía.IotDsl.GraphHasVariables link in links )
+			{
+				if ( target.Equals(link.Variable) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one GraphHasVariables link between a given Graphand a Variable.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.GraphHasVariables GetLink( global::Compañía.IotDsl.Graph source, global::Compañía.IotDsl.Variable target )
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.GraphHasVariables> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.GraphHasVariables>(source, global::Compañía.IotDsl.GraphHasVariables.GraphDomainRoleId);
+			foreach ( global::Compañía.IotDsl.GraphHasVariables link in links )
+			{
+				if ( target.Equals(link.Variable) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}

@@ -69,7 +69,7 @@
           </xsd:annotation>
         </xsd:attribute>
         <!-- Property: Provider -->
-        <xsd:attribute name="provider" type="xsd:string" />
+        <xsd:attribute name="provider" type="Provider" />
         <!-- Property: Subscription -->
         <xsd:attribute name="subscription" type="xsd:string" />
         <!-- Property: ServicePlan -->
@@ -235,8 +235,6 @@
             <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <!-- Property: Name -->
-        <xsd:attribute name="name" type="xsd:string" use="required" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -249,7 +247,7 @@
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
-        <xsd:attribute name="name" type="xsd:string" >
+        <xsd:attribute name="Id" type="xsd:string" >
           <xsd:annotation>
             <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
           </xsd:annotation>
@@ -368,6 +366,21 @@
                 <xsd:element ref="appServiceReferenciasMessageService" minOccurs="0" maxOccurs="1">
                   <xsd:annotation>
                     <xsd:documentation>[Instance of AppServiceReferenciasMessageService needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: AppServiceHasGraph -->
+          <xsd:element name="graphs" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of AppServiceHasGraph</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="appServiceHasGraph" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of AppServiceHasGraph needs to be serialized in full-form]</xsd:documentation>
                   </xsd:annotation>
                 </xsd:element>
               </xsd:sequence>
@@ -534,6 +547,12 @@
         </xsd:attribute>
         <!-- Property: deviceId -->
         <xsd:attribute name="deviceId" type="xsd:string" use="required" />
+        <!-- Property: Protocol -->
+        <xsd:attribute name="protocol" type="Protocol" />
+        <!-- Property: OS -->
+        <xsd:attribute name="oS" type="OS" />
+        <!-- Property: ProgrammingLenguage -->
+        <xsd:attribute name="programmingLenguage" type="ProgramingLenguage" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -680,6 +699,116 @@
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="MonikerCloudService">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Graph -->
+  <xsd:element name="graph" type="Graph" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Graph">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: GraphHasVariables -->
+          <xsd:element name="variables" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of GraphHasVariables</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="graphHasVariables" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of GraphHasVariables needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Graph Moniker -->
+  <xsd:element name="monikerGraph" type="MonikerGraph" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="MonikerGraph">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Graph instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- LineGraph -->
+  <xsd:element name="lineGraph" type="LineGraph" substitutionGroup="graph" />
+  <xsd:complexType name="LineGraph">
+    <xsd:complexContent>
+      <xsd:extension base="Graph">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- LineGraph Moniker -->
+  <xsd:element name="monikerLineGraph" type="MonikerLineGraph" substitutionGroup="monikerGraph" />
+  <xsd:complexType name="MonikerLineGraph">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for LineGraph instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="MonikerGraph">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Variable -->
+  <xsd:element name="variable" type="Variable" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Variable">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Type -->
+        <xsd:attribute name="type" type="Measurements" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Variable Moniker -->
+  <xsd:element name="monikerVariable" type="MonikerVariable" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="MonikerVariable">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Variable instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -1046,6 +1175,86 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- AppServiceHasGraph -->
+  <xsd:element name="appServiceHasGraph" type="AppServiceHasGraph" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="AppServiceHasGraph">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Graph -->
+          <xsd:element ref="graph" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AppServiceHasGraph Moniker -->
+  <xsd:element name="monikerAppServiceHasGraph" type="MonikerAppServiceHasGraph" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="MonikerAppServiceHasGraph">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for AppServiceHasGraph instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- GraphHasVariables -->
+  <xsd:element name="graphHasVariables" type="GraphHasVariables" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="GraphHasVariables">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end Variable -->
+          <xsd:element ref="variable" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- GraphHasVariables Moniker -->
+  <xsd:element name="monikerGraphHasVariables" type="MonikerGraphHasVariables" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="MonikerGraphHasVariables">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for GraphHasVariables instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- Enum Location -->
   <xsd:simpleType name="Location">
     <xsd:restriction base="xsd:string">
@@ -1056,6 +1265,49 @@
   <!-- Enum Provider -->
   <xsd:simpleType name="Provider">
     <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Azure">
+        <xsd:annotation>
+          <xsd:documentation>Descripción de Compañía.IotDsl.Provider.azure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum Protocol -->
+  <xsd:simpleType name="Protocol">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="MQTT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum OS -->
+  <xsd:simpleType name="OS">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="WindowsIoT"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum ProgramingLenguage -->
+  <xsd:simpleType name="ProgramingLenguage">
+    <xsd:annotation>
+      <xsd:documentation>Descripción de Compañía.IotDsl.ProgrammingLenguage</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="CSharp">
+        <xsd:annotation>
+          <xsd:documentation>Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum Measurements -->
+  <xsd:simpleType name="Measurements">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Temperature"/>
+      <xsd:enumeration value="Humidity"/>
+      <xsd:enumeration value="Pressure"/>
+      <xsd:enumeration value="Altitude"/>
     </xsd:restriction>
   </xsd:simpleType>
   

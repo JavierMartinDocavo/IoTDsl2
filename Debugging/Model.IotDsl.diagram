@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<iotDslDiagram dslVersion="1.0.0.0" Id="bbcccba3-2a7d-4a12-a66d-c07d462efb6a" absoluteBounds="0, 0, 11, 8.5" name="Model">
+  <exampleModelMoniker Id="0eaa8724-332b-42c3-886f-84ab975e1103" />
+  <nestedChildShapes>
+    <resourceGroupShape Id="ec502e77-51ca-4be4-9296-524d8af7300f" absoluteBounds="1.375, 1, 8, 4">
+      <monikerGrupoDeRecursos name="/0eaa8724-332b-42c3-886f-84ab975e1103/ResourceGroup1" />
+    </resourceGroupShape>
+  </nestedChildShapes>
+</iotDslDiagram>

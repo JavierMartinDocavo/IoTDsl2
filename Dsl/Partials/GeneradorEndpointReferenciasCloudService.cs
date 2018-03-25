@@ -87,7 +87,7 @@ namespace Compañía.IotDsl
                 AppService app = cloudService as AppService;
                 MessageService messageService = new MessageService(cloudService.ResourceGroup.Partition);
                 messageService.ResourceGroup = cloudService.ResourceGroup;
-                messageService.Name = app.Name + "ServiceBus";
+                messageService.Name = app.Name + "servicebus";
                 messageService.AppService = app;
                 endpoint.CloudService = messageService;
             }

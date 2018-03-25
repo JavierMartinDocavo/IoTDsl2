@@ -197,14 +197,6 @@
     <value>Endpoint</value>
     <comment>DisplayName for DomainClass &apos;Endpoint&apos;</comment>
   </data>
-  <data name="Compañía.IotDsl.Endpoint/Name.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.Endpoint.Name</value>
-    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;Endpoint&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.Endpoint/Name.DisplayName" xml:space="preserve">
-    <value>Name</value>
-    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Endpoint&apos;</comment>
-  </data>
   <data name="Compañía.IotDsl.CloudService.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.CloudService</value>
     <comment>Description for DomainClass &apos;CloudService&apos;</comment>
@@ -317,6 +309,30 @@
     <value>Device Id</value>
     <comment>DisplayName for DomainProperty &apos;deviceId&apos; on DomainClass &apos;Device&apos;</comment>
   </data>
+  <data name="Compañía.IotDsl.Device/Protocol.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Device.Protocol</value>
+    <comment>Description for DomainProperty &apos;Protocol&apos; on DomainClass &apos;Device&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Device/Protocol.DisplayName" xml:space="preserve">
+    <value>Protocol</value>
+    <comment>DisplayName for DomainProperty &apos;Protocol&apos; on DomainClass &apos;Device&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Device/OS.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Device.OS</value>
+    <comment>Description for DomainProperty &apos;OS&apos; on DomainClass &apos;Device&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Device/OS.DisplayName" xml:space="preserve">
+    <value>OS</value>
+    <comment>DisplayName for DomainProperty &apos;OS&apos; on DomainClass &apos;Device&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Device/ProgrammingLenguage.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Device.Programming Lenguage</value>
+    <comment>Description for DomainProperty &apos;ProgrammingLenguage&apos; on DomainClass &apos;Device&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Device/ProgrammingLenguage.DisplayName" xml:space="preserve">
+    <value>Programming Lenguage</value>
+    <comment>DisplayName for DomainProperty &apos;ProgrammingLenguage&apos; on DomainClass &apos;Device&apos;</comment>
+  </data>
   <data name="Compañía.IotDsl.RaspberryPi.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.RaspberryPi</value>
     <comment>Description for DomainClass &apos;RaspberryPi&apos;</comment>
@@ -396,6 +412,38 @@
   <data name="Compañía.IotDsl.MessageService.DisplayName" xml:space="preserve">
     <value>Message Service</value>
     <comment>DisplayName for DomainClass &apos;MessageService&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Graph.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Graph</value>
+    <comment>Description for DomainClass &apos;Graph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Graph.DisplayName" xml:space="preserve">
+    <value>Graph</value>
+    <comment>DisplayName for DomainClass &apos;Graph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.LineGraph.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.LineGraph</value>
+    <comment>Description for DomainClass &apos;LineGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.LineGraph.DisplayName" xml:space="preserve">
+    <value>Line Graph</value>
+    <comment>DisplayName for DomainClass &apos;LineGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Variable.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Variable</value>
+    <comment>Description for DomainClass &apos;Variable&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Variable.DisplayName" xml:space="preserve">
+    <value>Variable</value>
+    <comment>DisplayName for DomainClass &apos;Variable&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Variable/Type.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Variable.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;Variable&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Variable/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;Variable&apos;</comment>
   </data>
   <data name="Compañía.IotDsl.IotDslHasResourceGroups.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.IotDslHasResourceGroups</value>
@@ -693,6 +741,70 @@
     <value>App Service</value>
     <comment>PropertyDisplayName for DomainRole &apos;MessageService&apos; on DomainRelationship &apos;AppServiceReferenciasMessageService&apos;</comment>
   </data>
+  <data name="Compañía.IotDsl.AppServiceHasGraph.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.AppServiceHasGraph</value>
+    <comment>Description for DomainClass &apos;AppServiceHasGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AppServiceHasGraph.DisplayName" xml:space="preserve">
+    <value>App Service Has Graph</value>
+    <comment>DisplayName for DomainClass &apos;AppServiceHasGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AppServiceHasGraph/AppService.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.AppServiceHasGraph.AppService</value>
+    <comment>Description for DomainRole &apos;AppService&apos; on DomainRelationship &apos;AppServiceHasGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AppServiceHasGraph/AppService.DisplayName" xml:space="preserve">
+    <value>App Service</value>
+    <comment>DisplayName for DomainRole &apos;AppService&apos; on DomainRelationship &apos;AppServiceHasGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AppServiceHasGraph/AppService.PropertyDisplayName" xml:space="preserve">
+    <value>Graphs</value>
+    <comment>PropertyDisplayName for DomainRole &apos;AppService&apos; on DomainRelationship &apos;AppServiceHasGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AppServiceHasGraph/Graph.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.AppServiceHasGraph.Graph</value>
+    <comment>Description for DomainRole &apos;Graph&apos; on DomainRelationship &apos;AppServiceHasGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AppServiceHasGraph/Graph.DisplayName" xml:space="preserve">
+    <value>Graph</value>
+    <comment>DisplayName for DomainRole &apos;Graph&apos; on DomainRelationship &apos;AppServiceHasGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.AppServiceHasGraph/Graph.PropertyDisplayName" xml:space="preserve">
+    <value>App Service</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Graph&apos; on DomainRelationship &apos;AppServiceHasGraph&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphHasVariables.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GraphHasVariables</value>
+    <comment>Description for DomainClass &apos;GraphHasVariables&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphHasVariables.DisplayName" xml:space="preserve">
+    <value>Graph Has Variables</value>
+    <comment>DisplayName for DomainClass &apos;GraphHasVariables&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphHasVariables/Graph.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GraphHasVariables.Graph</value>
+    <comment>Description for DomainRole &apos;Graph&apos; on DomainRelationship &apos;GraphHasVariables&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphHasVariables/Graph.DisplayName" xml:space="preserve">
+    <value>Graph</value>
+    <comment>DisplayName for DomainRole &apos;Graph&apos; on DomainRelationship &apos;GraphHasVariables&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphHasVariables/Graph.PropertyDisplayName" xml:space="preserve">
+    <value>Variables</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Graph&apos; on DomainRelationship &apos;GraphHasVariables&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphHasVariables/Variable.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GraphHasVariables.Variable</value>
+    <comment>Description for DomainRole &apos;Variable&apos; on DomainRelationship &apos;GraphHasVariables&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphHasVariables/Variable.DisplayName" xml:space="preserve">
+    <value>Variable</value>
+    <comment>DisplayName for DomainRole &apos;Variable&apos; on DomainRelationship &apos;GraphHasVariables&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphHasVariables/Variable.PropertyDisplayName" xml:space="preserve">
+    <value>Graph</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Variable&apos; on DomainRelationship &apos;GraphHasVariables&apos;</comment>
+  </data>
   <data name="Compañía.IotDsl.Location/westeurope.DisplayName" xml:space="preserve">
     <value>westeurope</value>
     <comment>Display name for EnumerationLiteral &apos;westeurope&apos; on DomainEnumeration &apos;Location&apos;</comment>
@@ -700,6 +812,70 @@
   <data name="Compañía.IotDsl.Location/westeurope.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.Location.westeurope</value>
     <comment>Description for EnumerationLiteral &apos;westeurope&apos; on DomainEnumeration &apos;Location&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Provider/Azure.DisplayName" xml:space="preserve">
+    <value>Azure</value>
+    <comment>Display name for EnumerationLiteral &apos;Azure&apos; on DomainEnumeration &apos;Provider&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Provider/Azure.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Provider.azure</value>
+    <comment>Description for EnumerationLiteral &apos;Azure&apos; on DomainEnumeration &apos;Provider&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Protocol/MQTT.DisplayName" xml:space="preserve">
+    <value>MQTT</value>
+    <comment>Display name for EnumerationLiteral &apos;MQTT&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Protocol/MQTT.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Protocol.MQTT</value>
+    <comment>Description for EnumerationLiteral &apos;MQTT&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.OS/WindowsIoT.DisplayName" xml:space="preserve">
+    <value>WindowsIoT</value>
+    <comment>Display name for EnumerationLiteral &apos;WindowsIoT&apos; on DomainEnumeration &apos;OS&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.OS/WindowsIoT.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.OS.WindowsIoT</value>
+    <comment>Description for EnumerationLiteral &apos;WindowsIoT&apos; on DomainEnumeration &apos;OS&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.ProgramingLenguage/CSharp.DisplayName" xml:space="preserve">
+    <value>CSharp</value>
+    <comment>Display name for EnumerationLiteral &apos;CSharp&apos; on DomainEnumeration &apos;ProgramingLenguage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.ProgramingLenguage/CSharp.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp</value>
+    <comment>Description for EnumerationLiteral &apos;CSharp&apos; on DomainEnumeration &apos;ProgramingLenguage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Measurements/Temperature.DisplayName" xml:space="preserve">
+    <value>Temperature</value>
+    <comment>Display name for EnumerationLiteral &apos;Temperature&apos; on DomainEnumeration &apos;Measurements&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Measurements/Temperature.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Measurements.Temperature</value>
+    <comment>Description for EnumerationLiteral &apos;Temperature&apos; on DomainEnumeration &apos;Measurements&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Measurements/Humidity.DisplayName" xml:space="preserve">
+    <value>Humidity</value>
+    <comment>Display name for EnumerationLiteral &apos;Humidity&apos; on DomainEnumeration &apos;Measurements&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Measurements/Humidity.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Measurements.Humidity</value>
+    <comment>Description for EnumerationLiteral &apos;Humidity&apos; on DomainEnumeration &apos;Measurements&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Measurements/Pressure.DisplayName" xml:space="preserve">
+    <value>Pressure</value>
+    <comment>Display name for EnumerationLiteral &apos;Pressure&apos; on DomainEnumeration &apos;Measurements&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Measurements/Pressure.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Measurements.Pressure</value>
+    <comment>Description for EnumerationLiteral &apos;Pressure&apos; on DomainEnumeration &apos;Measurements&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Measurements/Altitude.DisplayName" xml:space="preserve">
+    <value>Altitude</value>
+    <comment>Display name for EnumerationLiteral &apos;Altitude&apos; on DomainEnumeration &apos;Measurements&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Measurements/Altitude.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Measurements.Altitude</value>
+    <comment>Description for EnumerationLiteral &apos;Altitude&apos; on DomainEnumeration &apos;Measurements&apos;</comment>
   </data>
   <data name="Compañía.IotDsl.ResourceGroupShape.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.ResourceGroupShape</value>
@@ -713,30 +889,6 @@
     <value>Name</value>
     <comment>Text decorator default text</comment>
   </data>
-  <data name="Compañía.IotDsl.DataAnalyticsImage.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.DataAnalyticsImage</value>
-    <comment>Description for DomainClass &apos;DataAnalyticsImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.DataAnalyticsImage.DisplayName" xml:space="preserve">
-    <value>Data Analytics Image</value>
-    <comment>DisplayName for DomainClass &apos;DataAnalyticsImage&apos;</comment>
-  </data>
-  <data name="DataAnalyticsImageNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="Compañía.IotDsl.NoSQLStorageImage.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.NoSQLStorageImage</value>
-    <comment>Description for DomainClass &apos;NoSQLStorageImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.NoSQLStorageImage.DisplayName" xml:space="preserve">
-    <value>No SQLStorage Image</value>
-    <comment>DisplayName for DomainClass &apos;NoSQLStorageImage&apos;</comment>
-  </data>
-  <data name="NoSQLStorageImageNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
-  </data>
   <data name="Compañía.IotDsl.AppServiceImage.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.AppServiceImage</value>
     <comment>Description for DomainClass &apos;AppServiceImage&apos;</comment>
@@ -746,18 +898,6 @@
     <comment>DisplayName for DomainClass &apos;AppServiceImage&apos;</comment>
   </data>
   <data name="AppServiceImageNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="Compañía.IotDsl.SQLStorageImage.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.SQLStorageImage</value>
-    <comment>Description for DomainClass &apos;SQLStorageImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.SQLStorageImage.DisplayName" xml:space="preserve">
-    <value>SQLStorage Image</value>
-    <comment>DisplayName for DomainClass &apos;SQLStorageImage&apos;</comment>
-  </data>
-  <data name="SQLStorageImageNameDefaultText" xml:space="preserve">
     <value>Name</value>
     <comment>Text decorator default text</comment>
   </data>
@@ -776,58 +916,6 @@
   <data name="Compañía.IotDsl.EndpointPort.DisplayName" xml:space="preserve">
     <value>Endpoint Port</value>
     <comment>DisplayName for DomainClass &apos;EndpointPort&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.RaspberryPiImage.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.RaspberryPiImage</value>
-    <comment>Description for DomainClass &apos;RaspberryPiImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.RaspberryPiImage.DisplayName" xml:space="preserve">
-    <value>Raspberry Pi Image</value>
-    <comment>DisplayName for DomainClass &apos;RaspberryPiImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.BME280Image.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.BME280Image</value>
-    <comment>Description for DomainClass &apos;BME280Image&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.BME280Image.DisplayName" xml:space="preserve">
-    <value>BME280 Image</value>
-    <comment>DisplayName for DomainClass &apos;BME280Image&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.IoTCenterImage.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.IoTCenterImage</value>
-    <comment>Description for DomainClass &apos;IoTCenterImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.IoTCenterImage.DisplayName" xml:space="preserve">
-    <value>Io TCenter Image</value>
-    <comment>DisplayName for DomainClass &apos;IoTCenterImage&apos;</comment>
-  </data>
-  <data name="IoTCenterImageNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="Compañía.IotDsl.MessageServiceImage.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.MessageServiceImage</value>
-    <comment>Description for DomainClass &apos;MessageServiceImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.MessageServiceImage.DisplayName" xml:space="preserve">
-    <value>Message Service Image</value>
-    <comment>DisplayName for DomainClass &apos;MessageServiceImage&apos;</comment>
-  </data>
-  <data name="MessageServiceImageNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="Compañía.IotDsl.WebAppImage.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.WebAppImage</value>
-    <comment>Description for DomainClass &apos;WebAppImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.WebAppImage.DisplayName" xml:space="preserve">
-    <value>Web App Image</value>
-    <comment>DisplayName for DomainClass &apos;WebAppImage&apos;</comment>
-  </data>
-  <data name="WebAppImageNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
   </data>
   <data name="Compañía.IotDsl.ApiRESTImage.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.ApiRESTImage</value>
@@ -852,6 +940,170 @@
   <data name="PhoneAppImageNameDefaultText" xml:space="preserve">
     <value>Name</value>
     <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.DeviceShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DeviceShape</value>
+    <comment>Description for DomainClass &apos;DeviceShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DeviceShape.DisplayName" xml:space="preserve">
+    <value>Device Shape</value>
+    <comment>DisplayName for DomainClass &apos;DeviceShape&apos;</comment>
+  </data>
+  <data name="DeviceShapeDeviceIdDefaultText" xml:space="preserve">
+    <value>DeviceId</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="DeviceShapeOSDefaultText" xml:space="preserve">
+    <value>OS</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="DeviceShapeProtocolDefaultText" xml:space="preserve">
+    <value>Protocol</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="DeviceShapeProgrammingLenguageDefaultText" xml:space="preserve">
+    <value>ProgrammingLenguage</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="DeviceShapeOSLabelDefaultText" xml:space="preserve">
+    <value>OS:</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="DeviceShapeProtocolLabelDefaultText" xml:space="preserve">
+    <value>Protocol:</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="DeviceShapePLLabelDefaultText" xml:space="preserve">
+    <value>Lenguage: </value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.IoTCenterShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.IoTCenterShape</value>
+    <comment>Description for DomainClass &apos;IoTCenterShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.IoTCenterShape.DisplayName" xml:space="preserve">
+    <value>Io TCenter Shape</value>
+    <comment>DisplayName for DomainClass &apos;IoTCenterShape&apos;</comment>
+  </data>
+  <data name="IoTCenterShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.SensorShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.SensorShape</value>
+    <comment>Description for DomainClass &apos;SensorShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SensorShape.DisplayName" xml:space="preserve">
+    <value>Sensor Shape</value>
+    <comment>DisplayName for DomainClass &apos;SensorShape&apos;</comment>
+  </data>
+  <data name="SensorShapeRefreshRateLabelDefaultText" xml:space="preserve">
+    <value>Refresh Rate:</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SensorShapeSensorIdDefaultText" xml:space="preserve">
+    <value>SensorId</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SensorShapeRefreshRateDefaultText" xml:space="preserve">
+    <value>RefreshRate</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessageServiceShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.MessageServiceShape</value>
+    <comment>Description for DomainClass &apos;MessageServiceShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.MessageServiceShape.DisplayName" xml:space="preserve">
+    <value>Message Service Shape</value>
+    <comment>DisplayName for DomainClass &apos;MessageServiceShape&apos;</comment>
+  </data>
+  <data name="MessageServiceShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsShape</value>
+    <comment>Description for DomainClass &apos;DataAnalyticsShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsShape.DisplayName" xml:space="preserve">
+    <value>Data Analytics Shape</value>
+    <comment>DisplayName for DomainClass &apos;DataAnalyticsShape&apos;</comment>
+  </data>
+  <data name="DataAnalyticsShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.SQLStorageShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.SQLStorageShape</value>
+    <comment>Description for DomainClass &apos;SQLStorageShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.SQLStorageShape.DisplayName" xml:space="preserve">
+    <value>SQLStorage Shape</value>
+    <comment>DisplayName for DomainClass &apos;SQLStorageShape&apos;</comment>
+  </data>
+  <data name="SQLStorageShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SQLStorageShapeUserDefaultText" xml:space="preserve">
+    <value>User</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SQLStorageShapePasswordDefaultText" xml:space="preserve">
+    <value>Password</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SQLStorageShapeUserLabelDefaultText" xml:space="preserve">
+    <value>User:</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="SQLStorageShapePasswordLabelDefaultText" xml:space="preserve">
+    <value>Password:</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.NoSQLStorageShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.NoSQLStorageShape</value>
+    <comment>Description for DomainClass &apos;NoSQLStorageShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.NoSQLStorageShape.DisplayName" xml:space="preserve">
+    <value>No SQLStorage Shape</value>
+    <comment>DisplayName for DomainClass &apos;NoSQLStorageShape&apos;</comment>
+  </data>
+  <data name="NoSQLStorageShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.WebAppShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.WebAppShape</value>
+    <comment>Description for DomainClass &apos;WebAppShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.WebAppShape.DisplayName" xml:space="preserve">
+    <value>Web App Shape</value>
+    <comment>DisplayName for DomainClass &apos;WebAppShape&apos;</comment>
+  </data>
+  <data name="WebAppShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.GraphShape</value>
+    <comment>Description for DomainClass &apos;GraphShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.GraphShape.DisplayName" xml:space="preserve">
+    <value>Graph Shape</value>
+    <comment>DisplayName for DomainClass &apos;GraphShape&apos;</comment>
+  </data>
+  <data name="GraphShapeVariablesTitle" xml:space="preserve">
+    <value>Variables</value>
+    <comment>Compartment title</comment>
+  </data>
+  <data name="Compañía.IotDsl.LineGrapghShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.LineGrapghShape</value>
+    <comment>Description for DomainClass &apos;LineGrapghShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.LineGrapghShape.DisplayName" xml:space="preserve">
+    <value>Line Grapgh Shape</value>
+    <comment>DisplayName for DomainClass &apos;LineGrapghShape&apos;</comment>
   </data>
   <data name="Compañía.IotDsl.EndpointToCloudService.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.EndpointToCloudService</value>
@@ -1003,6 +1255,14 @@
   </data>
   <data name="PhoneAppToolToolboxTooltip" xml:space="preserve">
     <value>Phone Application to visualize data</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="LineGraphToolToolboxItem" xml:space="preserve">
+    <value>Line Graph</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="LineGraphToolToolboxTooltip" xml:space="preserve">
+    <value>Line Graph</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="DeviceToolboxTab" xml:space="preserve">
@@ -1166,45 +1426,13 @@ A DomainClass can be serialized as a moniker only if
     <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="DataAnalyticsImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\analytics.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>DataAnalyticsImage shape image</comment>
-  </data>
-  <data name="NoSQLStorageImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\drives.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>NoSQLStorageImage shape image</comment>
-  </data>
   <data name="AppServiceImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\pngexports\dashboard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>AppServiceImage shape image</comment>
   </data>
-  <data name="SQLStorageImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\database.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>SQLStorageImage shape image</comment>
-  </data>
   <data name="EndpointPortImageDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\InPortImage.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
-  </data>
-  <data name="RaspberryPiImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\raspberrypi.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>RaspberryPiImage shape image</comment>
-  </data>
-  <data name="BME280ImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\bme280.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>BME280Image shape image</comment>
-  </data>
-  <data name="IoTCenterImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\iotcenter.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>IoTCenterImage shape image</comment>
-  </data>
-  <data name="MessageServiceImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\messageservice.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>MessageServiceImage shape image</comment>
-  </data>
-  <data name="WebAppImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\dashboard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>WebAppImage shape image</comment>
   </data>
   <data name="ApiRESTImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\pngexports\dashboard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1213,6 +1441,42 @@ A DomainClass can be serialized as a moniker only if
   <data name="PhoneAppImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\pngexports\phoneapp.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>PhoneAppImage shape image</comment>
+  </data>
+  <data name="DeviceShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\raspberrypi.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="IoTCenterShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\iotcenter.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="SensorShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\bme280.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="MessageServiceShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\messageservice.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="DataAnalyticsShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\analytics.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="SQLStorageShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\database.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="NoSQLStorageShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\drives.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="WebAppShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\dashboard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="LineGrapghShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\linegrapgh.svg.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
   </data>
   <data name="ResourceGroupToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1259,6 +1523,10 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="PhoneAppToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="LineGraphToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

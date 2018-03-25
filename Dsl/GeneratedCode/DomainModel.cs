@@ -84,6 +84,9 @@ namespace Compañía.IotDsl
 				typeof(Sensor),
 				typeof(BME280),
 				typeof(MessageService),
+				typeof(Graph),
+				typeof(LineGraph),
+				typeof(Variable),
 				typeof(IotDslHasResourceGroups),
 				typeof(ResourceGroupHasCloudServices),
 				typeof(EndpointConnectsCloudService),
@@ -93,6 +96,8 @@ namespace Compañía.IotDsl
 				typeof(DeviceReferenciasSensors),
 				typeof(IoTCenterHasDevices),
 				typeof(AppServiceReferenciasMessageService),
+				typeof(AppServiceHasGraph),
+				typeof(GraphHasVariables),
 				typeof(IotDslDiagram),
 				typeof(EndpointToCloudService),
 				typeof(DeviceToSensorConnection),
@@ -100,21 +105,28 @@ namespace Compañía.IotDsl
 				typeof(AppServiceToMessageConnection),
 				typeof(ResourceGroupShape),
 				typeof(CloudServiceShape),
-				typeof(DataAnalyticsImage),
-				typeof(NoSQLStorageImage),
+				typeof(DeviceShape),
+				typeof(IoTCenterShape),
+				typeof(SensorShape),
+				typeof(MessageServiceShape),
+				typeof(DataAnalyticsShape),
+				typeof(SQLStorageShape),
+				typeof(NoSQLStorageShape),
+				typeof(WebAppShape),
+				typeof(GraphShape),
+				typeof(LineGrapghShape),
 				typeof(AppServiceImage),
-				typeof(SQLStorageImage),
-				typeof(RaspberryPiImage),
-				typeof(BME280Image),
-				typeof(IoTCenterImage),
-				typeof(MessageServiceImage),
-				typeof(WebAppImage),
 				typeof(ApiRESTImage),
 				typeof(PhoneAppImage),
 				typeof(EndpointPort),
 				typeof(global::Compañía.IotDsl.FixUpDiagram),
 				typeof(global::Compañía.IotDsl.DecoratorPropertyChanged),
 				typeof(global::Compañía.IotDsl.ConnectorRolePlayerChanged),
+				typeof(global::Compañía.IotDsl.CompartmentItemAddRule),
+				typeof(global::Compañía.IotDsl.CompartmentItemDeleteRule),
+				typeof(global::Compañía.IotDsl.CompartmentItemRolePlayerChangeRule),
+				typeof(global::Compañía.IotDsl.CompartmentItemRolePlayerPositionChangeRule),
+				typeof(global::Compañía.IotDsl.CompartmentItemChangeRule),
 			};
 		}
 		/// <summary>
@@ -131,18 +143,21 @@ namespace Compañía.IotDsl
 				new DomainMemberInfo(typeof(IoTDsl), "ServicePlan", IoTDsl.ServicePlanDomainPropertyId, typeof(IoTDsl.ServicePlanPropertyHandler)),
 				new DomainMemberInfo(typeof(ResourceGroup), "Name", ResourceGroup.NameDomainPropertyId, typeof(ResourceGroup.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(ResourceGroup), "Location", ResourceGroup.LocationDomainPropertyId, typeof(ResourceGroup.LocationPropertyHandler)),
-				new DomainMemberInfo(typeof(Endpoint), "Name", Endpoint.NameDomainPropertyId, typeof(Endpoint.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(CloudService), "Name", CloudService.NameDomainPropertyId, typeof(CloudService.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(CloudService), "ConnectionString", CloudService.ConnectionStringDomainPropertyId, typeof(CloudService.ConnectionStringPropertyHandler)),
 				new DomainMemberInfo(typeof(SQLStorage), "User", SQLStorage.UserDomainPropertyId, typeof(SQLStorage.UserPropertyHandler)),
 				new DomainMemberInfo(typeof(SQLStorage), "Password", SQLStorage.PasswordDomainPropertyId, typeof(SQLStorage.PasswordPropertyHandler)),
 				new DomainMemberInfo(typeof(Device), "deviceId", Device.deviceIdDomainPropertyId, typeof(Device.deviceIdPropertyHandler)),
+				new DomainMemberInfo(typeof(Device), "Protocol", Device.ProtocolDomainPropertyId, typeof(Device.ProtocolPropertyHandler)),
+				new DomainMemberInfo(typeof(Device), "OS", Device.OSDomainPropertyId, typeof(Device.OSPropertyHandler)),
+				new DomainMemberInfo(typeof(Device), "ProgrammingLenguage", Device.ProgrammingLenguageDomainPropertyId, typeof(Device.ProgrammingLenguagePropertyHandler)),
 				new DomainMemberInfo(typeof(Sensor), "RefreshRate", Sensor.RefreshRateDomainPropertyId, typeof(Sensor.RefreshRatePropertyHandler)),
 				new DomainMemberInfo(typeof(Sensor), "SensorId", Sensor.SensorIdDomainPropertyId, typeof(Sensor.SensorIdPropertyHandler)),
 				new DomainMemberInfo(typeof(BME280), "Temperature", BME280.TemperatureDomainPropertyId, typeof(BME280.TemperaturePropertyHandler)),
 				new DomainMemberInfo(typeof(BME280), "Humidity", BME280.HumidityDomainPropertyId, typeof(BME280.HumidityPropertyHandler)),
 				new DomainMemberInfo(typeof(BME280), "Pressure", BME280.PressureDomainPropertyId, typeof(BME280.PressurePropertyHandler)),
 				new DomainMemberInfo(typeof(BME280), "Altitude", BME280.AltitudeDomainPropertyId, typeof(BME280.AltitudePropertyHandler)),
+				new DomainMemberInfo(typeof(Variable), "Type", Variable.TypeDomainPropertyId, typeof(Variable.TypePropertyHandler)),
 				new DomainMemberInfo(typeof(IoTCenterHasDevices), "DeviceKey", IoTCenterHasDevices.DeviceKeyDomainPropertyId, typeof(IoTCenterHasDevices.DeviceKeyPropertyHandler)),
 			};
 		}
@@ -172,6 +187,10 @@ namespace Compañía.IotDsl
 				new DomainRolePlayerInfo(typeof(IoTCenterHasDevices), "Device", IoTCenterHasDevices.DeviceDomainRoleId),
 				new DomainRolePlayerInfo(typeof(AppServiceReferenciasMessageService), "AppService", AppServiceReferenciasMessageService.AppServiceDomainRoleId),
 				new DomainRolePlayerInfo(typeof(AppServiceReferenciasMessageService), "MessageService", AppServiceReferenciasMessageService.MessageServiceDomainRoleId),
+				new DomainRolePlayerInfo(typeof(AppServiceHasGraph), "AppService", AppServiceHasGraph.AppServiceDomainRoleId),
+				new DomainRolePlayerInfo(typeof(AppServiceHasGraph), "Graph", AppServiceHasGraph.GraphDomainRoleId),
+				new DomainRolePlayerInfo(typeof(GraphHasVariables), "Graph", GraphHasVariables.GraphDomainRoleId),
+				new DomainRolePlayerInfo(typeof(GraphHasVariables), "Variable", GraphHasVariables.VariableDomainRoleId),
 			};
 		}
 		#endregion
@@ -193,7 +212,7 @@ namespace Compañía.IotDsl
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(36);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(41);
 				createElementMap.Add(typeof(IoTDsl), 0);
 				createElementMap.Add(typeof(ResourceGroup), 1);
 				createElementMap.Add(typeof(IoTCenter), 2);
@@ -211,25 +230,30 @@ namespace Compañía.IotDsl
 				createElementMap.Add(typeof(Sensor), 14);
 				createElementMap.Add(typeof(BME280), 15);
 				createElementMap.Add(typeof(MessageService), 16);
-				createElementMap.Add(typeof(IotDslDiagram), 17);
-				createElementMap.Add(typeof(EndpointToCloudService), 18);
-				createElementMap.Add(typeof(DeviceToSensorConnection), 19);
-				createElementMap.Add(typeof(DeviceToIoTCenter), 20);
-				createElementMap.Add(typeof(AppServiceToMessageConnection), 21);
-				createElementMap.Add(typeof(ResourceGroupShape), 22);
-				createElementMap.Add(typeof(CloudServiceShape), 23);
-				createElementMap.Add(typeof(DataAnalyticsImage), 24);
-				createElementMap.Add(typeof(NoSQLStorageImage), 25);
-				createElementMap.Add(typeof(AppServiceImage), 26);
-				createElementMap.Add(typeof(SQLStorageImage), 27);
-				createElementMap.Add(typeof(RaspberryPiImage), 28);
-				createElementMap.Add(typeof(BME280Image), 29);
-				createElementMap.Add(typeof(IoTCenterImage), 30);
-				createElementMap.Add(typeof(MessageServiceImage), 31);
-				createElementMap.Add(typeof(WebAppImage), 32);
-				createElementMap.Add(typeof(ApiRESTImage), 33);
-				createElementMap.Add(typeof(PhoneAppImage), 34);
-				createElementMap.Add(typeof(EndpointPort), 35);
+				createElementMap.Add(typeof(Graph), 17);
+				createElementMap.Add(typeof(LineGraph), 18);
+				createElementMap.Add(typeof(Variable), 19);
+				createElementMap.Add(typeof(IotDslDiagram), 20);
+				createElementMap.Add(typeof(EndpointToCloudService), 21);
+				createElementMap.Add(typeof(DeviceToSensorConnection), 22);
+				createElementMap.Add(typeof(DeviceToIoTCenter), 23);
+				createElementMap.Add(typeof(AppServiceToMessageConnection), 24);
+				createElementMap.Add(typeof(ResourceGroupShape), 25);
+				createElementMap.Add(typeof(CloudServiceShape), 26);
+				createElementMap.Add(typeof(DeviceShape), 27);
+				createElementMap.Add(typeof(IoTCenterShape), 28);
+				createElementMap.Add(typeof(SensorShape), 29);
+				createElementMap.Add(typeof(MessageServiceShape), 30);
+				createElementMap.Add(typeof(DataAnalyticsShape), 31);
+				createElementMap.Add(typeof(SQLStorageShape), 32);
+				createElementMap.Add(typeof(NoSQLStorageShape), 33);
+				createElementMap.Add(typeof(WebAppShape), 34);
+				createElementMap.Add(typeof(GraphShape), 35);
+				createElementMap.Add(typeof(LineGrapghShape), 36);
+				createElementMap.Add(typeof(AppServiceImage), 37);
+				createElementMap.Add(typeof(ApiRESTImage), 38);
+				createElementMap.Add(typeof(PhoneAppImage), 39);
+				createElementMap.Add(typeof(EndpointPort), 40);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -260,25 +284,30 @@ namespace Compañía.IotDsl
 				case 14: return new Sensor(partition, propertyAssignments);
 				case 15: return new BME280(partition, propertyAssignments);
 				case 16: return new MessageService(partition, propertyAssignments);
-				case 17: return new IotDslDiagram(partition, propertyAssignments);
-				case 18: return new EndpointToCloudService(partition, propertyAssignments);
-				case 19: return new DeviceToSensorConnection(partition, propertyAssignments);
-				case 20: return new DeviceToIoTCenter(partition, propertyAssignments);
-				case 21: return new AppServiceToMessageConnection(partition, propertyAssignments);
-				case 22: return new ResourceGroupShape(partition, propertyAssignments);
-				case 23: return new CloudServiceShape(partition, propertyAssignments);
-				case 24: return new DataAnalyticsImage(partition, propertyAssignments);
-				case 25: return new NoSQLStorageImage(partition, propertyAssignments);
-				case 26: return new AppServiceImage(partition, propertyAssignments);
-				case 27: return new SQLStorageImage(partition, propertyAssignments);
-				case 28: return new RaspberryPiImage(partition, propertyAssignments);
-				case 29: return new BME280Image(partition, propertyAssignments);
-				case 30: return new IoTCenterImage(partition, propertyAssignments);
-				case 31: return new MessageServiceImage(partition, propertyAssignments);
-				case 32: return new WebAppImage(partition, propertyAssignments);
-				case 33: return new ApiRESTImage(partition, propertyAssignments);
-				case 34: return new PhoneAppImage(partition, propertyAssignments);
-				case 35: return new EndpointPort(partition, propertyAssignments);
+				case 17: return new Graph(partition, propertyAssignments);
+				case 18: return new LineGraph(partition, propertyAssignments);
+				case 19: return new Variable(partition, propertyAssignments);
+				case 20: return new IotDslDiagram(partition, propertyAssignments);
+				case 21: return new EndpointToCloudService(partition, propertyAssignments);
+				case 22: return new DeviceToSensorConnection(partition, propertyAssignments);
+				case 23: return new DeviceToIoTCenter(partition, propertyAssignments);
+				case 24: return new AppServiceToMessageConnection(partition, propertyAssignments);
+				case 25: return new ResourceGroupShape(partition, propertyAssignments);
+				case 26: return new CloudServiceShape(partition, propertyAssignments);
+				case 27: return new DeviceShape(partition, propertyAssignments);
+				case 28: return new IoTCenterShape(partition, propertyAssignments);
+				case 29: return new SensorShape(partition, propertyAssignments);
+				case 30: return new MessageServiceShape(partition, propertyAssignments);
+				case 31: return new DataAnalyticsShape(partition, propertyAssignments);
+				case 32: return new SQLStorageShape(partition, propertyAssignments);
+				case 33: return new NoSQLStorageShape(partition, propertyAssignments);
+				case 34: return new WebAppShape(partition, propertyAssignments);
+				case 35: return new GraphShape(partition, propertyAssignments);
+				case 36: return new LineGrapghShape(partition, propertyAssignments);
+				case 37: return new AppServiceImage(partition, propertyAssignments);
+				case 38: return new ApiRESTImage(partition, propertyAssignments);
+				case 39: return new PhoneAppImage(partition, propertyAssignments);
+				case 40: return new EndpointPort(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -301,7 +330,7 @@ namespace Compañía.IotDsl
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(9);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(11);
 				createElementLinkMap.Add(typeof(IotDslHasResourceGroups), 0);
 				createElementLinkMap.Add(typeof(ResourceGroupHasCloudServices), 1);
 				createElementLinkMap.Add(typeof(EndpointConnectsCloudService), 2);
@@ -311,6 +340,8 @@ namespace Compañía.IotDsl
 				createElementLinkMap.Add(typeof(DeviceReferenciasSensors), 6);
 				createElementLinkMap.Add(typeof(IoTCenterHasDevices), 7);
 				createElementLinkMap.Add(typeof(AppServiceReferenciasMessageService), 8);
+				createElementLinkMap.Add(typeof(AppServiceHasGraph), 9);
+				createElementLinkMap.Add(typeof(GraphHasVariables), 10);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -334,6 +365,8 @@ namespace Compañía.IotDsl
 				case 6: return new DeviceReferenciasSensors(partition, roleAssignments, propertyAssignments);
 				case 7: return new IoTCenterHasDevices(partition, roleAssignments, propertyAssignments);
 				case 8: return new AppServiceReferenciasMessageService(partition, roleAssignments, propertyAssignments);
+				case 9: return new AppServiceHasGraph(partition, roleAssignments, propertyAssignments);
+				case 10: return new GraphHasVariables(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -456,6 +489,11 @@ namespace Compañía.IotDsl
 			ruleManager.EnableRule(typeof(global::Compañía.IotDsl.FixUpDiagram));
 			ruleManager.EnableRule(typeof(global::Compañía.IotDsl.DecoratorPropertyChanged));
 			ruleManager.EnableRule(typeof(global::Compañía.IotDsl.ConnectorRolePlayerChanged));
+			ruleManager.EnableRule(typeof(global::Compañía.IotDsl.CompartmentItemAddRule));
+			ruleManager.EnableRule(typeof(global::Compañía.IotDsl.CompartmentItemDeleteRule));
+			ruleManager.EnableRule(typeof(global::Compañía.IotDsl.CompartmentItemRolePlayerChangeRule));
+			ruleManager.EnableRule(typeof(global::Compañía.IotDsl.CompartmentItemRolePlayerPositionChangeRule));
+			ruleManager.EnableRule(typeof(global::Compañía.IotDsl.CompartmentItemChangeRule));
 		}
 		
 		/// <summary>
@@ -469,6 +507,11 @@ namespace Compañía.IotDsl
 			ruleManager.DisableRule(typeof(global::Compañía.IotDsl.FixUpDiagram));
 			ruleManager.DisableRule(typeof(global::Compañía.IotDsl.DecoratorPropertyChanged));
 			ruleManager.DisableRule(typeof(global::Compañía.IotDsl.ConnectorRolePlayerChanged));
+			ruleManager.DisableRule(typeof(global::Compañía.IotDsl.CompartmentItemAddRule));
+			ruleManager.DisableRule(typeof(global::Compañía.IotDsl.CompartmentItemDeleteRule));
+			ruleManager.DisableRule(typeof(global::Compañía.IotDsl.CompartmentItemRolePlayerChangeRule));
+			ruleManager.DisableRule(typeof(global::Compañía.IotDsl.CompartmentItemRolePlayerPositionChangeRule));
+			ruleManager.DisableRule(typeof(global::Compañía.IotDsl.CompartmentItemChangeRule));
 		}
 		#endregion
 	}
@@ -509,6 +552,8 @@ namespace Compañía.IotDsl
 			DomainRoles.Add(global::Compañía.IotDsl.IoTCenterHasEndpoints.EndpointDomainRoleId, true);
 			DomainRoles.Add(global::Compañía.IotDsl.IoTDslHasDevices.DeviceDomainRoleId, true);
 			DomainRoles.Add(global::Compañía.IotDsl.IoTDslTieneSensors.SensorDomainRoleId, true);
+			DomainRoles.Add(global::Compañía.IotDsl.AppServiceHasGraph.GraphDomainRoleId, true);
+			DomainRoles.Add(global::Compañía.IotDsl.GraphHasVariables.VariableDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>
@@ -609,6 +654,98 @@ namespace Compañía.IotDsl
 	[global::System.CLSCompliant(true)]
 	public enum Provider
 	{
+		/// <summary>
+		/// Azure
+		/// Descripción de Compañía.IotDsl.Provider.azure
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Provider/Azure.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		Azure,
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainEnumeration: Protocol
+	/// Descripción de Compañía.IotDsl.Protocol
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum Protocol
+	{
+		/// <summary>
+		/// MQTT
+		/// Descripción de Compañía.IotDsl.Protocol.MQTT
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Protocol/MQTT.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		MQTT,
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainEnumeration: OS
+	/// Descripción de Compañía.IotDsl.OS
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum OS
+	{
+		/// <summary>
+		/// WindowsIoT
+		/// Descripción de Compañía.IotDsl.OS.WindowsIoT
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.OS/WindowsIoT.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		WindowsIoT,
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainEnumeration: ProgramingLenguage
+	/// Descripción de Compañía.IotDsl.ProgrammingLenguage
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum ProgramingLenguage
+	{
+		/// <summary>
+		/// CSharp
+		/// Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.ProgramingLenguage/CSharp.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		CSharp,
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainEnumeration: Measurements
+	/// Descripción de Compañía.IotDsl.Measurements
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum Measurements
+	{
+		/// <summary>
+		/// Temperature
+		/// Descripción de Compañía.IotDsl.Measurements.Temperature
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Measurements/Temperature.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		Temperature,
+		/// <summary>
+		/// Humidity
+		/// Descripción de Compañía.IotDsl.Measurements.Humidity
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Measurements/Humidity.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		Humidity,
+		/// <summary>
+		/// Pressure
+		/// Descripción de Compañía.IotDsl.Measurements.Pressure
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Measurements/Pressure.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		Pressure,
+		/// <summary>
+		/// Altitude
+		/// Descripción de Compañía.IotDsl.Measurements.Altitude
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Measurements/Altitude.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		Altitude,
 	}
 }
 

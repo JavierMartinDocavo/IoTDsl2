@@ -58,7 +58,7 @@ namespace Compañía.IotDsl
 		/// <summary>
 		/// Storage for Provider
 		/// </summary>
-		private global::System.String providerPropertyStorage = string.Empty;
+		private Provider providerPropertyStorage;
 		
 		/// <summary>
 		/// Gets or sets the value of Provider domain property.
@@ -67,7 +67,7 @@ namespace Compañía.IotDsl
 		[DslDesign::DisplayNameResource("Compañía.IotDsl.IoTDsl/Provider.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 		[DslDesign::DescriptionResource("Compañía.IotDsl.IoTDsl/Provider.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("bcaf719f-53eb-4477-b29e-8259e76b80b9")]
-		public global::System.String Provider
+		public Provider Provider
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
@@ -83,7 +83,7 @@ namespace Compañía.IotDsl
 		/// <summary>
 		/// Value handler for the IoTDsl.Provider domain property.
 		/// </summary>
-		internal sealed partial class ProviderPropertyHandler : DslModeling::DomainPropertyValueHandler<IoTDsl, global::System.String>
+		internal sealed partial class ProviderPropertyHandler : DslModeling::DomainPropertyValueHandler<IoTDsl, Provider>
 		{
 			private ProviderPropertyHandler() { }
 		
@@ -109,7 +109,7 @@ namespace Compañía.IotDsl
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(IoTDsl element)
+			public override sealed Provider GetValue(IoTDsl element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				return element.providerPropertyStorage;
@@ -120,11 +120,11 @@ namespace Compañía.IotDsl
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(IoTDsl element, global::System.String newValue)
+			public override sealed void SetValue(IoTDsl element, Provider newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
-				global::System.String oldValue = GetValue(element);
+				Provider oldValue = GetValue(element);
 				if (newValue != oldValue)
 				{
 					ValueChanging(element, oldValue, newValue);
@@ -1035,7 +1035,6 @@ namespace Compañía.IotDsl
 	[DslDesign::DescriptionResource("Compañía.IotDsl.Endpoint.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
 	[global::System.CLSCompliant(true)]
-	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (Name = {namePropertyStorage})")]
 	[DslModeling::DomainObjectId("a2d11186-3514-48be-80ce-00f278229192")]
 	public partial class Endpoint : DslModeling::ModelElement
 	{
@@ -1064,94 +1063,6 @@ namespace Compañía.IotDsl
 			: base(partition, propertyAssignments)
 		{
 		}
-		#endregion
-		#region Name domain property code
-		
-		/// <summary>
-		/// Name domain property Id.
-		/// </summary>
-		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0x8f9bcc25, 0x620c, 0x4dcf, 0xb9, 0x9a, 0x23, 0x70, 0x78, 0x73, 0xfd, 0x10);
-		
-		/// <summary>
-		/// Storage for Name
-		/// </summary>
-		private global::System.String namePropertyStorage = string.Empty;
-		
-		/// <summary>
-		/// Gets or sets the value of Name domain property.
-		/// Descripción de Compañía.IotDsl.Endpoint.Name
-		/// </summary>
-		[DslDesign::DisplayNameResource("Compañía.IotDsl.Endpoint/Name.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Compañía.IotDsl.Endpoint/Name.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		[DslModeling::ElementName]
-		[DslModeling::DomainObjectId("8f9bcc25-620c-4dcf-b99a-23707873fd10")]
-		public global::System.String Name
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return namePropertyStorage;
-			}
-			[global::System.Diagnostics.DebuggerStepThrough]
-			set
-			{
-				NamePropertyHandler.Instance.SetValue(this, value);
-			}
-		}
-		/// <summary>
-		/// Value handler for the Endpoint.Name domain property.
-		/// </summary>
-		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<Endpoint, global::System.String>
-		{
-			private NamePropertyHandler() { }
-		
-			/// <summary>
-			/// Gets the singleton instance of the Endpoint.Name domain property value handler.
-			/// </summary>
-			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
-		
-			/// <summary>
-			/// Gets the Id of the Endpoint.Name domain property.
-			/// </summary>
-			public sealed override global::System.Guid DomainPropertyId
-			{
-				[global::System.Diagnostics.DebuggerStepThrough]
-				get
-				{
-					return NameDomainPropertyId;
-				}
-			}
-			
-			/// <summary>
-			/// Gets a strongly-typed value of the property on specified element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(Endpoint element)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-				return element.namePropertyStorage;
-			}
-		
-			/// <summary>
-			/// Sets property value on an element.
-			/// </summary>
-			/// <param name="element">Element which owns the property.</param>
-			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(Endpoint element, global::System.String newValue)
-			{
-				if (element == null) throw new global::System.ArgumentNullException("element");
-		
-				global::System.String oldValue = GetValue(element);
-				if (newValue != oldValue)
-				{
-					ValueChanging(element, oldValue, newValue);
-					element.namePropertyStorage = newValue;
-					ValueChanged(element, oldValue, newValue);
-				}
-			}
-		}
-		
 		#endregion
 		#region CloudService opposite domain role accessor
 		/// <summary>
@@ -1758,6 +1669,118 @@ namespace Compañía.IotDsl
 			}
 		}
 		#endregion
+		#region Graphs opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Graphs.
+		/// Descripción de Compañía.IotDsl.AppServiceHasGraph.AppService
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Graph> Graphs
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Graph>, Graph>(global::Compañía.IotDsl.AppServiceHasGraph.AppServiceDomainRoleId);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Compañía.IotDsl.Graph.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::Compañía.IotDsl.Graph sourceGraph1 = sourceElement as global::Compañía.IotDsl.Graph;
+			if (sourceGraph1 != null)
+			{
+				// Create link for path AppServiceHasGraph.Graphs
+				this.Graphs.Add(sourceGraph1);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::Compañía.IotDsl.Graph sourceGraph1 = sourceElement as global::Compañía.IotDsl.Graph;
+			if (sourceGraph1 != null)
+			{
+				// Delete link for path AppServiceHasGraph.Graphs
+				
+				foreach (DslModeling::ElementLink link in global::Compañía.IotDsl.AppServiceHasGraph.GetLinks((global::Compañía.IotDsl.AppService)this, sourceGraph1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Compañía.IotDsl.AppServiceHasGraph.AppServiceDomainRoleId, global::Compañía.IotDsl.AppServiceHasGraph.GraphDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
 	}
 }
 namespace Compañía.IotDsl
@@ -2046,6 +2069,267 @@ namespace Compañía.IotDsl
 				{
 					ValueChanging(element, oldValue, newValue);
 					element.deviceIdPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Protocol domain property code
+		
+		/// <summary>
+		/// Protocol domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ProtocolDomainPropertyId = new global::System.Guid(0x6d659ce4, 0xbab3, 0x461d, 0x83, 0x70, 0x90, 0x05, 0x42, 0xce, 0x15, 0x7a);
+		
+		/// <summary>
+		/// Storage for Protocol
+		/// </summary>
+		private Protocol protocolPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of Protocol domain property.
+		/// Descripción de Compañía.IotDsl.Device.Protocol
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.Device/Protocol.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Device/Protocol.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("6d659ce4-bab3-461d-8370-900542ce157a")]
+		public Protocol Protocol
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return protocolPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ProtocolPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Device.Protocol domain property.
+		/// </summary>
+		internal sealed partial class ProtocolPropertyHandler : DslModeling::DomainPropertyValueHandler<Device, Protocol>
+		{
+			private ProtocolPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Device.Protocol domain property value handler.
+			/// </summary>
+			public static readonly ProtocolPropertyHandler Instance = new ProtocolPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Device.Protocol domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ProtocolDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed Protocol GetValue(Device element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.protocolPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Device element, Protocol newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				Protocol oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.protocolPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region OS domain property code
+		
+		/// <summary>
+		/// OS domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid OSDomainPropertyId = new global::System.Guid(0xe59dcaa8, 0xab55, 0x4939, 0x9d, 0xc6, 0x01, 0x74, 0x6c, 0x34, 0x28, 0x74);
+		
+		/// <summary>
+		/// Storage for OS
+		/// </summary>
+		private OS oSPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of OS domain property.
+		/// Descripción de Compañía.IotDsl.Device.OS
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.Device/OS.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Device/OS.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("e59dcaa8-ab55-4939-9dc6-01746c342874")]
+		public OS OS
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return oSPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				OSPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Device.OS domain property.
+		/// </summary>
+		internal sealed partial class OSPropertyHandler : DslModeling::DomainPropertyValueHandler<Device, OS>
+		{
+			private OSPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Device.OS domain property value handler.
+			/// </summary>
+			public static readonly OSPropertyHandler Instance = new OSPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Device.OS domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return OSDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed OS GetValue(Device element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.oSPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Device element, OS newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				OS oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.oSPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region ProgrammingLenguage domain property code
+		
+		/// <summary>
+		/// ProgrammingLenguage domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ProgrammingLenguageDomainPropertyId = new global::System.Guid(0xf0e6e762, 0x9d83, 0x415a, 0xb4, 0x44, 0x4a, 0x13, 0xa8, 0x3b, 0x32, 0x58);
+		
+		/// <summary>
+		/// Storage for ProgrammingLenguage
+		/// </summary>
+		private ProgramingLenguage programmingLenguagePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of ProgrammingLenguage domain property.
+		/// Descripción de Compañía.IotDsl.Device.Programming Lenguage
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.Device/ProgrammingLenguage.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Device/ProgrammingLenguage.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("f0e6e762-9d83-415a-b444-4a13a83b3258")]
+		public ProgramingLenguage ProgrammingLenguage
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return programmingLenguagePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ProgrammingLenguagePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Device.ProgrammingLenguage domain property.
+		/// </summary>
+		internal sealed partial class ProgrammingLenguagePropertyHandler : DslModeling::DomainPropertyValueHandler<Device, ProgramingLenguage>
+		{
+			private ProgrammingLenguagePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Device.ProgrammingLenguage domain property value handler.
+			/// </summary>
+			public static readonly ProgrammingLenguagePropertyHandler Instance = new ProgrammingLenguagePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Device.ProgrammingLenguage domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ProgrammingLenguageDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed ProgramingLenguage GetValue(Device element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.programmingLenguagePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Device element, ProgramingLenguage newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				ProgramingLenguage oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.programmingLenguagePropertyStorage = newValue;
 					ValueChanged(element, oldValue, newValue);
 				}
 			}
@@ -2846,6 +3130,366 @@ namespace Compañía.IotDsl
 			set
 			{
 				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.AppServiceReferenciasMessageService.MessageServiceDomainRoleId, value);
+			}
+		}
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainClass Graph
+	/// Descripción de Compañía.IotDsl.Graph
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.Graph.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.Graph.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("fddf178d-ea46-48d0-9be4-cec1bd26c822")]
+	public partial class Graph : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Graph domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xfddf178d, 0xea46, 0x48d0, 0x9b, 0xe4, 0xce, 0xc1, 0xbd, 0x26, 0xc8, 0x22);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Graph(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Graph(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region AppService opposite domain role accessor
+		/// <summary>
+		/// Gets or sets AppService.
+		/// Descripción de Compañía.IotDsl.AppServiceHasGraph.Graph
+		/// </summary>
+		public virtual AppService AppService
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Compañía.IotDsl.AppServiceHasGraph.GraphDomainRoleId) as AppService;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.AppServiceHasGraph.GraphDomainRoleId, value);
+			}
+		}
+		#endregion
+		#region Variables opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Variables.
+		/// Descripción de Compañía.IotDsl.GraphHasVariables.Graph
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<Variable> Variables
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<Variable>, Variable>(global::Compañía.IotDsl.GraphHasVariables.GraphDomainRoleId);
+			}
+		}
+		#endregion
+		#region ElementGroupPrototype Merge methods
+		/// <summary>
+		/// Returns a value indicating whether the source element represented by the
+		/// specified root ProtoElement can be added to this element.
+		/// </summary>
+		/// <param name="rootElement">
+		/// The root ProtoElement representing a source element.  This can be null, 
+		/// in which case the ElementGroupPrototype does not contain an ProtoElements
+		/// and the code should inspect the ElementGroupPrototype context information.
+		/// </param>
+		/// <param name="elementGroupPrototype">The ElementGroupPrototype that contains the root ProtoElement.</param>
+		/// <returns>true if the source element represented by the ProtoElement can be added to this target element.</returns>
+		protected override bool CanMerge(DslModeling::ProtoElementBase rootElement, DslModeling::ElementGroupPrototype elementGroupPrototype)
+		{
+			if ( elementGroupPrototype == null ) throw new global::System.ArgumentNullException("elementGroupPrototype");
+			
+			if (rootElement != null)
+			{
+				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Compañía.IotDsl.Variable.DomainClassId)) 
+				{
+					return true;
+				}
+			}
+			return base.CanMerge(rootElement, elementGroupPrototype);
+		}
+		
+		/// <summary>
+		/// Called by the Merge process to create a relationship between 
+		/// this target element and the specified source element. 
+		/// Typically, a parent-child relationship is established
+		/// between the target element (the parent) and the source element 
+		/// (the child), but any relationship can be established.
+		/// </summary>
+		/// <param name="sourceElement">The element that is to be related to this model element.</param>
+		/// <param name="elementGroup">The group of source ModelElements that have been rehydrated into the target store.</param>
+		/// <remarks>
+		/// This method is overriden to create the relationship between the target element and the specified source element.
+		/// The base method does nothing.
+		/// </remarks>
+		protected override void MergeRelate(DslModeling::ModelElement sourceElement, DslModeling::ElementGroup elementGroup)
+		{
+			// In general, sourceElement is allowed to be null, meaning that the elementGroup must be parsed for special cases.
+			// However this is not supported in generated code.  Use double-deriving on this class and then override MergeRelate completely if you 
+			// need to support this case.
+			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
+		
+				
+			global::Compañía.IotDsl.Variable sourceVariable1 = sourceElement as global::Compañía.IotDsl.Variable;
+			if (sourceVariable1 != null)
+			{
+				// Create link for path GraphHasVariables.Variables
+				this.Variables.Add(sourceVariable1);
+
+				return;
+			}
+		
+			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
+			// during a "Paste".
+			if (sourceElement is DslModeling::ExtensionElement
+				&& sourceElement.Store.TransactionManager.CurrentTransaction.TopLevelTransaction.Context.ContextInfo.ContainsKey("{9DAFD42A-DC0E-4d78-8C3F-8266B2CF8B33}"))
+			{
+				return;
+			}
+		
+			// Fall through to base class if this class hasn't handled the merge.
+			base.MergeRelate(sourceElement, elementGroup);
+		}
+		
+		/// <summary>
+		/// Performs operation opposite to MergeRelate - i.e. disconnects a given
+		/// element from the current one (removes links created by MergeRelate).
+		/// </summary>
+		/// <param name="sourceElement">Element to be unmerged/disconnected.</param>
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
+		protected override void MergeDisconnect(DslModeling::ModelElement sourceElement)
+		{
+			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
+				
+			global::Compañía.IotDsl.Variable sourceVariable1 = sourceElement as global::Compañía.IotDsl.Variable;
+			if (sourceVariable1 != null)
+			{
+				// Delete link for path GraphHasVariables.Variables
+				
+				foreach (DslModeling::ElementLink link in global::Compañía.IotDsl.GraphHasVariables.GetLinks((global::Compañía.IotDsl.Graph)this, sourceVariable1))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Compañía.IotDsl.GraphHasVariables.GraphDomainRoleId, global::Compañía.IotDsl.GraphHasVariables.VariableDomainRoleId);
+				}
+
+				return;
+			}
+			// Fall through to base class if this class hasn't handled the unmerge.
+			base.MergeDisconnect(sourceElement);
+		}
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainClass LineGraph
+	/// Descripción de Compañía.IotDsl.LineGraph
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.LineGraph.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.LineGraph.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("4b6c57c0-30f7-4b36-b26c-170ac8698d6f")]
+	public partial class LineGraph : Graph
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// LineGraph domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x4b6c57c0, 0x30f7, 0x4b36, 0xb2, 0x6c, 0x17, 0x0a, 0xc8, 0x69, 0x8d, 0x6f);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public LineGraph(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public LineGraph(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainClass Variable
+	/// Descripción de Compañía.IotDsl.Variable
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.Variable.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.Variable.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("6acd3ab5-abc9-421d-8990-61e00064a307")]
+	public partial class Variable : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// Variable domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x6acd3ab5, 0xabc9, 0x421d, 0x89, 0x90, 0x61, 0xe0, 0x00, 0x64, 0xa3, 0x07);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Variable(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public Variable(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Type domain property code
+		
+		/// <summary>
+		/// Type domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TypeDomainPropertyId = new global::System.Guid(0x844f4254, 0x925f, 0x41d9, 0x91, 0xf0, 0x3d, 0xa4, 0x97, 0x42, 0x20, 0x97);
+		
+		/// <summary>
+		/// Storage for Type
+		/// </summary>
+		private Measurements typePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of Type domain property.
+		/// Descripción de Compañía.IotDsl.Variable.Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.Variable/Type.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Variable/Type.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("844f4254-925f-41d9-91f0-3da497422097")]
+		public Measurements Type
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return typePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the Variable.Type domain property.
+		/// </summary>
+		internal sealed partial class TypePropertyHandler : DslModeling::DomainPropertyValueHandler<Variable, Measurements>
+		{
+			private TypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the Variable.Type domain property value handler.
+			/// </summary>
+			public static readonly TypePropertyHandler Instance = new TypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the Variable.Type domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed Measurements GetValue(Variable element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.typePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(Variable element, Measurements newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				Measurements oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.typePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Graph opposite domain role accessor
+		/// <summary>
+		/// Gets or sets Graph.
+		/// Descripción de Compañía.IotDsl.GraphHasVariables.Variable
+		/// </summary>
+		public virtual Graph Graph
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Compañía.IotDsl.GraphHasVariables.VariableDomainRoleId) as Graph;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Compañía.IotDsl.GraphHasVariables.VariableDomainRoleId, value);
 			}
 		}
 		#endregion

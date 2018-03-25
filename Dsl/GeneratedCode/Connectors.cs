@@ -377,7 +377,7 @@ namespace Compañía.IotDsl
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
 			field1.AnchoringBehavior.MinimumWidthInCharacters = 1;
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
-			DslDiagrams::Decorator decorator1 = new DslDiagrams::ConnectorDecorator(field1, DslDiagrams::ConnectorDecoratorPosition.SourceBottom, DslDiagrams::PointD.Empty);
+			DslDiagrams::Decorator decorator1 = new DslDiagrams::ConnectorDecorator(field1, DslDiagrams::ConnectorDecoratorPosition.TargetBottom, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				
 		}

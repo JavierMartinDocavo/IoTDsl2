@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0eaa8724-332b-42c3-886f-84ab975e1103" provider="Azure" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
+  <resourceGroups>
+    <iotDslHasResourceGroups Id="f26d88c3-b2ed-4cce-993c-59444d0bbbd3">
+      <resourceGroup Id="bf14a924-4c33-4dbe-850e-08bfbf8b045c" name="ResourceGroup1" location="westeurope" />
+    </iotDslHasResourceGroups>
+  </resourceGroups>
+</ioTDsl>
