@@ -1276,7 +1276,11 @@
   <!-- Enum Protocol -->
   <xsd:simpleType name="Protocol">
     <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="MQTT"/>
+      <xsd:enumeration value="Mqtt">
+        <xsd:annotation>
+          <xsd:documentation>Descripción de Compañía.IotDsl.Protocol.MQTT</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   

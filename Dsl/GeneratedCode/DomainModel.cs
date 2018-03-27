@@ -672,11 +672,11 @@ namespace Compañía.IotDsl
 	public enum Protocol
 	{
 		/// <summary>
-		/// MQTT
+		/// Mqtt
 		/// Descripción de Compañía.IotDsl.Protocol.MQTT
 		/// </summary>
-		[DslDesign::DescriptionResource("Compañía.IotDsl.Protocol/MQTT.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
-		MQTT,
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Protocol/Mqtt.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		Mqtt,
 	}
 }
 namespace Compañía.IotDsl

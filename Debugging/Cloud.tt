@@ -28,7 +28,7 @@ New-AzureRmStorageAccount -ResourceGroupNAme <#=resourceGroup.Name#> -Name <#=no
 AppService appService = cloudService as AppService;
 #>
 #App service resources
-New-AzureRmAppServicePlan -ResourceGroupName <#=resourceGroup.Name#> -Name <#=appService.Name#>plan -Location <#=resourceGroup.Location#> -Tier "free";
+New-AzureRmAppServicePlan -ResourceGroupName <#=resourceGroup.Name#> -Name <#=appService.Name#>plan -Location <#=resourceGroup.Location#> -Tier <#if (this.IoTDsl.ServicePlan == "F1"){#>"free"<#}#>;
 New-AzureRmWebApp -ResourceGroupName <#=resourceGroup.Name#> -Name <#=appService.Name#> -Location <#=resourceGroup.Location#> -AppServicePlan <#=appService.Name#>plan;
 <#} else if (cloudService is MessageService){
 MessageService serviceBus =  cloudService as MessageService;
@@ -80,8 +80,8 @@ fileManager.StartNewFile(serviceBus.Name + ".json");
 
 			"sku": {
 
-				"name": "Basic",
-				"tier": "Basic"
+				"name": <#if (this.IoTDsl.ServicePlan == "F1"){#>"Basic"<#}#>,
+				"tier": <#if (this.IoTDsl.ServicePlan == "F1"){#>"Basic"<#}#>
 			},
 			"name": "[parameters('namespaces_servicebusjmd_name')]",
 			"apiVersion": "2017-04-01",

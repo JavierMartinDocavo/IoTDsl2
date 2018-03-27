@@ -33,31 +33,31 @@ namespace IoTWeatherHubDevice
 
 			deviceClientList = new List<DeviceClient>()
 			{
-				DeviceClient.Create("IoTCenter1.azure-devices.net", newDeviceAuthenticationWithRegistrySymetricKey(deviceId, "pruebadeclave"), TransportType.Mqtt);
+				DeviceClient.Create("jmdbecaiothub.azure-devices.net", newDeviceAuthenticationWithRegistrySymetricKey(deviceId, ""), TransportType.Mqtt);
 			};
-			iotdslbme280ToCloudMessage();
+			jmdbecasensorToCloudMessage();
 		}
 
-		private async void iotdslbme280ToCloudMessage()
+		private async void jmdbecasensorToCloudMessage()
 		{
 			BME280Sensor sensor = new BME280Sensor();
 			await sensor.Initialize();
 			float temperature = 0.00f;
-			float pressure = 0.00f;
+			float humidity = 0.00f;
 			while(true)
 			{
 				temperature = await sensor.ReadTemperature();
-				pressure = await sensor.ReadPressure();
+				humidity = await sensor.ReadHumidity();
 				var sensorData = new
 				{
 					deviceID = deviceId,
-					sensorId = "iotdslbme280",
+					sensorId = "jmdbecasensor",
 					date = String.Format("{0},{1},{2}",
 										DateTime.Now.ToLocalTime().TimeOfDay.Hours,
 										DateTime.Now.ToLocalTime().TimeOfDay.Minutes,
 										DateTime.Now.ToLocalTime().TimeOfDay.Seconds),
 					temperature = Math.Round(temperature, 2),
-					pressure = Math.Round(pressure,2),
+					humidity = Math.Round(humidity, 2),
 				};
 				var messageString = JsonConvert.SerializeObject(sensorData);
 				var message = new Message(byteArray: Encoding.ASCII.GetBytes(messageString));

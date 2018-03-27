@@ -472,7 +472,7 @@
     </DomainEnumeration>
     <DomainEnumeration Name="Protocol" Namespace="Compañía.IotDsl" Description="Descripción de Compañía.IotDsl.Protocol">
       <Literals>
-        <EnumerationLiteral Description="Descripción de Compañía.IotDsl.Protocol.MQTT" Name="MQTT" Value="" />
+        <EnumerationLiteral Description="Descripción de Compañía.IotDsl.Protocol.MQTT" Name="Mqtt" Value="" />
       </Literals>
     </DomainEnumeration>
     <DomainEnumeration Name="OS" Namespace="Compañía.IotDsl" Description="Descripción de Compañía.IotDsl.OS">

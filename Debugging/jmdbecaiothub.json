@@ -14,8 +14,7 @@
     "location": "westeurope",
     "sku": {
       "name": "F1",
-      "tier": "Free",
-      "capacity": 1
+	  "capacity": 1
     },
     "properties": {
       "location": "westeurope",
@@ -23,8 +22,8 @@
 		"endpoints":{
 			"serviceBusQueues":[
 				{
-					"connectionString": "[concat('Endpoint=sb://jmdbecaappserviceservicebus.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=kHFi0/RbVu9yMLugI+3j1RW3vUy0N4tU7MHdKvEdkiU=;EntityPath=jmdbecaappserviceservicebusqueue')]",
-					"name":"jmdbecaappserviceServiceBusendpoint",
+					"connectionString": "[concat('Endpoint=sb://jmdbecawebappservicebus.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=OcVrbrIH04ratWqAaqs1DEcEkOu6TxexpqPDZRxxrY4=;EntityPath=jmdbecawebappservicebusqueue')]",
+					"name":"jmdbecawebappservicebusendpoint",
 					"resourceGroup": "jmdbecaresourcegroup",
 					"subscriptionId": "f53c2e80-22fe-4b10-9758-2ae712295faf"
 				}
@@ -36,11 +35,11 @@
 		},
 		"routes": [
 			{
-				"name":"jmdbecaappserviceServiceBusroute",
+				"name":"jmdbecawebappservicebusroute",
 				"source":"DeviceMessages",
 				"condition":"true",
 				"endpointNames":[
-					"jmdbecaappserviceServiceBusendpoint"
+					"jmdbecawebappservicebusendpoint"
 				],
 				"isEnabled":true
 			}

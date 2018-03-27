@@ -821,13 +821,13 @@
     <value>Descripción de Compañía.IotDsl.Provider.azure</value>
     <comment>Description for EnumerationLiteral &apos;Azure&apos; on DomainEnumeration &apos;Provider&apos;</comment>
   </data>
-  <data name="Compañía.IotDsl.Protocol/MQTT.DisplayName" xml:space="preserve">
-    <value>MQTT</value>
-    <comment>Display name for EnumerationLiteral &apos;MQTT&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
+  <data name="Compañía.IotDsl.Protocol/Mqtt.DisplayName" xml:space="preserve">
+    <value>Mqtt</value>
+    <comment>Display name for EnumerationLiteral &apos;Mqtt&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
   </data>
-  <data name="Compañía.IotDsl.Protocol/MQTT.Description" xml:space="preserve">
+  <data name="Compañía.IotDsl.Protocol/Mqtt.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.Protocol.MQTT</value>
-    <comment>Description for EnumerationLiteral &apos;MQTT&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
+    <comment>Description for EnumerationLiteral &apos;Mqtt&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
   </data>
   <data name="Compañía.IotDsl.OS/WindowsIoT.DisplayName" xml:space="preserve">
     <value>WindowsIoT</value>

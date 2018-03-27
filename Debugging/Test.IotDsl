@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0eaa8724-332b-42c3-886f-84ab975e1103" provider="Azure" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
+<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0eaa8724-332b-42c3-886f-84ab975e1103" provider="Azure" subscription="f53c2e80-22fe-4b10-9758-2ae712295faf" servicePlan="F1" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
   <resourceGroups>
     <iotDslHasResourceGroups Id="65fe0c23-1c01-4539-9b15-41885a232b26">
       <resourceGroup Id="314ba4fb-b6a2-4fe7-8917-f9c79e6fba34" name="jmdbecaresourcegroup" location="westeurope">
@@ -7,19 +7,10 @@
           <resourceGroupHasCloudServices Id="7a45bf24-80c9-4fa8-bf9f-f74967b77eb7">
             <ioTCenter Id="1f98e086-93b5-49e2-b1e3-64a6c0d87f3d" name="jmdbecaiothub">
               <endpoints>
-                <ioTCenterHasEndpoints Id="44094906-f7ab-4e0c-9f32-4b07ebe35eb1">
-                  <endpoint Id="c51e98d4-e4dd-4abc-8e4d-0ed01630cf15">
+                <ioTCenterHasEndpoints Id="9db473a8-4a96-4d44-9e31-f6bd1e965f68">
+                  <endpoint Id="3ad0990a-b660-40f7-b7b4-ba6e7ce8248a">
                     <cloudService>
-                      <endpointConnectsCloudService Id="0e155251-86fb-4354-9ac3-cef6f9a6cbda">
-                        <monikerNoSQlStorage name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup/jmdbecastorage" />
-                      </endpointConnectsCloudService>
-                    </cloudService>
-                  </endpoint>
-                </ioTCenterHasEndpoints>
-                <ioTCenterHasEndpoints Id="8ed51b96-37ed-41a5-bb9b-ba63a1f359a9">
-                  <endpoint Id="e453d778-a08f-4223-8bfb-468bd69a3a2d">
-                    <cloudService>
-                      <endpointConnectsCloudService Id="1b960b4d-8a06-4a3c-ac69-ac9c2940d14b">
+                      <endpointConnectsCloudService Id="026da656-6c7c-4444-bbf9-e8496f6c5536">
                         <monikerServiceBus name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup/jmdbecawebappservicebus" />
                       </endpointConnectsCloudService>
                     </cloudService>
@@ -34,7 +25,7 @@
             </ioTCenter>
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="e06e667d-f9a2-4bf2-86ec-06e3b7f7f397">
-            <noSQLStorage Id="cb1c166a-a1fb-4c27-9d1e-e0cde6687fdf" name="jmdbecastorage" />
+            <noSQLStorage Id="cb1c166a-a1fb-4c27-9d1e-e0cde6687fdf" name="jmdbecastorage" connectionString="DefaultEndpointsProtocol=https;AccountName=jmdbecastorage;AccountKey=yifmfkuT4eaOpvAcQI7QDMRk1+IMAgBF5GBunLURyDdzmOXNXa2+lSk98jXz6HXZI//jwYmmA6LOElxJUG1rDQ==;EndpointSuffix=core.windows.net" />
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="5af33517-4d6a-41ec-893e-488b6bdaa928">
             <webApp Id="ef3f00fa-2128-4861-8ee5-cd897c1eb640" name="jmdbecawebapp">
@@ -44,14 +35,14 @@
                 </appServiceReferenciasMessageService>
               </messageService>
               <graphs>
-                <appServiceHasGraph Id="9b013638-3cc1-4e3e-ac4d-01afe3380d18">
-                  <lineGraph Id="0d34f780-e9ca-4b2a-8c44-6de65f7130ec">
+                <appServiceHasGraph Id="e9ec6f9a-0809-407a-b35f-5ec10a848d06">
+                  <lineGraph Id="7063d148-ac95-4183-9a66-58d983a61405">
                     <variables>
-                      <graphHasVariables Id="1308800e-d61b-4465-977a-46033975ab42">
-                        <variable Id="defe9ee5-2cf6-4500-a22c-5ceb3edc28eb" type="Temperature" />
+                      <graphHasVariables Id="fef1fce5-8654-4317-99f3-311695c3eb53">
+                        <variable Id="6bb2e78a-ff9f-458c-a780-fce3174308d1" type="Temperature" />
                       </graphHasVariables>
-                      <graphHasVariables Id="389c4e6a-941d-4575-8fef-85c9633682cb">
-                        <variable Id="1bb77983-a318-4f0a-bc55-6c1a74217bf9" type="Humidity" />
+                      <graphHasVariables Id="7143a259-a0b6-4e4b-9f77-89fc4bed1233">
+                        <variable Id="bc2ea144-ed52-448c-8345-2cf2ccdb75ee" type="Humidity" />
                       </graphHasVariables>
                     </variables>
                   </lineGraph>
@@ -60,7 +51,10 @@
             </webApp>
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="2976a13b-9b85-4712-9c98-35de0f36ebe7">
-            <messageService Id="b0019de7-c52a-4079-95d4-e23e9ec689af" name="jmdbecawebappservicebus" />
+            <messageService Id="b0019de7-c52a-4079-95d4-e23e9ec689af" name="jmdbecawebappservicebus" connectionString="Endpoint=sb://jmdbecawebappservicebus.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=OcVrbrIH04ratWqAaqs1DEcEkOu6TxexpqPDZRxxrY4=;EntityPath=jmdbecawebappservicebusqueue" />
+          </resourceGroupHasCloudServices>
+          <resourceGroupHasCloudServices Id="16f6cd7c-b80e-40c4-b52e-5c90d82f511e">
+            <dataAnalytics Id="5f28ca3f-cc33-455f-b055-f2ab09beea82" name="DataAnalytics1" />
           </resourceGroupHasCloudServices>
         </cloudServices>
       </resourceGroup>
@@ -68,7 +62,7 @@
   </resourceGroups>
   <devices>
     <ioTDslHasDevices Id="6d726bd6-722c-4f88-8459-87041e6126ed">
-      <raspberryPi Id="8a6996e0-7026-4dc9-9439-0aac16858f7c" deviceId="RaspberryPi1" protocol="MQTT" oS="WindowsIoT" programmingLenguage="CSharp">
+      <raspberryPi Id="8a6996e0-7026-4dc9-9439-0aac16858f7c" deviceId="RaspberryPi1" protocol="Mqtt" oS="WindowsIoT" programmingLenguage="CSharp">
         <sensors>
           <deviceReferenciasSensors Id="f5cd4e91-dd1a-467a-b468-f831325ac924">
             <monikerBME280 Id="94eb53bd-24ca-42f2-bcb0-97f6bcd32cc3" />

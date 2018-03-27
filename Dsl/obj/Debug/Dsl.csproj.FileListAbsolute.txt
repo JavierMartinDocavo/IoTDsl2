@@ -71,3 +71,4 @@ D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Dsl.csproj.GenerateReso
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Dsl.csproj.CoreCompileInputs.cache
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Compañía.IotDsl.Dsl.dll
 D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Compañía.IotDsl.Dsl.pdb
+D:\UPM\4º Curso\Beca Colaboración\IoTDSL\Dsl\obj\Debug\Dsl.csprojResolveAssemblyReference.cache

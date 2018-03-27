@@ -33,9 +33,8 @@ IoTCenter iot = cloudService as IoTCenter;
     "name": "[parameters('hubName')]",
     "location": "<#=resourceGroup.Location#>",
     "sku": {
-      "name": "F1",
-      "tier": "Free",
-      "capacity": 1
+      "name": "<#=this.IoTDsl.ServicePlan#>",
+	  "capacity": 1
     },
     "properties": {
       "location": "<#=resourceGroup.Location#>",
@@ -76,6 +75,7 @@ foreach(Endpoint endpoint in iot.Endpoints){
 		"routes": [
 <#
 foreach(Endpoint endpoint in iot.Endpoints){
+	if(!(endpoint.CloudService is NoSQLStorage)){
 #>
 			{
 				"name":"<#=endpoint.CloudService.Name#>route",
@@ -87,6 +87,7 @@ foreach(Endpoint endpoint in iot.Endpoints){
 				"isEnabled":true
 			}
 <#
+	}
 }
 #>
 		]

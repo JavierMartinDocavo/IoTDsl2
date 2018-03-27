@@ -33,8 +33,7 @@
 			"sku": {
 
 				"name": "Basic",
-				"tier": "Basic"
-			},
+				"tier": "Basic"			},
 			"name": "[parameters('namespaces_servicebusjmd_name')]",
 			"apiVersion": "2017-04-01",
 			"location": "West Europe",

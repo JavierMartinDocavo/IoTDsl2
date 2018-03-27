@@ -7,7 +7,8 @@ var fileManager=EntityFrameworkTemplateFileManager.Create(this);
 <#
 foreach(Device device in this.IoTDsl.Devices)
 {
-	fileManager.StartNewFile(device.deviceId+".cs");
+	if(device.OS == OS.WindowsIoT  && device.ProgrammingLenguage == ProgramingLenguage.CSharp){
+		fileManager.StartNewFile(device.deviceId+".cs");
 #>
 ﻿using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace IoTWeatherHubDevice
 foreach(IoTCenter hub in device.IoTCenters){
 	IoTCenterHasDevices relation = IoTCenterHasDevices.GetLink(hub,device);
 #>
-				DeviceClient.Create("<#=hub.Name#>.azure-devices.net", newDeviceAuthenticationWithRegistrySymetricKey(deviceId, "<#=relation.DeviceKey#>"), TransportType.Mqtt);
+				DeviceClient.Create("<#=hub.Name#>.azure-devices.net", newDeviceAuthenticationWithRegistrySymetricKey(deviceId, "<#=relation.DeviceKey#>"), TransportType.<#=device.Protocol#>);
 <#
 }
 #>
@@ -194,6 +195,7 @@ foreach(Sensor sensor in device.Sensors)
 	}
 }
 <#
+	}
 }
 #>
 <#
@@ -284,9 +286,14 @@ namespace IoTHubTempWebApp.Hubs
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div id="chart_div"></div>
 
-<script>
 
-    var data = [];
+<#
+foreach(Graph graph in appService.Graphs){
+	if(graph is LineGraph){
+		LineGraph linegraph = graph as LineGraph;
+#>
+<script>
+var data = [];
     var chart;
 
     google.charts.load('current', { packages: ['corechart', 'line'] });
@@ -299,10 +306,16 @@ namespace IoTHubTempWebApp.Hubs
         console.log(d);
         var pi = JSON.parse(d);
         var time = pi.date.split(',');
-        var temp = pi.temperature;
-        var humid = pi.humidity;
+<#
+		Variable last = linegraph.Variables.Last();
+		foreach(Variable variable in linegraph.Variables){
+#>
+		var <#=variable.Type.ToString().ToLower()#> = pi.<#=variable.Type.ToString().ToLower()#>;
+<#
+		}
+#>
 
-        data.addRows([[[parseInt(time[0]), parseInt(time[1]), parseInt(time[2])], temp, humid]]);
+        data.addRows([[[parseInt(time[0]), parseInt(time[1]), parseInt(time[2])], <#foreach(Variable variable in linegraph.Variables){#><#=variable.Type.ToString().ToLower()#><#if(variable != last){#>,<#}}#>]]);
 
         var options = {
             height: 250,
@@ -310,7 +323,7 @@ namespace IoTHubTempWebApp.Hubs
                 title: 'Time'
             },
             vAxis: {
-                title: 'Temperature / Humidity',
+                title: '<#foreach(Variable variable in linegraph.Variables){#><#=variable.Type.ToString()#><#if(variable != last){#> / <#}}#>',
                 gridlines: { count: 22 } 
             }
         };
@@ -321,16 +334,20 @@ namespace IoTHubTempWebApp.Hubs
     function loadChart() {
         data = new google.visualization.DataTable();
         data.addColumn('timeofday', 'Time');
-        data.addColumn('number', 'Temperature');
-        data.addColumn('number', 'Humidity');
-
+<#
+foreach(Variable variable in linegraph.Variables){
+#>
+		data.addColumn('number','<#=variable.Type.ToString()#>');
+<#
+		}
+#>
         var options = {
             height: 250,
             hAxis: {
                 title: 'Time'
             },
             vAxis: {
-                title: 'Temperarture / Humidity',
+                title: '<#foreach(Variable variable in linegraph.Variables){#><#=variable.Type.ToString()#><#if(variable != last){#> / <#}}#>',
                 gridlines: { count: 22 } 
             }
         };
@@ -339,6 +356,11 @@ namespace IoTHubTempWebApp.Hubs
         chart.draw(data, options);
     }
 </script>
+<#
+	}
+}
+#>
+
 <#
 		}
 	}
