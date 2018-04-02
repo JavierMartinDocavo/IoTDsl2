@@ -35,7 +35,6 @@ foreach(Device device in this.IoTDsl.Devices){
 			foreach(KeyValuePair<string,string> device in devices){
 				registryManager = RegistryManager.CreateFromConnectionString(device.Value);
 				AddDeviceAsync(device.Key).Wait();
-				Console.ReadLine();
 			}
 		}
 

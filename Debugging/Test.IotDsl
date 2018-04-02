@@ -5,7 +5,7 @@
       <resourceGroup Id="314ba4fb-b6a2-4fe7-8917-f9c79e6fba34" name="jmdbecaresourcegroup" location="westeurope">
         <cloudServices>
           <resourceGroupHasCloudServices Id="7a45bf24-80c9-4fa8-bf9f-f74967b77eb7">
-            <ioTCenter Id="1f98e086-93b5-49e2-b1e3-64a6c0d87f3d" name="jmdbecaiothub">
+            <ioTCenter Id="1f98e086-93b5-49e2-b1e3-64a6c0d87f3d" name="jmdbecaiothub" connectionString="HostName=jmdbecaiothub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=lufnM69hnkcQTbXJqRh485xZJgjq2fENayv4aFJutlM=">
               <endpoints>
                 <ioTCenterHasEndpoints Id="9db473a8-4a96-4d44-9e31-f6bd1e965f68">
                   <endpoint Id="3ad0990a-b660-40f7-b7b4-ba6e7ce8248a">
@@ -18,14 +18,11 @@
                 </ioTCenterHasEndpoints>
               </endpoints>
               <devices>
-                <ioTCenterHasDevices Id="1a516e9e-767e-4893-9658-9a6d1e6252a9">
-                  <monikerRaspberryPi deviceId="/0eaa8724-332b-42c3-886f-84ab975e1103/RaspberryPi1" />
+                <ioTCenterHasDevices Id="1a516e9e-767e-4893-9658-9a6d1e6252a9" deviceKey="azUodaAxCumHKZ6CtvI2gCPcYkrJY8r11gkTiggNZ4Q=">
+                  <monikerRaspberryPi deviceId="/0eaa8724-332b-42c3-886f-84ab975e1103/iotdevice" />
                 </ioTCenterHasDevices>
               </devices>
             </ioTCenter>
-          </resourceGroupHasCloudServices>
-          <resourceGroupHasCloudServices Id="e06e667d-f9a2-4bf2-86ec-06e3b7f7f397">
-            <noSQLStorage Id="cb1c166a-a1fb-4c27-9d1e-e0cde6687fdf" name="jmdbecastorage" connectionString="DefaultEndpointsProtocol=https;AccountName=jmdbecastorage;AccountKey=yifmfkuT4eaOpvAcQI7QDMRk1+IMAgBF5GBunLURyDdzmOXNXa2+lSk98jXz6HXZI//jwYmmA6LOElxJUG1rDQ==;EndpointSuffix=core.windows.net" />
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="5af33517-4d6a-41ec-893e-488b6bdaa928">
             <webApp Id="ef3f00fa-2128-4861-8ee5-cd897c1eb640" name="jmdbecawebapp">
@@ -41,8 +38,8 @@
                       <graphHasVariables Id="fef1fce5-8654-4317-99f3-311695c3eb53">
                         <variable Id="6bb2e78a-ff9f-458c-a780-fce3174308d1" type="Temperature" />
                       </graphHasVariables>
-                      <graphHasVariables Id="7143a259-a0b6-4e4b-9f77-89fc4bed1233">
-                        <variable Id="bc2ea144-ed52-448c-8345-2cf2ccdb75ee" type="Humidity" />
+                      <graphHasVariables Id="6284c665-cc39-419f-aaa5-e393d5a0b994">
+                        <variable Id="8dd996a7-6ad5-4e3a-a93c-3b7af7c4630b" type="Humidity" />
                       </graphHasVariables>
                     </variables>
                   </lineGraph>
@@ -51,10 +48,7 @@
             </webApp>
           </resourceGroupHasCloudServices>
           <resourceGroupHasCloudServices Id="2976a13b-9b85-4712-9c98-35de0f36ebe7">
-            <messageService Id="b0019de7-c52a-4079-95d4-e23e9ec689af" name="jmdbecawebappservicebus" connectionString="Endpoint=sb://jmdbecawebappservicebus.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=OcVrbrIH04ratWqAaqs1DEcEkOu6TxexpqPDZRxxrY4=;EntityPath=jmdbecawebappservicebusqueue" />
-          </resourceGroupHasCloudServices>
-          <resourceGroupHasCloudServices Id="16f6cd7c-b80e-40c4-b52e-5c90d82f511e">
-            <dataAnalytics Id="5f28ca3f-cc33-455f-b055-f2ab09beea82" name="DataAnalytics1" />
+            <messageService Id="b0019de7-c52a-4079-95d4-e23e9ec689af" name="jmdbecawebappservicebus" connectionString="Endpoint=sb://jmdbecawebappservicebus.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=W6xIC1/bOk6Gt7iOfOLzW6mZ5kCEM+abc3UTsQMhUVA=;EntityPath=jmdbecawebappservicebusqueue" />
           </resourceGroupHasCloudServices>
         </cloudServices>
       </resourceGroup>
@@ -62,7 +56,7 @@
   </resourceGroups>
   <devices>
     <ioTDslHasDevices Id="6d726bd6-722c-4f88-8459-87041e6126ed">
-      <raspberryPi Id="8a6996e0-7026-4dc9-9439-0aac16858f7c" deviceId="RaspberryPi1" protocol="Mqtt" oS="WindowsIoT" programmingLenguage="CSharp">
+      <raspberryPi Id="8a6996e0-7026-4dc9-9439-0aac16858f7c" deviceId="iotdevice" protocol="Mqtt" oS="WindowsIoT" programmingLenguage="CSharp">
         <sensors>
           <deviceReferenciasSensors Id="f5cd4e91-dd1a-467a-b468-f831325ac924">
             <monikerBME280 Id="94eb53bd-24ca-42f2-bcb0-97f6bcd32cc3" />

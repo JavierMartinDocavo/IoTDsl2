@@ -49,7 +49,7 @@ namespace IoTWeatherHubDevice
 foreach(IoTCenter hub in device.IoTCenters){
 	IoTCenterHasDevices relation = IoTCenterHasDevices.GetLink(hub,device);
 #>
-				DeviceClient.Create("<#=hub.Name#>.azure-devices.net", newDeviceAuthenticationWithRegistrySymetricKey(deviceId, "<#=relation.DeviceKey#>"), TransportType.<#=device.Protocol#>);
+				DeviceClient.Create("<#=hub.Name#>.azure-devices.net", new DeviceAuthenticationWithRegistrySymmetricKey(deviceId, "<#=relation.DeviceKey#>"), TransportType.<#=device.Protocol#>),
 <#
 }
 #>
@@ -224,8 +224,9 @@ namespace IoTHubTempWebApp.Controllers
 {
     public class HomeController : Controller
     {
-        private string connectionString = "<#=appService.MessageService.ConnectionString#>";
-        private string queueName = "<#=appService.MessageService#>"
+		<# string connectionString = appService.MessageService.ConnectionString.Replace(";EntityPath="+appService.MessageService.Name+"queue",""); #>
+        private string connectionString = "<#=connectionString#>";
+        private string queueName = "<#=appService.MessageService.Name#>queue";
         private IHubContext _hubContext;
 
         public HomeController()
@@ -284,7 +285,6 @@ namespace IoTHubTempWebApp.Hubs
 }
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div id="chart_div"></div>
 
 
 <#
@@ -292,6 +292,7 @@ foreach(Graph graph in appService.Graphs){
 	if(graph is LineGraph){
 		LineGraph linegraph = graph as LineGraph;
 #>
+<div id="chart_div<#=linegraph.Id#>"></div>
 <script>
 var data = [];
     var chart;
@@ -352,7 +353,7 @@ foreach(Variable variable in linegraph.Variables){
             }
         };
 
-        chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart = new google.visualization.LineChart(document.getElementById('chart_div<#=linegraph.Id#>'));
         chart.draw(data, options);
     }
 </script>

@@ -23,9 +23,9 @@ using System.Text;
 
 namespace IoTWeatherHubDevice
 {
-	public sealed partial class RaspberryPi1
+	public sealed partial class iotdevice
 	{
-		static string deviceId = "RaspberryPi1";
+		static string deviceId = "iotdevice";
 		static List<DeviceClient> deviceClientList;
 
 		public MainPage()
@@ -33,7 +33,7 @@ namespace IoTWeatherHubDevice
 
 			deviceClientList = new List<DeviceClient>()
 			{
-				DeviceClient.Create("jmdbecaiothub.azure-devices.net", newDeviceAuthenticationWithRegistrySymetricKey(deviceId, ""), TransportType.Mqtt);
+				DeviceClient.Create("jmdbecaiothub.azure-devices.net", new DeviceAuthenticationWithRegistrySymmetricKey(deviceId, "azUodaAxCumHKZ6CtvI2gCPcYkrJY8r11gkTiggNZ4Q="), TransportType.Mqtt),
 			};
 			jmdbecasensorToCloudMessage();
 		}

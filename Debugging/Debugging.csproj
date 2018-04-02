@@ -49,13 +49,13 @@
     <Compile Include="HomeController.cs">
       <DependentUpon>Devices5.tt</DependentUpon>
     </Compile>
+    <Compile Include="iotdevice.cs">
+      <DependentUpon>Devices5.tt</DependentUpon>
+    </Compile>
     <Compile Include="IoTHub.cs">
       <DependentUpon>Devices5.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RaspberryPi1.cs">
-      <DependentUpon>Devices5.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Dsl\GeneratedCode\IotDslSchema.xsd">
@@ -76,9 +76,6 @@
     <None Include="Cloud3.ps1">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Cloud3.tt</DependentUpon>
-    </None>
-    <None Include="DataAnalytics1.json">
       <DependentUpon>Cloud3.tt</DependentUpon>
     </None>
     <None Include="DeviceRegistration4.tt">
