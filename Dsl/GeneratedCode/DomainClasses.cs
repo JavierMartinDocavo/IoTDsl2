@@ -1353,6 +1353,36 @@ namespace Compañía.IotDsl
 			}
 		}
 		#endregion
+		#region DataAnalyticsInput opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of DataAnalyticsInput.
+		/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput.CloudService
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<DataAnalytics> DataAnalyticsInput
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<DataAnalytics>, DataAnalytics>(global::Compañía.IotDsl.DataAnalyticsReferencesInput.CloudServiceDomainRoleId);
+			}
+		}
+		#endregion
+		#region DataAnalyticsOutput opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of DataAnalyticsOutput.
+		/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput.CloudService
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<DataAnalytics> DataAnalyticsOutput
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<DataAnalytics>, DataAnalytics>(global::Compañía.IotDsl.DataAnalyticsReferencesOutput.CloudServiceDomainRoleId);
+			}
+		}
+		#endregion
 	}
 }
 namespace Compañía.IotDsl
@@ -1820,6 +1850,36 @@ namespace Compañía.IotDsl
 		public DataAnalytics(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
+		}
+		#endregion
+		#region Inputs opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Inputs.
+		/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput.DataAnalytics
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<CloudService> Inputs
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<CloudService>, CloudService>(global::Compañía.IotDsl.DataAnalyticsReferencesInput.DataAnalyticsDomainRoleId);
+			}
+		}
+		#endregion
+		#region Outputs opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of Outputs.
+		/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput.DataAnalytics
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<CloudService> Outputs
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<CloudService>, CloudService>(global::Compañía.IotDsl.DataAnalyticsReferencesOutput.DataAnalyticsDomainRoleId);
+			}
 		}
 		#endregion
 	}

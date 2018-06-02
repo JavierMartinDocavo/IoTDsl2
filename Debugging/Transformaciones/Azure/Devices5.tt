@@ -1,5 +1,5 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" lenguage="C#" hostspecific="True"#>
-<#@ IotDsl processor="IotDslDirectiveProcessor" requires="fileName='Test.IotDsl'" #>
+<#@ IotDsl processor="IotDslDirectiveProcessor" requires="fileName='../../Test.IotDsl'" #>
 <#@ include file="EF.utility.CS.ttinclude" #>
 <#
 var fileManager=EntityFrameworkTemplateFileManager.Create(this);

@@ -22,8 +22,10 @@ var data = [];
         var time = pi.date.split(',');
 		var temperature = pi.temperature;
 		var humidity = pi.humidity;
+		var pressure = pi.pressure;
+		var altitude = pi.altitude;
 
-        data.addRows([[[parseInt(time[0]), parseInt(time[1]), parseInt(time[2])], temperature,humidity]]);
+        data.addRows([[[parseInt(time[0]), parseInt(time[1]), parseInt(time[2])], temperature,humidity,pressure,altitude]]);
 
         var options = {
             height: 250,
@@ -31,7 +33,7 @@ var data = [];
                 title: 'Time'
             },
             vAxis: {
-                title: 'Temperature / Humidity',
+                title: 'Temperature / Humidity / Pressure / Altitude',
                 gridlines: { count: 22 } 
             }
         };
@@ -44,13 +46,15 @@ var data = [];
         data.addColumn('timeofday', 'Time');
 		data.addColumn('number','Temperature');
 		data.addColumn('number','Humidity');
+		data.addColumn('number','Pressure');
+		data.addColumn('number','Altitude');
         var options = {
             height: 250,
             hAxis: {
                 title: 'Time'
             },
             vAxis: {
-                title: 'Temperature / Humidity',
+                title: 'Temperature / Humidity / Pressure / Altitude',
                 gridlines: { count: 22 } 
             }
         };

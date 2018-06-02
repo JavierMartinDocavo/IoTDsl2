@@ -36,23 +36,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeviceRegistration4.cs">
+    <Compile Include="Transformaciones\Azure\casoestudiodispositivo.cs">
+      <DependentUpon>Devices5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transformaciones\Azure\DeviceRegistration4.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DeviceRegistration4.tt</DependentUpon>
     </Compile>
-    <Compile Include="Devices5.cs">
+    <Compile Include="Transformaciones\Azure\Devices5.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Devices5.tt</DependentUpon>
     </Compile>
-    <Compile Include="HomeController.cs">
+    <Compile Include="Transformaciones\Azure\HomeController.cs">
       <DependentUpon>Devices5.tt</DependentUpon>
     </Compile>
-    <Compile Include="iotdevice.cs">
-      <DependentUpon>Devices5.tt</DependentUpon>
-    </Compile>
-    <Compile Include="IoTHub.cs">
+    <Compile Include="Transformaciones\Azure\IoTHub.cs">
       <DependentUpon>Devices5.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,37 +63,37 @@
       <SubType>
       </SubType>
     </None>
-    <None Include="Cloud.ps1">
+    <None Include="Transformaciones\Azure\casoEstudioIoT.json">
+      <DependentUpon>Cloud2.tt</DependentUpon>
+    </None>
+    <None Include="Transformaciones\Azure\casoestudiomensajeria.json">
+      <DependentUpon>Cloud.tt</DependentUpon>
+    </None>
+    <None Include="Transformaciones\Azure\Cloud.ps1">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Cloud.tt</DependentUpon>
     </None>
-    <None Include="Cloud2.ps1">
+    <None Include="Transformaciones\Azure\Cloud2.ps1">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Cloud2.tt</DependentUpon>
     </None>
-    <None Include="Cloud3.ps1">
+    <None Include="Transformaciones\Azure\Cloud3.ps1">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Cloud3.tt</DependentUpon>
     </None>
-    <None Include="DeviceRegistration4.tt">
+    <None Include="Transformaciones\Azure\DeviceRegistration4.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DeviceRegistration4.cs</LastGenOutput>
     </None>
-    <None Include="Index.cshtml">
+    <None Include="Transformaciones\Azure\Index.cshtml">
       <DependentUpon>Devices5.tt</DependentUpon>
     </None>
     <None Include="IotDslReportVB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IotDslReportVB.txt</LastGenOutput>
-    </None>
-    <None Include="jmdbecaiothub.json">
-      <DependentUpon>Cloud2.tt</DependentUpon>
-    </None>
-    <None Include="jmdbecawebappservicebus.json">
-      <DependentUpon>Cloud.tt</DependentUpon>
     </None>
     <None Include="Sample.IotDsl" />
     <None Include="Sample.IotDsl.diagram">
@@ -110,19 +110,19 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Cloud.tt">
+    <Content Include="Transformaciones\Azure\Cloud.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cloud.ps1</LastGenOutput>
     </Content>
-    <Content Include="Cloud2.tt">
+    <Content Include="Transformaciones\Azure\Cloud2.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cloud2.ps1</LastGenOutput>
     </Content>
-    <Content Include="Cloud3.tt">
+    <Content Include="Transformaciones\Azure\Cloud3.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Cloud3.ps1</LastGenOutput>
     </Content>
-    <Content Include="Devices5.tt">
+    <Content Include="Transformaciones\Azure\Devices5.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Devices5.cs</LastGenOutput>
     </Content>

@@ -286,15 +286,9 @@ namespace Compañía.IotDsl
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
 		protected override DslDiagrams::ShapeElement CreateChildShape(DslModeling::ModelElement element)
 		{
-			if(element is global::Compañía.IotDsl.ApiREST)
-			{
-				global::Compañía.IotDsl.ApiRESTImage newShape = new global::Compañía.IotDsl.ApiRESTImage(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
 			if(element is global::Compañía.IotDsl.PhoneApp)
 			{
-				global::Compañía.IotDsl.PhoneAppImage newShape = new global::Compañía.IotDsl.PhoneAppImage(this.Partition);
+				global::Compañía.IotDsl.PhoneAppShape newShape = new global::Compañía.IotDsl.PhoneAppShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -304,21 +298,9 @@ namespace Compañía.IotDsl
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Compañía.IotDsl.SQLStorage)
+			if(element is global::Compañía.IotDsl.ApiREST)
 			{
-				global::Compañía.IotDsl.SQLStorageShape newShape = new global::Compañía.IotDsl.SQLStorageShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Compañía.IotDsl.DataAnalytics)
-			{
-				global::Compañía.IotDsl.DataAnalyticsShape newShape = new global::Compañía.IotDsl.DataAnalyticsShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Compañía.IotDsl.IoTCenter)
-			{
-				global::Compañía.IotDsl.IoTCenterShape newShape = new global::Compañía.IotDsl.IoTCenterShape(this.Partition);
+				global::Compañía.IotDsl.ApiRestShape newShape = new global::Compañía.IotDsl.ApiRestShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -334,9 +316,27 @@ namespace Compañía.IotDsl
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::Compañía.IotDsl.IoTCenter)
+			{
+				global::Compañía.IotDsl.IoTCenterShape newShape = new global::Compañía.IotDsl.IoTCenterShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::Compañía.IotDsl.MessageService)
 			{
 				global::Compañía.IotDsl.MessageServiceShape newShape = new global::Compañía.IotDsl.MessageServiceShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.DataAnalytics)
+			{
+				global::Compañía.IotDsl.DataAnalyticsShape newShape = new global::Compañía.IotDsl.DataAnalyticsShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.SQLStorage)
+			{
+				global::Compañía.IotDsl.SQLStorageShape newShape = new global::Compañía.IotDsl.SQLStorageShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -346,9 +346,43 @@ namespace Compañía.IotDsl
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Compañía.IotDsl.IoTCenterHasDevices)
+			if(element is global::Compañía.IotDsl.CloudService)
 			{
-				global::Compañía.IotDsl.DeviceToIoTCenter newShape = new global::Compañía.IotDsl.DeviceToIoTCenter(this.Partition);
+				global::Compañía.IotDsl.CloudServiceShape newShape = new global::Compañía.IotDsl.CloudServiceShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.Endpoint)
+			{
+				global::Compañía.IotDsl.EndpointPort newShape = new global::Compañía.IotDsl.EndpointPort(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.Device)
+			{
+				global::Compañía.IotDsl.DeviceShape newShape = new global::Compañía.IotDsl.DeviceShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.Sensor)
+			{
+				global::Compañía.IotDsl.SensorShape newShape = new global::Compañía.IotDsl.SensorShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.DataAnalyticsReferencesInput)
+			{
+				global::Compañía.IotDsl.DataAnalyticsInputConnector newShape = new global::Compañía.IotDsl.DataAnalyticsInputConnector(this.Partition);
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.AppServiceReferenciasMessageService)
+			{
+				global::Compañía.IotDsl.AppServiceToMessageConnection newShape = new global::Compañía.IotDsl.AppServiceToMessageConnection(this.Partition);
+				return newShape;
+			}
+			if(element is global::Compañía.IotDsl.EndpointConnectsCloudService)
+			{
+				global::Compañía.IotDsl.EndpointToCloudService newShape = new global::Compañía.IotDsl.EndpointToCloudService(this.Partition);
 				return newShape;
 			}
 			if(element is global::Compañía.IotDsl.DeviceReferenciasSensors)
@@ -356,9 +390,9 @@ namespace Compañía.IotDsl
 				global::Compañía.IotDsl.DeviceToSensorConnection newShape = new global::Compañía.IotDsl.DeviceToSensorConnection(this.Partition);
 				return newShape;
 			}
-			if(element is global::Compañía.IotDsl.EndpointConnectsCloudService)
+			if(element is global::Compañía.IotDsl.IoTCenterHasDevices)
 			{
-				global::Compañía.IotDsl.EndpointToCloudService newShape = new global::Compañía.IotDsl.EndpointToCloudService(this.Partition);
+				global::Compañía.IotDsl.DeviceToIoTCenter newShape = new global::Compañía.IotDsl.DeviceToIoTCenter(this.Partition);
 				return newShape;
 			}
 			if(element is global::Compañía.IotDsl.Graph)
@@ -373,33 +407,9 @@ namespace Compañía.IotDsl
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Compañía.IotDsl.Sensor)
+			if(element is global::Compañía.IotDsl.DataAnalyticsReferencesOutput)
 			{
-				global::Compañía.IotDsl.SensorShape newShape = new global::Compañía.IotDsl.SensorShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Compañía.IotDsl.Device)
-			{
-				global::Compañía.IotDsl.DeviceShape newShape = new global::Compañía.IotDsl.DeviceShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Compañía.IotDsl.Endpoint)
-			{
-				global::Compañía.IotDsl.EndpointPort newShape = new global::Compañía.IotDsl.EndpointPort(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Compañía.IotDsl.CloudService)
-			{
-				global::Compañía.IotDsl.CloudServiceShape newShape = new global::Compañía.IotDsl.CloudServiceShape(this.Partition);
-				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
-				return newShape;
-			}
-			if(element is global::Compañía.IotDsl.AppServiceReferenciasMessageService)
-			{
-				global::Compañía.IotDsl.AppServiceToMessageConnection newShape = new global::Compañía.IotDsl.AppServiceToMessageConnection(this.Partition);
+				global::Compañía.IotDsl.DataAnalyticsOutpurConnector newShape = new global::Compañía.IotDsl.DataAnalyticsOutpurConnector(this.Partition);
 				return newShape;
 			}
 			return base.CreateChildShape(element);
@@ -415,8 +425,6 @@ namespace Compañía.IotDsl
 			base.InitializeShapeFields(shapeFields);
 			global::Compañía.IotDsl.ResourceGroupShape.DecoratorsInitialized += ResourceGroupShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.AppServiceImage.DecoratorsInitialized += AppServiceImageDecoratorMap.OnDecoratorsInitialized;
-			global::Compañía.IotDsl.ApiRESTImage.DecoratorsInitialized += ApiRESTImageDecoratorMap.OnDecoratorsInitialized;
-			global::Compañía.IotDsl.PhoneAppImage.DecoratorsInitialized += PhoneAppImageDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.DeviceShape.DecoratorsInitialized += DeviceShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.IoTCenterShape.DecoratorsInitialized += IoTCenterShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.SensorShape.DecoratorsInitialized += SensorShapeDecoratorMap.OnDecoratorsInitialized;
@@ -425,6 +433,8 @@ namespace Compañía.IotDsl
 			global::Compañía.IotDsl.SQLStorageShape.DecoratorsInitialized += SQLStorageShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.NoSQLStorageShape.DecoratorsInitialized += NoSQLStorageShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.WebAppShape.DecoratorsInitialized += WebAppShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Compañía.IotDsl.ApiRestShape.DecoratorsInitialized += ApiRestShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Compañía.IotDsl.PhoneAppShape.DecoratorsInitialized += PhoneAppShapeDecoratorMap.OnDecoratorsInitialized;
 			global::Compañía.IotDsl.DeviceToIoTCenter.DecoratorsInitialized += DeviceToIoTCenterDecoratorMap.OnDecoratorsInitialized;
 		}
 		
@@ -453,42 +463,6 @@ namespace Compañía.IotDsl
 		{
 			/// <summary>
 			/// Event handler called when decorator initialization is complete for AppServiceImage.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.CloudService.NameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for ApiRESTImage.
-		/// </summary>
-		internal static partial class ApiRESTImageDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for ApiRESTImage.  Adds decorator mappings for this shape or connector.
-			/// </summary>
-			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
-			{
-				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
-				DslDiagrams::AssociatedPropertyInfo propertyInfo;
-				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.CloudService.NameDomainPropertyId);
-				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
-			}
-		}
-		
-		/// <summary>
-		/// Class containing decorator path traversal methods for PhoneAppImage.
-		/// </summary>
-		internal static partial class PhoneAppImageDecoratorMap
-		{
-			/// <summary>
-			/// Event handler called when decorator initialization is complete for PhoneAppImage.  Adds decorator mappings for this shape or connector.
 			/// </summary>
 			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
 			{
@@ -659,6 +633,45 @@ namespace Compañía.IotDsl
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.CloudService.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.CloudService.NameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for ApiRestShape.
+		/// </summary>
+		internal static partial class ApiRestShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for ApiRestShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.CloudService.NameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
+			}
+		}
+		
+		/// <summary>
+		/// Class containing decorator path traversal methods for PhoneAppShape.
+		/// </summary>
+		internal static partial class PhoneAppShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for PhoneAppShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
+				DslDiagrams::AssociatedPropertyInfo propertyInfo;
+				
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Compañía.IotDsl.CloudService.NameDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "Name").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
 		
@@ -685,6 +698,8 @@ namespace Compañía.IotDsl
 		#region Connect actions
 		private bool changingMouseAction;
 		private global::Compañía.IotDsl.EndpointtoCloudServiceConnectionConnectAction endpointtoCloudServiceConnectionConnectAction;
+		private global::Compañía.IotDsl.DataAnalyticsInputConnectionToolConnectAction dataAnalyticsInputConnectionToolConnectAction;
+		private global::Compañía.IotDsl.DataAnalyticsOutputConnectionConnectAction dataAnalyticsOutputConnectionConnectAction;
 		private global::Compañía.IotDsl.DeviceToSensorConnectionConnectAction deviceToSensorConnectionConnectAction;
 		private global::Compañía.IotDsl.IoTCenterToDeviceToolConnectAction ioTCenterToDeviceToolConnectAction;
 		/// <summary>
@@ -717,6 +732,24 @@ namespace Compañía.IotDsl
 						this.endpointtoCloudServiceConnectionConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
 					action = this.endpointtoCloudServiceConnectionConnectAction;
+				} 
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Compañía.IotDsl.IotDslToolboxHelper.DataAnalyticsInputConnectionToolFilterString))
+				{
+					if (this.dataAnalyticsInputConnectionToolConnectAction == null)
+					{
+						this.dataAnalyticsInputConnectionToolConnectAction = new global::Compañía.IotDsl.DataAnalyticsInputConnectionToolConnectAction(this);
+						this.dataAnalyticsInputConnectionToolConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.dataAnalyticsInputConnectionToolConnectAction;
+				} 
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Compañía.IotDsl.IotDslToolboxHelper.DataAnalyticsOutputConnectionFilterString))
+				{
+					if (this.dataAnalyticsOutputConnectionConnectAction == null)
+					{
+						this.dataAnalyticsOutputConnectionConnectAction = new global::Compañía.IotDsl.DataAnalyticsOutputConnectionConnectAction(this);
+						this.dataAnalyticsOutputConnectionConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.dataAnalyticsOutputConnectionConnectAction;
 				} 
 				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Compañía.IotDsl.IotDslToolboxHelper.DeviceToSensorConnectionFilterString))
 				{
@@ -798,6 +831,16 @@ namespace Compañía.IotDsl
 						this.endpointtoCloudServiceConnectionConnectAction.Dispose();
 						this.endpointtoCloudServiceConnectionConnectAction = null;
 					}
+					if(this.dataAnalyticsInputConnectionToolConnectAction != null)
+					{
+						this.dataAnalyticsInputConnectionToolConnectAction.Dispose();
+						this.dataAnalyticsInputConnectionToolConnectAction = null;
+					}
+					if(this.dataAnalyticsOutputConnectionConnectAction != null)
+					{
+						this.dataAnalyticsOutputConnectionConnectAction.Dispose();
+						this.dataAnalyticsOutputConnectionConnectAction = null;
+					}
 					if(this.deviceToSensorConnectionConnectAction != null)
 					{
 						this.deviceToSensorConnectionConnectAction.Dispose();
@@ -862,26 +905,28 @@ namespace Compañía.IotDsl
 		/// <summary>
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.ApiREST), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.PhoneApp), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.WebApp), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.MessageService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.ApiREST), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.NoSQLStorage), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.AppService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.LineGraph), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenter), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.MessageService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DataAnalytics), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.SQLStorage), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.NoSQLStorage), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.LineGraph), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.AppServiceReferenciasMessageService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenterHasDevices), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DeviceReferenciasSensors), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.EndpointConnectsCloudService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Graph), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.ResourceGroup), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DataAnalyticsReferencesInput), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Sensor), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Device), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Endpoint), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority + 1, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.CloudService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenterHasDevices), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.AppServiceReferenciasMessageService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.Graph), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DataAnalyticsReferencesOutput), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -897,10 +942,6 @@ namespace Compañía.IotDsl
 				{
 					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
 				} else
-				if(childElement is global::Compañía.IotDsl.ApiREST)
-				{
-					parentElement = GetParentForApiREST((global::Compañía.IotDsl.ApiREST)childElement);
-				} else
 				if(childElement is global::Compañía.IotDsl.PhoneApp)
 				{
 					parentElement = GetParentForPhoneApp((global::Compañía.IotDsl.PhoneApp)childElement);
@@ -909,21 +950,25 @@ namespace Compañía.IotDsl
 				{
 					parentElement = GetParentForWebApp((global::Compañía.IotDsl.WebApp)childElement);
 				} else
-				if(childElement is global::Compañía.IotDsl.MessageService)
+				if(childElement is global::Compañía.IotDsl.ApiREST)
 				{
-					parentElement = GetParentForMessageService((global::Compañía.IotDsl.MessageService)childElement);
+					parentElement = GetParentForApiREST((global::Compañía.IotDsl.ApiREST)childElement);
+				} else
+				if(childElement is global::Compañía.IotDsl.NoSQLStorage)
+				{
+					parentElement = GetParentForNoSQLStorage((global::Compañía.IotDsl.NoSQLStorage)childElement);
 				} else
 				if(childElement is global::Compañía.IotDsl.AppService)
 				{
 					parentElement = GetParentForAppService((global::Compañía.IotDsl.AppService)childElement);
 				} else
-				if(childElement is global::Compañía.IotDsl.LineGraph)
-				{
-					parentElement = GetParentForLineGraph((global::Compañía.IotDsl.LineGraph)childElement);
-				} else
 				if(childElement is global::Compañía.IotDsl.IoTCenter)
 				{
 					parentElement = GetParentForIoTCenter((global::Compañía.IotDsl.IoTCenter)childElement);
+				} else
+				if(childElement is global::Compañía.IotDsl.MessageService)
+				{
+					parentElement = GetParentForMessageService((global::Compañía.IotDsl.MessageService)childElement);
 				} else
 				if(childElement is global::Compañía.IotDsl.DataAnalytics)
 				{
@@ -933,13 +978,9 @@ namespace Compañía.IotDsl
 				{
 					parentElement = GetParentForSQLStorage((global::Compañía.IotDsl.SQLStorage)childElement);
 				} else
-				if(childElement is global::Compañía.IotDsl.NoSQLStorage)
+				if(childElement is global::Compañía.IotDsl.LineGraph)
 				{
-					parentElement = GetParentForNoSQLStorage((global::Compañía.IotDsl.NoSQLStorage)childElement);
-				} else
-				if(childElement is global::Compañía.IotDsl.Graph)
-				{
-					parentElement = GetParentForGraph((global::Compañía.IotDsl.Graph)childElement);
+					parentElement = GetParentForLineGraph((global::Compañía.IotDsl.LineGraph)childElement);
 				} else
 				if(childElement is global::Compañía.IotDsl.ResourceGroup)
 				{
@@ -960,6 +1001,10 @@ namespace Compañía.IotDsl
 				if(childElement is global::Compañía.IotDsl.CloudService)
 				{
 					parentElement = GetParentForCloudService((global::Compañía.IotDsl.CloudService)childElement);
+				} else
+				if(childElement is global::Compañía.IotDsl.Graph)
+				{
+					parentElement = GetParentForGraph((global::Compañía.IotDsl.Graph)childElement);
 				} else
 				{
 					parentElement = null;
@@ -1001,26 +1046,6 @@ namespace Compañía.IotDsl
 			{
 				// Segments 0 and 1
 				global::Compañía.IotDsl.IoTCenter result = root.IoTCenter;
-				if ( result == null ) return null;
-				return result;
-			}
-			public static global::Compañía.IotDsl.IoTDsl GetParentForApiREST( global::Compañía.IotDsl.CloudService root )
-			{
-				// Segments 0 and 1
-				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
-				if ( root2 == null ) return null;
-				// Segments 2 and 3
-				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
-				if ( result == null ) return null;
-				return result;
-			}
-			public static global::Compañía.IotDsl.IoTDsl GetParentForPhoneApp( global::Compañía.IotDsl.CloudService root )
-			{
-				// Segments 0 and 1
-				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
-				if ( root2 == null ) return null;
-				// Segments 2 and 3
-				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -1121,6 +1146,26 @@ namespace Compañía.IotDsl
 				if ( root4 == null ) return null;
 				// Segments 4 and 5
 				global::Compañía.IotDsl.IoTDsl result = root4.IoTDsl;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Compañía.IotDsl.IoTDsl GetParentForApiREST( global::Compañía.IotDsl.CloudService root )
+			{
+				// Segments 0 and 1
+				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Compañía.IotDsl.IoTDsl GetParentForPhoneApp( global::Compañía.IotDsl.CloudService root )
+			{
+				// Segments 0 and 1
+				global::Compañía.IotDsl.ResourceGroup root2 = root.ResourceGroup;
+				if ( root2 == null ) return null;
+				// Segments 2 and 3
+				global::Compañía.IotDsl.IoTDsl result = root2.IoTDsl;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -1442,16 +1487,6 @@ namespace Compañía.IotDsl
 					{
 						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.AppService.DomainClassId);
 					}
-					decorator = global::Compañía.IotDsl.ApiRESTImage.FindApiRESTImageDecorator("Name");
-					if(decorator != null)
-					{
-						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.ApiREST.DomainClassId);
-					}
-					decorator = global::Compañía.IotDsl.PhoneAppImage.FindPhoneAppImageDecorator("Name");
-					if(decorator != null)
-					{
-						decorator.UpdateDecoratorHostShapes(e.ModelElement, global::Compañía.IotDsl.PhoneApp.DomainClassId);
-					}
 				}
 				else if (e.DomainProperty.Id == global::Compañía.IotDsl.IoTCenterHasDevices.DeviceKeyDomainPropertyId)
 				{
@@ -1471,6 +1506,8 @@ namespace Compañía.IotDsl
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DeviceReferenciasSensors), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.IoTCenterHasDevices), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.AppServiceReferenciasMessageService), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DataAnalyticsReferencesInput), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Compañía.IotDsl.DataAnalyticsReferencesOutput), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

@@ -14,8 +14,8 @@ namespace IoTHubTempWebApp.Controllers
 {
     public class HomeController : Controller
     {
-		        private string connectionString = "Endpoint=sb://jmdbecawebappservicebus.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=W6xIC1/bOk6Gt7iOfOLzW6mZ5kCEM+abc3UTsQMhUVA=";
-        private string queueName = "jmdbecawebappservicebusqueue";
+		        private string connectionString = "Endpoint=sb://casoestudiomensajeria.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=icElKoecYVnXG9D1Nn0WJUdve6ngQvZXKzQXnGJoT8c=";
+        private string queueName = "casoestudiomensajeriaqueue";
         private IHubContext _hubContext;
 
         public HomeController()

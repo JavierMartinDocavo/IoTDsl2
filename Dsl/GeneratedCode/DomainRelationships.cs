@@ -2726,3 +2726,443 @@ namespace Compañía.IotDsl
 		#endregion
 	}
 }
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainRelationship DataAnalyticsReferencesInput
+	/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.DataAnalyticsReferencesInput.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.DataAnalyticsReferencesInput.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("293908a3-223e-40f8-84df-65206e5dd082")]
+	public partial class DataAnalyticsReferencesInput : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// DataAnalyticsReferencesInput domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x293908a3, 0x223e, 0x40f8, 0x84, 0xdf, 0x65, 0x20, 0x6e, 0x5d, 0xd0, 0x82);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a DataAnalyticsReferencesInput link in the same Partition as the given DataAnalytics
+		/// </summary>
+		/// <param name="source">DataAnalytics to use as the source of the relationship.</param>
+		/// <param name="target">CloudService to use as the target of the relationship.</param>
+		public DataAnalyticsReferencesInput(DataAnalytics source, CloudService target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DataAnalyticsReferencesInput.DataAnalyticsDomainRoleId, source), new DslModeling::RoleAssignment(DataAnalyticsReferencesInput.CloudServiceDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataAnalyticsReferencesInput(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataAnalyticsReferencesInput(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataAnalyticsReferencesInput(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataAnalyticsReferencesInput(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region DataAnalytics domain role code
+		
+		/// <summary>
+		/// DataAnalytics domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DataAnalyticsDomainRoleId = new global::System.Guid(0xb5b2b1cf, 0xfd11, 0x4e1f, 0x92, 0xc9, 0xf3, 0xd8, 0x0a, 0x63, 0x7e, 0x59);
+		
+		/// <summary>
+		/// DomainRole DataAnalytics
+		/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput.DataAnalytics
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.DataAnalyticsReferencesInput/DataAnalytics.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.DataAnalyticsReferencesInput/DataAnalytics.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Inputs", PropertyDisplayNameKey="Compañía.IotDsl.DataAnalyticsReferencesInput/DataAnalytics.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("b5b2b1cf-fd11-4e1f-92c9-f3d80a637e59")]
+		public virtual DataAnalytics DataAnalytics
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (DataAnalytics)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataAnalyticsDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataAnalyticsDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access DataAnalyticsInput of a CloudService
+		/// <summary>
+		/// Gets a list of DataAnalyticsInput.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<DataAnalytics> GetDataAnalyticsInput(CloudService element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<DataAnalytics>, DataAnalytics>(element, CloudServiceDomainRoleId);
+		}
+		#endregion
+		#region CloudService domain role code
+		
+		/// <summary>
+		/// CloudService domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid CloudServiceDomainRoleId = new global::System.Guid(0xf5cbb2d2, 0x7a6f, 0x41cc, 0x86, 0xd1, 0xcf, 0x41, 0xd9, 0x41, 0x60, 0x4b);
+		
+		/// <summary>
+		/// DomainRole CloudService
+		/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput.CloudService
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.DataAnalyticsReferencesInput/CloudService.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.DataAnalyticsReferencesInput/CloudService.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DataAnalyticsInput", PropertyDisplayNameKey="Compañía.IotDsl.DataAnalyticsReferencesInput/CloudService.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("f5cbb2d2-7a6f-41cc-86d1-cf41d941604b")]
+		public virtual CloudService CloudService
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (CloudService)DslModeling::DomainRoleInfo.GetRolePlayer(this, CloudServiceDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, CloudServiceDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Inputs of a DataAnalytics
+		/// <summary>
+		/// Gets a list of Inputs.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<CloudService> GetInputs(DataAnalytics element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<CloudService>, CloudService>(element, DataAnalyticsDomainRoleId);
+		}
+		#endregion
+		#region DataAnalytics link accessor
+		/// <summary>
+		/// Get the list of DataAnalyticsReferencesInput links to a DataAnalytics.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.DataAnalyticsReferencesInput> GetLinksToInputs ( global::Compañía.IotDsl.DataAnalytics dataAnalyticsInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.DataAnalyticsReferencesInput>(dataAnalyticsInstance, global::Compañía.IotDsl.DataAnalyticsReferencesInput.DataAnalyticsDomainRoleId);
+		}
+		#endregion
+		#region CloudService link accessor
+		/// <summary>
+		/// Get the list of DataAnalyticsReferencesInput links to a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.DataAnalyticsReferencesInput> GetLinksToDataAnalyticsInput ( global::Compañía.IotDsl.CloudService cloudServiceInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.DataAnalyticsReferencesInput>(cloudServiceInstance, global::Compañía.IotDsl.DataAnalyticsReferencesInput.CloudServiceDomainRoleId);
+		}
+		#endregion
+		#region DataAnalyticsReferencesInput instance accessors
+		
+		/// <summary>
+		/// Get any DataAnalyticsReferencesInput links between a given DataAnalytics and a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.DataAnalyticsReferencesInput> GetLinks( global::Compañía.IotDsl.DataAnalytics source, global::Compañía.IotDsl.CloudService target )
+		{
+			global::System.Collections.Generic.List<global::Compañía.IotDsl.DataAnalyticsReferencesInput> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.DataAnalyticsReferencesInput>();
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.DataAnalyticsReferencesInput> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.DataAnalyticsReferencesInput>(source, global::Compañía.IotDsl.DataAnalyticsReferencesInput.DataAnalyticsDomainRoleId);
+			foreach ( global::Compañía.IotDsl.DataAnalyticsReferencesInput link in links )
+			{
+				if ( target.Equals(link.CloudService) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one DataAnalyticsReferencesInput link between a given DataAnalyticsand a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.DataAnalyticsReferencesInput GetLink( global::Compañía.IotDsl.DataAnalytics source, global::Compañía.IotDsl.CloudService target )
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.DataAnalyticsReferencesInput> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.DataAnalyticsReferencesInput>(source, global::Compañía.IotDsl.DataAnalyticsReferencesInput.DataAnalyticsDomainRoleId);
+			foreach ( global::Compañía.IotDsl.DataAnalyticsReferencesInput link in links )
+			{
+				if ( target.Equals(link.CloudService) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Compañía.IotDsl
+{
+	/// <summary>
+	/// DomainRelationship DataAnalyticsReferencesOutput
+	/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput
+	/// </summary>
+	[DslDesign::DisplayNameResource("Compañía.IotDsl.DataAnalyticsReferencesOutput.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Compañía.IotDsl.DataAnalyticsReferencesOutput.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Compañía.IotDsl.IotDslDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("bed4aa25-792f-4632-ae99-44995546c688")]
+	public partial class DataAnalyticsReferencesOutput : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// DataAnalyticsReferencesOutput domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xbed4aa25, 0x792f, 0x4632, 0xae, 0x99, 0x44, 0x99, 0x55, 0x46, 0xc6, 0x88);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a DataAnalyticsReferencesOutput link in the same Partition as the given DataAnalytics
+		/// </summary>
+		/// <param name="source">DataAnalytics to use as the source of the relationship.</param>
+		/// <param name="target">CloudService to use as the target of the relationship.</param>
+		public DataAnalyticsReferencesOutput(DataAnalytics source, CloudService target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(DataAnalyticsReferencesOutput.DataAnalyticsDomainRoleId, source), new DslModeling::RoleAssignment(DataAnalyticsReferencesOutput.CloudServiceDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataAnalyticsReferencesOutput(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataAnalyticsReferencesOutput(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public DataAnalyticsReferencesOutput(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public DataAnalyticsReferencesOutput(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region DataAnalytics domain role code
+		
+		/// <summary>
+		/// DataAnalytics domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid DataAnalyticsDomainRoleId = new global::System.Guid(0x863f6655, 0x518f, 0x412d, 0x83, 0xef, 0x23, 0x81, 0x34, 0xa8, 0xf4, 0x61);
+		
+		/// <summary>
+		/// DomainRole DataAnalytics
+		/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput.DataAnalytics
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.DataAnalyticsReferencesOutput/DataAnalytics.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.DataAnalyticsReferencesOutput/DataAnalytics.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Outputs", PropertyDisplayNameKey="Compañía.IotDsl.DataAnalyticsReferencesOutput/DataAnalytics.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("863f6655-518f-412d-83ef-238134a8f461")]
+		public virtual DataAnalytics DataAnalytics
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (DataAnalytics)DslModeling::DomainRoleInfo.GetRolePlayer(this, DataAnalyticsDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, DataAnalyticsDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access DataAnalyticsOutput of a CloudService
+		/// <summary>
+		/// Gets a list of DataAnalyticsOutput.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<DataAnalytics> GetDataAnalyticsOutput(CloudService element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<DataAnalytics>, DataAnalytics>(element, CloudServiceDomainRoleId);
+		}
+		#endregion
+		#region CloudService domain role code
+		
+		/// <summary>
+		/// CloudService domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid CloudServiceDomainRoleId = new global::System.Guid(0x2b2f03d7, 0xea2c, 0x48c2, 0xbc, 0xce, 0xd4, 0x23, 0xf3, 0x17, 0x0a, 0x37);
+		
+		/// <summary>
+		/// DomainRole CloudService
+		/// Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput.CloudService
+		/// </summary>
+		[DslDesign::DisplayNameResource("Compañía.IotDsl.DataAnalyticsReferencesOutput/CloudService.DisplayName", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Compañía.IotDsl.DataAnalyticsReferencesOutput/CloudService.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "DataAnalyticsOutput", PropertyDisplayNameKey="Compañía.IotDsl.DataAnalyticsReferencesOutput/CloudService.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("2b2f03d7-ea2c-48c2-bcce-d423f3170a37")]
+		public virtual CloudService CloudService
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (CloudService)DslModeling::DomainRoleInfo.GetRolePlayer(this, CloudServiceDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, CloudServiceDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access Outputs of a DataAnalytics
+		/// <summary>
+		/// Gets a list of Outputs.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<CloudService> GetOutputs(DataAnalytics element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<CloudService>, CloudService>(element, DataAnalyticsDomainRoleId);
+		}
+		#endregion
+		#region DataAnalytics link accessor
+		/// <summary>
+		/// Get the list of DataAnalyticsReferencesOutput links to a DataAnalytics.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.DataAnalyticsReferencesOutput> GetLinksToOutputs ( global::Compañía.IotDsl.DataAnalytics dataAnalyticsInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.DataAnalyticsReferencesOutput>(dataAnalyticsInstance, global::Compañía.IotDsl.DataAnalyticsReferencesOutput.DataAnalyticsDomainRoleId);
+		}
+		#endregion
+		#region CloudService link accessor
+		/// <summary>
+		/// Get the list of DataAnalyticsReferencesOutput links to a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.DataAnalyticsReferencesOutput> GetLinksToDataAnalyticsOutput ( global::Compañía.IotDsl.CloudService cloudServiceInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.DataAnalyticsReferencesOutput>(cloudServiceInstance, global::Compañía.IotDsl.DataAnalyticsReferencesOutput.CloudServiceDomainRoleId);
+		}
+		#endregion
+		#region DataAnalyticsReferencesOutput instance accessors
+		
+		/// <summary>
+		/// Get any DataAnalyticsReferencesOutput links between a given DataAnalytics and a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Compañía.IotDsl.DataAnalyticsReferencesOutput> GetLinks( global::Compañía.IotDsl.DataAnalytics source, global::Compañía.IotDsl.CloudService target )
+		{
+			global::System.Collections.Generic.List<global::Compañía.IotDsl.DataAnalyticsReferencesOutput> outLinks = new global::System.Collections.Generic.List<global::Compañía.IotDsl.DataAnalyticsReferencesOutput>();
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.DataAnalyticsReferencesOutput> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.DataAnalyticsReferencesOutput>(source, global::Compañía.IotDsl.DataAnalyticsReferencesOutput.DataAnalyticsDomainRoleId);
+			foreach ( global::Compañía.IotDsl.DataAnalyticsReferencesOutput link in links )
+			{
+				if ( target.Equals(link.CloudService) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one DataAnalyticsReferencesOutput link between a given DataAnalyticsand a CloudService.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Compañía.IotDsl.DataAnalyticsReferencesOutput GetLink( global::Compañía.IotDsl.DataAnalytics source, global::Compañía.IotDsl.CloudService target )
+		{
+			global::System.Collections.Generic.IList<global::Compañía.IotDsl.DataAnalyticsReferencesOutput> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Compañía.IotDsl.DataAnalyticsReferencesOutput>(source, global::Compañía.IotDsl.DataAnalyticsReferencesOutput.DataAnalyticsDomainRoleId);
+			foreach ( global::Compañía.IotDsl.DataAnalyticsReferencesOutput link in links )
+			{
+				if ( target.Equals(link.CloudService) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}

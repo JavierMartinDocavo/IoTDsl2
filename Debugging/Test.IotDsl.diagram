@@ -3,43 +3,36 @@
   <exampleModelMoniker Id="0eaa8724-332b-42c3-886f-84ab975e1103" />
   <nestedChildShapes>
     <resourceGroupShape Id="bf43f751-f09e-4fd8-906c-c9f53d812002" absoluteBounds="0.5, 0.5, 8, 4">
-      <monikerGrupoDeRecursos name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup" />
+      <monikerGrupoDeRecursos name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup " />
     </resourceGroupShape>
     <ioTCenterShape Id="63d079ee-af65-4761-85fe-b5a17cf9bd0e" absoluteBounds="1, 1.125, 1.5, 0.625">
-      <monikerIotHub name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup/jmdbecaiothub" />
+      <monikerIotHub name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup /casoEstudioIoT" />
       <relativeChildShapes>
         <endpointPort Id="0f9bb21d-fb6a-4bb4-855a-6e53f65e2fda" absoluteBounds="2.09375, 1.625, 0.25, 0.25">
           <monikerEndpoints Id="3ad0990a-b660-40f7-b7b4-ba6e7ce8248a" />
         </endpointPort>
       </relativeChildShapes>
     </ioTCenterShape>
-    <webAppShape Id="7924d3f1-f540-492a-b23f-e50b329bb252" absoluteBounds="5.125, 1.75, 2.5, 2">
-      <monikerWebApp name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup/jmdbecawebapp" />
+    <webAppShape Id="7924d3f1-f540-492a-b23f-e50b329bb252" absoluteBounds="5.125, 1.75, 2.5, 2.25">
+      <monikerWebApp name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup /casoestudiowebapp" />
     </webAppShape>
     <messageServiceShape Id="fe6cc28b-7014-409d-9920-0d169e392a40" absoluteBounds="2.5, 2.75, 2, 0.5">
-      <monikerServiceBus name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup/jmdbecawebappservicebus" />
+      <monikerServiceBus name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup /casoestudiomensajeria" />
     </messageServiceShape>
-    <appServiceToMessageConnection Id="ed31dcfc-2236-461c-a10c-92e2be6c4153" edgePoints="[(5.125 : 3); (4.5 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <appServiceToMessageConnection Id="ed31dcfc-2236-461c-a10c-92e2be6c4153" edgePoints="[(5.125 : 3); (4.5 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <monikerAppServiceReferenciasMessageService Id="dbf5a178-1e48-4662-b74a-fdd9e9a85218" />
       <nodes>
         <monikerWebAppShape Id="7924d3f1-f540-492a-b23f-e50b329bb252" />
         <monikerMessageServiceShape Id="fe6cc28b-7014-409d-9920-0d169e392a40" />
       </nodes>
     </appServiceToMessageConnection>
-    <sensorShape Id="ae27eb86-63f3-4389-98b5-11233e546803" absoluteBounds="4.375, 5, 1.5, 1">
+    <sensorShape Id="ae27eb86-63f3-4389-98b5-11233e546803" absoluteBounds="5.125, 5.5, 1.5, 1">
       <monikerBME280 Id="94eb53bd-24ca-42f2-bcb0-97f6bcd32cc3" />
     </sensorShape>
-    <deviceShape Id="6fa3abe4-2093-4e3b-bf2c-b284bdf431d0" absoluteBounds="1.25, 4.75, 1.5, 1">
-      <monikerRaspberryPi deviceId="/0eaa8724-332b-42c3-886f-84ab975e1103/iotdevice" />
+    <deviceShape Id="6fa3abe4-2093-4e3b-bf2c-b284bdf431d0" absoluteBounds="1, 5.5, 1.875, 1">
+      <monikerRaspberryPi deviceId="/0eaa8724-332b-42c3-886f-84ab975e1103/casoestudiodispositivo" />
     </deviceShape>
-    <deviceToSensorConnection Id="7753ba00-b28d-431c-a63d-8b87674e0dca" edgePoints="[(2.75 : 5.375); (4.375 : 5.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <monikerDeviceReferenciasSensor Id="f5cd4e91-dd1a-467a-b468-f831325ac924" />
-      <nodes>
-        <monikerDeviceShape Id="6fa3abe4-2093-4e3b-bf2c-b284bdf431d0" />
-        <monikerSensorShape Id="ae27eb86-63f3-4389-98b5-11233e546803" />
-      </nodes>
-    </deviceToSensorConnection>
-    <deviceToIoTCenter Id="6ff41ad3-35bf-46ad-94b3-e0527f7bb672" edgePoints="[(1.671875 : 1.75); (1.671875 : 4.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <deviceToIoTCenter Id="6ff41ad3-35bf-46ad-94b3-e0527f7bb672" edgePoints="[(1.75 : 1.75); (1.75 : 5.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <monikerIoTCenterReferenciasDevice Id="1a516e9e-767e-4893-9658-9a6d1e6252a9" />
       <relativeChildShapes />
       <nodes>
@@ -54,11 +47,18 @@
         <monikerMessageServiceShape Id="fe6cc28b-7014-409d-9920-0d169e392a40" />
       </nodes>
     </endpointToCloudService>
-    <lineGrapghShape Id="37dea371-79fc-4adf-a60c-0dcf4c9d1a0d" absoluteBounds="5.25, 2.25, 1, 1.2439925130208329">
+    <lineGrapghShape Id="37dea371-79fc-4adf-a60c-0dcf4c9d1a0d" absoluteBounds="5.25, 2.25, 1, 1.6285953776041664">
       <monikerLineGraph Id="7063d148-ac95-4183-9a66-58d983a61405" />
       <nestedChildShapes>
-        <elementListCompartment Id="ce5cfba0-49a2-44a7-bbdd-ae9179d37fd8" absoluteBounds="5.265, 2.76, 0.97, 0.63399251302083326" name="Variables" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ce5cfba0-49a2-44a7-bbdd-ae9179d37fd8" absoluteBounds="5.265, 2.76, 0.97, 1.0185953776041665" name="Variables" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </lineGrapghShape>
+    <deviceToSensorConnection Id="00708a47-0433-4a01-b4eb-51b4bae12747" edgePoints="[(2.875 : 6); (5.125 : 6)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <monikerDeviceReferenciasSensor Id="e0b3335a-3641-43f9-a32a-acab5d644fc9" />
+      <nodes>
+        <monikerDeviceShape Id="6fa3abe4-2093-4e3b-bf2c-b284bdf431d0" />
+        <monikerSensorShape Id="ae27eb86-63f3-4389-98b5-11233e546803" />
+      </nodes>
+    </deviceToSensorConnection>
   </nestedChildShapes>
 </iotDslDiagram>

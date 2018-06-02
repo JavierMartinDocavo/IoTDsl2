@@ -805,6 +805,70 @@
     <value>Graph</value>
     <comment>PropertyDisplayName for DomainRole &apos;Variable&apos; on DomainRelationship &apos;GraphHasVariables&apos;</comment>
   </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesInput.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput</value>
+    <comment>Description for DomainClass &apos;DataAnalyticsReferencesInput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesInput.DisplayName" xml:space="preserve">
+    <value>Data Analytics References Input</value>
+    <comment>DisplayName for DomainClass &apos;DataAnalyticsReferencesInput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesInput/DataAnalytics.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput.DataAnalytics</value>
+    <comment>Description for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;DataAnalyticsReferencesInput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesInput/DataAnalytics.DisplayName" xml:space="preserve">
+    <value>Data Analytics</value>
+    <comment>DisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;DataAnalyticsReferencesInput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesInput/DataAnalytics.PropertyDisplayName" xml:space="preserve">
+    <value>Inputs</value>
+    <comment>PropertyDisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;DataAnalyticsReferencesInput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesInput/CloudService.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput.CloudService</value>
+    <comment>Description for DomainRole &apos;CloudService&apos; on DomainRelationship &apos;DataAnalyticsReferencesInput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesInput/CloudService.DisplayName" xml:space="preserve">
+    <value>Cloud Service</value>
+    <comment>DisplayName for DomainRole &apos;CloudService&apos; on DomainRelationship &apos;DataAnalyticsReferencesInput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesInput/CloudService.PropertyDisplayName" xml:space="preserve">
+    <value>Data Analytics Input</value>
+    <comment>PropertyDisplayName for DomainRole &apos;CloudService&apos; on DomainRelationship &apos;DataAnalyticsReferencesInput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesOutput.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput</value>
+    <comment>Description for DomainClass &apos;DataAnalyticsReferencesOutput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesOutput.DisplayName" xml:space="preserve">
+    <value>Data Analytics References Output</value>
+    <comment>DisplayName for DomainClass &apos;DataAnalyticsReferencesOutput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesOutput/DataAnalytics.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput.DataAnalytics</value>
+    <comment>Description for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;DataAnalyticsReferencesOutput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesOutput/DataAnalytics.DisplayName" xml:space="preserve">
+    <value>Data Analytics</value>
+    <comment>DisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;DataAnalyticsReferencesOutput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesOutput/DataAnalytics.PropertyDisplayName" xml:space="preserve">
+    <value>Outputs</value>
+    <comment>PropertyDisplayName for DomainRole &apos;DataAnalytics&apos; on DomainRelationship &apos;DataAnalyticsReferencesOutput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesOutput/CloudService.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput.CloudService</value>
+    <comment>Description for DomainRole &apos;CloudService&apos; on DomainRelationship &apos;DataAnalyticsReferencesOutput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesOutput/CloudService.DisplayName" xml:space="preserve">
+    <value>Cloud Service</value>
+    <comment>DisplayName for DomainRole &apos;CloudService&apos; on DomainRelationship &apos;DataAnalyticsReferencesOutput&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsReferencesOutput/CloudService.PropertyDisplayName" xml:space="preserve">
+    <value>Data Analytics Output</value>
+    <comment>PropertyDisplayName for DomainRole &apos;CloudService&apos; on DomainRelationship &apos;DataAnalyticsReferencesOutput&apos;</comment>
+  </data>
   <data name="Compañía.IotDsl.Location/westeurope.DisplayName" xml:space="preserve">
     <value>westeurope</value>
     <comment>Display name for EnumerationLiteral &apos;westeurope&apos; on DomainEnumeration &apos;Location&apos;</comment>
@@ -916,30 +980,6 @@
   <data name="Compañía.IotDsl.EndpointPort.DisplayName" xml:space="preserve">
     <value>Endpoint Port</value>
     <comment>DisplayName for DomainClass &apos;EndpointPort&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.ApiRESTImage.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.ApiRESTImage</value>
-    <comment>Description for DomainClass &apos;ApiRESTImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.ApiRESTImage.DisplayName" xml:space="preserve">
-    <value>Api RESTImage</value>
-    <comment>DisplayName for DomainClass &apos;ApiRESTImage&apos;</comment>
-  </data>
-  <data name="ApiRESTImageNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
-  </data>
-  <data name="Compañía.IotDsl.PhoneAppImage.Description" xml:space="preserve">
-    <value>Descripción de Compañía.IotDsl.PhoneAppImage</value>
-    <comment>Description for DomainClass &apos;PhoneAppImage&apos;</comment>
-  </data>
-  <data name="Compañía.IotDsl.PhoneAppImage.DisplayName" xml:space="preserve">
-    <value>Phone App Image</value>
-    <comment>DisplayName for DomainClass &apos;PhoneAppImage&apos;</comment>
-  </data>
-  <data name="PhoneAppImageNameDefaultText" xml:space="preserve">
-    <value>Name</value>
-    <comment>Text decorator default text</comment>
   </data>
   <data name="Compañía.IotDsl.DeviceShape.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.DeviceShape</value>
@@ -1105,6 +1145,30 @@
     <value>Line Grapgh Shape</value>
     <comment>DisplayName for DomainClass &apos;LineGrapghShape&apos;</comment>
   </data>
+  <data name="Compañía.IotDsl.ApiRestShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.ApiRestShape</value>
+    <comment>Description for DomainClass &apos;ApiRestShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.ApiRestShape.DisplayName" xml:space="preserve">
+    <value>Api Rest Shape</value>
+    <comment>DisplayName for DomainClass &apos;ApiRestShape&apos;</comment>
+  </data>
+  <data name="ApiRestShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Compañía.IotDsl.PhoneAppShape.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.PhoneAppShape</value>
+    <comment>Description for DomainClass &apos;PhoneAppShape&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.PhoneAppShape.DisplayName" xml:space="preserve">
+    <value>Phone App Shape</value>
+    <comment>DisplayName for DomainClass &apos;PhoneAppShape&apos;</comment>
+  </data>
+  <data name="PhoneAppShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
   <data name="Compañía.IotDsl.EndpointToCloudService.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.EndpointToCloudService</value>
     <comment>Description for DomainClass &apos;EndpointToCloudService&apos;</comment>
@@ -1141,6 +1205,22 @@
     <value>App Service To Message Connection</value>
     <comment>DisplayName for DomainClass &apos;AppServiceToMessageConnection&apos;</comment>
   </data>
+  <data name="Compañía.IotDsl.DataAnalyticsInputConnector.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsInputConnector</value>
+    <comment>Description for DomainClass &apos;DataAnalyticsInputConnector&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsInputConnector.DisplayName" xml:space="preserve">
+    <value>Data Analytics Input Connector</value>
+    <comment>DisplayName for DomainClass &apos;DataAnalyticsInputConnector&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsOutpurConnector.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.DataAnalyticsOutpurConnector</value>
+    <comment>Description for DomainClass &apos;DataAnalyticsOutpurConnector&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.DataAnalyticsOutpurConnector.DisplayName" xml:space="preserve">
+    <value>Data Analytics Outpur Connector</value>
+    <comment>DisplayName for DomainClass &apos;DataAnalyticsOutpurConnector&apos;</comment>
+  </data>
   <data name="FormatList" xml:space="preserve">
     <value>IotDsl (*.IotDsl)|*.IotDsl</value>
     <comment>A list of file format specifiers for the Save dialog box</comment>
@@ -1166,7 +1246,7 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="ResourceGroupToolToolboxTooltip" xml:space="preserve">
-    <value>Resource Group Tool</value>
+    <value>Adds a resource group to the model</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="IoTCenterToolToolboxItem" xml:space="preserve">
@@ -1174,7 +1254,7 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="IoTCenterToolToolboxTooltip" xml:space="preserve">
-    <value>IoT Center Tool</value>
+    <value>Adds an IoT Center to the model</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="DataAnalyticsToolToolboxItem" xml:space="preserve">
@@ -1182,7 +1262,7 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="DataAnalyticsToolToolboxTooltip" xml:space="preserve">
-    <value>Data Analytics Tool</value>
+    <value>Adds a data analytics resource to the model</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="NoSQLStorageToolToolboxItem" xml:space="preserve">
@@ -1190,7 +1270,7 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="NoSQLStorageToolToolboxTooltip" xml:space="preserve">
-    <value>No SQLStorage Tool</value>
+    <value>Adds a NoSQL Storage to the model</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="EndpointToolToolboxItem" xml:space="preserve">
@@ -1198,7 +1278,7 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="EndpointToolToolboxTooltip" xml:space="preserve">
-    <value>Endpoint Tool</value>
+    <value>Adds an endpoint to and IoT Center</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="SQLStorageToolToolboxItem" xml:space="preserve">
@@ -1206,7 +1286,7 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="SQLStorageToolToolboxTooltip" xml:space="preserve">
-    <value>SQLStorage Tool</value>
+    <value>Adds a SQLStorage resource to the model</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="EndpointtoCloudServiceConnectionToolboxItem" xml:space="preserve">
@@ -1214,7 +1294,7 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="EndpointtoCloudServiceConnectionToolboxTooltip" xml:space="preserve">
-    <value>Endpointto Cloud Service Connection</value>
+    <value>Connects an endpoint to a cloud service</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="AppServiceToolToolboxItem" xml:space="preserve">
@@ -1222,15 +1302,15 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="AppServiceToolToolboxTooltip" xml:space="preserve">
-    <value>App Service Tool</value>
+    <value>Adds an app service to the model</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="ServiceBusToolToolboxItem" xml:space="preserve">
-    <value>ServiceBusTool</value>
+    <value>Message Service</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="ServiceBusToolToolboxTooltip" xml:space="preserve">
-    <value>Service Bus Tool</value>
+    <value>Adds a Message Service to the model</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="WebAppToolToolboxItem" xml:space="preserve">
@@ -1238,7 +1318,7 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="WebAppToolToolboxTooltip" xml:space="preserve">
-    <value>Web Application to visualize data</value>
+    <value>Adds a Web Application to visualize data</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="ApiRESTToolToolboxItem" xml:space="preserve">
@@ -1262,7 +1342,23 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="LineGraphToolToolboxTooltip" xml:space="preserve">
-    <value>Line Graph</value>
+    <value>Adds a Line Graph to a web aplication</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="DataAnalyticsInputConnectionToolToolboxItem" xml:space="preserve">
+    <value>Connect Data Analytics with input</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="DataAnalyticsInputConnectionToolToolboxTooltip" xml:space="preserve">
+    <value>Creates connection between DataAnalytics and a data input</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="DataAnalyticsOutputConnectionToolboxItem" xml:space="preserve">
+    <value>Connects Data Analitics with output</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="DataAnalyticsOutputConnectionToolboxTooltip" xml:space="preserve">
+    <value>Data Analytics Output Connection</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="DeviceToolboxTab" xml:space="preserve">
@@ -1274,15 +1370,15 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="RaspberryPiToolToolboxTooltip" xml:space="preserve">
-    <value>Raspberry Pi Tool</value>
+    <value>Adds a raspberryPi to the model</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="DeviceToSensorConnectionToolboxItem" xml:space="preserve">
-    <value>DeviceToSensorConnection</value>
+    <value>Device To Sensor Connection</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="DeviceToSensorConnectionToolboxTooltip" xml:space="preserve">
-    <value>Device To Sensor Connection</value>
+    <value>Connects a device to a sensor</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="bme280ToolboxItem" xml:space="preserve">
@@ -1290,15 +1386,15 @@
     <comment>Toolbox item name</comment>
   </data>
   <data name="bme280ToolboxTooltip" xml:space="preserve">
-    <value>Bme280</value>
+    <value>Adds a BME280 sensor to the model</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="IoTCenterToDeviceToolToolboxItem" xml:space="preserve">
-    <value>IoTCenterToDeviceTool</value>
+    <value>IoT center To Device Connection</value>
     <comment>Toolbox item name</comment>
   </data>
   <data name="IoTCenterToDeviceToolToolboxTooltip" xml:space="preserve">
-    <value>Io TCenter To Device Tool</value>
+    <value>Connects an IoT Center to a device</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -1434,14 +1530,6 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\InPortImage.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
-  <data name="ApiRESTImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\dashboard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>ApiRESTImage shape image</comment>
-  </data>
-  <data name="PhoneAppImageImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\pngexports\phoneapp.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-    <comment>PhoneAppImage shape image</comment>
-  </data>
   <data name="DeviceShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\pngexports\raspberrypi.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
@@ -1478,20 +1566,28 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\pngexports\linegrapgh.svg.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
+  <data name="ApiRestShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\api.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="PhoneAppShapeIconDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\pngexports\phoneapp.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
   <data name="ResourceGroupToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="IoTCenterToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\iotcenter.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="DataAnalyticsToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\analytics.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="NoSQLStorageToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\drives.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="EndpointToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
@@ -1499,7 +1595,7 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="SQLStorageToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\database.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="EndpointtoCloudServiceConnectionToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
@@ -1507,27 +1603,35 @@ A DomainClass can be serialized as a moniker only if
     <comment>Toolbox item image</comment>
   </data>
   <data name="AppServiceToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\dashboard.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="ServiceBusToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\messageservice.BMP;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="WebAppToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\dashboard.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="ApiRESTToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\api.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="PhoneAppToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\phoneapp.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="LineGraphToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
-    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\bmpexports\linegraph.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="DataAnalyticsInputConnectionToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="DataAnalyticsOutputConnectionToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
   <data name="RaspberryPiToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">

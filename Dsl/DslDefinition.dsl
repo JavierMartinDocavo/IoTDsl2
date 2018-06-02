@@ -443,6 +443,38 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
+    <DomainRelationship Id="293908a3-223e-40f8-84df-65206e5dd082" Description="Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput" Name="DataAnalyticsReferencesInput" DisplayName="Data Analytics References Input" Namespace="Compañía.IotDsl">
+      <Source>
+        <DomainRole Id="b5b2b1cf-fd11-4e1f-92c9-f3d80a637e59" Description="Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput.DataAnalytics" Name="DataAnalytics" DisplayName="Data Analytics" PropertyName="Inputs" PropertyDisplayName="Inputs">
+          <RolePlayer>
+            <DomainClassMoniker Name="DataAnalytics" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="f5cbb2d2-7a6f-41cc-86d1-cf41d941604b" Description="Descripción de Compañía.IotDsl.DataAnalyticsReferencesInput.CloudService" Name="CloudService" DisplayName="Cloud Service" PropertyName="DataAnalyticsInput" PropertyDisplayName="Data Analytics Input">
+          <RolePlayer>
+            <DomainClassMoniker Name="CloudService" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="bed4aa25-792f-4632-ae99-44995546c688" Description="Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput" Name="DataAnalyticsReferencesOutput" DisplayName="Data Analytics References Output" Namespace="Compañía.IotDsl">
+      <Source>
+        <DomainRole Id="863f6655-518f-412d-83ef-238134a8f461" Description="Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput.DataAnalytics" Name="DataAnalytics" DisplayName="Data Analytics" PropertyName="Outputs" PropertyDisplayName="Outputs">
+          <RolePlayer>
+            <DomainClassMoniker Name="DataAnalytics" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="2b2f03d7-ea2c-48c2-bcce-d423f3170a37" Description="Descripción de Compañía.IotDsl.DataAnalyticsReferencesOutput.CloudService" Name="CloudService" DisplayName="Cloud Service" PropertyName="DataAnalyticsOutput" PropertyDisplayName="Data Analytics Output">
+          <RolePlayer>
+            <DomainClassMoniker Name="CloudService" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -511,16 +543,6 @@
         <IconDecorator Name="Image" DisplayName="Image" DefaultIcon="Resources\InPortImage.bmp" />
       </ShapeHasDecorators>
     </Port>
-    <ImageShape Id="1d608593-aa57-4258-8c78-0750bab42fde" Description="Descripción de Compañía.IotDsl.ApiRESTImage" Name="ApiRESTImage" DisplayName="Api RESTImage" Namespace="Compañía.IotDsl" FixedTooltipText="Api RESTImage" InitialWidth="1" InitialHeight="1" Image="Resources\pngexports\dashboard.png">
-      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
-      </ShapeHasDecorators>
-    </ImageShape>
-    <ImageShape Id="cc47049e-7e20-4093-aacb-9ce53a961f41" Description="Descripción de Compañía.IotDsl.PhoneAppImage" Name="PhoneAppImage" DisplayName="Phone App Image" Namespace="Compañía.IotDsl" FixedTooltipText="Phone App Image" InitialWidth="1" InitialHeight="1" Image="Resources\pngexports\phoneapp.png">
-      <ShapeHasDecorators Position="OuterBottomCenter" HorizontalOffset="0" VerticalOffset="0">
-        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" />
-      </ShapeHasDecorators>
-    </ImageShape>
     <GeometryShape Id="49675af2-43ba-45d7-a92a-e4dfe52e3bdb" Description="Descripción de Compañía.IotDsl.DeviceShape" Name="DeviceShape" DisplayName="Device Shape" Namespace="Compañía.IotDsl" FixedTooltipText="Device Shape" InitialHeight="1" Geometry="Rectangle">
       <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="DeviceId" DisplayName="Device Id" DefaultText="DeviceId" FontStyle="Bold, Underline" />
@@ -632,6 +654,22 @@
         <IconDecorator Name="Icon" DisplayName="Icon" DefaultIcon="Resources\pngexports\linegrapgh.svg.png" />
       </ShapeHasDecorators>
     </CompartmentShape>
+    <GeometryShape Id="a88b6327-4298-42b8-9411-1d14274fe968" Description="Descripción de Compañía.IotDsl.ApiRestShape" Name="ApiRestShape" DisplayName="Api Rest Shape" Namespace="Compañía.IotDsl" FixedTooltipText="Api Rest Shape" InitialHeight="0.5" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" FontStyle="Bold, Underline" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="Icon" DisplayName="Icon" DefaultIcon="Resources\pngexports\api.png" />
+      </ShapeHasDecorators>
+    </GeometryShape>
+    <GeometryShape Id="b8b72513-6c9b-4363-9feb-9cb4a9cf0e5c" Description="Descripción de Compañía.IotDsl.PhoneAppShape" Name="PhoneAppShape" DisplayName="Phone App Shape" Namespace="Compañía.IotDsl" FixedTooltipText="Phone App Shape" InitialHeight="0.5" Geometry="Rectangle">
+      <ShapeHasDecorators Position="InnerTopLeft" HorizontalOffset="0" VerticalOffset="0">
+        <TextDecorator Name="Name" DisplayName="Name" DefaultText="Name" FontStyle="Bold, Underline" />
+      </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerTopRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="Icon" DisplayName="Icon" DefaultIcon="Resources\pngexports\phoneapp.png" />
+      </ShapeHasDecorators>
+    </GeometryShape>
   </Shapes>
   <Connectors>
     <Connector Id="f70a14ee-d9b8-43b8-8785-877b5175f4c1" Description="Descripción de Compañía.IotDsl.EndpointToCloudService" Name="EndpointToCloudService" DisplayName="Endpoint To Cloud Service" Namespace="Compañía.IotDsl" FixedTooltipText="Endpoint To Cloud Service" />
@@ -642,6 +680,8 @@
       </ConnectorHasDecorators>
     </Connector>
     <Connector Id="8822d396-3187-44f8-8bc5-e9e33e32705f" Description="Descripción de Compañía.IotDsl.AppServiceToMessageConnection" Name="AppServiceToMessageConnection" DisplayName="App Service To Message Connection" Namespace="Compañía.IotDsl" FixedTooltipText="App Service To Message Connection" />
+    <Connector Id="247f023f-655c-44d7-8434-503ff3f9aeda" Description="Descripción de Compañía.IotDsl.DataAnalyticsInputConnector" Name="DataAnalyticsInputConnector" DisplayName="Data Analytics Input Connector" Namespace="Compañía.IotDsl" FixedTooltipText="Data Analytics Input Connector" />
+    <Connector Id="a310dec8-478d-46b5-9739-312ea895e79f" Description="Descripción de Compañía.IotDsl.DataAnalyticsOutpurConnector" Name="DataAnalyticsOutpurConnector" DisplayName="Data Analytics Outpur Connector" Namespace="Compañía.IotDsl" FixedTooltipText="Data Analytics Outpur Connector" />
   </Connectors>
   <XmlSerializationBehavior Name="IotDslSerializationBehavior" Namespace="Compañía.IotDsl">
     <ClassData>
@@ -754,6 +794,14 @@
       </XmlClassData>
       <XmlClassData TypeName="DataAnalytics" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerDataAnalytics" ElementName="dataAnalytics" MonikerTypeName="MonikerDataAnalytics">
         <DomainClassMoniker Name="DataAnalytics" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="inputs">
+            <DomainRelationshipMoniker Name="DataAnalyticsReferencesInput" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="outputs">
+            <DomainRelationshipMoniker Name="DataAnalyticsReferencesOutput" />
+          </XmlRelationshipData>
+        </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="CloudServiceShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerGeometryShape1" ElementName="cloudServiceShape" MonikerTypeName="MonikerGeometryShape1">
         <GeometryShapeMoniker Name="CloudServiceShape" />
@@ -862,12 +910,6 @@
       <XmlClassData TypeName="AppServiceToMessageConnection" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerAppServiceToMessageConnection" ElementName="appServiceToMessageConnection" MonikerTypeName="MonikerAppServiceToMessageConnection">
         <ConnectorMoniker Name="AppServiceToMessageConnection" />
       </XmlClassData>
-      <XmlClassData TypeName="ApiRESTImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerApiRESTImage" ElementName="apiRESTImage" MonikerTypeName="MonikerApiRESTImage">
-        <ImageShapeMoniker Name="ApiRESTImage" />
-      </XmlClassData>
-      <XmlClassData TypeName="PhoneAppImage" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerPhoneAppImage" ElementName="phoneAppImage" MonikerTypeName="MonikerPhoneAppImage">
-        <ImageShapeMoniker Name="PhoneAppImage" />
-      </XmlClassData>
       <XmlClassData TypeName="DeviceShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerDeviceShape" ElementName="deviceShape" MonikerTypeName="MonikerDeviceShape">
         <GeometryShapeMoniker Name="DeviceShape" />
       </XmlClassData>
@@ -922,6 +964,24 @@
       </XmlClassData>
       <XmlClassData TypeName="LineGrapghShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerLineGrapghShape" ElementName="lineGrapghShape" MonikerTypeName="MonikerLineGrapghShape">
         <CompartmentShapeMoniker Name="LineGrapghShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="DataAnalyticsReferencesInput" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerDataAnalyticsReferencesInput" ElementName="dataAnalyticsReferencesInput" MonikerTypeName="MonikerDataAnalyticsReferencesInput">
+        <DomainRelationshipMoniker Name="DataAnalyticsReferencesInput" />
+      </XmlClassData>
+      <XmlClassData TypeName="DataAnalyticsReferencesOutput" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerDataAnalyticsReferenciasOutut" ElementName="dataAnalyticsReferencesOutput" MonikerTypeName="MonikerDataAnalyticsReferenciasOutut">
+        <DomainRelationshipMoniker Name="DataAnalyticsReferencesOutput" />
+      </XmlClassData>
+      <XmlClassData TypeName="DataAnalyticsInputConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerDataAnalyticsInputConnector" ElementName="dataAnalyticsInputConnector" MonikerTypeName="MonikerDataAnalyticsInputConnector">
+        <ConnectorMoniker Name="DataAnalyticsInputConnector" />
+      </XmlClassData>
+      <XmlClassData TypeName="DataAnalyticsOutpurConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerDataAnalyticsOutpurConnector" ElementName="dataAnalyticsOutpurConnector" MonikerTypeName="MonikerDataAnalyticsOutpurConnector">
+        <ConnectorMoniker Name="DataAnalyticsOutpurConnector" />
+      </XmlClassData>
+      <XmlClassData TypeName="ApiRestShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerApiRestShape" ElementName="apiRestShape" MonikerTypeName="MonikerApiRestShape">
+        <GeometryShapeMoniker Name="ApiRestShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="PhoneAppShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="monikerPhoneAppShape" ElementName="phoneAppShape" MonikerTypeName="MonikerPhoneAppShape">
+        <GeometryShapeMoniker Name="PhoneAppShape" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -1003,6 +1063,44 @@
         </TargetDirectives>
       </LinkConnectDirective>
     </ConnectionBuilder>
+    <ConnectionBuilder Name="GeneradorDataAnalyticsReferencesInput" IsCustom="true">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="DataAnalyticsReferencesInput" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="DataAnalytics" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="CloudService" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
+    <ConnectionBuilder Name="GeneradorDataAnalyticsReferencesOutput" IsCustom="true">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="DataAnalyticsReferencesOutput" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="DataAnalytics" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="CloudService" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
   </ConnectionBuilders>
   <Diagram Id="32697784-6bc9-41c1-9b38-d506ffa3b791" Description="Description for Compañía.IotDsl.IotDslDiagram" Name="IotDslDiagram" DisplayName="Minimal Language Diagram" Namespace="Compañía.IotDsl">
     <Class>
@@ -1052,36 +1150,6 @@
           <DomainPath>IoTCenterHasEndpoints.IoTCenter/!IoTCenter</DomainPath>
         </ParentElementPath>
         <PortMoniker Name="EndpointPort" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="ApiREST" />
-        <ParentElementPath>
-          <DomainPath>ResourceGroupHasCloudServices.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="ApiRESTImage/Name" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="CloudService/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <ImageShapeMoniker Name="ApiRESTImage" />
-      </ShapeMap>
-      <ShapeMap>
-        <DomainClassMoniker Name="PhoneApp" />
-        <ParentElementPath>
-          <DomainPath>ResourceGroupHasCloudServices.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
-        </ParentElementPath>
-        <DecoratorMap>
-          <TextDecoratorMoniker Name="PhoneAppImage/Name" />
-          <PropertyDisplayed>
-            <PropertyPath>
-              <DomainPropertyMoniker Name="CloudService/Name" />
-            </PropertyPath>
-          </PropertyDisplayed>
-        </DecoratorMap>
-        <ImageShapeMoniker Name="PhoneAppImage" />
       </ShapeMap>
       <ShapeMap>
         <DomainClassMoniker Name="Device" />
@@ -1249,6 +1317,14 @@
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ApiRestShape/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="CloudService/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
         <GeometryShapeMoniker Name="WebAppShape" />
       </ShapeMap>
       <CompartmentShapeMap>
@@ -1276,6 +1352,36 @@
         </ParentElementPath>
         <CompartmentShapeMoniker Name="LineGrapghShape" />
       </CompartmentShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="ApiREST" />
+        <ParentElementPath>
+          <DomainPath>ResourceGroupHasCloudServices.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="ApiRestShape/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="CloudService/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="ApiRestShape" />
+      </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="PhoneApp" />
+        <ParentElementPath>
+          <DomainPath>ResourceGroupHasCloudServices.ResourceGroup/!ResourceGroup/IotDslHasResourceGroups.IoTDsl/!IoTDsl</DomainPath>
+        </ParentElementPath>
+        <DecoratorMap>
+          <TextDecoratorMoniker Name="PhoneAppShape/Name" />
+          <PropertyDisplayed>
+            <PropertyPath>
+              <DomainPropertyMoniker Name="CloudService/Name" />
+            </PropertyPath>
+          </PropertyDisplayed>
+        </DecoratorMap>
+        <GeometryShapeMoniker Name="PhoneAppShape" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -1302,6 +1408,14 @@
         <ConnectorMoniker Name="AppServiceToMessageConnection" />
         <DomainRelationshipMoniker Name="AppServiceReferenciasMessageService" />
       </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="DataAnalyticsInputConnector" />
+        <DomainRelationshipMoniker Name="DataAnalyticsReferencesInput" />
+      </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="DataAnalyticsOutpurConnector" />
+        <DomainRelationshipMoniker Name="DataAnalyticsReferencesOutput" />
+      </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="IotDsl" EditorGuid="19b5e7ef-c799-4b6a-ad94-cdfca0bbdaf7">
@@ -1312,57 +1426,63 @@
       <XmlSerializationBehaviorMoniker Name="IotDslSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="Cloud">
-      <ElementTool Name="ResourceGroupTool" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Resource Group" Tooltip="Resource Group Tool" HelpKeyword="ResourceGroupTool">
+      <ElementTool Name="ResourceGroupTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Resource Group" Tooltip="Adds a resource group to the model" HelpKeyword="ResourceGroupTool">
         <DomainClassMoniker Name="ResourceGroup" />
       </ElementTool>
-      <ElementTool Name="IoTCenterTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Iot Center" Tooltip="IoT Center Tool" HelpKeyword="IoTCenterTool">
+      <ElementTool Name="IoTCenterTool" ToolboxIcon="Resources\bmpexports\iotcenter.bmp" Caption="Iot Center" Tooltip="Adds an IoT Center to the model" HelpKeyword="IoTCenterTool">
         <DomainClassMoniker Name="IoTCenter" />
       </ElementTool>
-      <ElementTool Name="DataAnalyticsTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Data Analytics" Tooltip="Data Analytics Tool" HelpKeyword="DataAnalyticsTool">
+      <ElementTool Name="DataAnalyticsTool" ToolboxIcon="Resources\bmpexports\analytics.bmp" Caption="Data Analytics" Tooltip="Adds a data analytics resource to the model" HelpKeyword="DataAnalyticsTool">
         <DomainClassMoniker Name="DataAnalytics" />
       </ElementTool>
-      <ElementTool Name="NoSQLStorageTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="NoSQL Storage" Tooltip="No SQLStorage Tool" HelpKeyword="NoSQLStorageTool">
+      <ElementTool Name="NoSQLStorageTool" ToolboxIcon="Resources\bmpexports\drives.bmp" Caption="NoSQL Storage" Tooltip="Adds a NoSQL Storage to the model" HelpKeyword="NoSQLStorageTool">
         <DomainClassMoniker Name="NoSQLStorage" />
       </ElementTool>
-      <ElementTool Name="EndpointTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Endpoint" Tooltip="Endpoint Tool" HelpKeyword="EndpointTool">
+      <ElementTool Name="EndpointTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Endpoint" Tooltip="Adds an endpoint to and IoT Center" HelpKeyword="EndpointTool">
         <DomainClassMoniker Name="Endpoint" />
       </ElementTool>
-      <ElementTool Name="SQLStorageTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="SQL Storage" Tooltip="SQLStorage Tool" HelpKeyword="SQLStorageTool">
+      <ElementTool Name="SQLStorageTool" ToolboxIcon="Resources\bmpexports\database.bmp" Caption="SQL Storage" Tooltip="Adds a SQLStorage resource to the model" HelpKeyword="SQLStorageTool">
         <DomainClassMoniker Name="SQLStorage" />
       </ElementTool>
-      <ConnectionTool Name="EndpointtoCloudServiceConnection" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Connection Endpoint to Cloud Service" Tooltip="Endpointto Cloud Service Connection" HelpKeyword="EndpointtoCloudServiceConnection">
+      <ConnectionTool Name="EndpointtoCloudServiceConnection" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Connection Endpoint to Cloud Service" Tooltip="Connects an endpoint to a cloud service" HelpKeyword="EndpointtoCloudServiceConnection">
         <ConnectionBuilderMoniker Name="IotDsl/GeneradorEndpointReferenciasCloudService" />
       </ConnectionTool>
-      <ElementTool Name="AppServiceTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="App Service" Tooltip="App Service Tool" HelpKeyword="AppServiceTool">
+      <ElementTool Name="AppServiceTool" ToolboxIcon="Resources\bmpexports\dashboard.bmp" Caption="App Service" Tooltip="Adds an app service to the model" HelpKeyword="AppServiceTool">
         <DomainClassMoniker Name="AppService" />
       </ElementTool>
-      <ElementTool Name="ServiceBusTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="ServiceBusTool" Tooltip="Service Bus Tool" HelpKeyword="ServiceBusTool">
+      <ElementTool Name="ServiceBusTool" ToolboxIcon="Resources\bmpexports\messageservice.BMP" Caption="Message Service" Tooltip="Adds a Message Service to the model" HelpKeyword="MessageService">
         <DomainClassMoniker Name="MessageService" />
       </ElementTool>
-      <ElementTool Name="WebAppTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Web Application" Tooltip="Web Application to visualize data" HelpKeyword="WebAppTool">
+      <ElementTool Name="WebAppTool" ToolboxIcon="Resources\bmpexports\dashboard.bmp" Caption="Web Application" Tooltip="Adds a Web Application to visualize data" HelpKeyword="WebAppTool">
         <DomainClassMoniker Name="WebApp" />
       </ElementTool>
-      <ElementTool Name="ApiRESTTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="REST API" Tooltip="REST API to obtain data" HelpKeyword="ApiRESTTool">
+      <ElementTool Name="ApiRESTTool" ToolboxIcon="Resources\bmpexports\api.bmp" Caption="REST API" Tooltip="REST API to obtain data" HelpKeyword="ApiRESTTool">
         <DomainClassMoniker Name="ApiREST" />
       </ElementTool>
-      <ElementTool Name="PhoneAppTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Phone Application" Tooltip="Phone Application to visualize data" HelpKeyword="PhoneAppTool">
+      <ElementTool Name="PhoneAppTool" ToolboxIcon="Resources\bmpexports\phoneapp.bmp" Caption="Phone Application" Tooltip="Phone Application to visualize data" HelpKeyword="PhoneAppTool">
         <DomainClassMoniker Name="PhoneApp" />
       </ElementTool>
-      <ElementTool Name="LineGraphTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="Line Graph" Tooltip="Line Graph" HelpKeyword="LineGraphTool">
+      <ElementTool Name="LineGraphTool" ToolboxIcon="Resources\bmpexports\linegraph.bmp" Caption="Line Graph" Tooltip="Adds a Line Graph to a web aplication" HelpKeyword="LineGraphTool">
         <DomainClassMoniker Name="LineGraph" />
       </ElementTool>
+      <ConnectionTool Name="DataAnalyticsInputConnectionTool" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Connect Data Analytics with input" Tooltip="Creates connection between DataAnalytics and a data input" HelpKeyword="DataAnalyticsConnectionInput">
+        <ConnectionBuilderMoniker Name="IotDsl/GeneradorDataAnalyticsReferencesInput" />
+      </ConnectionTool>
+      <ConnectionTool Name="DataAnalyticsOutputConnection" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Connects Data Analitics with output" Tooltip="Data Analytics Output Connection" HelpKeyword="DataAnalyticsOutputConnection">
+        <ConnectionBuilderMoniker Name="IotDsl/GeneradorDataAnalyticsReferencesOutput" />
+      </ConnectionTool>
     </ToolboxTab>
     <ToolboxTab TabText="Device">
-      <ElementTool Name="RaspberryPiTool" ToolboxIcon="Resources\bmpexports\raspberrypi2.bmp" Caption="RaspberryPi" Tooltip="Raspberry Pi Tool" HelpKeyword="RaspberryPiTool">
+      <ElementTool Name="RaspberryPiTool" ToolboxIcon="Resources\bmpexports\raspberrypi2.bmp" Caption="RaspberryPi" Tooltip="Adds a raspberryPi to the model" HelpKeyword="RaspberryPiTool">
         <DomainClassMoniker Name="RaspberryPi" />
       </ElementTool>
-      <ConnectionTool Name="DeviceToSensorConnection" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="DeviceToSensorConnection" Tooltip="Device To Sensor Connection" HelpKeyword="DeviceToSensorConnection">
+      <ConnectionTool Name="DeviceToSensorConnection" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Device To Sensor Connection" Tooltip="Connects a device to a sensor" HelpKeyword="DeviceToSensorConnection">
         <ConnectionBuilderMoniker Name="IotDsl/GeneradorDeviceReferenciasSensor" />
       </ConnectionTool>
-      <ElementTool Name="bme280" ToolboxIcon="Resources\bmpexports\bme280.bmp" Caption="BME280" Tooltip="Bme280" HelpKeyword="bme280">
+      <ElementTool Name="bme280" ToolboxIcon="Resources\bmpexports\bme280.bmp" Caption="BME280" Tooltip="Adds a BME280 sensor to the model" HelpKeyword="bme280">
         <DomainClassMoniker Name="BME280" />
       </ElementTool>
-      <ConnectionTool Name="IoTCenterToDeviceTool" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="IoTCenterToDeviceTool" Tooltip="Io TCenter To Device Tool" HelpKeyword="IoTCenterToDeviceTool">
+      <ConnectionTool Name="IoTCenterToDeviceTool" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="IoT center To Device Connection" Tooltip="Connects an IoT Center to a device" HelpKeyword="IoTCenterToDeviceTool">
         <ConnectionBuilderMoniker Name="IotDsl/GeneradorIoTCenterReferenciasDevice" />
       </ConnectionTool>
     </ToolboxTab>

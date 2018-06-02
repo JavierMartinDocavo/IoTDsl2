@@ -23,9 +23,9 @@ using System.Text;
 
 namespace IoTWeatherHubDevice
 {
-	public sealed partial class iotdevice
+	public sealed partial class casoestudiodispositivo
 	{
-		static string deviceId = "iotdevice";
+		static string deviceId = "casoestudiodispositivo";
 		static List<DeviceClient> deviceClientList;
 
 		public MainPage()
@@ -33,31 +33,37 @@ namespace IoTWeatherHubDevice
 
 			deviceClientList = new List<DeviceClient>()
 			{
-				DeviceClient.Create("jmdbecaiothub.azure-devices.net", new DeviceAuthenticationWithRegistrySymmetricKey(deviceId, "azUodaAxCumHKZ6CtvI2gCPcYkrJY8r11gkTiggNZ4Q="), TransportType.Mqtt),
+				DeviceClient.Create("casoEstudioIoT.azure-devices.net", new DeviceAuthenticationWithRegistrySymmetricKey(deviceId, "Uiog7MEd9/2RAl/tgcb5RchYOPGPZK3riGlHAyGKG28="), TransportType.Mqtt),
 			};
-			jmdbecasensorToCloudMessage();
+			casoestudiosensorToCloudMessage();
 		}
 
-		private async void jmdbecasensorToCloudMessage()
+		private async void casoestudiosensorToCloudMessage()
 		{
 			BME280Sensor sensor = new BME280Sensor();
 			await sensor.Initialize();
 			float temperature = 0.00f;
 			float humidity = 0.00f;
+			float pressure = 0.00f;
+			float altitude = 0.00f;
 			while(true)
 			{
 				temperature = await sensor.ReadTemperature();
 				humidity = await sensor.ReadHumidity();
+				pressure = await sensor.ReadPressure();
+				altitude = await sensor.ReadAltitude();
 				var sensorData = new
 				{
 					deviceID = deviceId,
-					sensorId = "jmdbecasensor",
+					sensorId = "casoestudiosensor",
 					date = String.Format("{0},{1},{2}",
 										DateTime.Now.ToLocalTime().TimeOfDay.Hours,
 										DateTime.Now.ToLocalTime().TimeOfDay.Minutes,
 										DateTime.Now.ToLocalTime().TimeOfDay.Seconds),
 					temperature = Math.Round(temperature, 2),
 					humidity = Math.Round(humidity, 2),
+					pressure = Math.Round(pressure,2),
+					altitude = Math.Round(altitude, 2)
 				};
 				var messageString = JsonConvert.SerializeObject(sensorData);
 				var message = new Message(byteArray: Encoding.ASCII.GetBytes(messageString));

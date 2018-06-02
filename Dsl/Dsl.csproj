@@ -81,6 +81,8 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SerializationHelper.cs</LastGenOutput>
     </None>
+    <Compile Include="Partials\GeneradorDataAnalyticsReferencesInput.cs" />
+    <Compile Include="Partials\GeneradorDataAnalyticsReferencesOutput.cs" />
     <Compile Include="Partials\GeneradorDeviceReferenciasSensor.cs" />
     <Compile Include="Partials\GeneradorEndpointReferenciasCloudService.cs" />
     <Compile Include="GeneratedCode\ConnectionBuilders.cs">

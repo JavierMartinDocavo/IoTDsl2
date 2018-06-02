@@ -98,11 +98,15 @@ namespace Compañía.IotDsl
 				typeof(AppServiceReferenciasMessageService),
 				typeof(AppServiceHasGraph),
 				typeof(GraphHasVariables),
+				typeof(DataAnalyticsReferencesInput),
+				typeof(DataAnalyticsReferencesOutput),
 				typeof(IotDslDiagram),
 				typeof(EndpointToCloudService),
 				typeof(DeviceToSensorConnection),
 				typeof(DeviceToIoTCenter),
 				typeof(AppServiceToMessageConnection),
+				typeof(DataAnalyticsInputConnector),
+				typeof(DataAnalyticsOutpurConnector),
 				typeof(ResourceGroupShape),
 				typeof(CloudServiceShape),
 				typeof(DeviceShape),
@@ -113,11 +117,11 @@ namespace Compañía.IotDsl
 				typeof(SQLStorageShape),
 				typeof(NoSQLStorageShape),
 				typeof(WebAppShape),
+				typeof(ApiRestShape),
+				typeof(PhoneAppShape),
 				typeof(GraphShape),
 				typeof(LineGrapghShape),
 				typeof(AppServiceImage),
-				typeof(ApiRESTImage),
-				typeof(PhoneAppImage),
 				typeof(EndpointPort),
 				typeof(global::Compañía.IotDsl.FixUpDiagram),
 				typeof(global::Compañía.IotDsl.DecoratorPropertyChanged),
@@ -191,6 +195,10 @@ namespace Compañía.IotDsl
 				new DomainRolePlayerInfo(typeof(AppServiceHasGraph), "Graph", AppServiceHasGraph.GraphDomainRoleId),
 				new DomainRolePlayerInfo(typeof(GraphHasVariables), "Graph", GraphHasVariables.GraphDomainRoleId),
 				new DomainRolePlayerInfo(typeof(GraphHasVariables), "Variable", GraphHasVariables.VariableDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataAnalyticsReferencesInput), "DataAnalytics", DataAnalyticsReferencesInput.DataAnalyticsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataAnalyticsReferencesInput), "CloudService", DataAnalyticsReferencesInput.CloudServiceDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataAnalyticsReferencesOutput), "DataAnalytics", DataAnalyticsReferencesOutput.DataAnalyticsDomainRoleId),
+				new DomainRolePlayerInfo(typeof(DataAnalyticsReferencesOutput), "CloudService", DataAnalyticsReferencesOutput.CloudServiceDomainRoleId),
 			};
 		}
 		#endregion
@@ -212,7 +220,7 @@ namespace Compañía.IotDsl
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(41);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(43);
 				createElementMap.Add(typeof(IoTDsl), 0);
 				createElementMap.Add(typeof(ResourceGroup), 1);
 				createElementMap.Add(typeof(IoTCenter), 2);
@@ -238,22 +246,24 @@ namespace Compañía.IotDsl
 				createElementMap.Add(typeof(DeviceToSensorConnection), 22);
 				createElementMap.Add(typeof(DeviceToIoTCenter), 23);
 				createElementMap.Add(typeof(AppServiceToMessageConnection), 24);
-				createElementMap.Add(typeof(ResourceGroupShape), 25);
-				createElementMap.Add(typeof(CloudServiceShape), 26);
-				createElementMap.Add(typeof(DeviceShape), 27);
-				createElementMap.Add(typeof(IoTCenterShape), 28);
-				createElementMap.Add(typeof(SensorShape), 29);
-				createElementMap.Add(typeof(MessageServiceShape), 30);
-				createElementMap.Add(typeof(DataAnalyticsShape), 31);
-				createElementMap.Add(typeof(SQLStorageShape), 32);
-				createElementMap.Add(typeof(NoSQLStorageShape), 33);
-				createElementMap.Add(typeof(WebAppShape), 34);
-				createElementMap.Add(typeof(GraphShape), 35);
-				createElementMap.Add(typeof(LineGrapghShape), 36);
-				createElementMap.Add(typeof(AppServiceImage), 37);
-				createElementMap.Add(typeof(ApiRESTImage), 38);
-				createElementMap.Add(typeof(PhoneAppImage), 39);
-				createElementMap.Add(typeof(EndpointPort), 40);
+				createElementMap.Add(typeof(DataAnalyticsInputConnector), 25);
+				createElementMap.Add(typeof(DataAnalyticsOutpurConnector), 26);
+				createElementMap.Add(typeof(ResourceGroupShape), 27);
+				createElementMap.Add(typeof(CloudServiceShape), 28);
+				createElementMap.Add(typeof(DeviceShape), 29);
+				createElementMap.Add(typeof(IoTCenterShape), 30);
+				createElementMap.Add(typeof(SensorShape), 31);
+				createElementMap.Add(typeof(MessageServiceShape), 32);
+				createElementMap.Add(typeof(DataAnalyticsShape), 33);
+				createElementMap.Add(typeof(SQLStorageShape), 34);
+				createElementMap.Add(typeof(NoSQLStorageShape), 35);
+				createElementMap.Add(typeof(WebAppShape), 36);
+				createElementMap.Add(typeof(ApiRestShape), 37);
+				createElementMap.Add(typeof(PhoneAppShape), 38);
+				createElementMap.Add(typeof(GraphShape), 39);
+				createElementMap.Add(typeof(LineGrapghShape), 40);
+				createElementMap.Add(typeof(AppServiceImage), 41);
+				createElementMap.Add(typeof(EndpointPort), 42);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -292,22 +302,24 @@ namespace Compañía.IotDsl
 				case 22: return new DeviceToSensorConnection(partition, propertyAssignments);
 				case 23: return new DeviceToIoTCenter(partition, propertyAssignments);
 				case 24: return new AppServiceToMessageConnection(partition, propertyAssignments);
-				case 25: return new ResourceGroupShape(partition, propertyAssignments);
-				case 26: return new CloudServiceShape(partition, propertyAssignments);
-				case 27: return new DeviceShape(partition, propertyAssignments);
-				case 28: return new IoTCenterShape(partition, propertyAssignments);
-				case 29: return new SensorShape(partition, propertyAssignments);
-				case 30: return new MessageServiceShape(partition, propertyAssignments);
-				case 31: return new DataAnalyticsShape(partition, propertyAssignments);
-				case 32: return new SQLStorageShape(partition, propertyAssignments);
-				case 33: return new NoSQLStorageShape(partition, propertyAssignments);
-				case 34: return new WebAppShape(partition, propertyAssignments);
-				case 35: return new GraphShape(partition, propertyAssignments);
-				case 36: return new LineGrapghShape(partition, propertyAssignments);
-				case 37: return new AppServiceImage(partition, propertyAssignments);
-				case 38: return new ApiRESTImage(partition, propertyAssignments);
-				case 39: return new PhoneAppImage(partition, propertyAssignments);
-				case 40: return new EndpointPort(partition, propertyAssignments);
+				case 25: return new DataAnalyticsInputConnector(partition, propertyAssignments);
+				case 26: return new DataAnalyticsOutpurConnector(partition, propertyAssignments);
+				case 27: return new ResourceGroupShape(partition, propertyAssignments);
+				case 28: return new CloudServiceShape(partition, propertyAssignments);
+				case 29: return new DeviceShape(partition, propertyAssignments);
+				case 30: return new IoTCenterShape(partition, propertyAssignments);
+				case 31: return new SensorShape(partition, propertyAssignments);
+				case 32: return new MessageServiceShape(partition, propertyAssignments);
+				case 33: return new DataAnalyticsShape(partition, propertyAssignments);
+				case 34: return new SQLStorageShape(partition, propertyAssignments);
+				case 35: return new NoSQLStorageShape(partition, propertyAssignments);
+				case 36: return new WebAppShape(partition, propertyAssignments);
+				case 37: return new ApiRestShape(partition, propertyAssignments);
+				case 38: return new PhoneAppShape(partition, propertyAssignments);
+				case 39: return new GraphShape(partition, propertyAssignments);
+				case 40: return new LineGrapghShape(partition, propertyAssignments);
+				case 41: return new AppServiceImage(partition, propertyAssignments);
+				case 42: return new EndpointPort(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -330,7 +342,7 @@ namespace Compañía.IotDsl
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(11);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(13);
 				createElementLinkMap.Add(typeof(IotDslHasResourceGroups), 0);
 				createElementLinkMap.Add(typeof(ResourceGroupHasCloudServices), 1);
 				createElementLinkMap.Add(typeof(EndpointConnectsCloudService), 2);
@@ -342,6 +354,8 @@ namespace Compañía.IotDsl
 				createElementLinkMap.Add(typeof(AppServiceReferenciasMessageService), 8);
 				createElementLinkMap.Add(typeof(AppServiceHasGraph), 9);
 				createElementLinkMap.Add(typeof(GraphHasVariables), 10);
+				createElementLinkMap.Add(typeof(DataAnalyticsReferencesInput), 11);
+				createElementLinkMap.Add(typeof(DataAnalyticsReferencesOutput), 12);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -367,6 +381,8 @@ namespace Compañía.IotDsl
 				case 8: return new AppServiceReferenciasMessageService(partition, roleAssignments, propertyAssignments);
 				case 9: return new AppServiceHasGraph(partition, roleAssignments, propertyAssignments);
 				case 10: return new GraphHasVariables(partition, roleAssignments, propertyAssignments);
+				case 11: return new DataAnalyticsReferencesInput(partition, roleAssignments, propertyAssignments);
+				case 12: return new DataAnalyticsReferencesOutput(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}

@@ -1,50 +1,50 @@
 ﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" lenguage="C#" hostspecific="True"#>
 <#@ output extension=".ps1" #>
-<#@ IotDsl processor="IotDslDirectiveProcessor" requires="fileName='Test.IotDsl'" #>
+<#@ IotDsl processor="IotDslDirectiveProcessor" requires="fileName='../../Test.IotDsl'" #>
 <#@ include file="EF.utility.CS.ttinclude" #>
 Login-AzureRmAccount;
 <#
-foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
+    foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
 #>
 #Resource group creation
 New-AzureRmResourceGroup -Name <#=resourceGroup.Name#> -Location <#=resourceGroup.Location#>;
-<#
-foreach(CloudService cloudService in resourceGroup.CloudServices) {
-if(cloudService is SQLStorage){
-SQLStorage sql = cloudService as SQLStorage;
-#>
+        <#
+        foreach(CloudService cloudService in resourceGroup.CloudServices) {
+            if(cloudService is SQLStorage){
+                SQLStorage sql = cloudService as SQLStorage;
+        #>
 #SQL storage resources
 New-AzureRmSqlServer -ResourceGroupName <#=resourceGroup.Name#> -ServerName <#=sql.Name#>server -Location <#=resourceGroup.Location#> -SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList <#=sql.User#>, $(ConvertTo-SecureString -String <#=sql.Password#> -AsPlainText -Force));
 New-AzureRmSqlServerFirewallRule –ResourceGroupName <#=resourceGroup.Name#> -ServerName <#=sql.Name#>server -FirewallRuleName "Allowsome" -StartIpAddress 0.0.0.0 -EndIpAddress 255.255.255.255;
 New-AzureRmSqlDatabase  -ResourceGroupName <#=resourceGroup.Name#> -ServerName <#=sql.Name#>server -DatabaseName <#=sql.Name#>db -RequestedServiceObjectiveName "S0";
-<#
-} else if (cloudService is NoSQLStorage){
-NoSQLStorage noSql = cloudService as NoSQLStorage;
-#>
+            <#
+            } else if (cloudService is NoSQLStorage){
+                NoSQLStorage noSql = cloudService as NoSQLStorage;
+            #>
 #NoSQL storage resources
 New-AzureRmStorageAccount -ResourceGroupNAme <#=resourceGroup.Name#> -Name <#=noSql.Name#> -SkuName Standard_LRS -Location <#=resourceGroup.Location#> -Kind Storage;
-<#
-} else if (cloudService is AppService){
-AppService appService = cloudService as AppService;
-#>
+            <#
+            } else if (cloudService is AppService){
+                AppService appService = cloudService as AppService;
+            #>
 #App service resources
 New-AzureRmAppServicePlan -ResourceGroupName <#=resourceGroup.Name#> -Name <#=appService.Name#>plan -Location <#=resourceGroup.Location#> -Tier <#if (this.IoTDsl.ServicePlan == "F1"){#>"free"<#}#>;
 New-AzureRmWebApp -ResourceGroupName <#=resourceGroup.Name#> -Name <#=appService.Name#> -Location <#=resourceGroup.Location#> -AppServicePlan <#=appService.Name#>plan;
-<#} else if (cloudService is MessageService){
-MessageService serviceBus =  cloudService as MessageService;
-#>
+            <#} else if (cloudService is MessageService){
+                MessageService serviceBus =  cloudService as MessageService;
+            #>
 #ServiceBus resources
 New-AzureRmResourceGroupDeployment -ResourceGroupName <#=resourceGroup.Name#> -TemplateFile <#=serviceBus.Name#>.json -namespaces_servicebusjmd_name <#=serviceBus.Name#> -queues_iothubque_name <#=serviceBus.Name#>Queue;
-<#}#>
-<#}#>
-<#}#>
+            <#}#>
+        <#}#>
+    <#}#>
 <#
 var fileManager=EntityFrameworkTemplateFileManager.Create(this);
 foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
-foreach(CloudService cloudService in resourceGroup.CloudServices) {
-if (cloudService is MessageService){
-MessageService serviceBus =  cloudService as MessageService;
-fileManager.StartNewFile(serviceBus.Name + ".json");
+    foreach(CloudService cloudService in resourceGroup.CloudServices) {
+        if (cloudService is MessageService){
+            MessageService serviceBus =  cloudService as MessageService;
+            fileManager.StartNewFile(serviceBus.Name + ".json");
 #>
 {
 	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -178,8 +178,8 @@ fileManager.StartNewFile(serviceBus.Name + ".json");
 		}
 	]
 }
-<#}#>
-<#}#>
+        <#}#>
+    <#}#>
 <#}
 
 fileManager.Process();#>
