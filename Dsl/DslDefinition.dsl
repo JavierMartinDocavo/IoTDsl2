@@ -500,6 +500,8 @@
     <DomainEnumeration Name="Provider" Namespace="Compañía.IotDsl" Description="Descripción de Compañía.IotDsl.Provider">
       <Literals>
         <EnumerationLiteral Description="Descripción de Compañía.IotDsl.Provider.azure" Name="Azure" Value="" />
+        <EnumerationLiteral Description="Descripción de Compañía.IotDsl.Provider.azure" Name="ThingSpeak" Value="" />
+
       </Literals>
     </DomainEnumeration>
     <DomainEnumeration Name="Protocol" Namespace="Compañía.IotDsl" Description="Descripción de Compañía.IotDsl.Protocol">
@@ -515,6 +517,7 @@
     <DomainEnumeration Name="ProgramingLenguage" Namespace="Compañía.IotDsl" Description="Descripción de Compañía.IotDsl.ProgrammingLenguage">
       <Literals>
         <EnumerationLiteral Description="Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp" Name="CSharp" Value="" />
+        <EnumerationLiteral Description="Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp" Name="Java" Value="" />
       </Literals>
     </DomainEnumeration>
     <DomainEnumeration Name="Measurements" Namespace="Compañía.IotDsl" Description="Descripción de Compañía.IotDsl.Measurements">

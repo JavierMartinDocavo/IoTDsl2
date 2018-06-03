@@ -33,7 +33,7 @@ namespace IoTWeatherHubDevice
 
 			deviceClientList = new List<DeviceClient>()
 			{
-				DeviceClient.Create("casoEstudioIoT.azure-devices.net", new DeviceAuthenticationWithRegistrySymmetricKey(deviceId, "Uiog7MEd9/2RAl/tgcb5RchYOPGPZK3riGlHAyGKG28="), TransportType.Mqtt),
+				DeviceClient.Create("casoEstudioIoT.azure-devices.net", new DeviceAuthenticationWithRegistrySymmetricKey(deviceId, "kFKdyKB61Ipv0LRa+HXUP4SICAoQLINaZxqwzskbHhs="), TransportType.Mqtt),
 			};
 			casoestudiosensorToCloudMessage();
 		}

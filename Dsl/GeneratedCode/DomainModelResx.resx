@@ -885,6 +885,14 @@
     <value>Descripción de Compañía.IotDsl.Provider.azure</value>
     <comment>Description for EnumerationLiteral &apos;Azure&apos; on DomainEnumeration &apos;Provider&apos;</comment>
   </data>
+  <data name="Compañía.IotDsl.Provider/ThingSpeak.DisplayName" xml:space="preserve">
+    <value>ThingSpeak</value>
+    <comment>Display name for EnumerationLiteral &apos;ThingSpeak&apos; on DomainEnumeration &apos;Provider&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Provider/ThingSpeak.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Provider.azure</value>
+    <comment>Description for EnumerationLiteral &apos;ThingSpeak&apos; on DomainEnumeration &apos;Provider&apos;</comment>
+  </data>
   <data name="Compañía.IotDsl.Protocol/Mqtt.DisplayName" xml:space="preserve">
     <value>Mqtt</value>
     <comment>Display name for EnumerationLiteral &apos;Mqtt&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
@@ -908,6 +916,14 @@
   <data name="Compañía.IotDsl.ProgramingLenguage/CSharp.Description" xml:space="preserve">
     <value>Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp</value>
     <comment>Description for EnumerationLiteral &apos;CSharp&apos; on DomainEnumeration &apos;ProgramingLenguage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.ProgramingLenguage/Java.DisplayName" xml:space="preserve">
+    <value>Java</value>
+    <comment>Display name for EnumerationLiteral &apos;Java&apos; on DomainEnumeration &apos;ProgramingLenguage&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.ProgramingLenguage/Java.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp</value>
+    <comment>Description for EnumerationLiteral &apos;Java&apos; on DomainEnumeration &apos;ProgramingLenguage&apos;</comment>
   </data>
   <data name="Compañía.IotDsl.Measurements/Temperature.DisplayName" xml:space="preserve">
     <value>Temperature</value>

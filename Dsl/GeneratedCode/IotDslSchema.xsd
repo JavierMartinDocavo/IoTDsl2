@@ -1382,6 +1382,11 @@
           <xsd:documentation>Descripción de Compañía.IotDsl.Provider.azure</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
+      <xsd:enumeration value="ThingSpeak">
+        <xsd:annotation>
+          <xsd:documentation>Descripción de Compañía.IotDsl.Provider.azure</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   
@@ -1410,6 +1415,11 @@
     </xsd:annotation>
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="CSharp">
+        <xsd:annotation>
+          <xsd:documentation>Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Java">
         <xsd:annotation>
           <xsd:documentation>Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp</xsd:documentation>
         </xsd:annotation>

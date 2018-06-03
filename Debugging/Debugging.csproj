@@ -131,7 +131,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IotDslReportVB.tt</DependentUpon>
     </Content>
+    <Content Include="Transformaciones\ThingSpeak\Concentrator.java">
+      <DependentUpon>ThingSpeak.tt</DependentUpon>
+    </Content>
+    <Content Include="Transformaciones\ThingSpeak\ConsoleRouter.java">
+      <DependentUpon>ThingSpeak.tt</DependentUpon>
+    </Content>
+    <Content Include="Transformaciones\ThingSpeak\ThingSpeak.java">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThingSpeak.tt</DependentUpon>
+    </Content>
+    <Content Include="Transformaciones\ThingSpeak\ThingSpeak.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ThingSpeak.java</LastGenOutput>
+    </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

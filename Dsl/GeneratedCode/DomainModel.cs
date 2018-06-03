@@ -676,6 +676,12 @@ namespace Compañía.IotDsl
 		/// </summary>
 		[DslDesign::DescriptionResource("Compañía.IotDsl.Provider/Azure.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 		Azure,
+		/// <summary>
+		/// ThingSpeak
+		/// Descripción de Compañía.IotDsl.Provider.azure
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Provider/ThingSpeak.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		ThingSpeak,
 	}
 }
 namespace Compañía.IotDsl
@@ -727,6 +733,12 @@ namespace Compañía.IotDsl
 		/// </summary>
 		[DslDesign::DescriptionResource("Compañía.IotDsl.ProgramingLenguage/CSharp.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 		CSharp,
+		/// <summary>
+		/// Java
+		/// Descripción de Compañía.IotDsl.ProgrammingLenguage.CSharp
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.ProgramingLenguage/Java.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		Java,
 	}
 }
 namespace Compañía.IotDsl

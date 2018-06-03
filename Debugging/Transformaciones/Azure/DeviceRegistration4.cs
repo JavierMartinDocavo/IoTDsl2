@@ -16,7 +16,7 @@ namespace DeviceRegistration
 		static void Main(string[] args)
 		{
 			var devices = new List<KeyValuePair<string,string>>(){
-				new KeyValuePair<string,string>("casoestudiodispositivo","HostName=casoEstudioIoT.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=aZT6W5BEuj7VkUAjywRtf/hIXQuEkv5tDYnqbSFL4MM="),
+				new KeyValuePair<string,string>("casoestudiodispositivo","HostName=casoEstudioIoT.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=uRggV5nttQU8wiWasYNDYJr0eJDZz7sdNnz2I97qpm4="),
 			};
 			foreach(KeyValuePair<string,string> device in devices){
 				registryManager = RegistryManager.CreateFromConnectionString(device.Value);

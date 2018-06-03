@@ -22,7 +22,7 @@
 		"endpoints":{
 			"serviceBusQueues":[
 				{
-					"connectionString": "[concat('Endpoint=sb://casoestudiomensajeria.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=icElKoecYVnXG9D1Nn0WJUdve6ngQvZXKzQXnGJoT8c=;EntityPath=casoestudiomensajeriaqueue')]",
+					"connectionString": "[concat('Endpoint=sb://casoestudiomensajeria.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=dXnr1BChvKKTqpK3VnGzsyuXSjWNf9M9XGGEOPtagMA=;EntityPath=casoestudiomensajeriaqueue')]",
 					"name":"casoestudiomensajeriaendpoint",
 					"resourceGroup": "jmdbecaresourcegroup ",
 					"subscriptionId": "f53c2e80-22fe-4b10-9758-2ae712295faf"
