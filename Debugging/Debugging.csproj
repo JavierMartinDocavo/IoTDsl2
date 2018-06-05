@@ -131,20 +131,38 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IotDslReportVB.tt</DependentUpon>
     </Content>
-    <Content Include="Transformaciones\ThingSpeak\Concentrator.java">
-      <DependentUpon>ThingSpeak.tt</DependentUpon>
+    <Content Include="Transformaciones\ThingSpeak\BasicMonitor.java">
+      <DependentUpon>DeviceSimulation.tt</DependentUpon>
     </Content>
-    <Content Include="Transformaciones\ThingSpeak\ConsoleRouter.java">
-      <DependentUpon>ThingSpeak.tt</DependentUpon>
+    <Content Include="Transformaciones\ThingSpeak\ChannelCreation.java">
+      <DependentUpon>ChannelCreation.tt</DependentUpon>
     </Content>
-    <Content Include="Transformaciones\ThingSpeak\ThingSpeak.java">
+    <Content Include="Transformaciones\ThingSpeak\ChannelCreation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ChannelCreation1.java</LastGenOutput>
+    </Content>
+    <Content Include="Transformaciones\ThingSpeak\ChannelCreation1.java">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ThingSpeak.tt</DependentUpon>
+      <DependentUpon>ChannelCreation.tt</DependentUpon>
     </Content>
-    <Content Include="Transformaciones\ThingSpeak\ThingSpeak.tt">
+    <Content Include="Transformaciones\ThingSpeak\Concentrator.java">
+      <DependentUpon>DeviceSimulation.tt</DependentUpon>
+    </Content>
+    <Content Include="Transformaciones\ThingSpeak\ConsoleRouter.java">
+      <DependentUpon>DeviceSimulation.tt</DependentUpon>
+    </Content>
+    <Content Include="Transformaciones\ThingSpeak\DataGenerator.java">
+      <DependentUpon>DeviceSimulation.tt</DependentUpon>
+    </Content>
+    <Content Include="Transformaciones\ThingSpeak\DeviceSimulation.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ThingSpeak.java</LastGenOutput>
+      <LastGenOutput>DeviceSimulation.java</LastGenOutput>
+    </Content>
+    <Content Include="Transformaciones\ThingSpeak\DeviceSimulation.java">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeviceSimulation.tt</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup />

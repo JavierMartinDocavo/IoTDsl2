@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0eaa8724-332b-42c3-886f-84ab975e1103" provider="Azure" subscription="f53c2e80-22fe-4b10-9758-2ae712295faf" servicePlan="F1" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
+<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0eaa8724-332b-42c3-886f-84ab975e1103" provider="ThingSpeak" subscription="FISU4PS37D2EQWJ2" servicePlan="F1" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
   <resourceGroups>
     <iotDslHasResourceGroups Id="65fe0c23-1c01-4539-9b15-41885a232b26">
       <resourceGroup Id="314ba4fb-b6a2-4fe7-8917-f9c79e6fba34" name="jmdbecaresourcegroup " location="westeurope">
         <cloudServices>
           <resourceGroupHasCloudServices Id="7a45bf24-80c9-4fa8-bf9f-f74967b77eb7">
-            <ioTCenter Id="1f98e086-93b5-49e2-b1e3-64a6c0d87f3d" name="casoEstudioIoT" connectionString="HostName=casoEstudioIoT.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=uRggV5nttQU8wiWasYNDYJr0eJDZz7sdNnz2I97qpm4=">
+            <ioTCenter Id="1f98e086-93b5-49e2-b1e3-64a6c0d87f3d" name="casoEstudioIoT" connectionString="https://api.thingspeak.com/channels/511448/bulk_update.json">
               <endpoints>
                 <ioTCenterHasEndpoints Id="9db473a8-4a96-4d44-9e31-f6bd1e965f68">
                   <endpoint Id="3ad0990a-b660-40f7-b7b4-ba6e7ce8248a">
@@ -18,7 +18,7 @@
                 </ioTCenterHasEndpoints>
               </endpoints>
               <devices>
-                <ioTCenterHasDevices Id="1a516e9e-767e-4893-9658-9a6d1e6252a9" deviceKey="kFKdyKB61Ipv0LRa+HXUP4SICAoQLINaZxqwzskbHhs=">
+                <ioTCenterHasDevices Id="1a516e9e-767e-4893-9658-9a6d1e6252a9" deviceKey="EWZV5YREGWBNC39N">
                   <monikerRaspberryPi deviceId="/0eaa8724-332b-42c3-886f-84ab975e1103/casoestudiodispositivo" />
                 </ioTCenterHasDevices>
               </devices>
@@ -62,7 +62,7 @@
   </resourceGroups>
   <devices>
     <ioTDslHasDevices Id="6d726bd6-722c-4f88-8459-87041e6126ed">
-      <raspberryPi Id="8a6996e0-7026-4dc9-9439-0aac16858f7c" deviceId="casoestudiodispositivo" protocol="Mqtt" oS="WindowsIoT" programmingLenguage="CSharp">
+      <raspberryPi Id="8a6996e0-7026-4dc9-9439-0aac16858f7c" deviceId="casoestudiodispositivo" protocol="Mqtt" oS="WindowsIoT" programmingLenguage="Java">
         <sensors>
           <deviceReferenciasSensors Id="e0b3335a-3641-43f9-a32a-acab5d644fc9">
             <monikerBME280 Id="94eb53bd-24ca-42f2-bcb0-97f6bcd32cc3" />

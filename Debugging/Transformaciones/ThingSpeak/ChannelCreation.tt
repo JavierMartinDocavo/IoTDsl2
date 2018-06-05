@@ -1,0 +1,75 @@
+﻿<#@ template inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" lenguage="C#" hostspecific="True"#>
+<#@ output extension=".java" #>
+<#@ IotDsl processor="IotDslDirectiveProcessor" requires="fileName='../../Test.IotDsl'" #>
+<#@ include file="EF.utility.CS.ttinclude" #>
+<#
+    var fileManager=EntityFrameworkTemplateFileManager.Create(this);
+    foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
+        foreach (CloudService cloudService in resourceGroup.CloudServices)
+        {
+            if (cloudService is IoTCenter)
+            {
+			    IoTCenter hub = cloudService as IoTCenter;
+                if (hub.Devices.Count == 1)
+                {
+                    Device device = hub.Devices.First();
+                    BME280 sensor = device.Sensors.First() as BME280;
+					fileManager.StartNewFile("ChannelCreation.java");
+#>
+package IoTDsl;
+
+import org.json.JSONObject;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.DataOutputStream;
+import java.net.URL;
+
+public class ChannelCreation
+{
+    public static void main (String[] args){
+        try {
+            URL url = new URL("https://api.thingspeak.com/channels.json");
+            JSONObject body = new JSONObject();
+            body.put("api_key","<#=this.IoTDsl.Subscription#>");
+            body.put("name", "<#=hub.Name#>");
+			<# if (sensor.Temperature){#>
+            body.put("field1","temperature");
+			<#}#>
+			<# if (sensor.Humidity){#>
+            body.put("field2","humidity");
+			<#}#>
+			<# if (sensor.Pressure){#>
+            body.put("field3","pressure");
+			<#}#>
+			<# if (sensor.Altitude){#>
+            body.put("field4","altitude");
+			<#}#>
+
+
+            HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
+
+            //add request header
+            con.setRequestMethod("POST");
+            con.addRequestProperty("Content-Type", "application/json");
+
+            // Send post request
+            con.setDoOutput(true);
+
+            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+            wr.writeBytes(body.toString());
+            wr.close();
+            int responseCode = con.getResponseCode();
+            System.out.println("\nSending 'POST' request to URL : " + url);
+            System.out.println("Response Code : " + responseCode);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+}
+<#
+                }
+            }
+        }
+    }
+    fileManager.Process();
+#>

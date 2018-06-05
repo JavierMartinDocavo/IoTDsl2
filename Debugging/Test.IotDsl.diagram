@@ -19,7 +19,7 @@
     <messageServiceShape Id="fe6cc28b-7014-409d-9920-0d169e392a40" absoluteBounds="2.5, 2.75, 2, 0.5">
       <monikerServiceBus name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup /casoestudiomensajeria" />
     </messageServiceShape>
-    <appServiceToMessageConnection Id="ed31dcfc-2236-461c-a10c-92e2be6c4153" edgePoints="[(5.125 : 3); (4.5 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <appServiceToMessageConnection Id="ed31dcfc-2236-461c-a10c-92e2be6c4153" edgePoints="[(5.125 : 3); (4.5 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <monikerAppServiceReferenciasMessageService Id="dbf5a178-1e48-4662-b74a-fdd9e9a85218" />
       <nodes>
         <monikerWebAppShape Id="7924d3f1-f540-492a-b23f-e50b329bb252" />
