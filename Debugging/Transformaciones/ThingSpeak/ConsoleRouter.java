@@ -16,7 +16,6 @@ public class ConsoleRouter implements AutoCloseable {
 	public void send(String data) {
 		 
 	try{
-		 while(true){
 	    JSONObject rawResponseObject = new JSONObject(data.toString()); // raw data parsed to a object
         ArrayList<Object> updates = new ArrayList<Object>(); // creating an object array
 	          
@@ -55,10 +54,10 @@ public class ConsoleRouter implements AutoCloseable {
 	 
 	    JSONObject mainObject = new JSONObject();
 	    mainObject.put("updates", updates );
-	    mainObject.put("write_api_key","EWZV5YREGWBNC39N");
+	    mainObject.put("write_api_key","QJJrCzdTde8g+R6vIYHiynx6a733xcTuBpsk//m/j2M=");
 
 	    
-	    String url = "https://api.thingspeak.com/channels/511448/bulk_update.json";
+	    String url = "HostName=casoEstudioIoT.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=JOecYzOZ8JXU5ZRk+lDfCdNU/e6yzJL9PvcnGOzA9Xc=";
 		URL obj = new URL(url);
 		HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
 		
@@ -91,8 +90,7 @@ public class ConsoleRouter implements AutoCloseable {
 		
 		//print result
 		System.out.println(response.toString());
-		Thread.sleep(20000);
-		} }
+		}
 		
 		 catch (Exception e){
 			e.printStackTrace();

@@ -901,6 +901,14 @@
     <value>Descripción de Compañía.IotDsl.Protocol.MQTT</value>
     <comment>Description for EnumerationLiteral &apos;Mqtt&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
   </data>
+  <data name="Compañía.IotDsl.Protocol/Http.DisplayName" xml:space="preserve">
+    <value>Http</value>
+    <comment>Display name for EnumerationLiteral &apos;Http&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
+  </data>
+  <data name="Compañía.IotDsl.Protocol/Http.Description" xml:space="preserve">
+    <value>Descripción de Compañía.IotDsl.Protocol.HTTP</value>
+    <comment>Description for EnumerationLiteral &apos;Http&apos; on DomainEnumeration &apos;Protocol&apos;</comment>
+  </data>
   <data name="Compañía.IotDsl.OS/WindowsIoT.DisplayName" xml:space="preserve">
     <value>WindowsIoT</value>
     <comment>Display name for EnumerationLiteral &apos;WindowsIoT&apos; on DomainEnumeration &apos;OS&apos;</comment>

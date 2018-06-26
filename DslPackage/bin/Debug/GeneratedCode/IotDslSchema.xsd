@@ -1398,6 +1398,11 @@
           <xsd:documentation>Descripción de Compañía.IotDsl.Protocol.MQTT</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
+      <xsd:enumeration value="Http">
+        <xsd:annotation>
+          <xsd:documentation>Descripción de Compañía.IotDsl.Protocol.HTTP</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   

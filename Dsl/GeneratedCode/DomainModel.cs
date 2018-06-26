@@ -699,6 +699,12 @@ namespace Compañía.IotDsl
 		/// </summary>
 		[DslDesign::DescriptionResource("Compañía.IotDsl.Protocol/Mqtt.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
 		Mqtt,
+		/// <summary>
+		/// Http
+		/// Descripción de Compañía.IotDsl.Protocol.HTTP
+		/// </summary>
+		[DslDesign::DescriptionResource("Compañía.IotDsl.Protocol/Http.Description", typeof(global::Compañía.IotDsl.IotDslDomainModel), "Compañía.IotDsl.GeneratedCode.DomainModelResx")]
+		Http,
 	}
 }
 namespace Compañía.IotDsl

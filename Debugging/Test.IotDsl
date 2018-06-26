@@ -1,51 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0eaa8724-332b-42c3-886f-84ab975e1103" provider="ThingSpeak" subscription="FISU4PS37D2EQWJ2" servicePlan="F1" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
+<ioTDsl xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="0eaa8724-332b-42c3-886f-84ab975e1103" provider="Azure" subscription="f53c2e80-22fe-4b10-9758-2ae712295faf" servicePlan="F1" xmlns="http://schemas.microsoft.com/dsltools/IotDsl">
   <resourceGroups>
-    <iotDslHasResourceGroups Id="65fe0c23-1c01-4539-9b15-41885a232b26">
-      <resourceGroup Id="314ba4fb-b6a2-4fe7-8917-f9c79e6fba34" name="jmdbecaresourcegroup " location="westeurope">
+    <iotDslHasResourceGroups Id="f5405fc5-7019-41c5-985b-083b132af67c">
+      <resourceGroup Id="e7f792a4-4b47-4124-a05d-0d97fb2e8331" name="presentacionDsl" location="westeurope">
         <cloudServices>
-          <resourceGroupHasCloudServices Id="7a45bf24-80c9-4fa8-bf9f-f74967b77eb7">
-            <ioTCenter Id="1f98e086-93b5-49e2-b1e3-64a6c0d87f3d" name="casoEstudioIoT" connectionString="https://api.thingspeak.com/channels/511448/bulk_update.json">
+          <resourceGroupHasCloudServices Id="807b2af1-79b6-4bb3-b976-1e9d8d2ff36d">
+            <ioTCenter Id="cd92807b-d51e-44f0-99eb-43b114a774f4" name="presentacionIoT" connectionString="HostName=presentacionIoT.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=mba1QifApitSS+h0VcBZbdIrwjngaR2pTKY0q6phefA=">
               <endpoints>
-                <ioTCenterHasEndpoints Id="9db473a8-4a96-4d44-9e31-f6bd1e965f68">
-                  <endpoint Id="3ad0990a-b660-40f7-b7b4-ba6e7ce8248a">
+                <ioTCenterHasEndpoints Id="3bfcb593-5218-450f-9377-8741be7b2df7">
+                  <endpoint Id="9cb2d62e-6961-4912-9e46-81402c0225c7">
                     <cloudService>
-                      <endpointConnectsCloudService Id="026da656-6c7c-4444-bbf9-e8496f6c5536">
-                        <monikerServiceBus name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup /casoestudiomensajeria" />
+                      <endpointConnectsCloudService Id="aeb74142-c0b6-42f0-a256-f85b5c0fd054">
+                        <monikerServiceBus name="/0eaa8724-332b-42c3-886f-84ab975e1103/presentacionDsl/dslmensajeria" />
                       </endpointConnectsCloudService>
                     </cloudService>
                   </endpoint>
                 </ioTCenterHasEndpoints>
               </endpoints>
               <devices>
-                <ioTCenterHasDevices Id="1a516e9e-767e-4893-9658-9a6d1e6252a9" deviceKey="EWZV5YREGWBNC39N">
-                  <monikerRaspberryPi deviceId="/0eaa8724-332b-42c3-886f-84ab975e1103/casoestudiodispositivo" />
+                <ioTCenterHasDevices Id="54a353dd-305a-474d-b938-f3d381e48bbc" deviceKey="JEjU9vDp0LPsEZTk4ZU4w577jVkJWyPKQu32Jod5Zjs=">
+                  <monikerRaspberryPi deviceId="/0eaa8724-332b-42c3-886f-84ab975e1103/dispositivoPresentacion" />
                 </ioTCenterHasDevices>
               </devices>
             </ioTCenter>
           </resourceGroupHasCloudServices>
-          <resourceGroupHasCloudServices Id="5af33517-4d6a-41ec-893e-488b6bdaa928">
-            <webApp Id="ef3f00fa-2128-4861-8ee5-cd897c1eb640" name="casoestudiowebapp">
+          <resourceGroupHasCloudServices Id="daf13a80-1fdc-4ab8-95a2-72072c78339a">
+            <webApp Id="f66d0948-1b43-45bb-9678-9fc9caaff05d" name="presentacionDslWebApp">
               <messageService>
-                <appServiceReferenciasMessageService Id="dbf5a178-1e48-4662-b74a-fdd9e9a85218">
-                  <monikerServiceBus name="/0eaa8724-332b-42c3-886f-84ab975e1103/jmdbecaresourcegroup /casoestudiomensajeria" />
+                <appServiceReferenciasMessageService Id="dfbbce4c-90cf-477b-a149-6a6d57562f33">
+                  <monikerServiceBus name="/0eaa8724-332b-42c3-886f-84ab975e1103/presentacionDsl/dslmensajeria" />
                 </appServiceReferenciasMessageService>
               </messageService>
               <graphs>
-                <appServiceHasGraph Id="e9ec6f9a-0809-407a-b35f-5ec10a848d06">
-                  <lineGraph Id="7063d148-ac95-4183-9a66-58d983a61405">
+                <appServiceHasGraph Id="91f5a263-8a4d-48e0-a761-8dd6b30810cf">
+                  <lineGraph Id="e6725eea-0979-4c9b-bee9-b6d359f41aee">
                     <variables>
-                      <graphHasVariables Id="fef1fce5-8654-4317-99f3-311695c3eb53">
-                        <variable Id="6bb2e78a-ff9f-458c-a780-fce3174308d1" type="Temperature" />
+                      <graphHasVariables Id="84912455-5d12-45ba-b1f8-b7d91e5f15f1">
+                        <variable Id="7713a0d7-f7cc-4bbe-bfa9-b934f2fa68c7" type="Temperature" />
                       </graphHasVariables>
-                      <graphHasVariables Id="6284c665-cc39-419f-aaa5-e393d5a0b994">
-                        <variable Id="8dd996a7-6ad5-4e3a-a93c-3b7af7c4630b" type="Humidity" />
-                      </graphHasVariables>
-                      <graphHasVariables Id="53641b4a-9075-47c5-ac26-63d9902b1926">
-                        <variable Id="842499de-5620-4632-a543-7d3a4ac71cc5" type="Pressure" />
-                      </graphHasVariables>
-                      <graphHasVariables Id="a9ac25d8-4802-44fb-9b3b-624b5598d419">
-                        <variable Id="8b0d6753-6b21-4554-999c-7a844214728b" type="Altitude" />
+                      <graphHasVariables Id="e04142a6-b90b-4464-85ca-08f300baa807">
+                        <variable Id="d4af1127-ab3d-4572-9ea3-0f32fb921805" type="Altitude" />
                       </graphHasVariables>
                     </variables>
                   </lineGraph>
@@ -53,27 +47,27 @@
               </graphs>
             </webApp>
           </resourceGroupHasCloudServices>
-          <resourceGroupHasCloudServices Id="2976a13b-9b85-4712-9c98-35de0f36ebe7">
-            <messageService Id="b0019de7-c52a-4079-95d4-e23e9ec689af" name="casoestudiomensajeria" connectionString="Endpoint=sb://casoestudiomensajeria.servicebus.windows.net/;SharedAccessKeyName=iothubroutes_IotJMD;SharedAccessKey=dXnr1BChvKKTqpK3VnGzsyuXSjWNf9M9XGGEOPtagMA=;EntityPath=casoestudiomensajeriaqueue" />
+          <resourceGroupHasCloudServices Id="1028a28f-945b-48ba-868f-a414120ba843">
+            <messageService Id="278f084b-fe8e-47f1-8e02-bc924fac60a2" name="dslmensajeria" connectionString="Endpoint=sb://dslmensajeria.servicebus.windows.net/;SharedAccessKeyName=iothubroutes;SharedAccessKey=E1FkM1OSBKnXUaSchXcOsoVwbNqyLfgPYoM6ak7PxLw=;EntityPath=dslmensajeriaqueue" />
           </resourceGroupHasCloudServices>
         </cloudServices>
       </resourceGroup>
     </iotDslHasResourceGroups>
   </resourceGroups>
   <devices>
-    <ioTDslHasDevices Id="6d726bd6-722c-4f88-8459-87041e6126ed">
-      <raspberryPi Id="8a6996e0-7026-4dc9-9439-0aac16858f7c" deviceId="casoestudiodispositivo" protocol="Mqtt" oS="WindowsIoT" programmingLenguage="Java">
+    <ioTDslHasDevices Id="9a477fe1-d0f3-4c0f-b955-262ef19a2c18">
+      <raspberryPi Id="b2803103-f15b-41a1-b034-9526bbc9ffdb" deviceId="dispositivoPresentacion" protocol="Mqtt" oS="WindowsIoT" programmingLenguage="CSharp">
         <sensors>
-          <deviceReferenciasSensors Id="e0b3335a-3641-43f9-a32a-acab5d644fc9">
-            <monikerBME280 Id="94eb53bd-24ca-42f2-bcb0-97f6bcd32cc3" />
+          <deviceReferenciasSensors Id="318a8e35-0dc6-48e4-a2a7-d905d461f2e7">
+            <monikerBME280 Id="17e5aa50-fe3a-497a-ac44-744f0f5c6086" />
           </deviceReferenciasSensors>
         </sensors>
       </raspberryPi>
     </ioTDslHasDevices>
   </devices>
   <sensors>
-    <ioTDslTieneSensors Id="7ea5d7a6-5c8d-49d0-b8d8-063a349f4cac">
-      <bME280 Id="94eb53bd-24ca-42f2-bcb0-97f6bcd32cc3" refreshRate="10000" sensorId="casoestudiosensor" />
+    <ioTDslTieneSensors Id="a45a302e-0faf-47d3-b303-affde6275213">
+      <bME280 Id="17e5aa50-fe3a-497a-ac44-744f0f5c6086" refreshRate="1000" sensorId="sensorpresentacion" humidity="false" pressure="false" />
     </ioTDslTieneSensors>
   </sensors>
 </ioTDsl>

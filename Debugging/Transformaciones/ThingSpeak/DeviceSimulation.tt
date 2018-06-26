@@ -12,10 +12,12 @@
 			    IoTCenter hub = cloudService as IoTCenter;
                 if (hub.Devices.Count == 1)
                 {
-                    Device device = hub.Devices.First(); 
-                    BME280 sensor = device.Sensors.First() as BME280;
-                    IoTCenterHasDevices relation = IoTCenterHasDevices.GetLink(hub,device);
-                    fileManager.StartNewFile("ConsoleRouter.java");
+                    Device device = hub.Devices.First();
+                    if (device.Protocol == Protocol.Http && device.ProgrammingLenguage == ProgramingLenguage.Java)
+                    {
+                        BME280 sensor = device.Sensors.First() as BME280;
+                        IoTCenterHasDevices relation = IoTCenterHasDevices.GetLink(hub, device);
+                        fileManager.StartNewFile("ConsoleRouter.java");
 #>
 package IoTDsl;
 
@@ -35,7 +37,6 @@ public class ConsoleRouter implements AutoCloseable {
 	public void send(String data) {
 		 
 	try{
-		 while(true){
 	    JSONObject rawResponseObject = new JSONObject(data.toString()); // raw data parsed to a object
         ArrayList<Object> updates = new ArrayList<Object>(); // creating an object array
 	          
@@ -44,81 +45,81 @@ public class ConsoleRouter implements AutoCloseable {
 		 JSONObject measuresValueObject = new JSONObject();
 	    <#
 		if (sensor.Temperature)
-        {
-        #>
+                        {
+                            #>
         // GET Temperature dynamic value
 	    measuresValueObject = rawResponseObject.getJSONObject("MotaMeasure").getJSONObject("measures").getJSONObject("temperature");
 		<#
-        }
+                        }
 		#>
 		<#
 		if (sensor.Humidity)
-        {
-        #>
+                        {
+                            #>
         // GET Humidity dynamic value
 	    JSONObject humidityValueObject = rawResponseObject.getJSONObject("MotaMeasure").getJSONObject("measures").getJSONObject("humidity");
 	   
 		<#
-        }
+                        }
 		#>
 		<#
 		if (sensor.Pressure)
-        {
-        #>
+                        {
+                            #>
         // GET Pressure dynamic value
 	    JSONObject pressureValueObject = rawResponseObject.getJSONObject("MotaMeasure").getJSONObject("measures").getJSONObject("pressure");
 		<#
-        }
+                        }
 		#>
 		<#
 		if (sensor.Altitude)
-        {
-        #>
+                        {
+                            #>
         // GET Altitud dynamic value
 	    JSONObject altitudeValueObject = rawResponseObject.getJSONObject("MotaMeasure").getJSONObject("measures").getJSONObject("altitude");
 		<#
-        }
+                        }
 		#>
 	   
 	 
 // START OF temperature & timeStamp & humidity & altitude & pressure dynamic implementation
         <#
 		if (sensor.Temperature)
-        {
-        #>
+                        {
+                            #>
         measuresValueObject.remove("unit");
 	    measuresValueObject.put("field1", measuresValueObject.get("value").toString());
 		measuresValueObject.remove("value");
 		<#
-        }
+                        }
 		#>
 	    measuresValueObject.put("created_at", timestampValueObject.get("$date"));
 	    <#
 		if (sensor.Altitude)
-        {
-        #>
+                        {
+                            #>
         measuresValueObject.remove("unit");
 	    measuresValueObject.put("field4", altitudeValueObject.get("value").toString());
 		<#
-        }
+                        }
 		#>        
 		<#
 		if (sensor.Humidity)
-        {
-        #>
+                        {
+                            #>
         humidityValueObject.remove("unit");
 	    measuresValueObject.put("field2", humidityValueObject.get("value").toString());
 		<#
-        }
+                        }
 		#>        
 		<#
 		if (sensor.Pressure)
-        {
-        #>
+                        {
+                            #>
         pressureValueObject.remove("unit");
 	    measuresValueObject.put("field3", pressureValueObject.get("value").toString());
 		<#
-        }
+                        }
 		#>
 	    
  // END OF temperature & timeStamp & humidity & altitude & pressure dynamic implementation
@@ -128,10 +129,10 @@ public class ConsoleRouter implements AutoCloseable {
 	 
 	    JSONObject mainObject = new JSONObject();
 	    mainObject.put("updates", updates );
-	    mainObject.put("write_api_key","<#=relation.DeviceKey#>");
+	    mainObject.put("write_api_key","<#=relation.DeviceKey #>");
 
 	    
-	    String url = "<#=hub.ConnectionString#>";
+	    String url = "<#=hub.ConnectionString #>";
 		URL obj = new URL(url);
 		HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
 		
@@ -164,8 +165,7 @@ public class ConsoleRouter implements AutoCloseable {
 		
 		//print result
 		System.out.println(response.toString());
-		Thread.sleep(20000);
-		} }
+		}
 		
 		 catch (Exception e){
 			e.printStackTrace();
@@ -181,7 +181,7 @@ public class ConsoleRouter implements AutoCloseable {
 
 }
 <#
-                    fileManager.StartNewFile("Concentrator.java");
+                        fileManager.StartNewFile("Concentrator.java");
 #>
 package IoTDsl;
 
@@ -195,13 +195,13 @@ public class Concentrator {
 
 
 		try (
-				DataGenerator listener = new DataGenerator(1000);
+				DataGenerator listener = new DataGenerator(<#=sensor.RefreshRate #>);
 				ConsoleRouter router = new ConsoleRouter();
 				BasicMonitor monitor = new BasicMonitor(listener, router);){
 				monitor.start();
 
 			try {
-				Thread.sleep(20000);
+				Thread.sleep(200000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -217,7 +217,7 @@ public class Concentrator {
 
 }
 <#
-                    fileManager.StartNewFile("BasicMonitor.java");
+                        fileManager.StartNewFile("BasicMonitor.java");
 #>
 package IoTDsl;
 
@@ -366,7 +366,7 @@ public class BasicMonitor implements AutoCloseable {
 
 }
 <#
-                    fileManager.StartNewFile("DataGenerator.java");
+                        fileManager.StartNewFile("DataGenerator.java");
 #>
 package IoTDsl;
 
@@ -428,37 +428,37 @@ public class DataGenerator implements Runnable, AutoCloseable {
 					buffer.append(13);
 					<#
 					if (sensor.Temperature)
-                    {
-                    #>
+                        {
+                            #>
 					buffer.append(MEASURE_MARKER);
 					generateMeasure(buffer,"temperature", "Cº");
 					<#
-                    }
+                        }
 					#>
 					<#
 					if (sensor.Humidity)
-                    {
-                    #>
+                        {
+                            #>
 					buffer.append(MEASURE_MARKER);
 					generateMeasure(buffer,"humidity", "RH");
 					<#
-                    }
+                        }
 					#><#
 					if (sensor.Pressure)
-                    {
-                    #>
+                        {
+                            #>
 					buffer.append(MEASURE_MARKER);
 					generateMeasure(buffer,"pressure", "psi");
 					<#
-                    }
+                        }
 					#><#
 					if (sensor.Altitude)
-                    {
-                    #>
+                        {
+                            #>
 					buffer.append(MEASURE_MARKER);
 					generateMeasure(buffer,"altitude", "m");
 					<#
-                    }
+                        }
 					#>
 					buffer.append(LEC_TAIL);
 
@@ -531,6 +531,74 @@ public class DataGenerator implements Runnable, AutoCloseable {
 
 }
 <#
+                        fileManager.StartNewFile("pom.xml");
+#>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>UPM</groupId>
+  <artifactId>IoTDslThingSpeak</artifactId>
+  <version>1.0</version>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
+  </properties>
+
+
+  <dependencies>
+	
+	<dependency>
+	  <groupId>org.json</groupId>
+	  <artifactId>json</artifactId>
+	  <version>20090211</version>
+   </dependency>
+
+  <dependency>
+      <groupId>org.glassfish</groupId>
+      <artifactId>javax.json</artifactId>
+      <version>1.0.4</version>
+  </dependency>
+
+  </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.9</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>IoTDsl.Concentrator</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+<#
+                    }
                 }
             }
         }

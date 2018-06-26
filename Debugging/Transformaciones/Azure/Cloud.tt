@@ -34,7 +34,7 @@ New-AzureRmWebApp -ResourceGroupName <#=resourceGroup.Name#> -Name <#=appService
                 MessageService serviceBus =  cloudService as MessageService;
             #>
 #ServiceBus resources
-New-AzureRmResourceGroupDeployment -ResourceGroupName <#=resourceGroup.Name#> -TemplateFile <#=serviceBus.Name#>.json -namespaces_servicebusjmd_name <#=serviceBus.Name#> -queues_iothubque_name <#=serviceBus.Name#>Queue;
+New-AzureRmResourceGroupDeployment -ResourceGroupName <#=resourceGroup.Name#> -TemplateFile <#=serviceBus.Name#>.json -namespaces_servicebus_name <#=serviceBus.Name#> -queues_iothubque_name <#=serviceBus.Name#>Queue;
             <#}#>
         <#}#>
     <#}#>
@@ -52,7 +52,7 @@ foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
 	"contentVersion": "1.0.0.0",
 	"parameters":{
 	
-	        "namespaces_servicebusjmd_name": {
+	        "namespaces_servicebus_name": {
             
 			"defaultValue": "servicebusjmd",
 
@@ -65,9 +65,9 @@ foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
 			"type": "String"
 	
         },
-		"authorizationRules_iothubroutes_IotJMD_name": {
+		"authorizationRules_iothubroutes_name": {
 
-			"defaultValue": "iothubroutes_IotJMD",
+			"defaultValue": "iothubroutes",
 
 			"type": "String"
 		}
@@ -83,31 +83,22 @@ foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
 				"name": <#if (this.IoTDsl.ServicePlan == "F1"){#>"Basic"<#}#>,
 				"tier": <#if (this.IoTDsl.ServicePlan == "F1"){#>"Basic"<#}#>
 			},
-			"name": "[parameters('namespaces_servicebusjmd_name')]",
+			"name": "[parameters('namespaces_servicebus_name')]",
 			"apiVersion": "2017-04-01",
-			"location": "West Europe",
+			"location": "<#=resourceGroup.Location#>",
 			"tags": {},
 
 			"scale": null,
-			
-"properties": {
-
-				"provisioningState": "Succeeded",
-
-				"metricId": "[concat('a6492183-3009-45d2-bd0a-000dbbd6be72:', parameters('namespaces_servicebusjmd_name'))]",
-				"createdAt": "2018-01-08T09:18:45.68Z",
-				"updatedAt": "2018-01-08T09:20:34.253Z",
-
-				"serviceBusEndpoint": "[concat('https://', parameters('namespaces_servicebusjmd_name'),'.servicebus.windows.net:443/')]"
-			},
-			"dependsOn": []
+			"properties": {
+				"serviceBusEndpoint": "[concat('https://', parameters('namespaces_servicebus_name'),'.servicebus.windows.net:443/')]"
+			}
 		},
 		{
 			"type": "Microsoft.ServiceBus/namespaces/queues",
-			"name": "[concat(parameters('namespaces_servicebusjmd_name'), '/', parameters('queues_iothubque_name'))]",
+			"name": "[concat(parameters('namespaces_servicebus_name'), '/', parameters('queues_iothubque_name'))]",
 
 			"apiVersion": "2017-04-01",
-			"location": "West Europe",
+			"location": "<#=resourceGroup.Location#>",
 
 			"scale": null,
 			"properties": {
@@ -136,25 +127,20 @@ foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
 
 				},
 
-				"createdAt": "2018-01-08T09:22:47.407Z",
-				"updatedAt": "2018-01-08T09:45:30.9638494Z",
-
-				"accessedAt": "2018-01-08T10:01:27.2383629Z"
-
 				},
 				"dependsOn": [
 
-					"[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_servicebusjmd_name'))]"
+					"[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_servicebus_name'))]"
 
 				]
 
 		},
 		{	"type": "Microsoft.ServiceBus/namespaces/queues/authorizationRules",
 
-			"name": "[concat(parameters('namespaces_servicebusjmd_name'), '/', parameters('queues_iothubque_name'), '/', parameters('authorizationRules_iothubroutes_IotJMD_name'))]",
+			"name": "[concat(parameters('namespaces_servicebus_name'), '/', parameters('queues_iothubque_name'), '/', parameters('authorizationRules_iothubroutes_name'))]",
 			"apiVersion": "2017-04-01",
 
-			"location": "West Europe",
+			"location": "<#=resourceGroup.Location#>",
 
 			"scale": null,
 
@@ -171,8 +157,8 @@ foreach(ResourceGroup resourceGroup in this.IoTDsl.ResourceGroups){
 
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_servicebusjmd_name'))]",
-				"[resourceId('Microsoft.ServiceBus/namespaces/queues', parameters('namespaces_servicebusjmd_name'), parameters('queues_iothubque_name'))]"
+				"[resourceId('Microsoft.ServiceBus/namespaces', parameters('namespaces_servicebus_name'))]",
+				"[resourceId('Microsoft.ServiceBus/namespaces/queues', parameters('namespaces_servicebus_name'), parameters('queues_iothubque_name'))]"
 			]
 
 		}

@@ -36,9 +36,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Transformaciones\Azure\casoestudiodispositivo.cs">
-      <DependentUpon>Devices5.tt</DependentUpon>
-    </Compile>
     <Compile Include="Transformaciones\Azure\DeviceRegistration4.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -47,6 +44,9 @@
     <Compile Include="Transformaciones\Azure\Devices5.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Devices5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transformaciones\Azure\dispositivoPresentacion.cs">
       <DependentUpon>Devices5.tt</DependentUpon>
     </Compile>
     <Compile Include="Transformaciones\Azure\HomeController.cs">
@@ -62,12 +62,6 @@
       <Link>IotDslSchema.xsd</Link>
       <SubType>
       </SubType>
-    </None>
-    <None Include="Transformaciones\Azure\casoEstudioIoT.json">
-      <DependentUpon>Cloud2.tt</DependentUpon>
-    </None>
-    <None Include="Transformaciones\Azure\casoestudiomensajeria.json">
-      <DependentUpon>Cloud.tt</DependentUpon>
     </None>
     <None Include="Transformaciones\Azure\Cloud.ps1">
       <AutoGen>True</AutoGen>
@@ -88,6 +82,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DeviceRegistration4.cs</LastGenOutput>
     </None>
+    <None Include="Transformaciones\Azure\dslmensajeria.json">
+      <DependentUpon>Cloud.tt</DependentUpon>
+    </None>
     <None Include="Transformaciones\Azure\Index.cshtml">
       <DependentUpon>Devices5.tt</DependentUpon>
     </None>
@@ -104,6 +101,9 @@
     </None>
     <None Include="Test.IotDsl.diagram">
       <DependentUpon>Test.IotDsl</DependentUpon>
+    </None>
+    <None Include="Transformaciones\Azure\presentacionIoT.json">
+      <DependentUpon>Cloud2.tt</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +162,9 @@
     <Content Include="Transformaciones\ThingSpeak\DeviceSimulation.java">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>DeviceSimulation.tt</DependentUpon>
+    </Content>
+    <Content Include="Transformaciones\ThingSpeak\pom.xml">
       <DependentUpon>DeviceSimulation.tt</DependentUpon>
     </Content>
   </ItemGroup>
